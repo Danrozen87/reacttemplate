@@ -3,6 +3,7 @@ import React from 'react';
 import { ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NavigatorProps, ViewMode } from './types';
+import { cn } from '@/lib/utils';
 
 export const Navigator = ({ 
   currentYear, 
