@@ -1,6 +1,5 @@
 
 import { useTranslation } from "react-i18next";
-import { AuthLogo } from "@/components/atoms/auth-logo/auth-logo";
 import { animations } from "@/utils/animations";
 
 export function AuthHero() {
@@ -15,9 +14,6 @@ export function AuthHero() {
           className="h-full w-full object-cover opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background to-background/60" />
-      </div>
-      <div className="relative z-20 flex items-center text-lg font-medium">
-        <AuthLogo />
       </div>
       <div className="relative z-20 mt-auto">
         <blockquote className="space-y-2">
