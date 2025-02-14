@@ -1,5 +1,4 @@
 
-import * as React from "react";
 import { ThemeSwitcher } from "../../atoms/theme-switcher";
 import { BrandLogo } from "../../atoms/brand-logo/brand-logo";
 import { useTranslation } from "react-i18next";

@@ -5,7 +5,6 @@
  */
 
 import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "next-themes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -40,21 +39,19 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <TooltipProvider>
-          <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <main aria-label={t("app.aria.main")} className="min-h-screen bg-background">
-              <Toaster />
-              <BrowserRouter>
-                <div aria-label={t("app.aria.content")} className="h-full">
-                  <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </div>
-              </BrowserRouter>
-            </main>
-          </ErrorBoundary>
-        </TooltipProvider>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <main aria-label={t("app.aria.main")} className="min-h-screen bg-background">
+            <Toaster />
+            <BrowserRouter>
+              <div aria-label={t("app.aria.content")} className="h-full">
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </div>
+            </BrowserRouter>
+          </main>
+        </ErrorBoundary>
       </ThemeProvider>
     </QueryClientProvider>
   );

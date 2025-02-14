@@ -14,7 +14,6 @@
 import * as React from "react";
 import { useTranslation } from "react-i18next";
 import { animations } from "@/utils/animations";
-import { cn } from "@/lib/utils";
 import {
   Toast,
   ToastClose,
@@ -43,12 +42,10 @@ export function ToastNotification({
     <Toast
       key={id}
       variant={variant}
-      className={cn(
-        "font-poppins group pointer-events-auto relative flex w-full items-center justify-between space-x-4",
-        "p-6 pr-8 shadow-lg",
-        "sm:w-full md:max-w-[420px]",
-        animations.modal.content.enter
-      )}
+      className={`font-poppins group pointer-events-auto relative flex w-full items-center justify-between space-x-4
+        p-6 pr-8 shadow-lg
+        sm:w-full md:max-w-[420px]
+        ${animations.modal.content.enter}`}
       role={variant === "destructive" ? "alert" : "status"}
       aria-live={variant === "destructive" ? "assertive" : "polite"}
     >
