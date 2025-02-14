@@ -8,11 +8,13 @@ import * as matchers from '@testing-library/jest-dom/matchers';
 // Extend Vitest's expect method with testing-library matchers
 expect.extend(matchers);
 
-// Declare vi on globalThis
+// Declare vitest utility type without circular reference
 declare global {
-  var vi: typeof vi
+  // eslint-disable-next-line no-var
+  var vi: import('vitest').Vi;
 }
 
+// Assign vi to global scope
 globalThis.vi = vi;
 
 // Cleanup after each test case
