@@ -2,12 +2,16 @@
 import { useTranslation } from "react-i18next";
 import { animations } from "@/utils/animations";
 
+interface AuthHeroProps {
+  className?: string;
+}
+
 /**
  * @component AuthHero
  * @description Hero section for the authentication page featuring alternating background 
  * images and inspirational quote with proper accessibility and responsive design.
  */
-export function AuthHero() {
+export function AuthHero({ className }: AuthHeroProps) {
   const { t } = useTranslation();
 
   return (
@@ -21,8 +25,7 @@ export function AuthHero() {
         <img
           src="/lovable-uploads/dec206da-ce5b-47f3-bf86-10af90d620a6.png"
           alt={t("auth.heroImageAlt")}
-          className="h-full w-full object-cover"
-          style={{ objectPosition: '-300px center' }}
+          className="h-full w-full object-cover -translate-x-[300px]"
           role="presentation"
           loading="eager"
         />

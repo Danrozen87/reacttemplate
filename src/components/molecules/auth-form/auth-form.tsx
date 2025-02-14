@@ -7,6 +7,7 @@ import { AuthFormHeader } from "./auth-form-header";
 import { AuthFormFields } from "./auth-form-fields";
 import { AuthFormFooter } from "./auth-form-footer";
 import { PasswordRecoveryForm } from "./password-recovery-form";
+import type { AuthFormProps, AuthFormState } from "./types";
 
 /**
  * @component AuthForm
@@ -16,21 +17,23 @@ import { PasswordRecoveryForm } from "./password-recovery-form";
  * - Manager: Team management access
  * - User: Personal access
  */
-export function AuthForm() {
+export function AuthForm({ className }: AuthFormProps) {
   const { t } = useTranslation();
   const { toast } = useToast();
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isRecoveryMode, setIsRecoveryMode] = useState(false);
+  const [formState, setFormState] = useState<AuthFormState>({
+    email: "",
+    isSubmitting: false,
+    isRecoveryMode: false
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    setFormState(prev => ({ ...prev, isSubmitting: true }));
 
     try {
       const mockAuthResponse = {
-        role: email.includes('admin') ? 'admin' : 
-              email.includes('manager') ? 'manager' : 'user'
+        role: formState.email.includes('admin') ? 'admin' : 
+              formState.email.includes('manager') ? 'manager' : 'user'
       };
 
       toast({
@@ -39,7 +42,6 @@ export function AuthForm() {
         duration: 3000,
         variant: "default",
         className: "bg-background text-foreground border-accent",
-        "aria-live": "polite",
       });
 
     } catch (error) {
@@ -48,30 +50,29 @@ export function AuthForm() {
         description: t("auth.tryAgain"),
         variant: "destructive",
         duration: 3000,
-        "aria-live": "assertive",
       });
     } finally {
-      setIsSubmitting(false);
+      setFormState(prev => ({ ...prev, isSubmitting: false }));
     }
   };
 
-  if (isRecoveryMode) {
+  if (formState.isRecoveryMode) {
     return (
       <PasswordRecoveryForm 
-        onBack={() => setIsRecoveryMode(false)} 
+        onBack={() => setFormState(prev => ({ ...prev, isRecoveryMode: false }))} 
       />
     );
   }
 
   return (
-    <div className={`w-full max-w-md space-y-6 ${animations.modal.content.enter}`}>
+    <div className={`w-full max-w-md space-y-6 ${animations.modal.content.enter} ${className || ''}`}>
       <AuthFormHeader />
       <form onSubmit={handleSubmit} className="space-y-4">
         <AuthFormFields 
-          email={email}
-          setEmail={setEmail}
-          isSubmitting={isSubmitting}
-          onForgotPassword={() => setIsRecoveryMode(true)}
+          email={formState.email}
+          setEmail={(email) => setFormState(prev => ({ ...prev, email }))}
+          isSubmitting={formState.isSubmitting}
+          onForgotPassword={() => setFormState(prev => ({ ...prev, isRecoveryMode: true }))}
         />
         <AuthFormFooter />
       </form>
