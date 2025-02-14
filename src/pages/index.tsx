@@ -1,5 +1,5 @@
 
-import BaseLayout from "../layouts/base-layout";
+import BaseLayout from "@/layouts/base-layout";
 import { useTranslation } from "react-i18next";
 
 const Index = () => {
