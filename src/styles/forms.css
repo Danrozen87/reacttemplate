@@ -9,9 +9,9 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--background)) inset !important;
-  -webkit-text-fill-color: hsl(var(--foreground)) !important;
-  caret-color: hsl(var(--foreground));
+  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--input)) inset !important;
+  -webkit-text-fill-color: hsl(var(--input-foreground)) !important;
+  caret-color: hsl(var(--input-foreground));
   transition: background-color 5000s ease-in-out 0s;
   font-family: 'Poppins', system-ui, sans-serif;
 }
@@ -26,8 +26,7 @@ select:-webkit-autofill:focus {
 .dark select:-webkit-autofill,
 .dark select:-webkit-autofill:hover,
 .dark select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--background)) inset !important;
-  -webkit-text-fill-color: hsl(var(--foreground)) !important;
+  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--input)) inset !important;
+  -webkit-text-fill-color: hsl(var(--input-foreground)) !important;
 }
-
 
