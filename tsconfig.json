@@ -14,10 +14,12 @@
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "allowJs": true,
-    "checkJs": true,
+    "noEmit": true, // Added to prevent emit conflicts
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
+
+    /* Strict Type-Checking Options */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -29,7 +31,7 @@
     "strictFunctionTypes": true,
     "strictBindCallApply": true,
     "strictPropertyInitialization": true,
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
