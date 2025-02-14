@@ -24,12 +24,14 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    console.log("Starting login process for:", email);
 
     try {
       const formData = new FormData(e.target as HTMLFormElement);
       const password = formData.get('password') as string;
       const rememberMe = formData.get('remember') === 'on';
 
+      console.log("Attempting to sign in...");
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -39,12 +41,21 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
       });
 
       if (error) {
+        console.error("Login error:", error);
+        
         if (error.message.includes('Too many auth attempts')) {
           toast({
             title: t("auth.rateLimitExceeded"),
             description: t("auth.tryAgainLater"),
             variant: "destructive",
             duration: 5000,
+          });
+        } else if (error.message.includes('Invalid login credentials')) {
+          toast({
+            title: t("auth.invalidCredentials"),
+            description: t("auth.checkEmailPassword"),
+            variant: "destructive",
+            duration: 3000,
           });
         } else {
           toast({
@@ -54,8 +65,10 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
             duration: 3000,
           });
         }
-        throw error;
+        return;
       }
+
+      console.log("Login successful, user:", data.user?.id);
 
       if (rememberMe) {
         localStorage.setItem('rememberedEmail', email);
@@ -73,19 +86,29 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
 
       navigate("/dashboard");
     } catch (error: any) {
-      console.error('Auth error:', error);
+      console.error('Unexpected auth error:', error);
+      toast({
+        title: t("auth.unexpectedError"),
+        description: t("auth.tryAgainLater"),
+        variant: "destructive",
+        duration: 5000,
+      });
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleRecovery = async (email: string): Promise<boolean> => {
+    console.log("Starting password recovery for:", email);
+    
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo: `${window.location.origin}/auth/reset-password`,
       });
 
       if (error) {
+        console.error("Recovery error:", error);
+        
         if (error.message.includes('Too many auth attempts')) {
           toast({
             title: t("auth.rateLimitExceeded"),
@@ -103,6 +126,7 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         return false;
       }
 
+      console.log("Recovery email sent successfully");
       toast({
         title: t("auth.recovery.emailSent"),
         description: t("auth.recovery.checkInbox"),
@@ -111,7 +135,7 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
 
       return true;
     } catch (error: any) {
-      console.error('Recovery error:', error);
+      console.error('Unexpected recovery error:', error);
       toast({
         title: t("auth.recovery.error"),
         description: error.message || t("auth.recovery.tryAgain"),
@@ -122,6 +146,8 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
   };
 
   const handleSignUp = async (email: string, password: string): Promise<boolean> => {
+    console.log("Starting signup process for:", email);
+    
     try {
       const { data, error } = await supabase.auth.signUp({
         email,
@@ -129,18 +155,26 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         options: {
           emailRedirectTo: `${window.location.origin}/auth/callback`,
           data: {
-            email: email // Include email in user metadata
+            email: email
           }
         }
       });
 
       if (error) {
+        console.error("Signup error:", error);
+        
         if (error.message.includes('Too many auth attempts')) {
           toast({
             title: t("auth.rateLimitExceeded"),
             description: t("auth.tryAgainLater"),
             variant: "destructive",
             duration: 5000,
+          });
+        } else if (error.message.includes('already registered')) {
+          toast({
+            title: t("auth.signup.userExists"),
+            description: t("auth.signup.tryLogin"),
+            variant: "destructive",
           });
         } else {
           toast({
@@ -152,6 +186,7 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         return false;
       }
 
+      console.log("Signup successful, user:", data.user?.id);
       toast({
         title: t("auth.signup.success"),
         description: t("auth.signup.checkEmail"),
@@ -160,7 +195,7 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
 
       return true;
     } catch (error: any) {
-      console.error('Signup error:', error);
+      console.error('Unexpected signup error:', error);
       toast({
         title: t("auth.signup.error"),
         description: error.message || t("auth.signup.tryAgain"),
