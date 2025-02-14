@@ -79,6 +79,19 @@ export default tseslint.config(
             {
               pattern: "className=['\"`](?!.*px-4 sm:px-6 lg:px-8).*?px-['\"`]",
               message: "Use consistent responsive padding (px-4 sm:px-6 lg:px-8)",
+            },
+            // New patterns for animations and blur effects
+            {
+              pattern: "className=['\"`](?!.*animate-).*(?:transition|transform|opacity)['\"`]",
+              message: "Use our centralized animation system with animate-* classes",
+            },
+            {
+              pattern: "className=['\"`](?!.*backdrop-blur-).*blur['\"`]",
+              message: "Use our centralized blur system with backdrop-blur-* classes",
+            },
+            {
+              pattern: "className=['\"`](?!.*dark:).*bg-\\w+['\"`]",
+              message: "Use dark: variant for proper dark mode support",
             }
           ],
         }
