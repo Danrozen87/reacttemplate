@@ -9,6 +9,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { animations } from "@/utils/animations";
+import { useToast } from "@/hooks/use-toast";
+import { logger } from "@/utils/logger";
 
 /**
  * @component LanguageSwitcher
@@ -16,6 +18,7 @@ import { animations } from "@/utils/animations";
  */
 export function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
+  const { toast } = useToast();
 
   const languages = [
     { code: 'en', label: 'English' },
@@ -23,6 +26,22 @@ export function LanguageSwitcher() {
     { code: 'da', label: 'Dansk' },
     { code: 'nl', label: 'Nederlands' }
   ];
+
+  const handleLanguageChange = async (langCode: string) => {
+    try {
+      await i18n.changeLanguage(langCode);
+      toast({
+        description: t("common.languageChanged"),
+      });
+      logger.info(`Language changed to ${langCode}`);
+    } catch (error) {
+      logger.error('Failed to change language:', error);
+      toast({
+        variant: "destructive",
+        description: "Failed to change language. Please try again.",
+      });
+    }
+  };
 
   return (
     <DropdownMenu>
@@ -40,7 +59,7 @@ export function LanguageSwitcher() {
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => i18n.changeLanguage(lang.code)}
+            onClick={() => handleLanguageChange(lang.code)}
             className={`cursor-pointer ${
               i18n.language === lang.code ? "bg-accent" : ""
             }`}
