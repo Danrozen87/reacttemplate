@@ -7,7 +7,6 @@ import { LanguageSwitcher } from "@/components/atoms/language-switcher/language-
 import { ThemeSwitcher } from "@/components/atoms/theme-switcher";
 import { animations } from "@/utils/animations";
 import { useTranslation } from "react-i18next";
-import { useToast } from "@/hooks/use-toast";
 
 /**
  * @component HomePage
@@ -26,7 +25,6 @@ import { useToast } from "@/hooks/use-toast";
  */
 const HomePage = () => {
   const { t } = useTranslation();
-  const { toast } = useToast();
 
   return (
     <div className="min-h-screen grid lg:grid-cols-[35%_65%]">
