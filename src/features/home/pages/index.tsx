@@ -23,38 +23,13 @@ import { useToast } from "@/hooks/use-toast";
  * - Mobile (<640px): Single column layout, stacked components
  * - Tablet (640px-1024px): Enhanced spacing, optimized form width
  * - Desktop (>1024px): Two-column layout with hero section
- * 
- * @roles
- * - Admin: Full system access with user management capabilities
- *   - Can view all user data
- *   - Can modify system settings
- *   - Can manage other users' permissions
- * 
- * - Manager: Team management access
- *   - Can view team member data
- *   - Can modify team settings
- *   - Cannot access system-wide settings
- * 
- * - User: Basic authenticated access
- *   - Can view and modify own profile
- *   - Cannot access admin or management features
- * 
- * @testCoverage
- * Required coverage: 90%
- * Test scenarios:
- * - Component rendering in all viewport sizes
- * - Theme switching functionality
- * - Language switching behavior
- * - Role-based access control
- * - Form validation and submission
- * - Error handling and user feedback
  */
 const HomePage = () => {
   const { t } = useTranslation();
   const { toast } = useToast();
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2">
+    <div className="min-h-screen grid lg:grid-cols-[35%_65%]">
       <div 
         className={`
           flex flex-col bg-background p-4 
