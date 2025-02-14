@@ -1,4 +1,3 @@
-
 {
   "common": {
     "ready": "Klaar!",
@@ -27,5 +26,36 @@
     "heroQuote": "De mooiste ervaring die we kunnen hebben is het mysterieuze. Het is de fundamentele emotie die aan de wieg staat van ware kunst en ware wetenschap.",
     "heroAuthor": "Albert Einstein",
     "heroSection": "Authenticatie hero sectie"
+  },
+  "toast": {
+    "errors": {
+      "generic": "Er is een fout opgetreden",
+      "network": "Netwerkfout",
+      "unauthorized": "Ongeautoriseerde toegang",
+      "validation": "Validatiefout",
+      "notFound": "Bron niet gevonden",
+      "server": "Serverfout",
+      "timeout": "Verzoek duurde te lang",
+      "rateLimited": "Te veel verzoeken",
+      "database": "Databasefout",
+      "sync": "Synchronisatiefout",
+      "upload": "Uploadfout",
+      "download": "Downloadfout",
+      "format": "Formaatfout",
+      "conflict": "Conflictfout",
+      "maintenance": "Systeemonderhoud"
+    },
+    "success": {
+      "generic": "Operatie geslaagd",
+      "saved": "Wijzigingen opgeslagen",
+      "updated": "Update geslaagd",
+      "deleted": "Verwijdering geslaagd",
+      "created": "Aanmaken geslaagd"
+    },
+    "info": {
+      "loading": "Laden...",
+      "processing": "Verwerken...",
+      "waiting": "Even geduld..."
+    }
   }
 }

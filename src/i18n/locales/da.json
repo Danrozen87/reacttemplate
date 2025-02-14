@@ -1,4 +1,3 @@
-
 {
   "common": {
     "ready": "Klar!",
@@ -27,5 +26,36 @@
     "heroQuote": "Den smukkeste oplevelse vi kan have er det mystiske. Det er den grundlæggende følelse, der står ved vuggen til sand kunst og sand videnskab.",
     "heroAuthor": "Albert Einstein",
     "heroSection": "Godkendelse heltesektion"
+  },
+  "toast": {
+    "errors": {
+      "generic": "Der opstod en fejl",
+      "network": "Netværksfejl",
+      "unauthorized": "Uautoriseret adgang",
+      "validation": "Valideringsfejl",
+      "notFound": "Ressource ikke fundet",
+      "server": "Serverfejl",
+      "timeout": "Anmodningen tog for lang tid",
+      "rateLimited": "For mange anmodninger",
+      "database": "Databasefejl",
+      "sync": "Synkroniseringsfejl",
+      "upload": "Upload fejl",
+      "download": "Download fejl",
+      "format": "Formatfejl",
+      "conflict": "Konfliktfejl",
+      "maintenance": "Systemvedligeholdelse"
+    },
+    "success": {
+      "generic": "Handlingen blev udført",
+      "saved": "Ændringer gemt",
+      "updated": "Opdatering gennemført",
+      "deleted": "Sletning gennemført",
+      "created": "Oprettelse gennemført"
+    },
+    "info": {
+      "loading": "Indlæser...",
+      "processing": "Behandler...",
+      "waiting": "Vent venligst..."
+    }
   }
 }
