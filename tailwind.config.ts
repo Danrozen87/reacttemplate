@@ -63,18 +63,50 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        "fade-in": {
-          "0%": { opacity: "0", transform: "translateY(10px)" },
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        // Modal and overlay animations
+        "modal-in": {
+          "0%": { opacity: "0", transform: "translateY(-10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        "fade-out": {
+        "modal-out": {
           "0%": { opacity: "1", transform: "translateY(0)" },
           "100%": { opacity: "0", transform: "translateY(10px)" },
         },
+        "overlay-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "overlay-out": {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
       },
       animation: {
-        "fade-in": "fade-in 0.5s ease-out",
-        "fade-out": "fade-out 0.5s ease-in",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        // Modal and overlay animations
+        "modal-in": "modal-in 0.3s ease-out",
+        "modal-out": "modal-out 0.2s ease-in",
+        "overlay-in": "overlay-in 0.3s ease-out",
+        "overlay-out": "overlay-out 0.2s ease-in",
+      },
+      backdropBlur: {
+        'xs': '2px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        '2xl': '40px',
+        '3xl': '64px',
       },
     },
   },
