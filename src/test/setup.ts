@@ -1,23 +1,21 @@
 
-/// <reference types="vitest/globals" />
+/// <reference types="vitest" />
 import '@testing-library/jest-dom';
-import { expect, afterEach, vi } from 'vitest';
+import { expect, afterEach } from 'vitest';
 import { cleanup } from '@testing-library/react';
 import * as matchers from '@testing-library/jest-dom/matchers';
 
-// Extend Vitest's expect method with testing-library matchers
+// Extend expect with testing-library matchers
 expect.extend(matchers);
 
-// Declare vitest utility type without circular reference
-declare global {
-  // eslint-disable-next-line no-var
-  var vi: import('vitest').Vi;
+// Properly augment the global scope for Vitest
+declare module 'vitest' {
+  interface TestContext {
+    // Add any custom test context if needed
+  }
 }
 
-// Assign vi to global scope
-globalThis.vi = vi;
-
-// Cleanup after each test case
+// Cleanup DOM after each test
 afterEach(() => {
   cleanup();
 });
