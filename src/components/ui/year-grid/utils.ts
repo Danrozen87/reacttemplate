@@ -1,4 +1,6 @@
 
+import { MonthData } from './types';
+
 /**
  * Determines if a given year is a leap year
  */
