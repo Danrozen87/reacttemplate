@@ -1,3 +1,4 @@
+
 import { useTranslation } from "react-i18next";
 import { animations } from "@/utils/animations";
 import { useEffect, useState } from "react";
@@ -49,15 +50,12 @@ export function AuthHero() {
         role="region"
         aria-label={t("auth.heroQuoteSection")}
       >
-        <blockquote className="space-y-3 bg-black/80 p-8 rounded-xl backdrop-blur-sm border-l-4 border-primary shadow-lg hover:scale-[1.02] transition-transform duration-300">
-          <div className="relative">
-            <span className="absolute -top-8 -left-6 text-7xl text-primary font-serif opacity-90 hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">"</span>
-            <p className="text-xl font-poppins font-light text-white leading-relaxed pl-6 italic">
-              {t("auth.heroQuote")}
-            </p>
-          </div>
-          <footer className="text-base font-poppins text-primary/90 pl-6 font-medium">
-            — {t("auth.heroAuthor")}
+        <blockquote className="space-y-2">
+          <p className="text-lg font-poppins font-light">
+            {t("auth.heroQuote")}
+          </p>
+          <footer className="text-sm font-poppins">
+            {t("auth.heroAuthor")}
           </footer>
         </blockquote>
       </div>
