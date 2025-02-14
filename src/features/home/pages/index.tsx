@@ -5,10 +5,18 @@ import { AuthHero } from "@/components/organisms/auth-hero/auth-hero";
 import { AuthLogo } from "@/components/atoms/auth-logo/auth-logo";
 import { animations } from "@/utils/animations";
 
+/**
+ * @component HomePage
+ * @description Authentication page with login form and hero section
+ */
 const HomePage = () => {
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
-      <div className="flex flex-col bg-background p-6 md:p-10 text-foreground dark:border-r">
+      <div 
+        className={`flex flex-col bg-background p-6 md:p-10 text-foreground dark:border-r ${animations.modal.content.enter}`}
+        role="main"
+        aria-labelledby="auth-heading"
+      >
         <div className="mb-8">
           <AuthLogo />
         </div>
