@@ -179,14 +179,24 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         } else {
           toast({
             title: t("auth.signup.error"),
-            description: error.message || t("auth.signup.tryAgain"),
+            description: t("auth.signup.tryAgain"),
             variant: "destructive",
           });
         }
         return false;
       }
 
-      console.log("Signup successful, user:", data.user?.id);
+      if (!data.user) {
+        console.error("Signup failed: No user data returned");
+        toast({
+          title: t("auth.signup.error"),
+          description: t("auth.signup.tryAgain"),
+          variant: "destructive",
+        });
+        return false;
+      }
+
+      console.log("Signup successful, user:", data.user.id);
       toast({
         title: t("auth.signup.success"),
         description: t("auth.signup.checkEmail"),
