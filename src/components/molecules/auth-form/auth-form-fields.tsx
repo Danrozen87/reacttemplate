@@ -1,9 +1,9 @@
-import { useState } from "react";
+
 import { useTranslation } from "react-i18next";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { AuthPasswordInput } from "./auth-password-input";
+import { AuthFormEmail } from "./auth-form-email";
 
 interface AuthFormFieldsProps {
   email: string;
@@ -14,34 +14,7 @@ interface AuthFormFieldsProps {
 
 /**
  * @component AuthFormFields
- * @description Core authentication form fields component providing email and password inputs
- * with validation and accessibility features.
- *
- * @example
- * ```tsx
- * <AuthFormFields
- *   email={email}
- *   setEmail={setEmail}
- *   isSubmitting={isSubmitting}
- *   onForgotPassword={handleForgotPassword}
- * />
- * ```
- *
- * @accessibility
- * - Implements ARIA labels and descriptions
- * - Manages focus states
- * - Provides error announcements
- * - Supports keyboard navigation
- *
- * @i18n
- * - Uses "auth" namespace for translations
- * - Supports all required languages
- *
- * @param {Object} props
- * @param {string} props.email - Current email input value
- * @param {(email: string) => void} props.setEmail - Email state setter
- * @param {boolean} props.isSubmitting - Form submission state
- * @param {() => void} props.onForgotPassword - Handler for forgot password action
+ * @description Field group for authentication form
  */
 export function AuthFormFields({
   email,
@@ -54,23 +27,12 @@ export function AuthFormFields({
 
   return (
     <div className="space-y-4">
-      <div className="space-y-2">
-        <Input
-          id="email"
-          type="email"
-          placeholder={t("auth.emailOrPhonePlaceholder")}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          disabled={isSubmitting}
-          required
-          className="font-poppins bg-input shadow-sm border-input-border placeholder:text-input-placeholder"
-        />
-      </div>
-
-      <div className="space-y-2">
-        <AuthPasswordInput disabled={isSubmitting} />
-      </div>
-
+      <AuthFormEmail 
+        email={email}
+        setEmail={setEmail}
+        disabled={isSubmitting}
+      />
+      <AuthPasswordInput disabled={isSubmitting} />
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Checkbox
@@ -86,7 +48,6 @@ export function AuthFormFields({
             {t("auth.rememberMe")}
           </label>
         </div>
-
         <Button
           variant="link"
           className="px-0 font-poppins font-light text-sm"
@@ -97,7 +58,6 @@ export function AuthFormFields({
           {t("auth.forgotPassword")}
         </Button>
       </div>
-
       <Button
         type="submit"
         className="w-full font-poppins"
@@ -108,3 +68,4 @@ export function AuthFormFields({
     </div>
   );
 }
+
