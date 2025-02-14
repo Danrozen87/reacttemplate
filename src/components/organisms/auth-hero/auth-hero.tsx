@@ -52,11 +52,11 @@ export function AuthHero() {
       >
         <blockquote className="space-y-3 bg-black/80 p-8 rounded-xl backdrop-blur-sm border-l-4 border-primary shadow-lg hover:scale-[1.02] transition-transform duration-300">
           <div className="relative">
-            <span className="absolute -top-10 -left-6 text-6xl text-primary font-serif rotate-12">"</span>
+            <span className="absolute -top-12 -left-8 text-7xl text-primary font-serif rotate-12 opacity-90 hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">"</span>
             <p className="text-xl font-poppins font-light text-white leading-relaxed pl-6 italic">
               {t("auth.heroQuote")}
             </p>
-            <span className="absolute bottom-0 right-4 text-6xl text-primary/40 font-serif rotate-12">"</span>
+            <span className="absolute -bottom-4 right-2 text-7xl text-primary/60 font-serif -rotate-12 opacity-90 hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">"</span>
           </div>
           <footer className="text-base font-poppins text-primary/90 pl-6 font-medium">
             — {t("auth.heroAuthor")}
