@@ -44,7 +44,6 @@ export function AuthHero() {
           loading="eager"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-white/10 dark:bg-black/20 transition-colors duration-300" />
       </div>
       <div 
         className={`relative z-20 mt-auto ${animations.modal.content.enter}`}
