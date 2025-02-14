@@ -5,6 +5,7 @@ import { AuthFormFields } from "./auth-form-fields";
 import { AuthFormFooter } from "./auth-form-footer";
 import { PasswordRecoveryForm } from "./password-recovery-form";
 import { useAuthFormState } from "./auth-form-state";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 /**
