@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Input } from "@/components/ui/input";
@@ -13,6 +12,37 @@ interface AuthFormFieldsProps {
   onForgotPassword: () => void;
 }
 
+/**
+ * @component AuthFormFields
+ * @description Core authentication form fields component providing email and password inputs
+ * with validation and accessibility features.
+ *
+ * @example
+ * ```tsx
+ * <AuthFormFields
+ *   email={email}
+ *   setEmail={setEmail}
+ *   isSubmitting={isSubmitting}
+ *   onForgotPassword={handleForgotPassword}
+ * />
+ * ```
+ *
+ * @accessibility
+ * - Implements ARIA labels and descriptions
+ * - Manages focus states
+ * - Provides error announcements
+ * - Supports keyboard navigation
+ *
+ * @i18n
+ * - Uses "auth" namespace for translations
+ * - Supports all required languages
+ *
+ * @param {Object} props
+ * @param {string} props.email - Current email input value
+ * @param {(email: string) => void} props.setEmail - Email state setter
+ * @param {boolean} props.isSubmitting - Form submission state
+ * @param {() => void} props.onForgotPassword - Handler for forgot password action
+ */
 export function AuthFormFields({
   email,
   setEmail,

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Input } from "@/components/ui/input";
@@ -12,6 +11,29 @@ interface SignUpFormProps {
   onBack: () => void;
 }
 
+/**
+ * @component SignUpForm
+ * @description A comprehensive signup form component that handles new user registration
+ * with company information collection. Implements full i18n support and accessibility features.
+ *
+ * @example
+ * ```tsx
+ * <SignUpForm onBack={() => navigate('/login')} />
+ * ```
+ *
+ * @accessibility
+ * - Uses ARIA labels for all inputs
+ * - Implements focus management
+ * - Provides error announcements
+ * - Supports keyboard navigation
+ *
+ * @i18n
+ * - Requires "auth.signup" namespace
+ * - Supports en, sv, da, nl languages
+ *
+ * @param {Object} props
+ * @param {() => void} props.onBack - Handler for navigating back to login
+ */
 export function SignUpForm({ onBack }: SignUpFormProps) {
   const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);

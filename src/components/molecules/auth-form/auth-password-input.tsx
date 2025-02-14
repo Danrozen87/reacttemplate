@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Eye, EyeOff } from "lucide-react";
@@ -9,6 +8,31 @@ interface AuthPasswordInputProps {
   disabled?: boolean;
 }
 
+/**
+ * @component AuthPasswordInput
+ * @description A secure password input component with visibility toggle and accessibility features.
+ *
+ * @example
+ * ```tsx
+ * <AuthPasswordInput
+ *   disabled={isSubmitting}
+ *   onChange={(value) => setPassword(value)}
+ * />
+ * ```
+ *
+ * @accessibility
+ * - Toggle password visibility button is properly labeled
+ * - Error states are announced
+ * - Focus management implemented
+ * - Keyboard navigation supported
+ *
+ * @i18n
+ * - Uses "auth" namespace
+ * - Supports password-related translations
+ *
+ * @param {Object} props
+ * @param {boolean} [props.disabled] - Whether the input is disabled
+ */
 export function AuthPasswordInput({ disabled }: AuthPasswordInputProps) {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
