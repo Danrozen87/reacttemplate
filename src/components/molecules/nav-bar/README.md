@@ -25,13 +25,58 @@ No props required as the component is self-contained.
 - Keyboard navigation: Full support
 - Focus management: Trapped within navigation when menu is open
 
-## i18n
-Required translations:
+## i18n Requirements
+### Translation Keys
 ```json
 {
-  "nav": {
-    "home": "Home",
-    "brand": "Clean Slate"
+  "components": {
+    "navbar": {
+      "brand": "Clean Slate",
+      "home": "Home",
+      "menu": {
+        "open": "Open menu",
+        "close": "Close menu"
+      },
+      "search": {
+        "placeholder": "Search...",
+        "button": "Search"
+      }
+    }
+  }
+}
+```
+
+### Supported Languages
+- English (en)
+- Swedish (sv)
+- Danish (da)
+- Dutch (nl)
+
+### Language-Specific Considerations
+- Maintain consistent branding across languages
+- Account for navigation item text length variations
+- Ensure proper spacing in mobile view for all languages
+- Support RTL languages in future implementations
+
+### Implementation Examples
+```typescript
+// English
+{
+  "components": {
+    "navbar": {
+      "brand": "Clean Slate",
+      "home": "Home"
+    }
+  }
+}
+
+// Danish
+{
+  "components": {
+    "navbar": {
+      "brand": "Clean Slate",
+      "home": "Hjem"
+    }
   }
 }
 ```
@@ -43,3 +88,5 @@ Test scenarios:
 - Theme switcher functions correctly
 - Responsive design works as expected
 - Keyboard navigation works correctly
+- Verifies correct translations for all supported languages
+- Tests RTL support for future language additions
