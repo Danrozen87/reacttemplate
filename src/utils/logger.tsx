@@ -59,7 +59,10 @@ const createToastAction = (action: ToastOptions['action']): ToastActionElement |
   if (!action) return undefined;
   
   return (
-    <ToastAction onClick={action.onClick}>
+    <ToastAction 
+      onClick={action.onClick}
+      altText={`Action: ${action.label}`}
+    >
       {action.label}
     </ToastAction>
   );
