@@ -28,7 +28,14 @@ export default defineConfig(({ mode }) => ({
   optimizeDeps: {
     exclude: ['ts-node'],
     esbuildOptions: {
-      tsconfig: './tsconfig.json'
+      tsconfig: 'tsconfig.json',
+      tsconfigRaw: {
+        compilerOptions: {
+          // This will override any project references that might cause issues
+          composite: false,
+          incremental: false
+        }
+      }
     }
   }
 }));
