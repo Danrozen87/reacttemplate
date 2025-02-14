@@ -1,11 +1,10 @@
-
 /**
  * @utility logger
  * @description Centralized logging utility for consistent error handling and monitoring
  */
 
 import { useTranslation } from 'react-i18next';
-import { toast } from '@/components/ui/use-toast';
+import { toast } from '@/hooks/use-toast';
 import { ToastActionElement, ToastAction } from '@/components/ui/toast';
 
 type LogLevel = 'info' | 'warn' | 'error';
@@ -55,6 +54,8 @@ const formatMessage = (level: LogLevel, message: string, options?: LogOptions): 
   return parts.filter(Boolean).join(' ');
 };
 
+const DEFAULT_TOAST_DURATION = 5000; // 5 seconds
+
 const createToastAction = (action: ToastOptions['action']): ToastActionElement | undefined => {
   if (!action) return undefined;
   
@@ -86,7 +87,7 @@ export const logger = {
       toast({
         title: message,
         description: options?.toastOptions?.description,
-        duration: options?.toastOptions?.duration,
+        duration: options?.toastOptions?.duration ?? DEFAULT_TOAST_DURATION,
         action: options?.toastOptions?.action ? createToastAction(options.toastOptions.action) : undefined,
         variant: "default"
       });
@@ -100,7 +101,7 @@ export const logger = {
       toast({
         title: message,
         description: options?.toastOptions?.description,
-        duration: options?.toastOptions?.duration,
+        duration: options?.toastOptions?.duration ?? DEFAULT_TOAST_DURATION,
         action: options?.toastOptions?.action ? createToastAction(options.toastOptions.action) : undefined,
         variant: "default"
       });
@@ -117,7 +118,7 @@ export const logger = {
       toast({
         title: message,
         description: options?.toastOptions?.description,
-        duration: options?.toastOptions?.duration,
+        duration: options?.toastOptions?.duration ?? DEFAULT_TOAST_DURATION,
         action: options?.toastOptions?.action ? createToastAction(options.toastOptions.action) : undefined,
         variant: "destructive"
       });
