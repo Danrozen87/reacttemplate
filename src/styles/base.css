@@ -1,0 +1,25 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* Smooth scrolling and better touch behavior */
+html {
+  scroll-behavior: smooth;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Better default focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-ring ring-offset-2;
+}
