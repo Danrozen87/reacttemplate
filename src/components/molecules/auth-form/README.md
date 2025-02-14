@@ -1,80 +1,104 @@
 
-# Auth Form Component System
+# Auth Form System
 
 ## Overview
-A comprehensive authentication system that handles login, signup, and password recovery flows with full i18n support and accessibility features.
+A comprehensive authentication system implementing secure login, registration, and password recovery flows. Built with accessibility, internationalization, and role-based access control as core principles.
 
-## Components
-- AuthForm: Main authentication container
-- SignUpForm: New user registration
-- PasswordRecoveryForm: Password reset flow
-- AuthFormFields: Reusable form field components
-- AuthSocialButtons: Social authentication options
-
-## Usage
-```tsx
-// Basic implementation
-import { AuthForm } from './auth-form';
-
-function LoginPage() {
-  return <AuthForm />;
-}
-
-// With custom styling
-<AuthForm className="max-w-lg mx-auto" />
+## Components Structure
+```
+auth-form/
+├── auth-form.tsx           # Main container
+├── auth-form-fields.tsx    # Form field groups
+├── auth-password-input.tsx # Secure password input
+├── auth-form-email.tsx     # Email input with validation
+├── password-recovery-form.tsx # Password reset flow
+└── sign-up-form.tsx       # New user registration
 ```
 
-## Features
+## Core Features
+- Role-based access control (Admin, Manager, User)
 - Multi-step authentication flow
-- Responsive design
-- Dark/light mode support
+- Password visibility toggle
+- Form validation
+- Loading states
+- Error handling
 - Social authentication integration
+- Remember me functionality
 - Password recovery workflow
-- Comprehensive form validation
-- Real-time feedback
 
 ## Accessibility
-- ARIA live regions for form status updates
-- Focus management between form states
-- Clear error announcements
-- Keyboard navigation support
-- Screen reader optimized content
-- High contrast mode support
+- ARIA landmarks and roles
+- Keyboard navigation
+- Focus management
+- Screen reader announcements
+- Loading state indicators
+- Error message association
 
 ## i18n Support
-Supported languages:
-- English (en)
+Required translations:
 - Swedish (sv)
 - Danish (da)
+- English (en)
 - Dutch (nl)
 
-Required translations namespace: "auth"
-
+Translation namespaces:
 ```json
 {
   "auth": {
-    "welcome": "Welcome back",
-    "signInToContinue": "Sign in to continue",
-    "emailOrPhone": "Email or phone",
-    "password": "Password",
-    "forgotPassword": "Forgot password?",
-    "signIn": "Sign in",
-    "createAccount": "Create account",
-    "recovery": {
-      "title": "Reset password",
-      "instructions": "Enter your email"
-    }
+    "signIn": "",
+    "signUp": "",
+    "recovery": {},
+    "validation": {},
+    "errors": {}
   }
 }
 ```
 
-## Testing
-Coverage requirements: 90%+
-Key test scenarios:
-- Form validation
-- Authentication flow
-- i18n rendering
-- Accessibility compliance
-- Error handling
-- State management
+## Theme System
+- Follows 60-30-10 color rule
+- Dark/Light mode support
+- Consistent font usage (Poppins)
+- Responsive design
+- Animation system integration
 
+## Testing Strategy
+Coverage requirements:
+- Form validation: 100%
+- Authentication flow: 100%
+- UI components: 90%
+- Error handling: 100%
+
+Test scenarios:
+- Authentication flows
+- Form validation
+- Role-based access
+- Accessibility compliance
+- Responsive design
+- i18n rendering
+- Theme switching
+
+## Performance Considerations
+- Lazy loading of form variants
+- Optimized re-renders
+- Efficient state management
+- Bundle size optimization
+
+## Security
+- Input sanitization
+- CSRF protection
+- Rate limiting support
+- Session management
+- Secure password handling
+
+## Scalability
+- Modular component structure
+- Consistent naming conventions
+- Standardized prop interfaces
+- Reusable atomic components
+- Documented component APIs
+
+## Mobile-First Design
+- Touch-friendly inputs
+- Responsive layouts
+- Adaptive spacing
+- Optimized keyboard handling
