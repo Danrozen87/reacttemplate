@@ -1,4 +1,3 @@
-
 /**
  * @group unit
  * @description Comprehensive test suite for AuthForm component
