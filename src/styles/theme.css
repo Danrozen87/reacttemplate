@@ -1,4 +1,3 @@
-
 @layer base {
   :root {
     /* Base Color Palette - Adjusted for better contrast */
@@ -20,8 +19,8 @@
     --secondary: var(--khaki);
     --secondary-foreground: var(--eggplant);
     
-    /* Input fields with subtle off-white for light mode */
-    --input: 33 30% 98%;        /* Slightly off-white background */
+    /* Input fields with more subtle off-white for light mode */
+    --input: 108 15% 97%;        /* Slightly tinted towards mint background */
     --input-foreground: var(--eggplant);
     --input-border: 296 15% 85%; /* Soft border color */
     --input-placeholder: 296 15% 65%; /* Distinct placeholder text */
