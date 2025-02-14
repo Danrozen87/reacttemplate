@@ -1,3 +1,2 @@
 
-// Barrel file for organism components
-export {}
+export { AuthHero } from "./auth-hero/auth-hero";
