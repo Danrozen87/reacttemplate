@@ -1,11 +1,11 @@
 
 {
   "common": {
-    "ready": "Ready",
-    "cleanSlate": "Clean Slate",
-    "foundation": "Foundation setup in progress",
+    "ready": "Ready!",
+    "cleanSlate": "Clean slate achieved.",
+    "foundation": "Foundation setup in progress...",
     "selectLanguage": "Select language",
-    "languageChanged": "Language changed successfully"
+    "languageChanged": "Language successfully changed to English!"
   },
   "auth": {
     "welcome": "Nice to see you again",

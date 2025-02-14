@@ -30,7 +30,8 @@ export function LanguageSwitcher() {
     i18n.changeLanguage(langCode);
     toast({
       description: t("common.languageChanged"),
-      duration: 3000
+      duration: 3000, // Set to 3 seconds
+      className: "bg-background border-2 border-primary", // Added styling for better visibility
     });
   };
 

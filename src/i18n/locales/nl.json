@@ -1,11 +1,11 @@
 
 {
   "common": {
-    "ready": "Klaar",
-    "cleanSlate": "Schone lei",
-    "foundation": "Basisinstallatie in uitvoering",
+    "ready": "Klaar!",
+    "cleanSlate": "Schone lei bereikt.",
+    "foundation": "Basisinstallatie in uitvoering...",
     "selectLanguage": "Selecteer taal",
-    "languageChanged": "Taal is gewijzigd"
+    "languageChanged": "Taal is succesvol gewijzigd naar Nederlands!"
   },
   "auth": {
     "welcome": "Leuk je weer te zien",

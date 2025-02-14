@@ -1,11 +1,11 @@
 
 {
   "common": {
-    "ready": "Klar",
-    "cleanSlate": "Ren start",
-    "foundation": "Grundlæggende opsætning i gang",
+    "ready": "Klar!",
+    "cleanSlate": "Ren start opnået.",
+    "foundation": "Grundlæggende opsætning i gang...",
     "selectLanguage": "Vælg sprog",
-    "languageChanged": "Sproget er blevet ændret"
+    "languageChanged": "Sproget er blevet ændret til dansk!"
   },
   "auth": {
     "welcome": "Dejligt at se dig igen",

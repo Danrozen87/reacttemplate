@@ -1,11 +1,11 @@
 
 {
   "common": {
-    "ready": "Redo",
-    "cleanSlate": "Ren start",
-    "foundation": "Grundläggande installation pågår",
+    "ready": "Redo!",
+    "cleanSlate": "Ren start uppnådd.",
+    "foundation": "Grundläggande installation pågår...",
     "selectLanguage": "Välj språk",
-    "languageChanged": "Språket har ändrats"
+    "languageChanged": "Språket har ändrats till svenska!"
   },
   "auth": {
     "welcome": "Trevligt att se dig igen",
