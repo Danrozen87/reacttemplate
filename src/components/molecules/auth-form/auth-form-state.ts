@@ -9,6 +9,7 @@ export const useAuthFormState = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isRecoveryMode, setIsRecoveryMode] = useState(false);
+  const [isSignUpMode, setIsSignUpMode] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,6 +48,9 @@ export const useAuthFormState = () => {
     isSubmitting,
     isRecoveryMode,
     setIsRecoveryMode,
+    isSignUpMode,
+    setIsSignUpMode,
     handleSubmit,
   };
 };
+

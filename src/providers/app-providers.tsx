@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 import { Toaster } from "@/components/ui/toaster";
+import { ErrorFallback } from "@/components/ui/error-fallback";
 
 const queryClient = new QueryClient({
   defaultOptions: {
