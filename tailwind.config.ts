@@ -20,7 +20,12 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
+      },
+      fontWeight: {
+        light: '300',
+        normal: '400',
+        bold: '700',
       },
       colors: {
         border: "hsl(var(--border))",

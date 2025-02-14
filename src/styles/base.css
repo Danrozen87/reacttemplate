@@ -9,8 +9,51 @@
   }
   
   body {
-    @apply bg-background text-foreground antialiased min-h-screen;
+    @apply bg-background text-foreground antialiased min-h-screen font-normal;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  /* Typography scale with improved contrast ratios */
+  h1, .h1 {
+    @apply font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight;
+  }
+
+  h2, .h2 {
+    @apply font-bold text-3xl md:text-4xl lg:text-5xl tracking-tight;
+  }
+
+  h3, .h3 {
+    @apply font-bold text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h4, .h4 {
+    @apply font-bold text-xl md:text-2xl lg:text-3xl;
+  }
+
+  p, .body {
+    @apply font-light text-base md:text-lg leading-relaxed;
+  }
+
+  /* Better default focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2;
+  }
+
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted/80;
   }
 }
 
@@ -19,26 +62,4 @@ html {
   scroll-behavior: smooth;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
-}
-
-/* Better default focus styles */
-:focus-visible {
-  @apply outline-none ring-2 ring-ring ring-offset-2;
-}
-
-/* Custom scrollbar for webkit browsers */
-::-webkit-scrollbar {
-  @apply w-2;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-background;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-muted rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-muted/80;
 }
