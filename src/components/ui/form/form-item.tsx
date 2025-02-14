@@ -3,7 +3,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import { FormItemProps, FormItemContextValue } from "./types"
 
-const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue)
+export const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue)
 
 /**
  * @component
@@ -14,7 +14,7 @@ export function FormItem({ className, ...props }: FormItemProps) {
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...props} />
+      <div className={cn("space-y-2", className)} {...props} />
     </FormItemContext.Provider>
   )
 }
