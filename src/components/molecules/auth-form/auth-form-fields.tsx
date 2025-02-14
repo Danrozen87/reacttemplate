@@ -33,7 +33,7 @@ export function AuthFormFields({
           onChange={(e) => setEmail(e.target.value)}
           disabled={isSubmitting}
           required
-          className="font-poppins"
+          className="font-poppins bg-white shadow-sm border-input-border placeholder:text-input-placeholder"
         />
       </div>
 

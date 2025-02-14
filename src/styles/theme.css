@@ -19,9 +19,11 @@
     --secondary: var(--khaki);
     --secondary-foreground: var(--eggplant);
     
-    /* Input fields with better readability */
-    --input: 33 16% 90%;  /* Lighter background for inputs */
+    /* Input fields with white background for maximum readability */
+    --input: 0 0% 100%;        /* Pure white background */
     --input-foreground: var(--eggplant);
+    --input-border: 296 15% 85%; /* Soft border color */
+    --input-placeholder: 296 15% 65%; /* Distinct placeholder text */
     
     /* 10% - Accents and CTAs */
     --primary: var(--soft-orange);
