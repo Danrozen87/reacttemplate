@@ -1,5 +1,10 @@
 
-import { Input } from "@/components/ui/input";
+/**
+ * @component AuthFormEmail
+ * @description Email input field for authentication form with validation
+ */
+import { AuthInput } from "@/components/atoms/auth-input/auth-input";
+import { AuthLabel } from "@/components/atoms/auth-label/auth-label";
 import { useTranslation } from "react-i18next";
 
 interface AuthFormEmailProps {
@@ -8,16 +13,15 @@ interface AuthFormEmailProps {
   disabled?: boolean;
 }
 
-/**
- * @component AuthFormEmail
- * @description Email input field for authentication form
- */
 export function AuthFormEmail({ email, setEmail, disabled }: AuthFormEmailProps) {
   const { t } = useTranslation();
 
   return (
     <div className="space-y-2">
-      <Input
+      <AuthLabel htmlFor="email" required>
+        {t("auth.email")}
+      </AuthLabel>
+      <AuthInput
         id="email"
         type="email"
         placeholder={t("auth.emailOrPhonePlaceholder")}
@@ -25,9 +29,7 @@ export function AuthFormEmail({ email, setEmail, disabled }: AuthFormEmailProps)
         onChange={(e) => setEmail(e.target.value)}
         disabled={disabled}
         required
-        className="font-poppins bg-input shadow-sm border-input-border placeholder:text-input-placeholder"
       />
     </div>
   );
 }
-

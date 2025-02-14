@@ -1,10 +1,17 @@
 
+/**
+ * @component AuthFormFields
+ * @description Field group for authentication form with enhanced accessibility
+ */
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { AuthInput } from "@/components/atoms/auth-input/auth-input";
+import { AuthLabel } from "@/components/atoms/auth-label/auth-label";
 import { AuthPasswordInput } from "./auth-password-input";
 import { AuthFormEmail } from "./auth-form-email";
+import { animations } from "@/utils/animations";
 
 interface AuthFormFieldsProps {
   email: string;
@@ -13,10 +20,6 @@ interface AuthFormFieldsProps {
   onForgotPassword: () => void;
 }
 
-/**
- * @component AuthFormFields
- * @description Field group for authentication form
- */
 export function AuthFormFields({
   email,
   setEmail,
@@ -27,7 +30,7 @@ export function AuthFormFields({
   const [rememberMe, setRememberMe] = useState(false);
 
   return (
-    <div className="space-y-4">
+    <div className={`space-y-4 ${animations.modal.content.enter}`}>
       <AuthFormEmail 
         email={email}
         setEmail={setEmail}
@@ -42,12 +45,12 @@ export function AuthFormFields({
             onCheckedChange={(checked) => setRememberMe(checked as boolean)}
             disabled={isSubmitting}
           />
-          <label
+          <AuthLabel
             htmlFor="remember"
-            className="text-sm font-poppins font-light text-muted-foreground"
+            className="text-muted-foreground font-light"
           >
             {t("auth.rememberMe")}
-          </label>
+          </AuthLabel>
         </div>
         <Button
           variant="link"
@@ -69,4 +72,3 @@ export function AuthFormFields({
     </div>
   );
 }
-
