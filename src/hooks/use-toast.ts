@@ -1,3 +1,4 @@
+
 import * as React from "react"
 
 import type {
@@ -157,7 +158,7 @@ function toast({ ...props }: Toast) {
         if (!open) dismiss()
       },
       // Added proper accessibility attributes
-      ariaLive: "polite",
+      "aria-live": "polite",
       role: "status",
     },
   })
