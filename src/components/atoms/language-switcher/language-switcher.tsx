@@ -27,20 +27,16 @@ export function LanguageSwitcher() {
     { code: 'nl', label: 'Nederlands' }
   ];
 
-  const handleLanguageChange = async (langCode: string) => {
-    try {
-      await i18n.changeLanguage(langCode);
-      toast({
-        description: t("common.languageChanged"),
-      });
-      logger.info(`Language changed to ${langCode}`);
-    } catch (error) {
-      logger.error('Failed to change language:', error);
-      toast({
-        variant: "destructive",
-        description: "Failed to change language. Please try again.",
-      });
-    }
+  const handleLanguageChange = (langCode: string) => {
+    // Remove async/await as i18n.changeLanguage returns void
+    i18n.changeLanguage(langCode);
+    
+    // Show toast after language change
+    toast({
+      description: t("common.languageChanged"),
+    });
+    
+    logger.info(`Language changed to ${langCode}`);
   };
 
   return (
@@ -55,11 +51,14 @@ export function LanguageSwitcher() {
           <Globe className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className={animations.modal.content.enter}>
+      <DropdownMenuContent 
+        align="end" 
+        className={`${animations.modal.content.enter} bg-background`}
+      >
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => handleLanguageChange(lang.code)}
+            onSelect={() => handleLanguageChange(lang.code)}
             className={`cursor-pointer ${
               i18n.language === lang.code ? "bg-accent" : ""
             }`}
