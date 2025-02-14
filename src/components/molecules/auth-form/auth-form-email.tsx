@@ -19,7 +19,7 @@ export function AuthFormEmail({ email, setEmail, disabled }: AuthFormEmailProps)
   return (
     <div className="space-y-2">
       <AuthLabel htmlFor="email" required>
-        {t("auth.email")}
+        {t("auth.emailOrPhone")}
       </AuthLabel>
       <AuthInput
         id="email"
