@@ -9,9 +9,10 @@
     "target": "ES2022",
     "lib": ["ES2023"],
     "isolatedModules": true,
-    "noEmit": false,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "rootDir": "."
   },
   "include": ["vite.config.ts", "vitest.config.ts"]
 }
