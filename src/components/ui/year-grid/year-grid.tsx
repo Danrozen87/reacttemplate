@@ -5,16 +5,22 @@ import { Navigator } from './navigator';
 import { MonthHeader } from './month-header';
 import { DayColumn } from './day-column';
 import { getMonthsData, isWeekend } from './utils';
-import type { YearGridProps, ViewMode } from './types';
+import type { YearGridProps, ViewMode, CalendarEvent } from './types';
 
 export const YearGrid = ({ 
   year, 
   dayWidth = 20,
+  selectedDays = [],
+  events = [],
   onDayClick,
-  onDragOver 
+  onDragOver,
+  onRangeSelect,
+  onViewChange: onViewChangeProp,
+  className
 }: YearGridProps) => {
   const [currentYear, setCurrentYear] = React.useState(year);
   const [currentView, setCurrentView] = React.useState<ViewMode>('year');
+  const [rangeStart, setRangeStart] = React.useState<number | null>(null);
   
   const monthsData = React.useMemo(
     () => getMonthsData(currentYear),
@@ -24,24 +30,40 @@ export const YearGrid = ({
   const today = React.useMemo(() => new Date(), []);
 
   const handleDayClick = React.useCallback((dayIndex: number) => {
-    onDayClick?.(dayIndex);
-  }, [onDayClick]);
+    if (rangeStart !== null) {
+      onRangeSelect?.(Math.min(rangeStart, dayIndex), Math.max(rangeStart, dayIndex));
+      setRangeStart(null);
+    } else {
+      setRangeStart(dayIndex);
+      onDayClick?.(dayIndex);
+    }
+  }, [rangeStart, onDayClick, onRangeSelect]);
 
   const handleDragOver = React.useCallback((dayIndex: number) => {
     onDragOver?.(dayIndex);
   }, [onDragOver]);
 
+  const handleViewChange = React.useCallback((view: ViewMode) => {
+    setCurrentView(view);
+    onViewChangeProp?.(view);
+  }, [onViewChangeProp]);
+
+  const handleToday = React.useCallback(() => {
+    setCurrentYear(today.getFullYear());
+  }, [today]);
+
   return (
     <div 
-      className="w-full flex flex-col"
+      className={cn("w-full flex flex-col", className)}
       role="grid"
       aria-label="Year calendar grid"
     >
       <Navigator
         currentYear={currentYear}
         onChangeYear={setCurrentYear}
-        onViewChange={setCurrentView}
+        onViewChange={handleViewChange}
         currentView={currentView}
+        onToday={handleToday}
       />
       
       <div className="relative w-full overflow-x-auto">
@@ -67,6 +89,13 @@ export const YearGrid = ({
                   date.getMonth() === today.getMonth() &&
                   date.getFullYear() === today.getFullYear()
                 );
+                const isSelected = selectedDays.includes(dayIndex);
+                const isInRange = rangeStart !== null && 
+                  Math.min(rangeStart, dayIndex) <= dayIndex && 
+                  dayIndex <= Math.max(rangeStart, dayIndex);
+                const hasEvents = events.some(event => 
+                  event.start <= date && date <= event.end
+                );
 
                 return (
                   <DayColumn
@@ -76,6 +105,9 @@ export const YearGrid = ({
                     dayNumber={index + 1}
                     isWeekend={isWeekend(date)}
                     isCurrentDay={isCurrentDay}
+                    isSelected={isSelected}
+                    isInRange={isInRange}
+                    hasEvents={hasEvents}
                     onClick={() => handleDayClick(dayIndex)}
                     onDragOver={() => handleDragOver(dayIndex)}
                   />
