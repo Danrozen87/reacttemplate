@@ -1,8 +1,11 @@
+
 {
   "common": {
     "ready": "Klar",
     "cleanSlate": "Ren start",
-    "foundation": "Grundlæggende opsætning i gang"
+    "foundation": "Grundlæggende opsætning i gang",
+    "selectLanguage": "Vælg sprog",
+    "languageChanged": "Sproget er blevet ændret"
   },
   "auth": {
     "welcome": "Dejligt at se dig igen",
@@ -22,6 +25,7 @@
     "signUpNow": "Tilmeld dig nu",
     "heroImageAlt": "Et fredfyldt fyrtårn med bjerge og vand",
     "heroQuote": "Den smukkeste oplevelse vi kan have er det mystiske. Det er den grundlæggende følelse, der står ved vuggen til sand kunst og sand videnskab.",
-    "heroAuthor": "Albert Einstein"
+    "heroAuthor": "Albert Einstein",
+    "heroSection": "Godkendelse heltesektion"
   }
 }

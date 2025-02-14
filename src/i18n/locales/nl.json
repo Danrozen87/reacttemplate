@@ -1,8 +1,11 @@
+
 {
   "common": {
     "ready": "Klaar",
     "cleanSlate": "Schone lei",
-    "foundation": "Basisinstallatie in uitvoering"
+    "foundation": "Basisinstallatie in uitvoering",
+    "selectLanguage": "Selecteer taal",
+    "languageChanged": "Taal is gewijzigd"
   },
   "auth": {
     "welcome": "Leuk je weer te zien",
@@ -22,55 +25,7 @@
     "signUpNow": "Registreer nu",
     "heroImageAlt": "Een sereen vuurtoren uitzicht met bergen en water",
     "heroQuote": "De mooiste ervaring die we kunnen hebben is het mysterieuze. Het is de fundamentele emotie die aan de wieg staat van ware kunst en ware wetenschap.",
-    "heroAuthor": "Albert Einstein"
-  },
-  "components": {
-    "themeSwitcher": {
-      "toggle": "Thema wijzigen",
-      "lightMode": "Overschakelen naar lichte modus",
-      "darkMode": "Overschakelen naar donkere modus"
-    },
-    "navbar": {
-      "brand": "Schone lei",
-      "aria": {
-        "mainNav": "Hoofdnavigatie"
-      }
-    }
-  },
-  "app": {
-    "aria": {
-      "main": "Hoofdapplicatie wrapper",
-      "content": "Hoofdinhoudsgebied"
-    },
-    "errors": {
-      "generic": "Er is een onverwachte fout opgetreden",
-      "boundary": "Er is iets misgegaan"
-    }
-  },
-  "pages": {
-    "notFound": {
-      "title": "404",
-      "message": "Oeps! Pagina niet gevonden",
-      "returnHome": "Terug naar hoofdpagina"
-    }
-  },
-  "logger": {
-    "errors": {
-      "generic": "Er is een fout opgetreden",
-      "network": "Er is een netwerkfout opgetreden",
-      "validation": "Validatiefout",
-      "unauthorized": "Ongeautoriseerde toegang",
-      "notFound": "Bron niet gevonden",
-      "server": "Er is een serverfout opgetreden",
-      "timeout": "Verzoek is verlopen",
-      "rateLimited": "Te veel verzoeken, probeer het later opnieuw",
-      "database": "Databasebewerking mislukt",
-      "sync": "Synchronisatiefout",
-      "upload": "Bestand uploaden mislukt",
-      "download": "Bestand downloaden mislukt",
-      "format": "Ongeldig gegevensformaat",
-      "conflict": "Gegevensconflict gedetecteerd",
-      "maintenance": "Systeem is in onderhoud"
-    }
+    "heroAuthor": "Albert Einstein",
+    "heroSection": "Authenticatie hero sectie"
   }
 }
