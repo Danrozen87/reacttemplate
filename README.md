@@ -24,7 +24,7 @@
    - **No Tailwind Merge** libraries.  
    - ** Centralized Theme, style and font systems. 
    - ** Use of Poppins font with Bold for headers, regular for subtitles and light for headers font weight.
-   - ** Dark Mode & Light Mode should mirror best UX practices (akin to ChatGPT’s dark/light toggle).
+   - ** Dark Mode & Light Mode should mirror best UX practices. Follow our established color scheme for Light and Dark mode to perfection.
    - Global CSS, fonts and styling must be part of every feature and UI component naturally with each delivery.
 
 4. **Vite**  
@@ -238,3 +238,4 @@
    npm run test:coverage
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+
