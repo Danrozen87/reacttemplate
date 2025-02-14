@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { NavBar } from '@/components/molecules/nav-bar';
+import { NavBar } from '@/components/molecules';
 import { animations } from "@/utils/animations";
 
 interface BaseLayoutProps {
