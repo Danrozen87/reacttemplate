@@ -33,7 +33,7 @@ export function AuthHero() {
         <img
           src="/lovable-uploads/00c9a456-cba9-4ad1-aca7-49985038c872.png"
           alt={t("auth.heroImageAlt")}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover grayscale"
           role="presentation"
           loading="eager"
           fetchPriority="high"
