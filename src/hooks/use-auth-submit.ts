@@ -39,7 +39,6 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
       });
 
       if (error) {
-        // Check for rate limiting error
         if (error.message.includes('Too many auth attempts')) {
           toast({
             title: t("auth.rateLimitExceeded"),
@@ -58,7 +57,6 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         throw error;
       }
 
-      // Store the remember me preference
       if (rememberMe) {
         localStorage.setItem('rememberedEmail', email);
       } else {
@@ -73,7 +71,6 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         className: "bg-background text-foreground border-accent",
       });
 
-      // Navigate to dashboard after successful login
       navigate("/dashboard");
     } catch (error: any) {
       console.error('Auth error:', error);
@@ -89,7 +86,6 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
       });
 
       if (error) {
-        // Check for rate limiting error
         if (error.message.includes('Too many auth attempts')) {
           toast({
             title: t("auth.rateLimitExceeded"),
@@ -132,11 +128,13 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         password,
         options: {
           emailRedirectTo: `${window.location.origin}/auth/callback`,
+          data: {
+            email: email // Include email in user metadata
+          }
         }
       });
 
       if (error) {
-        // Check for rate limiting error
         if (error.message.includes('Too many auth attempts')) {
           toast({
             title: t("auth.rateLimitExceeded"),

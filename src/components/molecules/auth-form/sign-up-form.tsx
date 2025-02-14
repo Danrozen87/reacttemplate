@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { animations } from "@/utils/animations";
 import { useAuthSubmit } from "@/hooks/use-auth-submit";
-import { AuthPasswordInput } from "./auth-password-input";
 
 interface SignUpFormProps {
   onBack: () => void;
@@ -21,8 +20,9 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    
     setIsSubmitting(true);
-
     try {
       const success = await handleSignUp(email, password);
       if (success) {
