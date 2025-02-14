@@ -1,8 +1,20 @@
 
+/**
+ * @component HomePage
+ * @description Main landing page component of the application
+ * @example
+ * ```tsx
+ * <BrowserRouter>
+ *   <Routes>
+ *     <Route path="/" element={<HomePage />} />
+ *   </Routes>
+ * </BrowserRouter>
+ * ```
+ */
 import BaseLayout from "@/layouts/base-layout";
 import { useTranslation } from "react-i18next";
 
-const Index = () => {
+const HomePage = () => {
   const { t } = useTranslation();
 
   return (
@@ -26,4 +38,4 @@ const Index = () => {
   );
 }
 
-export default Index;
+export default HomePage;
