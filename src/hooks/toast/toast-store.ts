@@ -1,5 +1,6 @@
 
-import { State, Action, TOAST_REMOVE_DELAY, ToasterToast } from "./types";
+import { State, Action, TOAST_REMOVE_DELAY } from "./toast-types";
+import { removeToast } from "./toast-actions";
 
 export const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>();
 
@@ -10,10 +11,7 @@ export const addToRemoveQueue = (toastId: string, dispatch: (action: Action) => 
 
   const timeout = setTimeout(() => {
     toastTimeouts.delete(toastId);
-    dispatch({
-      type: "REMOVE_TOAST",
-      toastId: toastId,
-    });
+    dispatch(removeToast(toastId));
   }, TOAST_REMOVE_DELAY);
 
   toastTimeouts.set(toastId, timeout);
