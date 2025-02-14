@@ -1,47 +1,117 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    /* Base Color Palette */
+    --mint: 108 27% 84%;      /* #D0E6C6 */
+    --deep-red: 351 47% 47%;  /* #AF3E4F */
+    --eggplant: 296 21% 24%;  /* #47314A */
+    --khaki: 33 14% 68%;      /* #C0B39B */
+    --soft-orange: 21 59% 65%; /* #DF986D */
+
+    /* Light Mode Defaults */
+    --background: var(--mint);
+    --foreground: var(--eggplant);
+    
+    --card: var(--khaki);
+    --card-foreground: var(--eggplant);
+    
+    --popover: var(--khaki);
+    --popover-foreground: var(--eggplant);
+    
+    --primary: var(--soft-orange);
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: var(--khaki);
+    --secondary-foreground: var(--eggplant);
+    
+    --muted: var(--khaki);
+    --muted-foreground: 296 15% 40%;
+    
+    --accent: var(--soft-orange);
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: var(--deep-red);
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: var(--khaki);
+    --input: var(--khaki);
+    --ring: var(--soft-orange);
+    
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    /* Dark Mode Overrides */
+    --background: var(--eggplant);
+    --foreground: var(--mint);
+    
+    --card: var(--khaki);
+    --card-foreground: var(--eggplant);
+    
+    --popover: var(--khaki);
+    --popover-foreground: var(--eggplant);
+    
+    --primary: var(--soft-orange);
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: var(--khaki);
+    --secondary-foreground: var(--eggplant);
+    
+    --muted: 296 15% 30%;
+    --muted-foreground: var(--mint);
+    
+    --accent: var(--mint);
+    --accent-foreground: var(--eggplant);
+    
+    --destructive: var(--deep-red);
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: var(--khaki);
+    --input: var(--khaki);
+    --ring: var(--mint);
+  }
+}
+
+/* Base styles for better typography and spacing */
+@layer base {
+  * {
+    @apply border-border selection:bg-primary/10 selection:text-primary;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  /* Typography scale */
+  h1, .h1 {
+    @apply font-bold text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2, .h2 {
+    @apply font-bold text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3, .h3 {
+    @apply font-bold text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h4, .h4 {
+    @apply font-bold text-xl md:text-2xl lg:text-3xl;
+  }
+
+  p, .body {
+    @apply font-light text-base md:text-lg;
+  }
+}
+
+/* Custom utilities for common patterns */
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-xl bg-background/50 border border-border/50 shadow-lg;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
   }
 }
