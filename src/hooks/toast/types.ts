@@ -6,10 +6,10 @@
 
 import type { ToastProps, ToastActionElement } from "@/components/ui/toast";
 
-export interface ToasterToast extends ToastProps {
+export interface ToasterToast extends Omit<ToastProps, "title" | "description"> {
   id: string;
-  title?: React.ReactNode;
-  description?: React.ReactNode;
+  title?: string;
+  description?: string;
   action?: ToastActionElement;
   "aria-live"?: "polite" | "assertive";
   role?: "status" | "alert";
