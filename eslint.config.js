@@ -6,6 +6,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import tailwindcss from "eslint-plugin-tailwindcss";
 import regexp from "eslint-plugin-regexp";
+import a11y from "eslint-plugin-jsx-a11y";
 
 export default tseslint.config(
   { ignores: ["dist"] },
@@ -27,6 +28,7 @@ export default tseslint.config(
       "react-refresh": reactRefresh,
       tailwindcss: tailwindcss,
       regexp: regexp,
+      "jsx-a11y": a11y,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -34,6 +36,7 @@ export default tseslint.config(
         "warn",
         { allowConstantExport: true },
       ],
+      // TypeScript rules
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -56,10 +59,32 @@ export default tseslint.config(
           leadingUnderscore: "allow",
         },
       ],
+      // Accessibility rules
+      "jsx-a11y/aria-props": "error",
+      "jsx-a11y/aria-proptypes": "error",
+      "jsx-a11y/aria-unsupported-elements": "error",
+      "jsx-a11y/role-has-required-aria-props": "error",
+      "jsx-a11y/role-supports-aria-props": "error",
       // Custom rules for responsive design patterns
       "tailwindcss/no-custom-classname": "error",
       "tailwindcss/enforces-negative-arbitrary-values": "error",
       "tailwindcss/enforces-shorthand": "error",
+      // Component size limit
+      "max-lines": ["error", {
+        "max": 68,
+        "skipBlankLines": true,
+        "skipComments": true
+      }],
+      // i18n requirements
+      "regexp/no-missing-translations": [
+        "error",
+        {
+          pattern: "\\bt\\(['\"`]([^'\"]+)['\"`]\\)",
+          message: "Missing translation key"
+        }
+      ],
+      // Logger enforcement
+      "no-console": ["error", { allow: ["error", "warn"] }],
       // Enforce responsive patterns using regexp
       "regexp/no-unused-capturing-group": "error",
       "regexp/no-super-linear-backtracking": "error",
@@ -80,7 +105,6 @@ export default tseslint.config(
               pattern: "className=['\"`](?!.*px-4 sm:px-6 lg:px-8).*?px-['\"`]",
               message: "Use consistent responsive padding (px-4 sm:px-6 lg:px-8)",
             },
-            // New patterns for animations and blur effects
             {
               pattern: "className=['\"`](?!.*animate-).*(?:transition|transform|opacity)['\"`]",
               message: "Use our centralized animation system with animate-* classes",
@@ -92,6 +116,10 @@ export default tseslint.config(
             {
               pattern: "className=['\"`](?!.*dark:).*bg-\\w+['\"`]",
               message: "Use dark: variant for proper dark mode support",
+            },
+            {
+              pattern: "logger\\.(?:info|error|warn|debug)\\(",
+              message: "Use our centralized logger system",
             }
           ],
         }
