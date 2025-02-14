@@ -32,9 +32,8 @@ export function LanguageSwitcher() {
       description: t("common.languageChanged"),
       duration: 3000,
       className: "bg-background text-foreground border-accent",
-      // Adding proper accessibility attributes
-      ariaLive: "polite",
-      role: "status",
+      variant: "default",
+      "aria-live": "polite",
     });
   };
 
