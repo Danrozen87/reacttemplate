@@ -16,6 +16,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { animations } from "@/utils/animations";
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -26,7 +27,7 @@ export function ThemeSwitcher() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="w-9 h-9 relative rounded-full transition-colors hover:bg-accent"
+      className={`w-9 h-9 relative rounded-full transition-colors hover:bg-accent animate-fade-in ${animations.blur.sm}`}
       aria-label={t("components.themeSwitcher.toggle")}
     >
       <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

@@ -1,7 +1,6 @@
-
 # ThemeSwitcher
 
-A theme toggle component that switches between light and dark modes using next-themes.
+A theme toggle component that switches between light and dark modes using next-themes, with proper animations and transitions.
 
 ## Usage
 ```tsx
@@ -12,18 +11,35 @@ function App() {
 }
 ```
 
-## Props
-No props are required as the component is self-contained.
-
-## Variants
-- Default: Icon-only button with Sun/Moon icons
-- Future variants may include text labels or custom icons
+## Animation Implementation
+- Uses `animate-fade-in` for component entry
+- Smooth icon transitions using our animation system
+- Proper blur effects on hover
+- Dark mode transition support
 
 ## Accessibility
 - ARIA label: "Toggle theme"
 - Keyboard navigable: Yes (Tab + Enter/Space)
 - Screen reader: Announces current theme state
 - Focus visible styles: Yes
+- High contrast in both themes
+
+## Testing
+Coverage requirements: 100%
+Test scenarios:
+- Renders correctly with animations
+- Toggles theme on click with proper transitions
+- Has correct accessibility attributes
+- Handles keyboard navigation
+- Verifies animation classes are present
+- Tests dark mode transitions
+
+## Props
+No props are required as the component is self-contained.
+
+## Variants
+- Default: Icon-only button with Sun/Moon icons
+- Future variants may include text labels or custom icons
 
 ## i18n Requirements
 ### Translation Keys

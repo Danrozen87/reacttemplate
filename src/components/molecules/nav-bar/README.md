@@ -1,4 +1,3 @@
-
 # NavBar
 
 Main navigation component that includes theme switching and branding.
@@ -12,74 +11,31 @@ function Layout() {
 }
 ```
 
-## Props
-No props required as the component is self-contained.
-
-## Variants
-- Default: Simple navbar with logo and theme switcher
-- Future variants may include user profile, search, and additional navigation items
+## Animation Implementation
+- Uses `animate-fade-in` for smooth entry
+- Implements blur backdrop effect using our animation system
+- Responsive transitions for all child components
+- Dark mode support with smooth transitions
 
 ## Accessibility
 - Semantic HTML: `<nav>` element
 - ARIA landmark: navigation
 - Keyboard navigation: Full support
 - Focus management: Trapped within navigation when menu is open
+- Proper contrast in both light and dark modes
 
-## i18n Requirements
-### Translation Keys
-```json
-{
-  "components": {
-    "navbar": {
-      "brand": "Clean Slate",
-      "home": "Home",
-      "menu": {
-        "open": "Open menu",
-        "close": "Close menu"
-      },
-      "search": {
-        "placeholder": "Search...",
-        "button": "Search"
-      }
-    }
-  }
-}
-```
+## Responsive Design
+- Mobile-first approach
+- Proper spacing with consistent padding (px-4 sm:px-6 lg:px-8)
+- Container usage for centered content
+- Dynamic text sizing for different breakpoints
 
-### Supported Languages
-- English (en)
-- Swedish (sv)
-- Danish (da)
-- Dutch (nl)
-
-### Language-Specific Considerations
-- Maintain consistent branding across languages
-- Account for navigation item text length variations
-- Ensure proper spacing in mobile view for all languages
-- Support RTL languages in future implementations
-
-### Implementation Examples
-```typescript
-// English
-{
-  "components": {
-    "navbar": {
-      "brand": "Clean Slate",
-      "home": "Home"
-    }
-  }
-}
-
-// Danish
-{
-  "components": {
-    "navbar": {
-      "brand": "Clean Slate",
-      "home": "Hjem"
-    }
-  }
-}
-```
+## Requirements
+- Must use our centralized animation system
+- Must implement proper blur effects
+- Must support dark mode
+- Must follow mobile-first approach
+- Must use container class for centered content
 
 ## Testing
 Coverage requirements: 90%
@@ -88,5 +44,5 @@ Test scenarios:
 - Theme switcher functions correctly
 - Responsive design works as expected
 - Keyboard navigation works correctly
-- Verifies correct translations for all supported languages
-- Tests RTL support for future language additions
+- Animations work as expected
+- Dark mode transitions properly
