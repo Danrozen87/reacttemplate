@@ -23,7 +23,6 @@ export type ErrorType =
   | "conflict"
   | "maintenance";
 
-// Export the ToastOptions interface
 export interface ToastOptions {
   description?: string;
   duration?: number;
