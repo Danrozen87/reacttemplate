@@ -7,7 +7,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   test: {
-    globals: true,
+    globals: true, // This ensures vi is globally available
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
     coverage: {

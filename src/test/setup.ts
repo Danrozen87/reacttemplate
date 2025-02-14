@@ -8,9 +8,11 @@ import * as matchers from '@testing-library/jest-dom/matchers';
 // Extend expect with testing-library matchers
 expect.extend(matchers);
 
-// Ensure global types are properly declared
+// We don't need to redeclare vi since it's already available from vitest/globals
+// Just augment the types that aren't included by default
 declare global {
-  var vi: typeof import('vitest')['vi']
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface ImportMetaEnv extends Partial<ImportMetaEnv> {}
 }
 
 // Cleanup DOM after each test
