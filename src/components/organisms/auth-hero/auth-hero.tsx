@@ -1,26 +1,32 @@
 
 import { useTranslation } from "react-i18next";
 import { animations } from "@/utils/animations";
+import { useEffect, useState } from "react";
 
 /**
  * @component AuthHero
- * @description Hero section for the authentication page featuring a background 
- * image and inspirational quote with proper accessibility and responsive design.
- * 
- * @accessibility
- * - Uses semantic HTML structure
- * - Provides ARIA labels for all sections
- * - Ensures proper contrast ratios
- * - Background image is decorative with role="presentation"
- * 
- * @responsive
- * - Hidden on mobile/tablet (<1024px)
- * - Full-height display on desktop
- * - Responsive image loading with proper sizing
- * - Maintains readability across viewport sizes
+ * @description Hero section for the authentication page featuring alternating background 
+ * images and inspirational quote with proper accessibility and responsive design.
  */
 export function AuthHero() {
   const { t } = useTranslation();
+  const [currentImage, setCurrentImage] = useState("/lovable-uploads/997c580c-3303-4d43-92b8-157886dca0e7.png");
+
+  useEffect(() => {
+    // Get current page load count from localStorage
+    const loadCount = parseInt(localStorage.getItem('pageLoadCount') || '0');
+    
+    // Increment the count
+    const newCount = loadCount + 1;
+    localStorage.setItem('pageLoadCount', newCount.toString());
+    
+    // Switch image every 10 loads (0-9 first image, 10-19 second image, etc)
+    const shouldUseSecondImage = Math.floor(newCount / 10) % 2 === 1;
+    setCurrentImage(shouldUseSecondImage 
+      ? "/lovable-uploads/3c06e17b-d40f-4233-9b25-18e27a30107d.png"
+      : "/lovable-uploads/997c580c-3303-4d43-92b8-157886dca0e7.png"
+    );
+  }, []);
 
   return (
     <div 
@@ -31,13 +37,14 @@ export function AuthHero() {
     >
       <div className="absolute inset-0">
         <img
-          src="/lovable-uploads/3c99958c-47a7-41d7-8f9e-14b3412c52d4.png"
+          src={currentImage}
           alt={t("auth.heroImageAlt")}
           className="h-full w-full object-cover"
           role="presentation"
           loading="eager"
           fetchPriority="high"
         />
+        <div className="absolute inset-0 bg-white/10 dark:bg-black/20 transition-colors duration-300" />
       </div>
       <div 
         className={`relative z-20 mt-auto ${animations.modal.content.enter}`}
