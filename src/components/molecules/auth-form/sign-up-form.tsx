@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { animations } from "@/utils/animations";
+import { ArrowLeft } from "lucide-react";
 
 interface SignUpFormProps {
   onBack: () => void;
@@ -115,12 +116,13 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
 
         <Button
           type="button"
-          variant="link"
+          variant="ghost"
+          className="w-full font-poppins"
           onClick={onBack}
-          className="w-full font-poppins font-light"
           disabled={isSubmitting}
         >
-          Back to Login
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          {t("auth.recovery.backToLogin")}
         </Button>
       </form>
     </div>
