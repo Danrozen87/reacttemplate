@@ -1,7 +1,6 @@
 
 import { useTranslation } from "react-i18next";
 import { animations } from "@/utils/animations";
-import { useEffect, useState } from "react";
 
 /**
  * @component AuthHero
@@ -10,23 +9,6 @@ import { useEffect, useState } from "react";
  */
 export function AuthHero() {
   const { t } = useTranslation();
-  const [currentImage, setCurrentImage] = useState("/lovable-uploads/4ccb9c72-95ec-4d07-9b1f-64eded2300be.png");
-
-  useEffect(() => {
-    // Get current page load count from localStorage
-    const loadCount = parseInt(localStorage.getItem('pageLoadCount') || '0');
-    
-    // Increment the count
-    const newCount = loadCount + 1;
-    localStorage.setItem('pageLoadCount', newCount.toString());
-    
-    // Switch image every 10 loads (0-9 first image, 10-19 second image, etc)
-    const shouldUseSecondImage = Math.floor(newCount / 10) % 2 === 1;
-    setCurrentImage(shouldUseSecondImage 
-      ? "/lovable-uploads/dec206da-ce5b-47f3-bf86-10af90d620a6.png"
-      : "/lovable-uploads/4ccb9c72-95ec-4d07-9b1f-64eded2300be.png"
-    );
-  }, []);
 
   return (
     <div 
@@ -37,7 +19,7 @@ export function AuthHero() {
     >
       <div className="absolute inset-0">
         <img
-          src={currentImage}
+          src="/lovable-uploads/dec206da-ce5b-47f3-bf86-10af90d620a6.png"
           alt={t("auth.heroImageAlt")}
           className="h-full w-full object-cover"
           style={{ objectPosition: '-300px center' }}
