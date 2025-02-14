@@ -1,24 +1,28 @@
 
 @layer base {
   :root {
-    /* Base Color Palette */
+    /* Base Color Palette - Adjusted for better contrast */
     --mint: 108 27% 84%;      /* #D0E6C6 */
     --deep-red: 351 47% 47%;  /* #AF3E4F */
-    --eggplant: 296 21% 24%;  /* #47314A */
-    --khaki: 33 14% 68%;      /* #C0B39B */
+    --eggplant: 296 25% 18%;  /* Darkened from 24% to 18% */
+    --khaki: 33 20% 82%;      /* Lightened and increased saturation for better contrast */
     --soft-orange: 21 59% 65%; /* #DF986D */
 
     /* Light Mode Defaults - Following 60-30-10 rule */
     --background: var(--mint);
     --foreground: var(--eggplant);
     
-    /* 30% - Secondary surfaces */
+    /* 30% - Secondary surfaces with improved contrast */
     --card: var(--khaki);
     --card-foreground: var(--eggplant);
     --popover: var(--khaki);
     --popover-foreground: var(--eggplant);
     --secondary: var(--khaki);
     --secondary-foreground: var(--eggplant);
+    
+    /* Input fields with better readability */
+    --input: 33 16% 90%;  /* Lighter background for inputs */
+    --input-foreground: var(--eggplant);
     
     /* 10% - Accents and CTAs */
     --primary: var(--soft-orange);
@@ -36,43 +40,45 @@
     
     /* UI elements */
     --border: var(--khaki);
-    --input: var(--khaki);
     --ring: var(--soft-orange);
     
     --radius: 0.75rem;
   }
 
   .dark {
-    /* Dark Mode Overrides - Following 60-30-10 rule */
-    --background: var(--eggplant);
-    --foreground: var(--mint);
+    /* Dark Mode Overrides - Following 60-30-10 rule with darker theme */
+    --background: 296 25% 12%;  /* Even darker background */
+    --foreground: 108 27% 90%;  /* Brighter mint for better contrast */
     
-    /* 30% - Secondary surfaces with improved contrast */
-    --card: var(--khaki);
-    --card-foreground: var(--eggplant);
-    --popover: var(--khaki);
-    --popover-foreground: var(--eggplant);
-    --secondary: var(--khaki);
-    --secondary-foreground: var(--eggplant);
+    /* 30% - Secondary surfaces with improved dark mode contrast */
+    --card: 296 20% 20%;  /* Darker cards */
+    --card-foreground: 108 27% 90%;
+    --popover: 296 20% 20%;
+    --popover-foreground: 108 27% 90%;
+    --secondary: 296 20% 20%;
+    --secondary-foreground: 108 27% 90%;
+    
+    /* Input fields with enhanced dark mode visibility */
+    --input: 296 15% 25%;  /* Darker but still visible input background */
+    --input-foreground: 108 27% 90%;
     
     /* 10% - Accents and CTAs optimized for dark mode */
     --primary: var(--soft-orange);
     --primary-foreground: 0 0% 100%;
-    --accent: var(--mint);
-    --accent-foreground: var(--eggplant);
+    --accent: 108 27% 84%;
+    --accent-foreground: 296 25% 12%;
     
     /* Support colors with better dark mode visibility */
-    --muted: 296 15% 30%;
-    --muted-foreground: var(--mint);
+    --muted: 296 15% 25%;
+    --muted-foreground: 108 27% 75%;
     
     /* Destructive actions - consistent across modes */
     --destructive: var(--deep-red);
     --destructive-foreground: 0 0% 100%;
     
     /* UI elements with improved contrast */
-    --border: var(--khaki);
-    --input: var(--khaki);
-    --ring: var(--mint);
+    --border: 296 20% 30%;
+    --ring: 108 27% 84%;
   }
 }
 
