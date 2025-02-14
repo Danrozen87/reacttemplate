@@ -2,17 +2,19 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useToast } from "./use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface UseAuthSubmitReturn {
   email: string;
   setEmail: (email: string) => void;
   isSubmitting: boolean;
   handleSubmit: (e: React.FormEvent) => Promise<void>;
+  handleRecovery: (email: string) => Promise<void>;
 }
 
 /**
  * @hook useAuthSubmit
- * @description Custom hook to handle authentication form submission logic
+ * @description Custom hook to handle authentication form submission logic with Supabase
  * @returns {UseAuthSubmitReturn} Auth form state and handlers
  */
 export function useAuthSubmit(): UseAuthSubmitReturn {
@@ -26,29 +28,57 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
     setIsSubmitting(true);
 
     try {
-      const mockAuthResponse = {
-        role: email.includes('admin') ? 'admin' : 
-              email.includes('manager') ? 'manager' : 'user'
-      };
+      const formData = new FormData(e.target as HTMLFormElement);
+      const password = formData.get('password') as string;
+
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) throw error;
 
       toast({
         title: t("auth.loginSuccess"),
-        description: t(`auth.roleAssigned.${mockAuthResponse.role}`),
+        description: t("auth.welcome"),
         duration: 3000,
         variant: "default",
         className: "bg-background text-foreground border-accent",
-        "aria-live": "polite",
       });
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: t("auth.loginError"),
-        description: t("auth.tryAgain"),
+        description: error.message || t("auth.tryAgain"),
         variant: "destructive",
         duration: 3000,
-        "aria-live": "assertive",
       });
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleRecovery = async (email: string) => {
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: window.location.origin + '/auth/reset-password',
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: t("auth.recovery.emailSent"),
+        description: t("auth.recovery.checkInbox"),
+        duration: 5000,
+      });
+
+      return true;
+    } catch (error: any) {
+      toast({
+        title: t("auth.recovery.error"),
+        description: error.message || t("auth.recovery.tryAgain"),
+        variant: "destructive",
+      });
+      return false;
     }
   };
 
@@ -57,5 +87,6 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
     setEmail,
     isSubmitting,
     handleSubmit,
+    handleRecovery,
   };
 }

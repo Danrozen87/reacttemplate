@@ -1,15 +1,11 @@
 
-/**
- * @component PasswordRecoveryForm
- * @description Handles the password recovery flow with email verification
- */
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { MailIcon, ArrowLeft } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
 import { animations } from "@/utils/animations";
+import { useAuthSubmit } from "@/hooks/use-auth-submit";
 
 interface PasswordRecoveryFormProps {
   onBack: () => void;
@@ -17,29 +13,19 @@ interface PasswordRecoveryFormProps {
 
 export function PasswordRecoveryForm({ onBack }: PasswordRecoveryFormProps) {
   const { t } = useTranslation();
-  const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { handleRecovery } = useAuthSubmit();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Mock recovery email send
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      toast({
-        title: t("auth.recovery.emailSent"),
-        description: t("auth.recovery.checkInbox"),
-        duration: 5000,
-      });
-      onBack();
-    } catch (error) {
-      toast({
-        title: t("auth.recovery.error"),
-        description: t("auth.recovery.tryAgain"),
-        variant: "destructive",
-      });
+      const success = await handleRecovery(email);
+      if (success) {
+        onBack();
+      }
     } finally {
       setIsSubmitting(false);
     }
