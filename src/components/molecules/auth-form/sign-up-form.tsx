@@ -74,7 +74,7 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
 
         <div className="space-y-2">
           <AuthLabel htmlFor="signup-email" required>
-            {t("auth.email")}
+            {t("auth.signup.email")}
           </AuthLabel>
           <AuthInput
             id="signup-email"

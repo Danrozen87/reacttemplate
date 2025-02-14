@@ -18,6 +18,7 @@
     "rememberMe": "Onthoud mij",
     "forgotPassword": "Wachtwoord vergeten?",
     "signIn": "Inloggen",
+    "signingIn": "Bezig met inloggen...",
     "orContinueWith": "Of ga verder met",
     "signInWithGoogle": "Inloggen met Google",
     "noAccount": "Heb je geen account?",
@@ -44,6 +45,23 @@
       "checkInbox": "Controleer je inbox voor instructies voor het opnieuw instellen van je wachtwoord",
       "error": "Herstel mislukt",
       "tryAgain": "Probeer het later opnieuw"
+    },
+    "signup": {
+      "title": "Account aanmaken",
+      "description": "Registreer om ons platform te gebruiken",
+      "firstName": "Voornaam",
+      "firstNamePlaceholder": "Voer je voornaam in",
+      "lastName": "Achternaam",
+      "lastNamePlaceholder": "Voer je achternaam in",
+      "email": "E-mail",
+      "emailPlaceholder": "Voer je e-mailadres in",
+      "companyName": "Bedrijfsnaam",
+      "companyNamePlaceholder": "Voer je bedrijfsnaam in",
+      "companySize": "Bedrijfsgrootte",
+      "companySizePlaceholder": "Selecteer bedrijfsgrootte",
+      "create": "Account aanmaken",
+      "creating": "Account wordt aangemaakt...",
+      "backToLogin": "Terug naar inloggen"
     }
   },
   "toast": {

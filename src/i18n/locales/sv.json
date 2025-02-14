@@ -26,6 +26,14 @@
     "heroQuote": "Den vackraste upplevelsen vi kan ha är det mystiska. Det är den grundläggande känslan som står vid vaggan för sann konst och sann vetenskap.",
     "heroAuthor": "Albert Einstein",
     "heroSection": "Autentisering hjälteavsnitt",
+    "loginSuccess": "Inloggen lyckades!",
+    "loginError": "Inloggen misslyckades",
+    "tryAgain": "Vänligen försök igen.",
+    "roleAssigned": {
+      "admin": "Inloggad som administratör med fullständig systemåtkomst.",
+      "manager": "Inloggad som manager med teamhanteringsåtkomst.",
+      "user": "Inloggad som användare med personlig åtkomst."
+    },
     "recovery": {
       "title": "Återställ lösenord",
       "description": "Ange din e-postadress så skickar vi instruktioner för att återställa ditt lösenord.",
@@ -36,6 +44,23 @@
       "checkInbox": "Kontrollera din inkorg för instruktioner om lösenordsåterställning",
       "error": "Återställning misslyckades",
       "tryAgain": "Försök igen senare"
+    },
+    "signup": {
+      "title": "Skapa ett konto",
+      "description": "Registrera dig för att börja använda vår plattform",
+      "firstName": "Förnamn",
+      "firstNamePlaceholder": "Ange ditt förnamn",
+      "lastName": "Efternamn",
+      "lastNamePlaceholder": "Ange ditt efternamn",
+      "email": "E-post",
+      "emailPlaceholder": "Ange din e-postadress",
+      "companyName": "Företagsnamn",
+      "companyNamePlaceholder": "Ange ditt företagsnamn",
+      "companySize": "Företagsstorlek",
+      "companySizePlaceholder": "Välj företagsstorlek",
+      "create": "Skapa konto",
+      "creating": "Skapar konto...",
+      "backToLogin": "Tillbaka till inloggning"
     }
   },
   "toast": {

@@ -26,6 +26,31 @@
     "heroQuote": "Den smukkeste oplevelse vi kan have er det mystiske. Det er den grundlæggende følelse, der står ved vuggen til sand kunst og sand videnskab.",
     "heroAuthor": "Albert Einstein",
     "heroSection": "Godkendelse heltesektion",
+    "loginSuccess": "Login Successful!",
+    "loginError": "Login Failed",
+    "tryAgain": "Please try again.",
+    "roleAssigned": {
+      "admin": "Logged in as Administrator with full system access.",
+      "manager": "Logged in as Manager with team management access.",
+      "user": "Logged in as User with personal access."
+    },
+    "signup": {
+      "title": "Opret en konto",
+      "description": "Tilmeld dig for at begynde at bruge vores platform",
+      "firstName": "Fornavn",
+      "firstNamePlaceholder": "Indtast dit fornavn",
+      "lastName": "Efternavn",
+      "lastNamePlaceholder": "Indtast dit efternavn",
+      "email": "E-mail",
+      "emailPlaceholder": "Indtast din e-mailadresse",
+      "companyName": "Virksomhedsnavn",
+      "companyNamePlaceholder": "Indtast dit virksomhedsnavn",
+      "companySize": "Virksomhedsstørrelse",
+      "companySizePlaceholder": "Vælg virksomhedsstørrelse",
+      "create": "Opret konto",
+      "creating": "Opretter konto...",
+      "backToLogin": "Tilbage til login"
+    },
     "recovery": {
       "title": "Nulstil adgangskode",
       "description": "Indtast din e-mailadresse, og vi sender dig instruktioner til at nulstille din adgangskode.",
