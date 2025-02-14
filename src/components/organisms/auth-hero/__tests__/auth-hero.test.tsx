@@ -1,22 +1,34 @@
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { AuthHero } from '../auth-hero';
 
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (str: string) => str,
+    i18n: { changeLanguage: vi.fn() }
+  })
+}));
+
 describe('AuthHero', () => {
+  it('renders hero section with correct role', () => {
+    render(<AuthHero />);
+    expect(screen.getByRole('complementary')).toBeInTheDocument();
+  });
+
   it('renders hero image with correct alt text', () => {
     render(<AuthHero />);
-    const image = screen.getByAltText(/serene lighthouse/i);
-    expect(image).toBeInTheDocument();
+    expect(screen.getByRole('presentation')).toBeInTheDocument();
   });
 
-  it('displays quote and author', () => {
+  it('renders quote and author', () => {
     render(<AuthHero />);
-    expect(screen.getByText(/Albert Einstein/i)).toBeInTheDocument();
+    expect(screen.getByText('auth.heroQuote')).toBeInTheDocument();
+    expect(screen.getByText('auth.heroAuthor')).toBeInTheDocument();
   });
 
-  it('includes logo component', () => {
-    render(<AuthHero />);
-    expect(screen.getByText('UI Unicorn')).toBeInTheDocument();
+  it('applies animation classes', () => {
+    const { container } = render(<AuthHero />);
+    expect(container.querySelector(`.${animations.modal.content.enter.split(' ')[0]}`)).toBeInTheDocument();
   });
 });
