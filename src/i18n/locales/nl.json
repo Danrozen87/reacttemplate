@@ -24,5 +24,15 @@
       "message": "Oeps! Pagina niet gevonden",
       "returnHome": "Terug naar hoofdpagina"
     }
+  },
+  "logger": {
+    "errors": {
+      "generic": "Er is een fout opgetreden",
+      "network": "Er is een netwerkfout opgetreden",
+      "validation": "Validatiefout",
+      "unauthorized": "Ongeautoriseerde toegang",
+      "notFound": "Bron niet gevonden",
+      "server": "Er is een serverfout opgetreden"
+    }
   }
 }

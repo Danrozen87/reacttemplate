@@ -24,5 +24,15 @@
       "message": "Ups! Siden blev ikke fundet",
       "returnHome": "Tilbage til forsiden"
     }
+  },
+  "logger": {
+    "errors": {
+      "generic": "Der opstod en fejl",
+      "network": "Der opstod en netværksfejl",
+      "validation": "Valideringsfejl",
+      "unauthorized": "Uautoriseret adgang",
+      "notFound": "Ressource ikke fundet",
+      "server": "Der opstod en serverfejl"
+    }
   }
 }

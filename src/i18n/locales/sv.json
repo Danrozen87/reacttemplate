@@ -24,5 +24,15 @@
       "message": "Hoppsan! Sidan kunde inte hittas",
       "returnHome": "Återvänd till startsidan"
     }
+  },
+  "logger": {
+    "errors": {
+      "generic": "Ett fel uppstod",
+      "network": "Nätverksfel uppstod",
+      "validation": "Valideringsfel",
+      "unauthorized": "Obehörig åtkomst",
+      "notFound": "Resursen hittades inte",
+      "server": "Serverfel uppstod"
+    }
   }
 }

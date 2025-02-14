@@ -24,5 +24,15 @@
       "message": "Oops! Page not found",
       "returnHome": "Return to Home"
     }
+  },
+  "logger": {
+    "errors": {
+      "generic": "An error occurred",
+      "network": "Network error occurred",
+      "validation": "Validation error",
+      "unauthorized": "Unauthorized access",
+      "notFound": "Resource not found",
+      "server": "Server error occurred"
+    }
   }
 }
