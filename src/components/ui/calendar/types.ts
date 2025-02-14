@@ -2,9 +2,8 @@
 import { DayPicker } from "react-day-picker";
 
 export interface CalendarHeaderProps {
-  onPreviousMonth: () => void;
-  onNextMonth: () => void;
-  currentMonth: string;
+  displayMonth: Date;
+  onGoToMonth: (month: Date) => void;
   className?: string;
 }
 

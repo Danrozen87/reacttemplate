@@ -3,7 +3,6 @@ import * as React from "react";
 import { DayPicker } from "react-day-picker";
 import { cn } from "@/lib/utils";
 import { CalendarHeader } from "./calendar-header";
-import { CalendarGrid } from "./calendar-grid";
 import type { CalendarProps } from "./types";
 
 /**
