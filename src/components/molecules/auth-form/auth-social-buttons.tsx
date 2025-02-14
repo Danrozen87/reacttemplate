@@ -21,7 +21,7 @@ export function AuthSocialButtons() {
       <Button
         variant="outline"
         type="button"
-        className="w-full bg-muted/50"
+        className="w-full bg-muted/50 hover:bg-accent/10 active:bg-accent/20 transition-colors duration-200"
       >
         <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
           <path
