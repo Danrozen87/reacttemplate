@@ -25,7 +25,26 @@
     "heroImageAlt": "Een sereen vuurtoren uitzicht met bergen en water",
     "heroQuote": "De mooiste ervaring die we kunnen hebben is het mysterieuze. Het is de fundamentele emotie die aan de wieg staat van ware kunst en ware wetenschap.",
     "heroAuthor": "Albert Einstein",
-    "heroSection": "Authenticatie hero sectie"
+    "heroSection": "Authenticatie hero sectie",
+    "loginSuccess": "Inloggen succesvol!",
+    "loginError": "Inloggen mislukt",
+    "tryAgain": "Probeer het opnieuw.",
+    "roleAssigned": {
+      "admin": "Ingelogd als Administrator met volledige systeemtoegang.",
+      "manager": "Ingelogd als Manager met teammanagement toegang.",
+      "user": "Ingelogd als Gebruiker met persoonlijke toegang."
+    },
+    "recovery": {
+      "title": "Wachtwoord resetten",
+      "description": "Voer je e-mailadres in en we sturen je instructies om je wachtwoord te resetten.",
+      "emailPlaceholder": "Voer je e-mailadres in",
+      "sendInstructions": "Verstuur instructies",
+      "backToLogin": "Terug naar inloggen",
+      "emailSent": "Herstel-e-mail verzonden",
+      "checkInbox": "Controleer je inbox voor instructies voor het opnieuw instellen van je wachtwoord",
+      "error": "Herstel mislukt",
+      "tryAgain": "Probeer het later opnieuw"
+    }
   },
   "toast": {
     "errors": {

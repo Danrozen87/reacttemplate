@@ -25,7 +25,18 @@
     "heroImageAlt": "En rofylld fyrplats med berg och vatten",
     "heroQuote": "Den vackraste upplevelsen vi kan ha är det mystiska. Det är den grundläggande känslan som står vid vaggan för sann konst och sann vetenskap.",
     "heroAuthor": "Albert Einstein",
-    "heroSection": "Autentisering hjälteavsnitt"
+    "heroSection": "Autentisering hjälteavsnitt",
+    "recovery": {
+      "title": "Återställ lösenord",
+      "description": "Ange din e-postadress så skickar vi instruktioner för att återställa ditt lösenord.",
+      "emailPlaceholder": "Ange din e-postadress",
+      "sendInstructions": "Skicka instruktioner",
+      "backToLogin": "Tillbaka till inloggning",
+      "emailSent": "Återställningsmail skickat",
+      "checkInbox": "Kontrollera din inkorg för instruktioner om lösenordsåterställning",
+      "error": "Återställning misslyckades",
+      "tryAgain": "Försök igen senare"
+    }
   },
   "toast": {
     "errors": {

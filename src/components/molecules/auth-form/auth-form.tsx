@@ -6,6 +6,7 @@ import { animations } from "@/utils/animations";
 import { AuthFormHeader } from "./auth-form-header";
 import { AuthFormFields } from "./auth-form-fields";
 import { AuthFormFooter } from "./auth-form-footer";
+import { PasswordRecoveryForm } from "./password-recovery-form";
 
 /**
  * @component AuthForm
@@ -20,6 +21,7 @@ export function AuthForm() {
   const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isRecoveryMode, setIsRecoveryMode] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,6 +55,14 @@ export function AuthForm() {
     }
   };
 
+  if (isRecoveryMode) {
+    return (
+      <PasswordRecoveryForm 
+        onBack={() => setIsRecoveryMode(false)} 
+      />
+    );
+  }
+
   return (
     <div className={`w-full max-w-md space-y-6 ${animations.modal.content.enter}`}>
       <AuthFormHeader />
@@ -61,6 +71,7 @@ export function AuthForm() {
           email={email}
           setEmail={setEmail}
           isSubmitting={isSubmitting}
+          onForgotPassword={() => setIsRecoveryMode(true)}
         />
         <AuthFormFooter />
       </form>

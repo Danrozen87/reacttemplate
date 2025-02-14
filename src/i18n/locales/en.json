@@ -34,6 +34,17 @@
       "admin": "Logged in as Administrator with full system access.",
       "manager": "Logged in as Manager with team management access.",
       "user": "Logged in as User with personal access."
+    },
+    "recovery": {
+      "title": "Reset Password",
+      "description": "Enter your email address and we'll send you instructions to reset your password.",
+      "emailPlaceholder": "Enter your email address",
+      "sendInstructions": "Send Instructions",
+      "backToLogin": "Back to Login",
+      "emailSent": "Recovery Email Sent",
+      "checkInbox": "Please check your inbox for password reset instructions",
+      "error": "Recovery Failed",
+      "tryAgain": "Please try again later"
     }
   },
   "toast": {
