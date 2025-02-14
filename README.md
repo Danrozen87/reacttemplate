@@ -47,6 +47,13 @@
 
 8. **No Lovable Commands**  
    - Do not use any project-level commands that deviate from these constraints.
+
++9. **Centralized Animations & Modal Blur**  
++   - Create a **single, reusable animation system** (e.g., in `utils/animations`) that uses Tailwind CSS transitions/Animate classes for consistent entry and exit effects throughout the project.  
++   - All modal components must apply a **global backdrop-blur class** to the page background or overlay, ensuring a uniform blur effect behind open modals.  
++   - No inline CSS; define any blur or transition variations in Tailwind’s global config or in a dedicated utility file.  
++   - Keep these animation/blur utilities documented for easy adoption in new features.
+
 ---
 
 ## Documentation Structure & Standards
