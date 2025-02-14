@@ -6,7 +6,7 @@
 
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
-import { ToastActionElement } from '@/components/ui/toast';
+import { ToastActionElement, ToastAction } from '@/components/ui/toast';
 
 type LogLevel = 'info' | 'warn' | 'error';
 type ErrorType = 
@@ -58,10 +58,11 @@ const formatMessage = (level: LogLevel, message: string, options?: LogOptions): 
 const createToastAction = (action: ToastOptions['action']): ToastActionElement | undefined => {
   if (!action) return undefined;
   
-  return {
-    children: action.label,
-    onClick: action.onClick,
-  };
+  return (
+    <ToastAction onClick={action.onClick}>
+      {action.label}
+    </ToastAction>
+  );
 };
 
 const isProduction = process.env.NODE_ENV === 'production';
