@@ -40,6 +40,13 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
 
       if (error) throw error;
 
+      // Store the remember me preference
+      if (rememberMe) {
+        localStorage.setItem('rememberedEmail', email);
+      } else {
+        localStorage.removeItem('rememberedEmail');
+      }
+
       toast({
         title: t("auth.loginSuccess"),
         description: t("auth.welcome"),
@@ -66,7 +73,7 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
   const handleRecovery = async (email: string): Promise<boolean> => {
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: window.location.origin + '/auth/reset-password',
+        redirectTo: `${window.location.origin}/auth/reset-password`,
       });
 
       if (error) throw error;
@@ -95,7 +102,7 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         email,
         password,
         options: {
-          emailRedirectTo: window.location.origin + '/auth/callback'
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
         }
       });
 
