@@ -17,11 +17,18 @@ function App() {
 - AuthHero: Displays hero image and quote
 - AuthLogo: Branding component
 
+## Features
+- Focus management with focus-trap-react
+- Loading state animations
+- Keyboard shortcuts:
+  - Alt + L: Focus language switcher
+
 ## Accessibility
 - Proper ARIA labels and roles
 - Keyboard navigation support
 - Focus management
 - High contrast in both light and dark modes
+- Screen reader announcements for loading states
 
 ## i18n Requirements
 ### Required Translations
@@ -29,6 +36,7 @@ function App() {
 {
   "auth": {
     "welcome": "Welcome back",
+    "loading": "Loading authentication page",
     "signInToContinue": "Sign in to continue",
     "emailOrPhone": "Email or phone number",
     "password": "Password",
@@ -56,6 +64,7 @@ function App() {
 Coverage requirement: 90%
 
 Test scenarios:
+- Loading state display
 - Form submission
 - Form validation
 - Social login integration
@@ -64,3 +73,5 @@ Test scenarios:
 - Accessibility compliance
 - i18n rendering
 - Animation transitions
+- Focus trap functionality
+- Keyboard shortcuts
