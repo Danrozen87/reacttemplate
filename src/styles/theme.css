@@ -8,31 +8,33 @@
     --khaki: 33 14% 68%;      /* #C0B39B */
     --soft-orange: 21 59% 65%; /* #DF986D */
 
-    /* Light Mode Defaults */
+    /* Light Mode Defaults - Following 60-30-10 rule */
     --background: var(--mint);
     --foreground: var(--eggplant);
     
+    /* 30% - Secondary surfaces */
     --card: var(--khaki);
     --card-foreground: var(--eggplant);
-    
     --popover: var(--khaki);
     --popover-foreground: var(--eggplant);
-    
-    --primary: var(--soft-orange);
-    --primary-foreground: 0 0% 100%;
-    
     --secondary: var(--khaki);
     --secondary-foreground: var(--eggplant);
     
-    --muted: var(--khaki);
-    --muted-foreground: 296 15% 40%;
-    
+    /* 10% - Accents and CTAs */
+    --primary: var(--soft-orange);
+    --primary-foreground: 0 0% 100%;
     --accent: var(--soft-orange);
     --accent-foreground: 0 0% 100%;
     
+    /* Support colors - for better contrast and readability */
+    --muted: var(--khaki);
+    --muted-foreground: 296 15% 40%;
+    
+    /* Destructive actions - use sparingly */
     --destructive: var(--deep-red);
     --destructive-foreground: 0 0% 100%;
     
+    /* UI elements */
     --border: var(--khaki);
     --input: var(--khaki);
     --ring: var(--soft-orange);
@@ -41,31 +43,33 @@
   }
 
   .dark {
-    /* Dark Mode Overrides */
+    /* Dark Mode Overrides - Following 60-30-10 rule */
     --background: var(--eggplant);
     --foreground: var(--mint);
     
+    /* 30% - Secondary surfaces with improved contrast */
     --card: var(--khaki);
     --card-foreground: var(--eggplant);
-    
     --popover: var(--khaki);
     --popover-foreground: var(--eggplant);
-    
-    --primary: var(--soft-orange);
-    --primary-foreground: 0 0% 100%;
-    
     --secondary: var(--khaki);
     --secondary-foreground: var(--eggplant);
     
-    --muted: 296 15% 30%;
-    --muted-foreground: var(--mint);
-    
+    /* 10% - Accents and CTAs optimized for dark mode */
+    --primary: var(--soft-orange);
+    --primary-foreground: 0 0% 100%;
     --accent: var(--mint);
     --accent-foreground: var(--eggplant);
     
+    /* Support colors with better dark mode visibility */
+    --muted: 296 15% 30%;
+    --muted-foreground: var(--mint);
+    
+    /* Destructive actions - consistent across modes */
     --destructive: var(--deep-red);
     --destructive-foreground: 0 0% 100%;
     
+    /* UI elements with improved contrast */
     --border: var(--khaki);
     --input: var(--khaki);
     --ring: var(--mint);
@@ -83,13 +87,13 @@
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
 
-  /* Typography scale */
+  /* Typography scale with improved contrast ratios */
   h1, .h1 {
-    @apply font-bold text-4xl md:text-5xl lg:text-6xl;
+    @apply font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight;
   }
 
   h2, .h2 {
-    @apply font-bold text-3xl md:text-4xl lg:text-5xl;
+    @apply font-bold text-3xl md:text-4xl lg:text-5xl tracking-tight;
   }
 
   h3, .h3 {
@@ -101,17 +105,34 @@
   }
 
   p, .body {
-    @apply font-light text-base md:text-lg;
+    @apply font-light text-base md:text-lg leading-relaxed;
+  }
+
+  /* Links with improved visibility */
+  a {
+    @apply text-primary hover:text-primary/80 transition-colors duration-200;
   }
 }
 
 /* Custom utilities for common patterns */
 @layer utilities {
+  /* Glass effect with improved contrast */
   .glass {
     @apply backdrop-blur-xl bg-background/50 border border-border/50 shadow-lg;
   }
   
+  /* Text balance for better readability */
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* High contrast text variants */
+  .text-high-contrast {
+    @apply text-foreground font-medium;
+  }
+
+  /* Interactive element states */
+  .interactive-hover {
+    @apply hover:bg-accent/10 active:bg-accent/20 transition-colors duration-200;
   }
 }
