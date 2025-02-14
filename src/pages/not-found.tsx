@@ -18,15 +18,15 @@ const NotFound = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background text-foreground transition-colors duration-300">
       <div className={`text-center px-4 sm:px-6 lg:px-8 max-w-[90%] sm:max-w-[80%] lg:max-w-[60%] ${animations.modal.content.enter}`}>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-foreground dark:text-foreground">
+        <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-foreground dark:text-foreground ${animations.modal.content.enter} animate-in fade-in slide-in-from-bottom duration-500`}>
           {t("pages.notFound.title")}
         </h1>
-        <p className="text-base sm:text-lg text-muted-foreground dark:text-muted-foreground mb-4">
+        <p className={`text-base sm:text-lg text-muted-foreground dark:text-muted-foreground mb-4 ${animations.modal.content.enter} animate-in fade-in slide-in-from-bottom duration-700 delay-200`}>
           {t("pages.notFound.message")}
         </p>
         <a 
           href="/" 
-          className="text-primary hover:text-primary/80 underline transition-colors duration-200"
+          className={`text-primary hover:text-primary/80 underline transition-colors duration-200 ${animations.modal.content.enter} animate-in fade-in slide-in-from-bottom duration-1000 delay-300`}
         >
           {t("pages.notFound.returnHome")}
         </a>
