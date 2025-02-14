@@ -4,6 +4,7 @@ import { AuthForm } from "@/components/molecules/auth-form/auth-form";
 import { AuthHero } from "@/components/organisms/auth-hero/auth-hero";
 import { AuthLogo } from "@/components/atoms/auth-logo/auth-logo";
 import { LanguageSwitcher } from "@/components/atoms/language-switcher/language-switcher";
+import { ThemeSwitcher } from "@/components/atoms/theme-switcher";
 import { animations } from "@/utils/animations";
 import { useTranslation } from "react-i18next";
 import { useToast } from "@/hooks/use-toast";
@@ -40,7 +41,10 @@ const HomePage = () => {
             {t("auth.welcome")}
           </h1>
           <AuthLogo />
-          <LanguageSwitcher />
+          <div className="flex items-center gap-2">
+            <ThemeSwitcher />
+            <LanguageSwitcher />
+          </div>
         </div>
         <div className="flex flex-1 items-center justify-center">
           <AuthForm />
