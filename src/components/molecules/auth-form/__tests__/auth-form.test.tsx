@@ -1,5 +1,5 @@
 
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { AuthForm } from '../auth-form';
 import { useToast } from '@/hooks/use-toast';
@@ -19,7 +19,7 @@ vi.mock('@/hooks/use-toast', () => ({
 
 describe('AuthForm', () => {
   beforeEach(() => {
-    (useToast as jest.Mock).mockReturnValue({
+    (useToast as jest.Mock<any, any>).mockReturnValue({
       toast: vi.fn()
     });
   });
@@ -50,7 +50,7 @@ describe('AuthForm', () => {
   });
 
   it('shows success toast for admin login', async () => {
-    const { toast } = useToast() as { toast: jest.Mock };
+    const { toast } = useToast() as { toast: ReturnType<typeof vi.fn> };
     render(<AuthForm />);
     
     const emailInput = screen.getByRole('textbox');
