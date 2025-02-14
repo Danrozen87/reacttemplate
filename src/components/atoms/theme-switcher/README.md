@@ -1,3 +1,4 @@
+
 # ThemeSwitcher
 
 A theme toggle component that switches between light and dark modes using next-themes, with proper animations and transitions.
