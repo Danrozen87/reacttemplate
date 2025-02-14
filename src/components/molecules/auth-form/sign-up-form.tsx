@@ -24,40 +24,38 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
   };
 
   const companySizes = [
-    { value: "0-10", label: t("auth.signup.companySizes.small") },
-    { value: "10-50", label: t("auth.signup.companySizes.medium") },
-    { value: "50-100", label: t("auth.signup.companySizes.large") },
-    { value: "100+", label: t("auth.signup.companySizes.enterprise") },
+    { value: "0-10", label: "0-10 employees" },
+    { value: "10-50", label: "10-50 employees" },
+    { value: "50-100", label: "50-100 employees" },
+    { value: "100+", label: "100+ employees" },
   ];
 
   return (
     <div className={`w-full max-w-md space-y-6 ${animations.modal.content.enter}`}>
       <div className="space-y-2 text-center">
-        <h2 className="text-2xl font-semibold tracking-tight font-poppins">
-          {t("auth.signup.title")}
-        </h2>
+        <h2 className="text-2xl font-semibold tracking-tight font-poppins">Create an Account</h2>
         <p className="text-sm text-muted-foreground font-poppins font-light">
-          {t("auth.signup.description")}
+          Enter your information to get started
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="firstName">{t("auth.signup.firstName")}</Label>
+            <Label htmlFor="firstName">First Name</Label>
             <Input
               id="firstName"
-              placeholder={t("auth.signup.firstNamePlaceholder")}
+              placeholder="John"
               required
               disabled={isSubmitting}
               className="font-poppins bg-input shadow-sm border-input-border"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="lastName">{t("auth.signup.lastName")}</Label>
+            <Label htmlFor="lastName">Last Name</Label>
             <Input
               id="lastName"
-              placeholder={t("auth.signup.lastNamePlaceholder")}
+              placeholder="Doe"
               required
               disabled={isSubmitting}
               className="font-poppins bg-input shadow-sm border-input-border"
@@ -66,11 +64,11 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email">{t("auth.signup.email")}</Label>
+          <Label htmlFor="email">Email</Label>
           <Input
             id="email"
             type="email"
-            placeholder={t("auth.signup.emailPlaceholder")}
+            placeholder="john.doe@company.com"
             required
             disabled={isSubmitting}
             className="font-poppins bg-input shadow-sm border-input-border"
@@ -78,10 +76,10 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="companyName">{t("auth.signup.companyName")}</Label>
+          <Label htmlFor="companyName">Company Name</Label>
           <Input
             id="companyName"
-            placeholder={t("auth.signup.companyNamePlaceholder")}
+            placeholder="Acme Inc."
             required
             disabled={isSubmitting}
             className="font-poppins bg-input shadow-sm border-input-border"
@@ -89,10 +87,10 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="companySize">{t("auth.signup.companySize")}</Label>
+          <Label htmlFor="companySize">Company Size</Label>
           <Select disabled={isSubmitting}>
             <SelectTrigger className="w-full font-poppins bg-input shadow-sm border-input-border">
-              <SelectValue placeholder={t("auth.signup.companySizePlaceholder")} />
+              <SelectValue placeholder="Select company size" />
             </SelectTrigger>
             <SelectContent>
               {companySizes.map((size) => (
@@ -113,7 +111,7 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
           className="w-full font-poppins"
           disabled={isSubmitting}
         >
-          {isSubmitting ? t("auth.signup.creating") : t("auth.signup.create")}
+          {isSubmitting ? "Creating Account..." : "Create Account"}
         </Button>
 
         <Button
