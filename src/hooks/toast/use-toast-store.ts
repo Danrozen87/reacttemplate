@@ -4,11 +4,18 @@
  * @description Custom hook for managing toast notification state
  */
 import * as React from "react";
-import { ToasterToast } from "./types";
-import { addToRemoveQueue, State, actionTypes } from "./toast-store";
+import { ToasterToast, State } from "./types";
+import { addToRemoveQueue } from "./toast-store";
 
 const listeners: Array<(state: State) => void> = [];
 let memoryState: State = { toasts: [] };
+
+export const actionTypes = {
+  ADD_TOAST: "ADD_TOAST",
+  UPDATE_TOAST: "UPDATE_TOAST",
+  DISMISS_TOAST: "DISMISS_TOAST",
+  REMOVE_TOAST: "REMOVE_TOAST",
+} as const;
 
 function dispatch(action: {
   type: keyof typeof actionTypes;
