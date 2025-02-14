@@ -30,8 +30,11 @@ export function LanguageSwitcher() {
     i18n.changeLanguage(langCode);
     toast({
       description: t("common.languageChanged"),
-      duration: 3000, // Set to 3 seconds
-      className: "bg-background border-2 border-primary", // Added styling for better visibility
+      duration: 3000,
+      className: "bg-background text-foreground border-accent",
+      // Adding proper accessibility attributes
+      ariaLive: "polite",
+      role: "status",
     });
   };
 
@@ -47,13 +50,16 @@ export function LanguageSwitcher() {
           <Globe className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className={animations.modal.content.enter}>
+      <DropdownMenuContent 
+        align="end" 
+        className={`${animations.modal.content.enter} bg-background`}
+      >
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
             className={`cursor-pointer ${
-              i18n.language === lang.code ? "bg-accent" : ""
+              i18n.language === lang.code ? "bg-accent text-accent-foreground" : ""
             }`}
           >
             {lang.label}
