@@ -38,7 +38,25 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         }
       });
 
-      if (error) throw error;
+      if (error) {
+        // Check for rate limiting error
+        if (error.message.includes('Too many auth attempts')) {
+          toast({
+            title: t("auth.rateLimitExceeded"),
+            description: t("auth.tryAgainLater"),
+            variant: "destructive",
+            duration: 5000,
+          });
+        } else {
+          toast({
+            title: t("auth.loginError"),
+            description: error.message || t("auth.tryAgain"),
+            variant: "destructive",
+            duration: 3000,
+          });
+        }
+        throw error;
+      }
 
       // Store the remember me preference
       if (rememberMe) {
@@ -59,12 +77,6 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
       navigate("/dashboard");
     } catch (error: any) {
       console.error('Auth error:', error);
-      toast({
-        title: t("auth.loginError"),
-        description: error.message || t("auth.tryAgain"),
-        variant: "destructive",
-        duration: 3000,
-      });
     } finally {
       setIsSubmitting(false);
     }
@@ -76,7 +88,24 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         redirectTo: `${window.location.origin}/auth/reset-password`,
       });
 
-      if (error) throw error;
+      if (error) {
+        // Check for rate limiting error
+        if (error.message.includes('Too many auth attempts')) {
+          toast({
+            title: t("auth.rateLimitExceeded"),
+            description: t("auth.tryAgainLater"),
+            variant: "destructive",
+            duration: 5000,
+          });
+        } else {
+          toast({
+            title: t("auth.recovery.error"),
+            description: error.message || t("auth.recovery.tryAgain"),
+            variant: "destructive",
+          });
+        }
+        return false;
+      }
 
       toast({
         title: t("auth.recovery.emailSent"),
@@ -106,7 +135,24 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         }
       });
 
-      if (error) throw error;
+      if (error) {
+        // Check for rate limiting error
+        if (error.message.includes('Too many auth attempts')) {
+          toast({
+            title: t("auth.rateLimitExceeded"),
+            description: t("auth.tryAgainLater"),
+            variant: "destructive",
+            duration: 5000,
+          });
+        } else {
+          toast({
+            title: t("auth.signup.error"),
+            description: error.message || t("auth.signup.tryAgain"),
+            variant: "destructive",
+          });
+        }
+        return false;
+      }
 
       toast({
         title: t("auth.signup.success"),
