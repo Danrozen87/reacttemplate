@@ -11,7 +11,7 @@ interface AuthHeroProps {
  * @description Hero section for the authentication page featuring alternating background 
  * images and inspirational quote with proper accessibility and responsive design.
  */
-export function AuthHero({ className }: AuthHeroProps) {
+export function AuthHero() {
   const { t } = useTranslation();
 
   return (
@@ -25,7 +25,8 @@ export function AuthHero({ className }: AuthHeroProps) {
         <img
           src="/lovable-uploads/dec206da-ce5b-47f3-bf86-10af90d620a6.png"
           alt={t("auth.heroImageAlt")}
-          className="h-full w-full object-cover -translate-x-[300px]"
+          className="h-full w-full object-cover"
+          style={{ objectPosition: '-300px center' }}
           role="presentation"
           loading="eager"
         />
