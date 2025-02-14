@@ -59,7 +59,7 @@ export const logger = {
     if (options?.showToast) {
       toast({
         title: message,
-        variant: "warning"
+        variant: "default" // Changed from "warning" to "default"
       });
     }
   },

@@ -1,5 +1,5 @@
 
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { logger, useLogger } from '../logger';
 import { renderHook } from '@testing-library/react';
 import { toast } from '@/components/ui/use-toast';
