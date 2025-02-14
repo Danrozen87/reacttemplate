@@ -7,7 +7,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   test: {
-    globals: true, // This ensures vi is globally available
+    globals: true,
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
     coverage: {
@@ -20,10 +20,11 @@ export default defineConfig({
         '**/*.config.*',
         '**/index.ts',
       ],
-      branches: 90,
-      functions: 90,
-      lines: 90,
-      statements: 90
+      thresholds: {
+        statements: 90,
+        functions: 90,
+        lines: 90,
+      }
     },
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
     watchExclude: ['**/node_modules/**', '**/dist/**'],
