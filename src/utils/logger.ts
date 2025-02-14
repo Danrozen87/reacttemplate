@@ -6,6 +6,7 @@
 
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
+import { ToastActionElement } from '@/components/ui/toast';
 
 type LogLevel = 'info' | 'warn' | 'error';
 type ErrorType = 
@@ -54,6 +55,16 @@ const formatMessage = (level: LogLevel, message: string, options?: LogOptions): 
   return parts.filter(Boolean).join(' ');
 };
 
+const createToastAction = (action: ToastOptions['action']): ToastActionElement | undefined => {
+  if (!action) return undefined;
+  
+  return {
+    altText: action.label,
+    children: action.label,
+    onClick: action.onClick,
+  };
+};
+
 const isProduction = process.env.NODE_ENV === 'production';
 
 const errorTrackingService = {
@@ -73,10 +84,7 @@ export const logger = {
         title: message,
         description: options?.toastOptions?.description,
         duration: options?.toastOptions?.duration,
-        action: options?.toastOptions?.action ? {
-          onClick: options.toastOptions.action.onClick,
-          children: options.toastOptions.action.label,
-        } : undefined,
+        action: options?.toastOptions?.action ? createToastAction(options.toastOptions.action) : undefined,
         variant: "default"
       });
     }
@@ -90,10 +98,7 @@ export const logger = {
         title: message,
         description: options?.toastOptions?.description,
         duration: options?.toastOptions?.duration,
-        action: options?.toastOptions?.action ? {
-          onClick: options.toastOptions.action.onClick,
-          children: options.toastOptions.action.label,
-        } : undefined,
+        action: options?.toastOptions?.action ? createToastAction(options.toastOptions.action) : undefined,
         variant: "default"
       });
     }
@@ -110,10 +115,7 @@ export const logger = {
         title: message,
         description: options?.toastOptions?.description,
         duration: options?.toastOptions?.duration,
-        action: options?.toastOptions?.action ? {
-          onClick: options.toastOptions.action.onClick,
-          children: options.toastOptions.action.label,
-        } : undefined,
+        action: options?.toastOptions?.action ? createToastAction(options.toastOptions.action) : undefined,
         variant: "destructive"
       });
     }
