@@ -4,68 +4,21 @@
  * @description Custom hook for managing toast notification state
  */
 import * as React from "react";
-import { ToasterToast, State } from "./types";
-import { addToRemoveQueue } from "./toast-store";
+import { ToasterToast, State, actionTypes } from "./types";
+import { addToRemoveQueue, reducer } from "./toast-store";
 
 const listeners: Array<(state: State) => void> = [];
 let memoryState: State = { toasts: [] };
-
-export const actionTypes = {
-  ADD_TOAST: "ADD_TOAST",
-  UPDATE_TOAST: "UPDATE_TOAST",
-  DISMISS_TOAST: "DISMISS_TOAST",
-  REMOVE_TOAST: "REMOVE_TOAST",
-} as const;
 
 function dispatch(action: {
   type: keyof typeof actionTypes;
   toast?: Partial<ToasterToast>;
   toastId?: string;
 }): void {
-  switch (action.type) {
-    case "ADD_TOAST":
-      if (action.toast) {
-        memoryState = {
-          ...memoryState,
-          toasts: [action.toast as ToasterToast, ...memoryState.toasts].slice(0, 1),
-        };
-      }
-      break;
-    case "UPDATE_TOAST":
-      if (action.toast) {
-        memoryState = {
-          ...memoryState,
-          toasts: memoryState.toasts.map((t) =>
-            t.id === action.toast?.id ? { ...t, ...action.toast } : t
-          ),
-        };
-      }
-      break;
-    case "DISMISS_TOAST":
-      if (action.toastId) {
-        addToRemoveQueue(action.toastId, dispatch);
-        memoryState = {
-          ...memoryState,
-          toasts: memoryState.toasts.map((t) =>
-            t.id === action.toastId ? { ...t, open: false } : t
-          ),
-        };
-      }
-      break;
-    case "REMOVE_TOAST":
-      if (action.toastId === undefined) {
-        memoryState = {
-          ...memoryState,
-          toasts: [],
-        };
-      } else {
-        memoryState = {
-          ...memoryState,
-          toasts: memoryState.toasts.filter((t) => t.id !== action.toastId),
-        };
-      }
-      break;
-  }
+  memoryState = reducer(memoryState, {
+    ...action,
+    toast: action.toast as ToasterToast,
+  });
   
   listeners.forEach((listener) => {
     listener(memoryState);

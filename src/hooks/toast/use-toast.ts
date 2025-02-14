@@ -1,7 +1,7 @@
 
 import * as React from "react";
 import { ToasterToast } from "./types";
-import { reducer, toastTimeouts } from "./toast-store";
+import { reducer } from "./toast-store";
 
 let count = 0;
 

@@ -24,14 +24,16 @@ export const reducer = (state: State, action: Action): State => {
     case "ADD_TOAST":
       return {
         ...state,
-        toasts: [action.toast, ...state.toasts].slice(0, 1),
+        toasts: [action.toast as ToasterToast, ...state.toasts].slice(0, 1),
       };
 
     case "UPDATE_TOAST":
       return {
         ...state,
         toasts: state.toasts.map((t) =>
-          t.id === action.toast.id ? { ...t, ...action.toast } : t
+          t.id === (action.toast as Partial<ToasterToast>).id 
+            ? { ...t, ...(action.toast as Partial<ToasterToast>) } 
+            : t
         ),
       };
 
