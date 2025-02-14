@@ -21,6 +21,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'system-ui', 'sans-serif'],
+        monoton: ['Monoton', 'cursive'],
       },
       fontWeight: {
         light: '300',
@@ -117,3 +118,4 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
