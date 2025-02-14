@@ -48,11 +48,11 @@
 8. **No Lovable Commands**  
    - Do not use any project-level commands that deviate from these constraints.
 
-+9. **Centralized Animations & Modal Blur**  
-+   - Create a **single, reusable animation system** (e.g., in `utils/animations`) that uses Tailwind CSS transitions/Animate classes for consistent entry and exit effects throughout the project.  
-+   - All modal components must apply a **global backdrop-blur class** to the page background or overlay, ensuring a uniform blur effect behind open modals.  
-+   - No inline CSS; define any blur or transition variations in Tailwind’s global config or in a dedicated utility file.  
-+   - Keep these animation/blur utilities documented for easy adoption in new features.
+9. **Centralized Animations & Modal Blur**  
+   - Create and always use a **single, reusable animation system** (e.g., in `utils/animations`) that uses Tailwind CSS transitions/Animate classes for consistent entry and exit effects throughout the project. This should be made globally available for our components and project going forward.
+   - All modal components, **including future profile menus, sensitive modals, or multi-step wizards**, must apply a **global backdrop-blur class** to the page background or overlay, ensuring a uniform blur effect for focusing.  
+   - Reminder: Never ever use inline CSS; define any blur or transition variations in Tailwind’s global config or in a dedicated utility file.  
+   - Keep these animation/blur utilities documented for easy adoption in new features.
 
 ---
 
@@ -243,6 +243,7 @@
 
    # Run tests with coverage
    npm run test:coverage
+
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
 
