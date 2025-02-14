@@ -1,13 +1,7 @@
 
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import { render, screen, fireEvent } from '../../../../test/test-utils';
 import { AuthHero } from '../auth-hero';
-
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (key: string) => key,
-  }),
-}));
 
 describe('AuthHero', () => {
   it('renders hero image with loading state', () => {
@@ -26,7 +20,13 @@ describe('AuthHero', () => {
 
   it('displays quote and author', () => {
     render(<AuthHero />);
-    expect(screen.getByText('auth.heroQuote')).toBeInTheDocument();
-    expect(screen.getByText('auth.heroAuthor')).toBeInTheDocument();
+    expect(screen.getByText(/beautiful experience/i)).toBeInTheDocument();
+    expect(screen.getByText(/Einstein/i)).toBeInTheDocument();
+  });
+
+  it('has proper accessibility attributes', () => {
+    render(<AuthHero />);
+    expect(screen.getByRole('complementary')).toBeInTheDocument();
+    expect(screen.getByRole('region')).toBeInTheDocument();
   });
 });

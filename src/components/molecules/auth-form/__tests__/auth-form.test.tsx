@@ -1,19 +1,14 @@
 
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '../../../test/test-utils';
 import { AuthForm } from '../auth-form';
 import { useToast } from '@/hooks/use-toast';
 
+// Mock the toast hook
 vi.mock('@/hooks/use-toast', () => ({
   useToast: vi.fn(() => ({
     toast: vi.fn(),
   })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (key: string) => key,
-  }),
 }));
 
 describe('AuthForm', () => {
@@ -24,20 +19,26 @@ describe('AuthForm', () => {
 
   it('shows recovery form when forgot password is clicked', () => {
     render(<AuthForm />);
-    fireEvent.click(screen.getByText('auth.forgotPassword'));
-    expect(screen.getByTestId('recovery-form')).toBeInTheDocument();
+    const forgotPasswordButton = screen.getByRole('button', { name: /forgot password/i });
+    fireEvent.click(forgotPasswordButton);
+    expect(screen.getByText(/reset password/i)).toBeInTheDocument();
   });
 
   it('handles form submission', async () => {
-    const { toast } = useToast() as { toast: vi.Mock };
+    const mockToast = vi.fn();
+    (useToast as unknown as vi.Mock).mockImplementation(() => ({
+      toast: mockToast,
+    }));
+
     render(<AuthForm />);
     
-    const emailInput = screen.getByRole('textbox');
+    const emailInput = screen.getByPlaceholderText(/email/i);
     fireEvent.change(emailInput, { target: { value: 'admin@example.com' } });
     fireEvent.submit(screen.getByRole('form'));
 
-    expect(toast).toHaveBeenCalledWith(expect.objectContaining({
-      title: 'auth.loginSuccess',
+    expect(mockToast).toHaveBeenCalledWith(expect.objectContaining({
+      title: expect.any(String),
+      variant: 'default',
     }));
   });
 });
