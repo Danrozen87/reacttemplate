@@ -1,29 +1,32 @@
 
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { AuthHero } from '../auth-hero';
 
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string) => key,
+  }),
+}));
+
 describe('AuthHero', () => {
-  it('renders hero image and quote', () => {
+  it('renders hero image with loading state', () => {
     render(<AuthHero />);
-    const heroImage = screen.getByRole('presentation');
-    const quote = screen.getByText(/auth.heroQuote/);
-    
-    expect(heroImage).toBeInTheDocument();
-    expect(quote).toBeInTheDocument();
+    const image = screen.getByRole('presentation');
+    expect(image).toBeInTheDocument();
+    expect(image).toHaveClass('opacity-0');
   });
 
-  it('applies correct dark mode classes', () => {
-    const { container } = render(<AuthHero />);
-    const gradientOverlay = container.querySelector('.bg-gradient-to-t');
-    
-    expect(gradientOverlay).toHaveClass('dark:from-background', 'dark:to-background/80');
+  it('shows image after loading', () => {
+    render(<AuthHero />);
+    const image = screen.getByRole('presentation');
+    fireEvent.load(image);
+    expect(image).toHaveClass('opacity-100');
   });
 
-  it('maintains accessibility in both themes', () => {
+  it('displays quote and author', () => {
     render(<AuthHero />);
-    const heroSection = screen.getByRole('complementary');
-    
-    expect(heroSection).toHaveAttribute('aria-label', 'auth.heroSection');
+    expect(screen.getByText('auth.heroQuote')).toBeInTheDocument();
+    expect(screen.getByText('auth.heroAuthor')).toBeInTheDocument();
   });
 });

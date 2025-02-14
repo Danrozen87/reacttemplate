@@ -1,10 +1,7 @@
 
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { animations } from "@/utils/animations";
-
-interface AuthHeroProps {
-  className?: string;
-}
 
 /**
  * @component AuthHero
@@ -13,6 +10,7 @@ interface AuthHeroProps {
  */
 export function AuthHero() {
   const { t } = useTranslation();
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   return (
     <div 
@@ -22,13 +20,19 @@ export function AuthHero() {
       aria-label={t("auth.heroSection")}
     >
       <div className="absolute inset-0">
+        {isImageLoading && (
+          <div className="absolute inset-0 bg-muted animate-pulse" />
+        )}
         <img
           src="/lovable-uploads/dec206da-ce5b-47f3-bf86-10af90d620a6.png"
           alt={t("auth.heroImageAlt")}
-          className="h-full w-full object-cover"
+          className={`h-full w-full object-cover transition-opacity duration-300 ${
+            isImageLoading ? 'opacity-0' : 'opacity-100'
+          }`}
           style={{ objectPosition: '-300px center' }}
           role="presentation"
           loading="eager"
+          onLoad={() => setIsImageLoading(false)}
         />
       </div>
       <div 
