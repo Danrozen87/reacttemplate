@@ -29,3 +29,4 @@ describe('LanguageSwitcher', () => {
     expect(await screen.findByText('Nederlands')).toBeInTheDocument();
   });
 });
+

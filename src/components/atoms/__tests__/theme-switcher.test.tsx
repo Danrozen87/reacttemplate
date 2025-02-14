@@ -24,3 +24,4 @@ describe('ThemeSwitcher', () => {
     expect(button).toBeInTheDocument();
   });
 });
+

@@ -47,3 +47,4 @@ describe('ThemeSwitcher', () => {
     expect(srText).toHaveClass('sr-only');
   });
 });
+

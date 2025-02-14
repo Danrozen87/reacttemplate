@@ -22,3 +22,4 @@ describe('NavBar', () => {
     expect(nav).toHaveAttribute('aria-label');
   });
 });
+

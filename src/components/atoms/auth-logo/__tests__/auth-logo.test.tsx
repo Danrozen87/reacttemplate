@@ -14,3 +14,4 @@ describe('AuthLogo', () => {
     expect(container.firstChild).toHaveClass('animate-modal-in');
   });
 });
+

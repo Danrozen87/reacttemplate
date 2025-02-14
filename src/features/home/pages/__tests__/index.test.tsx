@@ -34,3 +34,4 @@ describe('HomePage', () => {
     expect(mainSection).toHaveClass('animate-modal-in');
   });
 });
+

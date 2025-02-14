@@ -63,3 +63,4 @@ describe('useIsMobile', () => {
     expect(removeEventListener).toHaveBeenCalled();
   });
 });
+
