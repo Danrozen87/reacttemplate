@@ -16,3 +16,4 @@ Atomic components are the smallest building blocks of our application. They are 
 - Must have 90%+ test coverage
 - Must include accessibility considerations
 - Must support i18n where text is present
+
