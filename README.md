@@ -54,6 +54,11 @@
    - Reminder: Never ever use inline CSS; define any blur or transition variations in Tailwind’s global config or in a dedicated utility file.  
    - Keep these animation/blur utilities documented for easy adoption in new features.
 
+10.  **Inline Comments & JSDoc Documentation**    
+   - Provide thorough code comments explaining complex logic, focusing on how data flows within the component or function.
+   - Ensure each major function, interface, and component is documented with standard JSDoc format, including parameter and return type annotations.
+   - This approach increases code clarity for both human maintainers and AI-based tools, ensuring accurate suggestions and improved collaboration across the team.
+
 ---
 
 ## Documentation Structure & Standards
