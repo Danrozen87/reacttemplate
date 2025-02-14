@@ -1,4 +1,3 @@
-
 import BaseLayout from "@/layouts/base-layout";
 import { AuthForm } from "@/components/molecules/auth-form/auth-form";
 import { AuthHero } from "@/components/organisms/auth-hero/auth-hero";
@@ -7,7 +6,7 @@ import { LanguageSwitcher } from "@/components/atoms/language-switcher/language-
 import { animations } from "@/utils/animations";
 import { useTranslation } from "react-i18next";
 import FocusTrap from 'focus-trap-react';
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
 
 /**
