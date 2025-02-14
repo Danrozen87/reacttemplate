@@ -19,8 +19,11 @@ vi.mock('@/hooks/use-toast', () => ({
 
 describe('AuthForm', () => {
   beforeEach(() => {
+    const mockToast = vi.fn();
     (useToast as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
-      toast: vi.fn()
+      toast: mockToast,
+      dismiss: vi.fn(),
+      toasts: []
     });
   });
 
@@ -50,7 +53,13 @@ describe('AuthForm', () => {
   });
 
   it('shows success toast for admin login', async () => {
-    const { toast } = useToast() as { toast: ReturnType<typeof vi.fn> };
+    const mockToast = vi.fn();
+    (useToast as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
+      toast: mockToast,
+      dismiss: vi.fn(),
+      toasts: []
+    });
+    
     render(<AuthForm />);
     
     const emailInput = screen.getByRole('textbox');
@@ -59,7 +68,7 @@ describe('AuthForm', () => {
     const submitButton = screen.getByRole('button', { name: /sign in/i });
     fireEvent.click(submitButton);
 
-    expect(toast).toHaveBeenCalledWith(expect.objectContaining({
+    expect(mockToast).toHaveBeenCalledWith(expect.objectContaining({
       title: 'auth.loginSuccess'
     }));
   });
