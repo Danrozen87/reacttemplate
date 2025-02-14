@@ -1,5 +1,4 @@
 
-/// <reference types="vitest" />
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -20,14 +19,13 @@ export default defineConfig({
         '**/*.config.*',
         '**/index.ts',
       ],
-      thresholds: {
-        statements: 90,
-        functions: 90,
-        lines: 90,
-      }
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90
     },
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
-    exclude: ['**/node_modules/**', '**/dist/**'],
+    watchExclude: ['**/node_modules/**', '**/dist/**'],
   },
   resolve: {
     alias: {

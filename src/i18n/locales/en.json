@@ -1,4 +1,3 @@
-
 {
   "common": {
     "ready": "Ready!",
@@ -46,18 +45,6 @@
       "checkInbox": "Please check your inbox for password reset instructions",
       "error": "Recovery Failed",
       "tryAgain": "Please try again later"
-    },
-    "signup": {
-      "title": "Create an Account",
-      "description": "Enter your email and password to create your account",
-      "emailPlaceholder": "Enter your email address",
-      "passwordPlaceholder": "Create a secure password",
-      "submit": "Create Account",
-      "backToLogin": "Back to Login",
-      "success": "Account created successfully!",
-      "error": "Registration failed",
-      "tryAgain": "Please try again",
-      "checkEmail": "Please check your email to verify your account"
     }
   },
   "toast": {
