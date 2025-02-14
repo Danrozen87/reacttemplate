@@ -1,10 +1,9 @@
-
 /**
  * @module toast-utils
  * @description Utility functions for creating and displaying toast notifications
  */
 import { ToastActionElement } from "@/components/ui/toast";
-import { toast } from "@/hooks/use-toast";
+import { toast } from "@/hooks/toast";
 import { ToastOptions } from "./types";
 import { useTranslation } from "react-i18next";
 import { animations } from "@/utils/animations";

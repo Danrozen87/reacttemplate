@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/toast";
 
 export const useAuthFormState = () => {
   const { t } = useTranslation();
@@ -53,4 +53,3 @@ export const useAuthFormState = () => {
     handleSubmit,
   };
 };
-
