@@ -27,7 +27,7 @@ export default defineConfig({
       }
     },
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
-    watchExclude: ['**/node_modules/**', '**/dist/**'],
+    exclude: ['**/node_modules/**', '**/dist/**'],
   },
   resolve: {
     alias: {
