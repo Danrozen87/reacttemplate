@@ -25,7 +25,6 @@ export function AuthHero() {
           style={{ objectPosition: '-300px center' }}
           role="presentation"
           loading="eager"
-          priority="high"
         />
       </div>
       <div 
