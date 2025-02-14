@@ -34,6 +34,7 @@
    - Setup ESLint to enforce above constraints and keeps us focused on best in class delivery.
    - Enforce code quality and linting rules.
    - Automated checks on every commit to maintain high standards.
+   - Accessability is a necessity, make that apart of our ESLint checks. 
 
 6. **i18n** (version ^4.0.1)  
    - Multi-language support: Swedish, Danish, English, and Dutch are **mandatory**.
@@ -235,6 +236,5 @@
 
    # Run tests with coverage
    npm run test:coverage
-
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
