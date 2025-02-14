@@ -31,13 +31,14 @@ export function AuthHero() {
     >
       <div className="absolute inset-0">
         <img
-          src="/lovable-uploads/3c99958c-47a7-41d7-8f9e-14b3412c52d4.png"
+          src="/lovable-uploads/00c9a456-cba9-4ad1-aca7-49985038c872.png"
           alt={t("auth.heroImageAlt")}
           className="h-full w-full object-cover"
           role="presentation"
           loading="eager"
           fetchPriority="high"
         />
+        <div className="absolute inset-0 bg-white/10 dark:bg-black/20 transition-colors duration-300" />
       </div>
       <div 
         className={`relative z-20 mt-auto ${animations.modal.content.enter}`}
