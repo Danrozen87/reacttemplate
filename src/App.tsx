@@ -7,7 +7,7 @@
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "next-themes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import HomePage from "@/features/home/pages";
 import NotFound from "@/pages/not-found";
@@ -46,6 +46,7 @@ const App = () => {
               <div aria-label={t("app.aria.content")} className="h-full">
                 <Routes>
                   <Route path="/" element={<HomePage />} />
+                  <Route path="/index" element={<Navigate to="/" replace />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>
