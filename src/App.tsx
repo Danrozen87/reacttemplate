@@ -58,9 +58,10 @@ const App = () => {
                 </Routes>
               </div>
             </BrowserRouter>
-          </TooltipProvider>
-        </ThemeProvider>
-      </QueryClientProvider>
+          </main>
+        </TooltipProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 };
 
