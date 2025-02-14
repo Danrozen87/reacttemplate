@@ -3,7 +3,9 @@
   "common": {
     "ready": "Ready",
     "cleanSlate": "Clean Slate",
-    "foundation": "Foundation setup in progress"
+    "foundation": "Foundation setup in progress",
+    "selectLanguage": "Select language",
+    "languageChanged": "Language changed to English"
   },
   "auth": {
     "welcome": "Nice to see you again",
@@ -23,55 +25,13 @@
     "signUpNow": "Sign up now",
     "heroImageAlt": "A serene lighthouse view with mountains and water",
     "heroQuote": "The most beautiful experience we can have is the mysterious. It is the fundamental emotion that stands at the cradle of true art and true science.",
-    "heroAuthor": "Albert Einstein"
-  },
-  "components": {
-    "themeSwitcher": {
-      "toggle": "Toggle theme",
-      "lightMode": "Switch to light mode",
-      "darkMode": "Switch to dark mode"
-    },
-    "navbar": {
-      "brand": "Clean Slate",
-      "aria": {
-        "mainNav": "Main navigation"
-      }
-    }
-  },
-  "app": {
-    "aria": {
-      "main": "Main application wrapper",
-      "content": "Main content area"
-    },
-    "errors": {
-      "generic": "An unexpected error occurred",
-      "boundary": "Something went wrong"
-    }
-  },
-  "pages": {
-    "notFound": {
-      "title": "404",
-      "message": "Oops! Page not found",
-      "returnHome": "Return to Home"
-    }
-  },
-  "logger": {
-    "errors": {
-      "generic": "An error occurred",
-      "network": "Network error occurred",
-      "validation": "Validation error",
-      "unauthorized": "Unauthorized access",
-      "notFound": "Resource not found",
-      "server": "Server error occurred",
-      "timeout": "Request timed out",
-      "rateLimited": "Too many requests, please try again later",
-      "database": "Database operation failed",
-      "sync": "Synchronization error",
-      "upload": "File upload failed",
-      "download": "File download failed",
-      "format": "Invalid data format",
-      "conflict": "Data conflict detected",
-      "maintenance": "System is under maintenance"
+    "heroAuthor": "Albert Einstein",
+    "loading": "Loading authentication page",
+    "shortcuts": {
+      "languageSwitcher": "Press Alt + L to focus language switcher",
+      "signIn": "Press Alt + S to focus sign in button",
+      "password": "Press Alt + P to focus password field",
+      "email": "Press Alt + E to focus email field"
     }
   }
 }

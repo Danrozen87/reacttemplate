@@ -1,14 +1,19 @@
-
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act, fireEvent } from '@testing-library/react';
 import HomePage from '../index';
 import { useTranslation } from 'react-i18next';
 
-// Mock translations
+// Mock translations and toast
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
     t: (key: string) => key,
     i18n: { changeLanguage: vi.fn() }
+  })
+}));
+
+vi.mock('@/hooks/use-toast', () => ({
+  useToast: () => ({
+    toast: vi.fn()
   })
 }));
 
@@ -19,6 +24,7 @@ describe('HomePage', () => {
 
   afterEach(() => {
     vi.useRealTimers();
+    vi.clearAllMocks();
   });
 
   it('shows loading state initially', () => {
@@ -75,5 +81,21 @@ describe('HomePage', () => {
 
     const mainSection = screen.getByRole('main');
     expect(mainSection).toHaveClass('animate-modal-in');
+  });
+
+  it('handles keyboard shortcuts', async () => {
+    render(<HomePage />);
+    
+    act(() => {
+      vi.advanceTimersByTime(1000);
+    });
+
+    fireEvent.keyDown(window, { key: 'l', altKey: true });
+    fireEvent.keyDown(window, { key: 's', altKey: true });
+    fireEvent.keyDown(window, { key: 'p', altKey: true });
+    fireEvent.keyDown(window, { key: 'e', altKey: true });
+
+    // Verify toast notifications were shown
+    expect(screen.getByText('auth.shortcuts.languageSwitcher')).toBeInTheDocument();
   });
 });
