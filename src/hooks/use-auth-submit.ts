@@ -28,10 +28,14 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
     try {
       const formData = new FormData(e.target as HTMLFormElement);
       const password = formData.get('password') as string;
+      const rememberMe = formData.get('remember') === 'on';
 
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
+        options: {
+          data: { remember_me: rememberMe }
+        }
       });
 
       if (error) throw error;
@@ -44,9 +48,10 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         className: "bg-background text-foreground border-accent",
       });
 
-      // Navigate to home page after successful login
+      // Navigate to dashboard after successful login
       navigate("/dashboard");
     } catch (error: any) {
+      console.error('Auth error:', error);
       toast({
         title: t("auth.loginError"),
         description: error.message || t("auth.tryAgain"),
@@ -74,6 +79,7 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
 
       return true;
     } catch (error: any) {
+      console.error('Recovery error:', error);
       toast({
         title: t("auth.recovery.error"),
         description: error.message || t("auth.recovery.tryAgain"),
@@ -88,6 +94,9 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
+        options: {
+          emailRedirectTo: window.location.origin + '/auth/callback'
+        }
       });
 
       if (error) throw error;
@@ -100,6 +109,7 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
 
       return true;
     } catch (error: any) {
+      console.error('Signup error:', error);
       toast({
         title: t("auth.signup.error"),
         description: error.message || t("auth.signup.tryAgain"),
