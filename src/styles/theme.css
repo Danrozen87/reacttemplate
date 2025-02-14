@@ -20,7 +20,7 @@
     --secondary-foreground: var(--eggplant);
     
     /* Input fields with more subtle off-white for light mode */
-    --input: 108 15% 97%;        /* Slightly tinted towards mint background */
+    --input: 108 20% 94%;        /* More muted, slightly more saturated mint tint */
     --input-foreground: var(--eggplant);
     --input-border: 296 15% 85%; /* Soft border color */
     --input-placeholder: 296 15% 65%; /* Distinct placeholder text */
