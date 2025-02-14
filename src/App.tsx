@@ -2,25 +2,6 @@
 /**
  * @component App
  * @description Root component of the application that sets up the main providers and routing.
- * 
- * Features:
- * - Theme support (light/dark mode)
- * - Internationalization (i18n) with support for en, sv, da, nl
- * - React Query for data fetching
- * - Toast notifications
- * - Tooltip functionality
- * - React Router for navigation
- * 
- * @example
- * ```tsx
- * <App />
- * ```
- * 
- * @requirements
- * - Must handle theme switching
- * - Must support all required languages
- * - Must provide toast notifications
- * - Must handle routing
  */
 
 import { Toaster } from "@/components/ui/toaster";
@@ -31,6 +12,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import HomePage from "@/features/home/pages";
 import NotFound from "@/pages/not-found";
+import { ErrorBoundary } from "react-error-boundary";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -41,6 +23,17 @@ const queryClient = new QueryClient({
   },
 });
 
+function ErrorFallback({ error }: { error: Error }) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background text-foreground p-4">
+      <div className="text-center">
+        <h2 className="text-2xl font-bold text-destructive mb-4">Something went wrong</h2>
+        <pre className="text-sm text-muted-foreground">{error.message}</pre>
+      </div>
+    </div>
+  );
+}
+
 const App = () => {
   const { t } = useTranslation();
 
@@ -48,17 +41,19 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <TooltipProvider>
-          <main aria-label={t("app.aria.main")} className="min-h-screen">
-            <Toaster />
-            <BrowserRouter>
-              <div aria-label={t("app.aria.content")} className="h-full">
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </div>
-            </BrowserRouter>
-          </main>
+          <ErrorBoundary FallbackComponent={ErrorFallback}>
+            <main aria-label={t("app.aria.main")} className="min-h-screen bg-background">
+              <Toaster />
+              <BrowserRouter>
+                <div aria-label={t("app.aria.content")} className="h-full">
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </div>
+              </BrowserRouter>
+            </main>
+          </ErrorBoundary>
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>
