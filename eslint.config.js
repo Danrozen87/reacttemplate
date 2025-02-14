@@ -4,6 +4,8 @@ import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
+import tailwindcss from "eslint-plugin-tailwindcss";
+import regexp from "eslint-plugin-regexp";
 
 export default tseslint.config(
   { ignores: ["dist"] },
@@ -23,6 +25,8 @@ export default tseslint.config(
     plugins: {
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
+      tailwindcss: tailwindcss,
+      regexp: regexp,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -51,6 +55,33 @@ export default tseslint.config(
           format: ["camelCase", "UPPER_CASE", "PascalCase"],
           leadingUnderscore: "allow",
         },
+      ],
+      // Custom rules for responsive design patterns
+      "tailwindcss/no-custom-classname": "error",
+      "tailwindcss/enforces-negative-arbitrary-values": "error",
+      "tailwindcss/enforces-shorthand": "error",
+      // Enforce responsive patterns using regexp
+      "regexp/no-unused-capturing-group": "error",
+      "regexp/no-super-linear-backtracking": "error",
+      "regexp/prefer-named-replacement": "error",
+      "regexp/match": [
+        "error",
+        {
+          patterns: [
+            {
+              pattern: "className=['\"`](?:(?!sm:|lg:).)*?(?:text-\\w+|p\\w*-\\w+|m\\w*-\\w+)['\"`]",
+              message: "Use mobile-first approach with sm: or lg: breakpoints for responsive styles",
+            },
+            {
+              pattern: "className=['\"`](?!.*container).*?mx-auto['\"`]",
+              message: "Use the container class for centered content",
+            },
+            {
+              pattern: "className=['\"`](?!.*px-4 sm:px-6 lg:px-8).*?px-['\"`]",
+              message: "Use consistent responsive padding (px-4 sm:px-6 lg:px-8)",
+            }
+          ],
+        }
       ],
     },
   },
