@@ -1,7 +1,7 @@
 
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '../../../test/test-utils';
-import { NavBar } from '../nav-bar';
+import { NavBar } from '../nav-bar/nav-bar';
 
 describe('NavBar', () => {
   it('renders navigation landmark', () => {

@@ -1,3 +1,2 @@
 
-// Barrel file for molecular components
-export {}
+export { NavBar } from "./nav-bar/nav-bar"
