@@ -10,12 +10,10 @@ expect.extend(matchers);
 
 // Declare vi on globalThis
 declare global {
-  interface Global {
-    vi: typeof vi;
-  }
+  var vi: typeof vi
 }
 
-(globalThis as Global).vi = vi;
+globalThis.vi = vi;
 
 // Cleanup after each test case
 afterEach(() => {
