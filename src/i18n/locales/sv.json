@@ -1,4 +1,3 @@
-
 {
   "common": {
     "ready": "Redo!",
@@ -27,5 +26,36 @@
     "heroQuote": "Den vackraste upplevelsen vi kan ha är det mystiska. Det är den grundläggande känslan som står vid vaggan för sann konst och sann vetenskap.",
     "heroAuthor": "Albert Einstein",
     "heroSection": "Autentisering hjälteavsnitt"
+  },
+  "toast": {
+    "errors": {
+      "generic": "Ett fel uppstod",
+      "network": "Nätverksfel",
+      "unauthorized": "Obehörig åtkomst",
+      "validation": "Valideringsfel",
+      "notFound": "Resursen hittades inte",
+      "server": "Serverfel",
+      "timeout": "Förfrågan tog för lång tid",
+      "rateLimited": "För många förfrågningar",
+      "database": "Databasfel",
+      "sync": "Synkroniseringsfel",
+      "upload": "Uppladdningsfel",
+      "download": "Nedladdningsfel",
+      "format": "Formatfel",
+      "conflict": "Konfliktfel",
+      "maintenance": "Systemunderhåll"
+    },
+    "success": {
+      "generic": "Åtgärden lyckades",
+      "saved": "Ändringarna sparades",
+      "updated": "Uppdateringen lyckades",
+      "deleted": "Raderingen lyckades",
+      "created": "Skapandet lyckades"
+    },
+    "info": {
+      "loading": "Laddar...",
+      "processing": "Bearbetar...",
+      "waiting": "Vänligen vänta..."
+    }
   }
 }

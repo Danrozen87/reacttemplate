@@ -1,4 +1,3 @@
-
 {
   "common": {
     "ready": "Ready!",
@@ -35,6 +34,37 @@
       "admin": "Logged in as Administrator with full system access.",
       "manager": "Logged in as Manager with team management access.",
       "user": "Logged in as User with personal access."
+    }
+  },
+  "toast": {
+    "errors": {
+      "generic": "An error occurred",
+      "network": "Network error",
+      "unauthorized": "Unauthorized access",
+      "validation": "Validation error",
+      "notFound": "Resource not found",
+      "server": "Server error",
+      "timeout": "Request timeout",
+      "rateLimited": "Too many requests",
+      "database": "Database error",
+      "sync": "Sync error",
+      "upload": "Upload error",
+      "download": "Download error",
+      "format": "Format error",
+      "conflict": "Conflict error",
+      "maintenance": "System maintenance"
+    },
+    "success": {
+      "generic": "Operation successful",
+      "saved": "Changes saved successfully",
+      "updated": "Update successful",
+      "deleted": "Deletion successful",
+      "created": "Creation successful"
+    },
+    "info": {
+      "loading": "Loading...",
+      "processing": "Processing...",
+      "waiting": "Please wait..."
     }
   }
 }
