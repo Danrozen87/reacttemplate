@@ -6,7 +6,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { MailIcon, ArrowLeft } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { AuthInput } from "@/components/atoms/auth-input/auth-input";
+import { AuthLabel } from "@/components/atoms/auth-label/auth-label";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { animations } from "@/utils/animations";
@@ -58,14 +59,16 @@ export function PasswordRecoveryForm({ onBack }: PasswordRecoveryFormProps) {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
-          <Input
-            id="email"
+          <AuthLabel htmlFor="recovery-email" required>
+            {t("auth.email")}
+          </AuthLabel>
+          <AuthInput
+            id="recovery-email"
             type="email"
             placeholder={t("auth.recovery.emailPlaceholder")}
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="font-poppins"
             disabled={isSubmitting}
           />
         </div>

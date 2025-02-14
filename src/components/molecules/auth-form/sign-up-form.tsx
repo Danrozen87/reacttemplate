@@ -1,11 +1,12 @@
+
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Input } from "@/components/ui/input";
+import { ArrowLeft } from "lucide-react";
+import { AuthInput } from "@/components/atoms/auth-input/auth-input";
+import { AuthLabel } from "@/components/atoms/auth-label/auth-label";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { animations } from "@/utils/animations";
-import { ArrowLeft } from "lucide-react";
 
 interface SignUpFormProps {
   onBack: () => void;
@@ -15,24 +16,6 @@ interface SignUpFormProps {
  * @component SignUpForm
  * @description A comprehensive signup form component that handles new user registration
  * with company information collection. Implements full i18n support and accessibility features.
- *
- * @example
- * ```tsx
- * <SignUpForm onBack={() => navigate('/login')} />
- * ```
- *
- * @accessibility
- * - Uses ARIA labels for all inputs
- * - Implements focus management
- * - Provides error announcements
- * - Supports keyboard navigation
- *
- * @i18n
- * - Requires "auth.signup" namespace
- * - Supports en, sv, da, nl languages
- *
- * @param {Object} props
- * @param {() => void} props.onBack - Handler for navigating back to login
  */
 export function SignUpForm({ onBack }: SignUpFormProps) {
   const { t } = useTranslation();
@@ -55,64 +38,72 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
   return (
     <div className={`w-full max-w-md space-y-6 ${animations.modal.content.enter}`}>
       <div className="space-y-2 text-center">
-        <h2 className="text-2xl font-semibold tracking-tight font-poppins">Create an Account</h2>
+        <h2 className="text-2xl font-semibold tracking-tight font-poppins">
+          {t("auth.signup.title")}
+        </h2>
         <p className="text-sm text-muted-foreground font-poppins font-light">
-          Enter your information to get started
+          {t("auth.signup.description")}
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="firstName">First Name</Label>
-            <Input
+            <AuthLabel htmlFor="firstName" required>
+              {t("auth.signup.firstName")}
+            </AuthLabel>
+            <AuthInput
               id="firstName"
-              placeholder="John"
+              placeholder={t("auth.signup.firstNamePlaceholder")}
               required
               disabled={isSubmitting}
-              className="font-poppins bg-input shadow-sm border-input-border"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="lastName">Last Name</Label>
-            <Input
+            <AuthLabel htmlFor="lastName" required>
+              {t("auth.signup.lastName")}
+            </AuthLabel>
+            <AuthInput
               id="lastName"
-              placeholder="Doe"
+              placeholder={t("auth.signup.lastNamePlaceholder")}
               required
               disabled={isSubmitting}
-              className="font-poppins bg-input shadow-sm border-input-border"
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
-          <Input
-            id="email"
+          <AuthLabel htmlFor="signup-email" required>
+            {t("auth.email")}
+          </AuthLabel>
+          <AuthInput
+            id="signup-email"
             type="email"
-            placeholder="john.doe@company.com"
+            placeholder={t("auth.signup.emailPlaceholder")}
             required
             disabled={isSubmitting}
-            className="font-poppins bg-input shadow-sm border-input-border"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="companyName">Company Name</Label>
-          <Input
+          <AuthLabel htmlFor="companyName" required>
+            {t("auth.signup.companyName")}
+          </AuthLabel>
+          <AuthInput
             id="companyName"
-            placeholder="Acme Inc."
+            placeholder={t("auth.signup.companyNamePlaceholder")}
             required
             disabled={isSubmitting}
-            className="font-poppins bg-input shadow-sm border-input-border"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="companySize">Company Size</Label>
+          <AuthLabel htmlFor="companySize" required>
+            {t("auth.signup.companySize")}
+          </AuthLabel>
           <Select disabled={isSubmitting}>
             <SelectTrigger className="w-full font-poppins bg-input shadow-sm border-input-border">
-              <SelectValue placeholder="Select company size" />
+              <SelectValue placeholder={t("auth.signup.companySizePlaceholder")} />
             </SelectTrigger>
             <SelectContent>
               {companySizes.map((size) => (
@@ -133,7 +124,7 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
           className="w-full font-poppins"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Creating Account..." : "Create Account"}
+          {isSubmitting ? t("auth.signup.creating") : t("auth.signup.create")}
         </Button>
 
         <Button
@@ -144,7 +135,7 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
           disabled={isSubmitting}
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
-          {t("auth.recovery.backToLogin")}
+          {t("auth.signup.backToLogin")}
         </Button>
       </form>
     </div>
