@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
  */
 export function AuthHero() {
   const { t } = useTranslation();
-  const [currentImage, setCurrentImage] = useState("/lovable-uploads/997c580c-3303-4d43-92b8-157886dca0e7.png");
+  const [currentImage, setCurrentImage] = useState("/lovable-uploads/4ccb9c72-95ec-4d07-9b1f-64eded2300be.png");
 
   useEffect(() => {
     // Get current page load count from localStorage
@@ -23,8 +23,8 @@ export function AuthHero() {
     // Switch image every 10 loads (0-9 first image, 10-19 second image, etc)
     const shouldUseSecondImage = Math.floor(newCount / 10) % 2 === 1;
     setCurrentImage(shouldUseSecondImage 
-      ? "/lovable-uploads/3c06e17b-d40f-4233-9b25-18e27a30107d.png"
-      : "/lovable-uploads/997c580c-3303-4d43-92b8-157886dca0e7.png"
+      ? "/lovable-uploads/dec206da-ce5b-47f3-bf86-10af90d620a6.png"
+      : "/lovable-uploads/4ccb9c72-95ec-4d07-9b1f-64eded2300be.png"
     );
   }, []);
 

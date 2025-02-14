@@ -4,8 +4,6 @@
  * @description Type definitions for the logging system
  */
 
-import type { ToastOptions } from "@/types/toast";
-
 export type LogLevel = "info" | "warn" | "error";
 
 export type ErrorType = 
@@ -24,6 +22,16 @@ export type ErrorType =
   | "format"
   | "conflict"
   | "maintenance";
+
+export interface ToastOptions {
+  description?: string;
+  duration?: number;
+  action?: {
+    label: string;
+    onClick: () => void;
+    altText?: string;
+  };
+}
 
 export interface LogOptions {
   context?: string;
