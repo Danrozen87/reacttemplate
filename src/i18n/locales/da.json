@@ -32,7 +32,16 @@
       "validation": "Valideringsfejl",
       "unauthorized": "Uautoriseret adgang",
       "notFound": "Ressource ikke fundet",
-      "server": "Der opstod en serverfejl"
+      "server": "Der opstod en serverfejl",
+      "timeout": "Anmodningen udløb",
+      "rateLimited": "For mange anmodninger, prøv igen senere",
+      "database": "Databasehandling mislykkedes",
+      "sync": "Synkroniseringsfejl",
+      "upload": "Filupload mislykkedes",
+      "download": "Fildownload mislykkedes",
+      "format": "Ugyldigt dataformat",
+      "conflict": "Datakonflikt opdaget",
+      "maintenance": "Systemet er under vedligeholdelse"
     }
   }
 }

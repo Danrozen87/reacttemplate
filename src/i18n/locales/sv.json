@@ -32,7 +32,16 @@
       "validation": "Valideringsfel",
       "unauthorized": "Obehörig åtkomst",
       "notFound": "Resursen hittades inte",
-      "server": "Serverfel uppstod"
+      "server": "Serverfel uppstod",
+      "timeout": "Begäran tog för lång tid",
+      "rateLimited": "För många förfrågningar, försök igen senare",
+      "database": "Databasåtgärden misslyckades",
+      "sync": "Synkroniseringsfel",
+      "upload": "Filuppladdningen misslyckades",
+      "download": "Filnedladdningen misslyckades",
+      "format": "Ogiltigt dataformat",
+      "conflict": "Datakonflikt upptäckt",
+      "maintenance": "Systemet är under underhåll"
     }
   }
 }

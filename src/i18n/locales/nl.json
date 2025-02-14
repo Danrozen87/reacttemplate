@@ -32,7 +32,16 @@
       "validation": "Validatiefout",
       "unauthorized": "Ongeautoriseerde toegang",
       "notFound": "Bron niet gevonden",
-      "server": "Er is een serverfout opgetreden"
+      "server": "Er is een serverfout opgetreden",
+      "timeout": "Verzoek is verlopen",
+      "rateLimited": "Te veel verzoeken, probeer het later opnieuw",
+      "database": "Databasebewerking mislukt",
+      "sync": "Synchronisatiefout",
+      "upload": "Bestand uploaden mislukt",
+      "download": "Bestand downloaden mislukt",
+      "format": "Ongeldig gegevensformaat",
+      "conflict": "Gegevensconflict gedetecteerd",
+      "maintenance": "Systeem is in onderhoud"
     }
   }
 }
