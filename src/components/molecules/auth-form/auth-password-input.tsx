@@ -21,7 +21,7 @@ export function AuthPasswordInput({ disabled }: AuthPasswordInputProps) {
           id="password"
           type={showPassword ? "text" : "password"}
           placeholder={t("auth.passwordPlaceholder")}
-          className="bg-white shadow-sm border-input-border placeholder:text-input-placeholder pr-10 font-poppins"
+          className="bg-input shadow-sm border-input-border placeholder:text-input-placeholder pr-10 font-poppins"
           disabled={disabled}
           required
         />

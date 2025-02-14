@@ -1,3 +1,4 @@
+
 @layer base {
   :root {
     /* Base Color Palette - Adjusted for better contrast */
@@ -19,8 +20,8 @@
     --secondary: var(--khaki);
     --secondary-foreground: var(--eggplant);
     
-    /* Input fields with white background for maximum readability */
-    --input: 0 0% 100%;        /* Pure white background */
+    /* Input fields with subtle off-white for light mode */
+    --input: 33 30% 98%;        /* Slightly off-white background */
     --input-foreground: var(--eggplant);
     --input-border: 296 15% 85%; /* Soft border color */
     --input-placeholder: 296 15% 65%; /* Distinct placeholder text */
@@ -62,6 +63,8 @@
     /* Input fields with enhanced dark mode visibility */
     --input: 296 15% 25%;  /* Darker but still visible input background */
     --input-foreground: 108 27% 90%;
+    --input-border: 296 20% 30%;
+    --input-placeholder: 108 27% 50%;
     
     /* 10% - Accents and CTAs optimized for dark mode */
     --primary: var(--soft-orange);
