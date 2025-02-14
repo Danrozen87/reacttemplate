@@ -39,7 +39,7 @@ export function AuthHero() {
         <img
           src={currentImage}
           alt={t("auth.heroImageAlt")}
-          className="h-full w-full object-cover scale-x-[-1]"
+          className="h-full w-full object-cover object-left scale-x-[-1]"
           role="presentation"
           loading="eager"
           fetchPriority="high"
