@@ -6,6 +6,7 @@
     "useDefineForClassFields": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "emitDeclarationOnly": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
@@ -30,7 +31,6 @@
     "strictBindCallApply": true,
     "strictPropertyInitialization": true,
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
