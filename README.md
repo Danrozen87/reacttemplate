@@ -48,6 +48,87 @@
    - Do not use any project-level commands that deviate from these constraints.
 ---
 
+## Documentation Structure & Standards
+
+1. **Component Documentation**
+   - Each component must have its own README.md in its directory
+   - Documentation must include:
+     ```md
+     # ComponentName
+     
+     ## Usage
+     - Basic implementation example
+     - Common use cases
+     - Props interface
+     
+     ## Variants
+     - Available component variations
+     - Configuration options
+     
+     ## Accessibility
+     - ARIA roles and attributes
+     - Keyboard navigation
+     - Screen reader considerations
+     
+     ## i18n
+     - Required translations
+     - Language-specific considerations
+     
+     ## Testing
+     - Test coverage requirements
+     - Important test scenarios
+     ```
+
+2. **Folder Structure Documentation**
+   ```
+   src/
+   ├── components/
+   │   ├── atoms/
+   │   │   └── README.md
+   │   ├── molecules/
+   │   │   └── README.md
+   │   └── organisms/
+   │       └── README.md
+   ├── layouts/
+   │   └── README.md
+   ├── hooks/
+   │   └── README.md
+   └── utils/
+       └── README.md
+   ```
+
+3. **Code Comments & JSDoc**
+   - All components must include JSDoc comments
+   - Type definitions must be documented
+   - Complex logic must include explanatory comments
+   - Example:
+     ```typescript
+     /**
+      * @component
+      * @description Button component with multiple variants
+      * @example
+      * <Button variant="primary">Click me</Button>
+      */
+     ```
+
+4. **Testing Documentation**
+   - Test files must include descriptive comments
+   - Test scenarios must be documented
+   - Coverage requirements must be specified
+   - Example:
+     ```typescript
+     /**
+      * @group unit
+      * @description Tests for Button component
+      * @requirements
+      * - Must handle all click events
+      * - Must support keyboard navigation
+      * - Must be accessible
+      */
+     ```
+
+---
+
 ## Key Guidelines
 
 1. **Atomic File Structure**  
