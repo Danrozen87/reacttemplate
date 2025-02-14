@@ -9,6 +9,8 @@ export const DayColumn = ({
   dayNumber,
   isWeekend,
   isCurrentDay,
+  onClick,
+  onDragOver,
   children 
 }: DayColumnProps) => {
   return (
@@ -25,6 +27,8 @@ export const DayColumn = ({
       role="gridcell"
       aria-label={`Day ${dayNumber}`}
       tabIndex={0}
+      onClick={onClick}
+      onDragOver={onDragOver}
     >
       <span className="absolute top-1 right-1 text-xs text-muted-foreground">
         {dayNumber}

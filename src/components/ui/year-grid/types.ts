@@ -5,6 +5,8 @@ export interface DayColumnProps {
   dayNumber: number;
   isWeekend: boolean;
   isCurrentDay: boolean;
+  onClick?: () => void;
+  onDragOver?: () => void;
   children?: React.ReactNode;
 }
 
