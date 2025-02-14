@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/base-layout";
 import { AuthForm } from "@/components/molecules/auth-form/auth-form";
 import { AuthHero } from "@/components/organisms/auth-hero/auth-hero";
 import { AuthLogo } from "@/components/atoms/auth-logo/auth-logo";
+import { LanguageSwitcher } from "@/components/atoms/language-switcher/language-switcher";
 import { animations } from "@/utils/animations";
 import { useTranslation } from "react-i18next";
 
@@ -25,7 +26,7 @@ const HomePage = () => {
         role="main"
         aria-labelledby="auth-heading"
       >
-        <div className="mb-8">
+        <div className="flex justify-between items-center mb-8">
           <h1 
             id="auth-heading" 
             className="sr-only"
@@ -33,6 +34,7 @@ const HomePage = () => {
             {t("auth.welcome")}
           </h1>
           <AuthLogo />
+          <LanguageSwitcher />
         </div>
         <div className="flex flex-1 items-center justify-center">
           <AuthForm />
