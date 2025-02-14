@@ -4,5 +4,18 @@
     "ready": "Redo",
     "cleanSlate": "Ren början",
     "foundation": "Grundläggande installation pågår"
+  },
+  "components": {
+    "themeSwitcher": {
+      "toggle": "Växla tema",
+      "lightMode": "Byt till ljust läge",
+      "darkMode": "Byt till mörkt läge"
+    },
+    "navbar": {
+      "brand": "Ren början",
+      "aria": {
+        "mainNav": "Huvudnavigering"
+      }
+    }
   }
 }

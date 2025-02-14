@@ -4,5 +4,18 @@
     "ready": "Klar",
     "cleanSlate": "Ren start",
     "foundation": "Grundlæggende opsætning i gang"
+  },
+  "components": {
+    "themeSwitcher": {
+      "toggle": "Skift tema",
+      "lightMode": "Skift til lys tilstand",
+      "darkMode": "Skift til mørk tilstand"
+    },
+    "navbar": {
+      "brand": "Ren start",
+      "aria": {
+        "mainNav": "Hovednavigation"
+      }
+    }
   }
 }

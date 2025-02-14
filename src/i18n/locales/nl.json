@@ -4,5 +4,18 @@
     "ready": "Gereed",
     "cleanSlate": "Schone lei",
     "foundation": "Basisinstallatie in uitvoering"
+  },
+  "components": {
+    "themeSwitcher": {
+      "toggle": "Thema wijzigen",
+      "lightMode": "Overschakelen naar lichte modus",
+      "darkMode": "Overschakelen naar donkere modus"
+    },
+    "navbar": {
+      "brand": "Schone lei",
+      "aria": {
+        "mainNav": "Hoofdnavigatie"
+      }
+    }
   }
 }

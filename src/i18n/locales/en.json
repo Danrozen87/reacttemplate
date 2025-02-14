@@ -4,5 +4,18 @@
     "ready": "Ready",
     "cleanSlate": "Clean Slate",
     "foundation": "Foundation setup in progress"
+  },
+  "components": {
+    "themeSwitcher": {
+      "toggle": "Toggle theme",
+      "lightMode": "Switch to light mode",
+      "darkMode": "Switch to dark mode"
+    },
+    "navbar": {
+      "brand": "Clean Slate",
+      "aria": {
+        "mainNav": "Main navigation"
+      }
+    }
   }
 }
