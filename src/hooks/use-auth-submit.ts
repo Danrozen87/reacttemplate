@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { useToast } from "./use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -9,17 +10,14 @@ interface UseAuthSubmitReturn {
   setEmail: (email: string) => void;
   isSubmitting: boolean;
   handleSubmit: (e: React.FormEvent) => Promise<void>;
-  handleRecovery: (email: string) => Promise<void>;
+  handleRecovery: (email: string) => Promise<boolean>;
+  handleSignUp: (email: string, password: string) => Promise<boolean>;
 }
 
-/**
- * @hook useAuthSubmit
- * @description Custom hook to handle authentication form submission logic with Supabase
- * @returns {UseAuthSubmitReturn} Auth form state and handlers
- */
 export function useAuthSubmit(): UseAuthSubmitReturn {
   const { t } = useTranslation();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -45,6 +43,9 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
         variant: "default",
         className: "bg-background text-foreground border-accent",
       });
+
+      // Navigate to home page after successful login
+      navigate("/dashboard");
     } catch (error: any) {
       toast({
         title: t("auth.loginError"),
@@ -57,7 +58,7 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
     }
   };
 
-  const handleRecovery = async (email: string) => {
+  const handleRecovery = async (email: string): Promise<boolean> => {
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo: window.location.origin + '/auth/reset-password',
@@ -82,11 +83,38 @@ export function useAuthSubmit(): UseAuthSubmitReturn {
     }
   };
 
+  const handleSignUp = async (email: string, password: string): Promise<boolean> => {
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: t("auth.signup.success"),
+        description: t("auth.signup.checkEmail"),
+        duration: 5000,
+      });
+
+      return true;
+    } catch (error: any) {
+      toast({
+        title: t("auth.signup.error"),
+        description: error.message || t("auth.signup.tryAgain"),
+        variant: "destructive",
+      });
+      return false;
+    }
+  };
+
   return {
     email,
     setEmail,
     isSubmitting,
     handleSubmit,
     handleRecovery,
+    handleSignUp,
   };
 }

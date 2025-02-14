@@ -1,28 +1,34 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuthSubmit } from "@/hooks/use-auth-submit";
 import { animations } from "@/utils/animations";
 import { AuthFormHeader } from "./auth-form-header";
 import { AuthFormFields } from "./auth-form-fields";
 import { AuthFormFooter } from "./auth-form-footer";
 import { PasswordRecoveryForm } from "./password-recovery-form";
+import { SignUpForm } from "./sign-up-form";
+import { useTranslation } from "react-i18next";
 
-/**
- * @component AuthForm
- * @description Authentication form with role-based access control
- * @roles
- * - Admin: Full system access
- * - Manager: Team management access
- * - User: Personal access
- */
 export function AuthForm() {
+  const { t } = useTranslation();
   const [isRecoveryMode, setIsRecoveryMode] = useState(false);
+  const [isSignUpMode, setIsSignUpMode] = useState(false);
   const { email, setEmail, isSubmitting, handleSubmit } = useAuthSubmit();
+  const navigate = useNavigate();
 
   if (isRecoveryMode) {
     return (
       <PasswordRecoveryForm 
         onBack={() => setIsRecoveryMode(false)} 
+      />
+    );
+  }
+
+  if (isSignUpMode) {
+    return (
+      <SignUpForm
+        onBack={() => setIsSignUpMode(false)}
       />
     );
   }
@@ -37,7 +43,9 @@ export function AuthForm() {
           isSubmitting={isSubmitting}
           onForgotPassword={() => setIsRecoveryMode(true)}
         />
-        <AuthFormFooter />
+        <AuthFormFooter 
+          onSignUpClick={() => setIsSignUpMode(true)}
+        />
       </form>
     </div>
   );

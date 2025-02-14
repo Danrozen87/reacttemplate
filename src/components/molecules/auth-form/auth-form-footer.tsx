@@ -3,11 +3,11 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { AuthSocialButtons } from "./auth-social-buttons";
 
-/**
- * @component AuthFormFooter
- * @description Footer section of the authentication form with social login and signup link
- */
-export function AuthFormFooter() {
+interface AuthFormFooterProps {
+  onSignUpClick: () => void;
+}
+
+export function AuthFormFooter({ onSignUpClick }: AuthFormFooterProps) {
   const { t } = useTranslation();
 
   return (
@@ -15,7 +15,11 @@ export function AuthFormFooter() {
       <AuthSocialButtons />
       <p className="text-center text-sm text-muted-foreground font-poppins font-light">
         {t("auth.noAccount")}{" "}
-        <Button variant="link" className="font-medium text-primary p-0 font-poppins">
+        <Button 
+          variant="link" 
+          className="font-medium text-primary p-0 font-poppins"
+          onClick={onSignUpClick}
+        >
           {t("auth.signUpNow")}
         </Button>
       </p>
