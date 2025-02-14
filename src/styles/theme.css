@@ -19,11 +19,11 @@
     --secondary: var(--khaki);
     --secondary-foreground: var(--eggplant);
     
-    /* Input fields with more subtle off-white for light mode */
-    --input: 108 20% 94%;        /* More muted, slightly more saturated mint tint */
+    /* Input fields with more subtle tint for light mode */
+    --input: 108 20% 94%;
     --input-foreground: var(--eggplant);
-    --input-border: 296 15% 85%; /* Soft border color */
-    --input-placeholder: 296 15% 65%; /* Distinct placeholder text */
+    --input-border: 296 15% 85%;
+    --input-placeholder: 296 15% 65%;
     
     /* 10% - Accents and CTAs */
     --primary: var(--soft-orange);
@@ -51,6 +51,12 @@
     --background: 296 25% 12%;  /* Even darker background */
     --foreground: 108 27% 90%;  /* Brighter mint for better contrast */
     
+    /* Input fields with enhanced dark mode visibility and subtle tint */
+    --input: 296 15% 20%;
+    --input-foreground: 108 27% 90%;
+    --input-border: 296 20% 30%;
+    --input-placeholder: 108 27% 50%;
+    
     /* 30% - Secondary surfaces with improved dark mode contrast */
     --card: 296 20% 20%;  /* Darker cards */
     --card-foreground: 108 27% 90%;
@@ -58,18 +64,6 @@
     --popover-foreground: 108 27% 90%;
     --secondary: 296 20% 20%;
     --secondary-foreground: 108 27% 90%;
-    
-    /* Input fields with enhanced dark mode visibility */
-    --input: 296 15% 25%;  /* Darker but still visible input background */
-    --input-foreground: 108 27% 90%;
-    --input-border: 296 20% 30%;
-    --input-placeholder: 108 27% 50%;
-    
-    /* 10% - Accents and CTAs optimized for dark mode */
-    --primary: var(--soft-orange);
-    --primary-foreground: 0 0% 100%;
-    --accent: 108 27% 84%;
-    --accent-foreground: 296 25% 12%;
     
     /* Support colors with better dark mode visibility */
     --muted: 296 15% 25%;
