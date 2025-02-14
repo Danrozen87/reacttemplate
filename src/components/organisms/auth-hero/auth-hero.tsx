@@ -50,15 +50,16 @@ export function AuthHero() {
         role="region"
         aria-label={t("auth.heroQuoteSection")}
       >
-        <blockquote className="space-y-2 bg-black/80 p-6 rounded-lg backdrop-blur-sm">
+        <blockquote className="space-y-3 bg-black/80 p-8 rounded-xl backdrop-blur-sm border-l-4 border-primary shadow-lg hover:scale-[1.02] transition-transform duration-300">
           <div className="relative">
-            <span className="absolute -top-8 -left-4 text-4xl text-white/80 font-serif">"</span>
-            <p className="text-lg font-poppins font-light text-white/90 pl-4">
+            <span className="absolute -top-10 -left-6 text-6xl text-primary font-serif rotate-12">"</span>
+            <p className="text-xl font-poppins font-light text-white leading-relaxed pl-6 italic">
               {t("auth.heroQuote")}
             </p>
+            <span className="absolute bottom-0 right-4 text-6xl text-primary/40 font-serif rotate-12">"</span>
           </div>
-          <footer className="text-sm font-poppins text-white/70 pl-4">
-            {t("auth.heroAuthor")}
+          <footer className="text-base font-poppins text-primary/90 pl-6 font-medium">
+            — {t("auth.heroAuthor")}
           </footer>
         </blockquote>
       </div>
