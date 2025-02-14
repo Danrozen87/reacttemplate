@@ -19,7 +19,7 @@ vi.mock('@/hooks/use-toast', () => ({
 
 describe('AuthForm', () => {
   beforeEach(() => {
-    (useToast as jest.Mock<any, any>).mockReturnValue({
+    (useToast as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
       toast: vi.fn()
     });
   });
