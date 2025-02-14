@@ -1,48 +1,52 @@
-# NavBar
+# NavBar Component
 
-Main navigation component that includes theme switching and branding.
+The main navigation bar component that appears at the top of the application.
 
 ## Usage
 ```tsx
 import { NavBar } from "@/components/molecules/nav-bar"
 
 function Layout() {
-  return <NavBar />
+  return (
+    <div>
+      <NavBar />
+      {/* other content */}
+    </div>
+  )
 }
 ```
 
-## Animation Implementation
-- Uses `animate-fade-in` for smooth entry
-- Implements blur backdrop effect using our animation system
-- Responsive transitions for all child components
-- Dark mode support with smooth transitions
+## Features
+- Fixed positioning at the top
+- Responsive design
+- Blur effect on scroll
+- Theme switcher integration
+- Brand logo display
 
 ## Accessibility
-- Semantic HTML: `<nav>` element
-- ARIA landmark: navigation
-- Keyboard navigation: Full support
-- Focus management: Trapped within navigation when menu is open
-- Proper contrast in both light and dark modes
+- Navigation landmark role
+- Proper heading structure
+- Keyboard navigation support
+- Screen reader announcements for navigation sections
 
-## Responsive Design
-- Mobile-first approach
-- Proper spacing with consistent padding (px-4 sm:px-6 lg:px-8)
-- Container usage for centered content
-- Dynamic text sizing for different breakpoints
+## i18n Requirements
+```json
+{
+  "components": {
+    "navbar": {
+      "aria": {
+        "mainNav": "Main navigation"
+      }
+    }
+  }
+}
+```
 
-## Requirements
-- Must use our centralized animation system
-- Must implement proper blur effects
-- Must support dark mode
-- Must follow mobile-first approach
-- Must use container class for centered content
-
-## Testing
-Coverage requirements: 90%
-Test scenarios:
-- Renders all navigation items
-- Theme switcher functions correctly
-- Responsive design works as expected
-- Keyboard navigation works correctly
-- Animations work as expected
-- Dark mode transitions properly
+## Testing Requirements
+- Coverage target: 90%
+- Test scenarios:
+  - Renders all child components
+  - Maintains proper accessibility attributes
+  - Validates responsive behavior
+  - Verifies blur effects
+  - Tests i18n integration
