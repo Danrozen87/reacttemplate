@@ -32,7 +32,16 @@
       "validation": "Validation error",
       "unauthorized": "Unauthorized access",
       "notFound": "Resource not found",
-      "server": "Server error occurred"
+      "server": "Server error occurred",
+      "timeout": "Request timed out",
+      "rateLimited": "Too many requests, please try again later",
+      "database": "Database operation failed",
+      "sync": "Synchronization error",
+      "upload": "File upload failed",
+      "download": "File download failed",
+      "format": "Invalid data format",
+      "conflict": "Data conflict detected",
+      "maintenance": "System is under maintenance"
     }
   }
 }

@@ -8,7 +8,31 @@ import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
 
 type LogLevel = 'info' | 'warn' | 'error';
-type ErrorType = 'generic' | 'network' | 'validation' | 'unauthorized' | 'notFound' | 'server';
+type ErrorType = 
+  | 'generic' 
+  | 'network' 
+  | 'validation' 
+  | 'unauthorized' 
+  | 'notFound' 
+  | 'server'
+  | 'timeout'
+  | 'rateLimited'
+  | 'database'
+  | 'sync'
+  | 'upload'
+  | 'download'
+  | 'format'
+  | 'conflict'
+  | 'maintenance';
+
+interface ToastOptions {
+  description?: string;
+  duration?: number;
+  action?: {
+    label: string;
+    onClick: () => void;
+  };
+}
 
 interface LogOptions {
   context?: string;
@@ -16,6 +40,7 @@ interface LogOptions {
   timestamp?: boolean;
   errorType?: ErrorType;
   showToast?: boolean;
+  toastOptions?: ToastOptions;
 }
 
 const formatMessage = (level: LogLevel, message: string, options?: LogOptions): string => {
@@ -31,11 +56,9 @@ const formatMessage = (level: LogLevel, message: string, options?: LogOptions): 
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-// Error tracking service (replace with your preferred service)
 const errorTrackingService = {
   captureError: (error: Error | string, context?: Record<string, unknown>) => {
     if (isProduction) {
-      // Integration point for services like Sentry, LogRocket, etc.
       console.warn('Error tracking service not implemented:', { error, context });
     }
   }
@@ -48,6 +71,12 @@ export const logger = {
     if (options?.showToast) {
       toast({
         title: message,
+        description: options?.toastOptions?.description,
+        duration: options?.toastOptions?.duration,
+        action: options?.toastOptions?.action ? {
+          onClick: options.toastOptions.action.onClick,
+          children: options.toastOptions.action.label,
+        } : undefined,
         variant: "default"
       });
     }
@@ -59,7 +88,13 @@ export const logger = {
     if (options?.showToast) {
       toast({
         title: message,
-        variant: "default" // Changed from "warning" to "default"
+        description: options?.toastOptions?.description,
+        duration: options?.toastOptions?.duration,
+        action: options?.toastOptions?.action ? {
+          onClick: options.toastOptions.action.onClick,
+          children: options.toastOptions.action.label,
+        } : undefined,
+        variant: "default"
       });
     }
   },
@@ -68,19 +103,23 @@ export const logger = {
     const formattedMessage = formatMessage('error', message, options);
     console.error(formattedMessage, options?.data || '');
     
-    // Capture error in tracking service
     errorTrackingService.captureError(formattedMessage, options?.data);
     
     if (options?.showToast) {
       toast({
         title: message,
+        description: options?.toastOptions?.description,
+        duration: options?.toastOptions?.duration,
+        action: options?.toastOptions?.action ? {
+          onClick: options.toastOptions.action.onClick,
+          children: options.toastOptions.action.label,
+        } : undefined,
         variant: "destructive"
       });
     }
   }
 } as const;
 
-// React hook for using logger with i18n
 export const useLogger = () => {
   const { t } = useTranslation();
   
@@ -96,5 +135,4 @@ export const useLogger = () => {
   };
 };
 
-// Type for consuming code
 export type Logger = typeof logger;

@@ -56,12 +56,46 @@ describe('logger utility', () => {
     expect(console.info).toHaveBeenCalledWith('[INFO] Test with data', { userId: 123, action: 'test' });
   });
 
-  it('should show toast when showToast option is true', () => {
+  it('should show basic toast when showToast option is true', () => {
     const message = 'Test toast message';
     logger.info(message, { showToast: true });
     expect(toast).toHaveBeenCalledWith({
       title: message,
       variant: 'default'
+    });
+  });
+
+  it('should show toast with description when provided', () => {
+    const message = 'Test toast message';
+    const description = 'Additional details about the message';
+    logger.info(message, { 
+      showToast: true,
+      toastOptions: { description }
+    });
+    expect(toast).toHaveBeenCalledWith({
+      title: message,
+      description,
+      variant: 'default'
+    });
+  });
+
+  it('should show toast with action when provided', () => {
+    const message = 'Test toast message';
+    const action = {
+      label: 'Retry',
+      onClick: vi.fn()
+    };
+    logger.error(message, { 
+      showToast: true,
+      toastOptions: { action }
+    });
+    expect(toast).toHaveBeenCalledWith({
+      title: message,
+      action: {
+        onClick: action.onClick,
+        children: action.label
+      },
+      variant: 'destructive'
     });
   });
 
