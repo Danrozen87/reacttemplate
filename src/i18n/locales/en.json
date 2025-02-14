@@ -18,6 +18,16 @@
       }
     }
   },
+  "app": {
+    "aria": {
+      "main": "Main application wrapper",
+      "content": "Main content area"
+    },
+    "errors": {
+      "generic": "An unexpected error occurred",
+      "boundary": "Something went wrong"
+    }
+  },
   "pages": {
     "notFound": {
       "title": "404",

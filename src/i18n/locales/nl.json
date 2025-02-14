@@ -1,4 +1,3 @@
-
 {
   "common": {
     "ready": "Gereed",
@@ -16,6 +15,16 @@
       "aria": {
         "mainNav": "Hoofdnavigatie"
       }
+    }
+  },
+  "app": {
+    "aria": {
+      "main": "Hoofdapplicatie wrapper",
+      "content": "Hoofdinhoudsgebied"
+    },
+    "errors": {
+      "generic": "Er is een onverwachte fout opgetreden",
+      "boundary": "Er is iets misgegaan"
     }
   },
   "pages": {

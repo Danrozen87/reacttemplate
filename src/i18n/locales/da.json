@@ -1,4 +1,3 @@
-
 {
   "common": {
     "ready": "Klar",
@@ -16,6 +15,16 @@
       "aria": {
         "mainNav": "Hovednavigation"
       }
+    }
+  },
+  "app": {
+    "aria": {
+      "main": "Hovedapplikation wrapper",
+      "content": "Hovedindholdsområde"
+    },
+    "errors": {
+      "generic": "Der opstod en uventet fejl",
+      "boundary": "Noget gik galt"
     }
   },
   "pages": {

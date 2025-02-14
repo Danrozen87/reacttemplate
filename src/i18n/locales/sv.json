@@ -1,4 +1,3 @@
-
 {
   "common": {
     "ready": "Redo",
@@ -16,6 +15,16 @@
       "aria": {
         "mainNav": "Huvudnavigering"
       }
+    }
+  },
+  "app": {
+    "aria": {
+      "main": "Huvudapplikationens omslag",
+      "content": "Huvudinnehållsområde"
+    },
+    "errors": {
+      "generic": "Ett oväntat fel inträffade",
+      "boundary": "Något gick fel"
     }
   },
   "pages": {
