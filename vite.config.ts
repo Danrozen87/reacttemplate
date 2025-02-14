@@ -40,7 +40,6 @@ export default defineConfig(({ mode }) => ({
           allowImportingTsExtensions: true,
           resolveJsonModule: true,
           isolatedModules: true,
-          noEmit: true,
           jsx: "react-jsx",
           strict: true,
           noUnusedLocals: true,
