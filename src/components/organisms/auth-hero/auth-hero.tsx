@@ -19,10 +19,10 @@ export function AuthHero() {
         <img
           src="/lovable-uploads/cc2c564c-0d65-46a7-97ae-b00e0abde3d0.png"
           alt={t("auth.heroImageAlt")}
-          className="h-full w-full object-cover opacity-90"
+          className="h-full w-full object-cover opacity-90 dark:opacity-70 transition-opacity duration-300"
           role="presentation"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background to-background/60 dark:from-background dark:to-background/80" />
       </div>
       <div className={`relative z-20 mt-auto ${animations.modal.content.enter}`}>
         <blockquote className="space-y-2">

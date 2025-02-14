@@ -2,28 +2,35 @@
 # Home Feature
 
 ## Overview
-The home feature contains the main landing page of the application.
+The authentication page serves as the main entry point for user access control.
 
 ## Components
-- `pages/index.tsx`: Main landing page component
-
-## Usage
-The home page is the entry point of the application, showing a welcome message and basic status.
-
-## Internationalization
-Requires translations for:
-- common.ready
-- common.cleanSlate
-- common.foundation
-
-## Testing Requirements
-- Component render testing: 100%
-- i18n implementation: 100%
-- Responsive design testing: 90%
-- User interaction: 85%
+- AuthForm: Main authentication form with role-based access
+- AuthHero: Hero section with responsive image and quote
+- AuthLogo: Brand identity component
+- ThemeSwitcher: Dark/light mode toggle
+- LanguageSwitcher: Multi-language support
 
 ## Accessibility
-- Proper heading hierarchy
-- ARIA labels for interactive elements
+- ARIA labels and roles implemented
 - Keyboard navigation support
-- Screen reader compatibility
+- Screen reader optimizations
+- High contrast in both themes
+
+## i18n Requirements
+Supports all required languages:
+- English (en)
+- Swedish (sv)
+- Danish (da)
+- Dutch (nl)
+
+## Testing Coverage
+Required coverage:
+- Form components: 100%
+- Layout components: 75%
+- User interactions: 85%
+
+## User Access Levels
+- Admin: Full system access
+- Manager: Team management access
+- User: Basic access
