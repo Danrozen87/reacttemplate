@@ -44,8 +44,7 @@ export function Calendar({
         ...classNames,
       }}
       components={{
-        Header: CalendarHeader,
-        // Extend with more custom components as needed
+        Caption: CalendarHeader
       }}
       {...props}
     />
