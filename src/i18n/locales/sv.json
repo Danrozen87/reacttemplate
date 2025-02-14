@@ -1,11 +1,8 @@
-
 {
   "common": {
     "ready": "Redo",
     "cleanSlate": "Ren start",
-    "foundation": "Grundläggande installation pågår",
-    "selectLanguage": "Välj språk",
-    "languageChanged": "Språket ändrades till svenska"
+    "foundation": "Grundlæggande installation pågår"
   },
   "auth": {
     "welcome": "Trevligt att se dig igen",
@@ -25,13 +22,55 @@
     "signUpNow": "Registrera dig nu",
     "heroImageAlt": "En rofylld fyrplats med berg och vatten",
     "heroQuote": "Den vackraste upplevelsen vi kan ha är det mystiska. Det är den grundläggande känslan som står vid vaggan för sann konst och sann vetenskap.",
-    "heroAuthor": "Albert Einstein",
-    "loading": "Laddar inloggningssidan",
-    "shortcuts": {
-      "languageSwitcher": "Tryck Alt + L för att fokusera språkväljaren",
-      "signIn": "Tryck Alt + S för att fokusera inloggningsknappen",
-      "password": "Tryck Alt + P för att fokusera lösenordsfältet",
-      "email": "Tryck Alt + E för att fokusera e-postfältet"
+    "heroAuthor": "Albert Einstein"
+  },
+  "components": {
+    "themeSwitcher": {
+      "toggle": "Växla tema",
+      "lightMode": "Byt till ljust läge",
+      "darkMode": "Byt till mörkt läge"
+    },
+    "navbar": {
+      "brand": "Ren start",
+      "aria": {
+        "mainNav": "Huvudnavigation"
+      }
+    }
+  },
+  "app": {
+    "aria": {
+      "main": "Huvudapplikationens omslag",
+      "content": "Huvudinnehållsområde"
+    },
+    "errors": {
+      "generic": "Ett oväntat fel inträffade",
+      "boundary": "Något gick fel"
+    }
+  },
+  "pages": {
+    "notFound": {
+      "title": "404",
+      "message": "Hoppsan! Sidan kunde inte hittas",
+      "returnHome": "Återvänd till startsidan"
+    }
+  },
+  "logger": {
+    "errors": {
+      "generic": "Ett fel uppstod",
+      "network": "Nätverksfel uppstod",
+      "validation": "Valideringsfel",
+      "unauthorized": "Obehörig åtkomst",
+      "notFound": "Resursen hittades inte",
+      "server": "Serverfel uppstod",
+      "timeout": "Begäran tog för lång tid",
+      "rateLimited": "För många förfrågningar, försök igen senare",
+      "database": "Databasåtgärden misslyckades",
+      "sync": "Synkroniseringsfel",
+      "upload": "Filuppladdningen misslyckades",
+      "download": "Filnedladdningen misslyckades",
+      "format": "Ogiltigt dataformat",
+      "conflict": "Datakonflikt upptäckt",
+      "maintenance": "Systemet är under underhåll"
     }
   }
 }
