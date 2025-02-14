@@ -11,6 +11,33 @@ Our theme uses a carefully selected color palette following the 60-30-10 rule:
 - `--khaki`: #C0B39B - Neutral balance
 - `--soft-orange`: #DF986D - Warm accent
 
+### Input Field Design Pattern
+Input fields follow specific design patterns for consistency and accessibility:
+
+#### Light Mode
+```tsx
+// Correct usage with semantic tokens
+<Input className="bg-input border-input-border" />
+
+// Example with proper input styling
+<div className="space-y-2">
+  <Label>Field Label</Label>
+  <Input className="bg-input shadow-sm border-input-border placeholder:text-input-placeholder" />
+</div>
+```
+
+Properties:
+- Background: Subtle off-white (--input: 33 30% 98%)
+- Border: Soft contrast (--input-border: 296 15% 85%)
+- Placeholder: Distinct but subtle (--input-placeholder: 296 15% 65%)
+
+#### Dark Mode
+Properties:
+- Background: Darker shade (--input: 296 15% 25%)
+- Text: High contrast (--input-foreground: 108 27% 90%)
+- Border: Visible edge (--input-border: 296 20% 30%)
+- Placeholder: Balanced visibility (--input-placeholder: 108 27% 50%)
+
 ### Usage Distribution
 - **60%** Primary/Background
 - **30%** Secondary/Surface colors

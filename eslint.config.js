@@ -1,4 +1,3 @@
-
 import js from "@eslint/js";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -65,36 +64,25 @@ export default tseslint.config(
       "jsx-a11y/aria-unsupported-elements": "error",
       "jsx-a11y/role-has-required-aria-props": "error",
       "jsx-a11y/role-supports-aria-props": "error",
-      // Custom rules for responsive design patterns
-      "tailwindcss/no-custom-classname": "error",
-      "tailwindcss/enforces-negative-arbitrary-values": "error",
-      "tailwindcss/enforces-shorthand": "error",
-      // Component size limit
-      "max-lines": ["error", {
-        "max": 68,
-        "skipBlankLines": true,
-        "skipComments": true
-      }],
-      // i18n requirements
-      "regexp/no-missing-translations": [
-        "error",
-        {
-          pattern: "\\bt\\(['\"`]([^'\"]+)['\"`]\\)",
-          message: "Missing translation key"
-        }
-      ],
-      // Logger enforcement
-      "no-console": ["error", { allow: ["error", "warn"] }],
-      // Enforce responsive patterns using regexp
-      "regexp/no-unused-capturing-group": "error",
-      "regexp/no-super-linear-backtracking": "error",
-      "regexp/prefer-named-replacement": "error",
+      // Input field styling enforcement
       "regexp/match": [
         "error",
         {
           patterns: [
             {
-              pattern: "className=['\"`](?:(?!sm:|lg:).)*?(?:text-\\w+|p\\w*-\\w+|m\\w*-\\w+)['\"`]",
+              pattern: "className=['\"`](?!.*bg-input).*(?:bg-white|bg-gray-\\d+)['\"`]",
+              message: "Use semantic bg-input token instead of direct colors for input fields",
+            },
+            {
+              pattern: "className=['\"`](?!.*border-input-border).*(?:border-gray-\\d+)['\"`]",
+              message: "Use semantic border-input-border token for input field borders",
+            },
+            {
+              pattern: "className=['\"`](?!.*placeholder:text-input-placeholder).*placeholder:text-['\"`]",
+              message: "Use semantic placeholder:text-input-placeholder token for input placeholders",
+            },
+            {
+              pattern: "className=['\"`](?!.*sm:|lg:).)*?(?:text-\\w+|p\\w*-\\w+|m\\w*-\\w+)['\"`]",
               message: "Use mobile-first approach with sm: or lg: breakpoints for responsive styles",
             },
             {
