@@ -51,14 +51,16 @@ export function LanguageSwitcher() {
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className={`${animations.modal.content.enter} bg-background`}
+        className={`${animations.modal.content.enter} bg-background dark:bg-gray-800 border dark:border-gray-700`}
       >
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code)}
-            className={`cursor-pointer ${
-              i18n.language === lang.code ? "bg-accent text-accent-foreground" : ""
+            className={`cursor-pointer font-poppins text-sm ${
+              i18n.language === lang.code 
+                ? "bg-accent text-accent-foreground dark:bg-gray-700 dark:text-white" 
+                : "text-foreground dark:text-gray-200 hover:bg-accent/10 dark:hover:bg-gray-700"
             }`}
           >
             {lang.label}
