@@ -17,5 +17,12 @@
         "mainNav": "Main navigation"
       }
     }
+  },
+  "pages": {
+    "notFound": {
+      "title": "404",
+      "message": "Oops! Page not found",
+      "returnHome": "Return to Home"
+    }
   }
 }

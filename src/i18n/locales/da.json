@@ -17,5 +17,12 @@
         "mainNav": "Hovednavigation"
       }
     }
+  },
+  "pages": {
+    "notFound": {
+      "title": "404",
+      "message": "Ups! Siden blev ikke fundet",
+      "returnHome": "Tilbage til forsiden"
+    }
   }
 }

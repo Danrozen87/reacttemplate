@@ -17,5 +17,12 @@
         "mainNav": "Huvudnavigering"
       }
     }
+  },
+  "pages": {
+    "notFound": {
+      "title": "404",
+      "message": "Hoppsan! Sidan kunde inte hittas",
+      "returnHome": "Återvänd till startsidan"
+    }
   }
 }
