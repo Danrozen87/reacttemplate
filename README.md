@@ -59,6 +59,13 @@
    - Ensure each major function, interface, and component is documented with standard JSDoc format, including parameter and return type annotations.
    - This approach increases code clarity for both human maintainers and AI-based tools, ensuring accurate suggestions and improved collaboration across the team.
 
+11. **User Access Levels**  
+   - Prepare the frontend for three distinct roles: **Admin**, **Manager**, and **User**.  
+   - **Admin** always has full read/write privileges across all content.  
+   - **Manager** can read/write only for the users (or teams) they manage.  
+   - **User** has read/write access **exclusively** for their own content or pages.  
+   - All new UI components and features must respect these roles and permissions in **every** delivery, ensuring a consistent foundation for future backend integration.
+
 ---
 
 ## Documentation Structure & Standards
