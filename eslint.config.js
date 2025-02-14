@@ -1,3 +1,4 @@
+
 import js from "@eslint/js";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -64,6 +65,26 @@ export default tseslint.config(
       "jsx-a11y/aria-unsupported-elements": "error",
       "jsx-a11y/role-has-required-aria-props": "error",
       "jsx-a11y/role-supports-aria-props": "error",
+      // Custom rules for responsive design patterns
+      "tailwindcss/no-custom-classname": "error",
+      "tailwindcss/enforces-negative-arbitrary-values": "error",
+      "tailwindcss/enforces-shorthand": "error",
+      // Component size limit
+      "max-lines": ["error", {
+        "max": 68,
+        "skipBlankLines": true,
+        "skipComments": true
+      }],
+      // i18n requirements
+      "regexp/no-missing-translations": [
+        "error",
+        {
+          pattern: "\\bt\\(['\"`]([^'\"]+)['\"`]\\)",
+          message: "Missing translation key"
+        }
+      ],
+      // Logger enforcement
+      "no-console": ["error", { allow: ["error", "warn"] }],
       // Input field styling enforcement
       "regexp/match": [
         "error",
