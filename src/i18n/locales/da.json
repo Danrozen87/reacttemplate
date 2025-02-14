@@ -4,53 +4,24 @@
     "cleanSlate": "Ren start",
     "foundation": "Grundlæggende opsætning i gang"
   },
-  "components": {
-    "themeSwitcher": {
-      "toggle": "Skift tema",
-      "lightMode": "Skift til lys tilstand",
-      "darkMode": "Skift til mørk tilstand"
-    },
-    "navbar": {
-      "brand": "Ren start",
-      "aria": {
-        "mainNav": "Hovednavigation"
-      }
-    }
-  },
-  "app": {
-    "aria": {
-      "main": "Hovedapplikation wrapper",
-      "content": "Hovedindholdsområde"
-    },
-    "errors": {
-      "generic": "Der opstod en uventet fejl",
-      "boundary": "Noget gik galt"
-    }
-  },
-  "pages": {
-    "notFound": {
-      "title": "404",
-      "message": "Ups! Siden blev ikke fundet",
-      "returnHome": "Tilbage til forsiden"
-    }
-  },
-  "logger": {
-    "errors": {
-      "generic": "Der opstod en fejl",
-      "network": "Der opstod en netværksfejl",
-      "validation": "Valideringsfejl",
-      "unauthorized": "Uautoriseret adgang",
-      "notFound": "Ressource ikke fundet",
-      "server": "Der opstod en serverfejl",
-      "timeout": "Anmodningen udløb",
-      "rateLimited": "For mange anmodninger, prøv igen senere",
-      "database": "Databasehandling mislykkedes",
-      "sync": "Synkroniseringsfejl",
-      "upload": "Filupload mislykkedes",
-      "download": "Fildownload mislykkedes",
-      "format": "Ugyldigt dataformat",
-      "conflict": "Datakonflikt opdaget",
-      "maintenance": "Systemet er under vedligeholdelse"
-    }
+  "auth": {
+    "welcome": "Dejligt at se dig igen",
+    "signInToContinue": "Log ind for at fortsætte til din konto",
+    "emailOrPhone": "E-mail eller telefonnummer",
+    "emailOrPhonePlaceholder": "Indtast din e-mail eller telefonnummer",
+    "password": "Adgangskode",
+    "passwordPlaceholder": "Indtast din adgangskode",
+    "showPassword": "Vis adgangskode",
+    "hidePassword": "Skjul adgangskode",
+    "rememberMe": "Husk mig",
+    "forgotPassword": "Glemt adgangskode?",
+    "signIn": "Log ind",
+    "orContinueWith": "Eller fortsæt med",
+    "signInWithGoogle": "Log ind med Google",
+    "noAccount": "Har du ikke en konto?",
+    "signUpNow": "Tilmeld dig nu",
+    "heroImageAlt": "Et fredfyldt fyrtårn med bjerge og vand",
+    "heroQuote": "Den smukkeste oplevelse vi kan have er det mystiske. Det er den grundlæggende følelse, der står ved vuggen til sand kunst og sand videnskab.",
+    "heroAuthor": "Albert Einstein"
   }
 }

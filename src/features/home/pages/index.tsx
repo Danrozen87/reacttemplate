@@ -1,34 +1,26 @@
 
-/**
- * @component HomePage
- * @description Main landing page component of the application
- */
 import BaseLayout from "@/layouts/base-layout";
-import { useTranslation } from "react-i18next";
+import { AuthForm } from "@/components/molecules/auth-form/auth-form";
+import { AuthHero } from "@/components/organisms/auth-hero/auth-hero";
+import { AuthLogo } from "@/components/atoms/auth-logo/auth-logo";
 import { animations } from "@/utils/animations";
 
 const HomePage = () => {
-  const { t } = useTranslation();
-
   return (
-    <BaseLayout>
-      <div className="flex items-center justify-center min-h-[80vh] px-4 sm:px-6 lg:px-8">
-        <div className={`text-center space-y-4 sm:space-y-6 ${animations.modal.content.enter} max-w-[90%] sm:max-w-[80%] lg:max-w-[60%]`}>
-          <div className="inline-flex items-center justify-center">
-            <span className={`text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 rounded-full bg-primary/10 text-primary dark:bg-primary/20 ${animations.modal.content.enter}`}>
-              {t("common.ready")}
-            </span>
+    <div className="h-screen">
+      <div className="container relative h-full flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+        <div className="relative h-full flex-col bg-background p-10 text-foreground dark:border-r md:flex">
+          <div className="absolute right-4 top-4 md:right-8 md:top-8">
+            <AuthLogo />
           </div>
-          <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground dark:text-foreground ${animations.modal.content.enter} animate-in fade-in slide-in-from-bottom duration-500`}>
-            {t("common.cleanSlate")}
-          </h1>
-          <p className={`text-base sm:text-lg font-light text-muted-foreground dark:text-muted-foreground ${animations.modal.content.enter} animate-in fade-in slide-in-from-bottom duration-700 delay-200`}>
-            {t("common.foundation")}
-          </p>
+          <div className="flex items-center justify-center h-full">
+            <AuthForm />
+          </div>
         </div>
+        <AuthHero />
       </div>
-    </BaseLayout>
+    </div>
   );
-}
+};
 
 export default HomePage;

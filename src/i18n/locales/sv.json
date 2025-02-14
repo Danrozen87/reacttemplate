@@ -1,8 +1,28 @@
 {
   "common": {
     "ready": "Redo",
-    "cleanSlate": "Ren början",
-    "foundation": "Grundläggande installation pågår"
+    "cleanSlate": "Ren start",
+    "foundation": "Grundlæggande installation pågår"
+  },
+  "auth": {
+    "welcome": "Trevligt att se dig igen",
+    "signInToContinue": "Logga in för att fortsätta till ditt konto",
+    "emailOrPhone": "E-post eller telefonnummer",
+    "emailOrPhonePlaceholder": "Ange din e-post eller telefonnummer",
+    "password": "Lösenord",
+    "passwordPlaceholder": "Ange ditt lösenord",
+    "showPassword": "Visa lösenord",
+    "hidePassword": "Dölj lösenord",
+    "rememberMe": "Kom ihåg mig",
+    "forgotPassword": "Glömt lösenord?",
+    "signIn": "Logga in",
+    "orContinueWith": "Eller fortsätt med",
+    "signInWithGoogle": "Logga in med Google",
+    "noAccount": "Har du inget konto?",
+    "signUpNow": "Registrera dig nu",
+    "heroImageAlt": "En rofylld fyrplats med berg och vatten",
+    "heroQuote": "Den vackraste upplevelsen vi kan ha är det mystiska. Det är den grundläggande känslan som står vid vaggan för sann konst och sann vetenskap.",
+    "heroAuthor": "Albert Einstein"
   },
   "components": {
     "themeSwitcher": {
@@ -11,9 +31,9 @@
       "darkMode": "Byt till mörkt läge"
     },
     "navbar": {
-      "brand": "Ren början",
+      "brand": "Ren start",
       "aria": {
-        "mainNav": "Huvudnavigering"
+        "mainNav": "Huvudnavigation"
       }
     }
   },

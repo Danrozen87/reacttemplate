@@ -5,6 +5,26 @@
     "cleanSlate": "Clean Slate",
     "foundation": "Foundation setup in progress"
   },
+  "auth": {
+    "welcome": "Nice to see you again",
+    "signInToContinue": "Sign in to continue to your account",
+    "emailOrPhone": "Email or phone number",
+    "emailOrPhonePlaceholder": "Enter your email or phone number",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign in",
+    "orContinueWith": "Or continue with",
+    "signInWithGoogle": "Sign in with Google",
+    "noAccount": "Don't have an account?",
+    "signUpNow": "Sign up now",
+    "heroImageAlt": "A serene lighthouse view with mountains and water",
+    "heroQuote": "The most beautiful experience we can have is the mysterious. It is the fundamental emotion that stands at the cradle of true art and true science.",
+    "heroAuthor": "Albert Einstein"
+  },
   "components": {
     "themeSwitcher": {
       "toggle": "Toggle theme",

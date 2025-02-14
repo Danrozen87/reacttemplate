@@ -1,8 +1,28 @@
 {
   "common": {
-    "ready": "Gereed",
+    "ready": "Klaar",
     "cleanSlate": "Schone lei",
     "foundation": "Basisinstallatie in uitvoering"
+  },
+  "auth": {
+    "welcome": "Leuk je weer te zien",
+    "signInToContinue": "Log in om door te gaan naar je account",
+    "emailOrPhone": "E-mail of telefoonnummer",
+    "emailOrPhonePlaceholder": "Voer je e-mail of telefoonnummer in",
+    "password": "Wachtwoord",
+    "passwordPlaceholder": "Voer je wachtwoord in",
+    "showPassword": "Toon wachtwoord",
+    "hidePassword": "Verberg wachtwoord",
+    "rememberMe": "Onthoud mij",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "signIn": "Inloggen",
+    "orContinueWith": "Of ga verder met",
+    "signInWithGoogle": "Inloggen met Google",
+    "noAccount": "Heb je geen account?",
+    "signUpNow": "Registreer nu",
+    "heroImageAlt": "Een sereen vuurtoren uitzicht met bergen en water",
+    "heroQuote": "De mooiste ervaring die we kunnen hebben is het mysterieuze. Het is de fundamentele emotie die aan de wieg staat van ware kunst en ware wetenschap.",
+    "heroAuthor": "Albert Einstein"
   },
   "components": {
     "themeSwitcher": {
