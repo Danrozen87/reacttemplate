@@ -1,4 +1,3 @@
-
 import { useTranslation } from "react-i18next";
 import { animations } from "@/utils/animations";
 import { useEffect, useState } from "react";
@@ -56,7 +55,6 @@ export function AuthHero() {
             <p className="text-xl font-poppins font-light text-white leading-relaxed pl-6 italic">
               {t("auth.heroQuote")}
             </p>
-            <span className="absolute -bottom-6 right-2 text-7xl text-primary/60 font-serif opacity-90 hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">"</span>
           </div>
           <footer className="text-base font-poppins text-primary/90 pl-6 font-medium">
             — {t("auth.heroAuthor")}
