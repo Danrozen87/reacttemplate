@@ -2,6 +2,7 @@
 import * as React from "react"
 import { Menu, X } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { NavigationMobileProps } from "./types"
