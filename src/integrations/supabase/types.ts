@@ -30,6 +30,24 @@ export type Database = {
         }
         Relationships: []
       }
+      typescript_config: {
+        Row: {
+          config: Json
+          created_at: string | null
+          id: string
+        }
+        Insert: {
+          config: Json
+          created_at?: string | null
+          id?: string
+        }
+        Update: {
+          config?: Json
+          created_at?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string

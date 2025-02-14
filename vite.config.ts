@@ -26,6 +26,28 @@ export default defineConfig(({ mode }) => ({
     },
   },
   optimizeDeps: {
-    exclude: ['ts-node']
+    exclude: ['ts-node'],
+    esbuildOptions: {
+      tsconfig: 'tsconfig.json',
+      tsconfigRaw: {
+        compilerOptions: {
+          target: "ES2020",
+          useDefineForClassFields: true,
+          lib: ["ES2020", "DOM", "DOM.Iterable"],
+          module: "ESNext",
+          skipLibCheck: true,
+          moduleResolution: "bundler",
+          allowImportingTsExtensions: true,
+          resolveJsonModule: true,
+          isolatedModules: true,
+          noEmit: true,
+          jsx: "react-jsx",
+          strict: true,
+          noUnusedLocals: true,
+          noUnusedParameters: true,
+          noFallthroughCasesInSwitch: true
+        }
+      }
+    }
   }
 }));
