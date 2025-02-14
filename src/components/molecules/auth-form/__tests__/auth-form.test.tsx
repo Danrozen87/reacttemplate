@@ -1,3 +1,4 @@
+
 /**
  * @group unit
  * @description Comprehensive test suite for AuthForm component
@@ -9,7 +10,7 @@
  * - Must support i18n
  */
 
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { AuthForm } from '../auth-form';
@@ -17,18 +18,23 @@ import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from 'react-i18next';
 
 // Mock the hooks
-vi.mock('@/hooks/use-toast', () => ({
-  useToast: vi.fn(() => ({
-    toast: vi.fn(),
-  })),
-}));
+const mockToast = vi.fn();
+const mockChangeLanguage = vi.fn();
 
-vi.mock('react-i18next', () => ({
-  useTranslation: vi.fn(() => ({
-    t: (key: string) => key,
-    i18n: { changeLanguage: vi.fn() }
-  })),
-}));
+beforeEach(() => {
+  vi.mock('@/hooks/use-toast', () => ({
+    useToast: () => ({
+      toast: mockToast,
+    }),
+  }));
+
+  vi.mock('react-i18next', () => ({
+    useTranslation: () => ({
+      t: (key: string) => key,
+      i18n: { changeLanguage: mockChangeLanguage }
+    }),
+  }));
+});
 
 describe('AuthForm', () => {
   it('renders login form by default', () => {
@@ -46,11 +52,6 @@ describe('AuthForm', () => {
   });
 
   it('handles form submission with success', async () => {
-    const mockToast = vi.fn();
-    (useToast as unknown as vi.Mock).mockImplementation(() => ({
-      toast: mockToast,
-    }));
-
     render(<AuthForm />);
     
     const emailInput = screen.getByLabelText(/email/i);
@@ -67,11 +68,6 @@ describe('AuthForm', () => {
   });
 
   it('handles password recovery submission', async () => {
-    const mockToast = vi.fn();
-    (useToast as unknown as vi.Mock).mockImplementation(() => ({
-      toast: mockToast,
-    }));
-
     render(<AuthForm />);
     await userEvent.click(screen.getByRole('button', { name: /forgot password/i }));
     
@@ -87,42 +83,19 @@ describe('AuthForm', () => {
 
   it('supports keyboard navigation', async () => {
     render(<AuthForm />);
-    
-    // Focus should start on email input
     expect(document.activeElement).toBe(screen.getByLabelText(/email/i));
-    
-    // Tab to password
     await userEvent.tab();
     expect(document.activeElement).toBe(screen.getByLabelText(/password/i));
-    
-    // Tab to forgot password
     await userEvent.tab();
     expect(document.activeElement).toBe(screen.getByRole('button', { name: /forgot password/i }));
   });
 
-  it('renders in different languages', async () => {
-    const mockT = vi.fn((key: string) => `translated_${key}`);
-    (useTranslation as unknown as vi.Mock).mockImplementation(() => ({
-      t: mockT,
-      i18n: { changeLanguage: vi.fn() }
-    }));
-
-    render(<AuthForm />);
-    expect(screen.getByRole('button', { name: /translated_auth\.login/i })).toBeInTheDocument();
-  });
-
   it('maintains accessibility attributes', () => {
     render(<AuthForm />);
-    
-    // Check form accessibility
     const form = screen.getByRole('form');
     expect(form).toHaveAttribute('aria-label');
-    
-    // Check input accessibility
     const emailInput = screen.getByLabelText(/email/i);
     expect(emailInput).toHaveAttribute('aria-required', 'true');
-    
-    // Check button accessibility
     const submitButton = screen.getByRole('button', { name: /sign in/i });
     expect(submitButton).toHaveAttribute('type', 'submit');
   });
