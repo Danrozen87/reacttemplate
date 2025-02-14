@@ -1,5 +1,5 @@
 
-import { State, Action, TOAST_REMOVE_DELAY } from "./types";
+import { State, Action, TOAST_REMOVE_DELAY, ToasterToast } from "./types";
 
 export const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>();
 
@@ -24,16 +24,14 @@ export const reducer = (state: State, action: Action): State => {
     case "ADD_TOAST":
       return {
         ...state,
-        toasts: [action.toast as ToasterToast, ...state.toasts].slice(0, 1),
+        toasts: [action.toast, ...state.toasts].slice(0, 1),
       };
 
     case "UPDATE_TOAST":
       return {
         ...state,
         toasts: state.toasts.map((t) =>
-          t.id === (action.toast as Partial<ToasterToast>).id 
-            ? { ...t, ...(action.toast as Partial<ToasterToast>) } 
-            : t
+          t.id === action.toast.id ? { ...t, ...action.toast } : t
         ),
       };
 

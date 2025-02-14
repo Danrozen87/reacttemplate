@@ -26,14 +26,10 @@ export const actionTypes: ActionTypes = {
 
 export type Action =
   | {
-      type: keyof ActionTypes;
+      type: "ADD_TOAST" | "UPDATE_TOAST";
       toast: ToasterToast;
     }
   | {
-      type: keyof ActionTypes;
-      toast: Partial<ToasterToast>;
-    }
-  | {
-      type: keyof ActionTypes;
+      type: "DISMISS_TOAST" | "REMOVE_TOAST";
       toastId?: string;
     };
