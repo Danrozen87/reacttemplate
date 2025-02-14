@@ -5,7 +5,11 @@ import { Eye, EyeOff } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export function AuthPasswordInput() {
+interface AuthPasswordInputProps {
+  disabled?: boolean;
+}
+
+export function AuthPasswordInput({ disabled }: AuthPasswordInputProps) {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -17,13 +21,16 @@ export function AuthPasswordInput() {
           id="password"
           type={showPassword ? "text" : "password"}
           placeholder={t("auth.passwordPlaceholder")}
-          className="bg-muted/50 pr-10"
+          className="bg-muted/50 pr-10 font-poppins"
+          disabled={disabled}
+          required
         />
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
           className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
           aria-label={t(showPassword ? "auth.hidePassword" : "auth.showPassword")}
+          disabled={disabled}
         >
           {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
         </button>
