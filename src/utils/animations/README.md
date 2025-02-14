@@ -37,3 +37,4 @@ import { animations } from '@/utils/animations';
   - Animation class application
   - Reduced motion preferences
   - Blur effect application
+

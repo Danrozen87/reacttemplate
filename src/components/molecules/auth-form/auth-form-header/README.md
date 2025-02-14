@@ -53,3 +53,4 @@ Key scenarios:
 - Responsive behavior
 - i18n rendering
 - Accessibility compliance
+

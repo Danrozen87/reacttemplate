@@ -8,3 +8,4 @@ export interface AuthFormState {
 export interface AuthFormProps {
   className?: string;
 }
+
