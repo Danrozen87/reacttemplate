@@ -76,41 +76,15 @@
   }
 }
 
-/* Base styles for better typography and spacing */
+/* Typography classes with Poppins integration */
 @layer base {
   * {
     @apply border-border selection:bg-primary/10 selection:text-primary;
   }
   
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground font-poppins antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
-  }
-
-  /* Typography scale with improved contrast ratios */
-  h1, .h1 {
-    @apply font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight;
-  }
-
-  h2, .h2 {
-    @apply font-bold text-3xl md:text-4xl lg:text-5xl tracking-tight;
-  }
-
-  h3, .h3 {
-    @apply font-bold text-2xl md:text-3xl lg:text-4xl;
-  }
-
-  h4, .h4 {
-    @apply font-bold text-xl md:text-2xl lg:text-3xl;
-  }
-
-  p, .body {
-    @apply font-light text-base md:text-lg leading-relaxed;
-  }
-
-  /* Links with improved visibility */
-  a {
-    @apply text-primary hover:text-primary/80 transition-colors duration-200;
   }
 }
 
