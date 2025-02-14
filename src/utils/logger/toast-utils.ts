@@ -8,14 +8,12 @@ export const DEFAULT_TOAST_DURATION = 5000;
 export const createToastAction = (action: ToastOptions['action']): ToastActionElement | undefined => {
   if (!action) return undefined;
   
-  return (
-    <ToastAction 
-      onClick={action.onClick}
-      altText={`Action: ${action.label}`}
-    >
-      {action.label}
-    </ToastAction>
-  );
+  // Using JSX factory function instead of JSX syntax since this is a .ts file
+  return ToastAction({
+    onClick: action.onClick,
+    altText: `Action: ${action.label}`,
+    children: action.label
+  }) as ToastActionElement;
 };
 
 export const showToast = (
