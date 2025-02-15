@@ -1,5 +1,6 @@
 
 import { ParsedProp } from './types';
+import { extractTag } from './tag-extractor';
 
 /**
  * Extracts interface properties from JSDoc comment
@@ -21,6 +22,3 @@ export function extractProps(source: string): ParsedProp[] {
 
   return props;
 }
-
-// Helper function import
-import { extractTag } from './tag-extractor';
