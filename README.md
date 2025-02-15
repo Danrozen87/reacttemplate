@@ -14,7 +14,8 @@
 1. **React** (Best Practice Implementation)  
    - Keep the developer experience in mind for easy handover.  
    - No custom experimental patterns; only well-established, best-in-class solutions.
-  - Consistent patterns throughout all of our work. 
+   - Consistent patterns throughout all of our work.
+   - Maintain a zero-warning codebase.
 
 2. **TypeScript** (Strict)  
    - Avoid the `any` type; create and maintain clean, custom interfaces/types.
