@@ -258,5 +258,38 @@
    # Run tests with coverage
    npm run test:coverage
 
+
+# Refactoring Best Practices
+
+Refactoring is the systematic process of improving existing code without altering its behavior. It helps maintain readability, performance, and long-term maintainability.
+
+## 1. Small, Incremental Changes
+- **Isolate Changes**: Make one improvement at a time (e.g., extract a function, rename a variable).
+- **Frequent Commits**: Allows easy rollback and clear tracking of each refactoring step.
+
+## 2. Preserve Existing Functionality
+- **Automated Testing**: Write or run tests before and after refactoring to confirm behavior remains the same.
+- **Test Often**: If test coverage is lacking, add tests first to ensure safe refactors.
+
+## 3. Improve Code Clarity
+- **Rename for Meaning**: Favor descriptive function, variable, and component names.
+- **Remove Dead Code**: Eliminate unused imports, variables, or functions to reduce confusion.
+
+## 4. Maintain Atomic Structure
+- **Component Splitting**: If a file is too long or handles multiple responsibilities, break it into smaller, reusable components.
+- **Limit Lines of Code**: Enforce a practical limit (e.g., ≤ 68 lines) per file to keep it manageable.
+
+## 5. Check Dependencies & Complexity
+- **Minimize External Libraries**: Only keep what’s truly necessary.
+- **Simplify Logic**: When refactoring, consider if you can remove nesting, break out complex loops, or reduce complexity.
+
+## 6. Document as You Go
+- **Commented Changes**: Briefly explain why a refactor was done.
+- **Update README**: If the code structure changes significantly, update documentation accordingly.
+
+---
+
+> Refactoring ensures the codebase remains flexible, readable, and easy to collaborate on. By making small, tested changes, you minimize risk and steadily improve your code’s quality.
+
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
 
