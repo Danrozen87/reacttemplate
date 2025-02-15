@@ -22,6 +22,7 @@
 3. **Tailwind CSS + Animate**  
    - **No inline CSS**—enforce a centralized theming for consistent styling.  
    - **No Tailwind Merge** libraries.  
+   - **theme.css file is an exception to our line constraints of 68 lines of code.  
    - ** Centralized Theme, style and font systems. 
    - ** Use of Poppins font with Bold for headers, regular for subtitles and light for headers font weight.
    - ** Dark Mode & Light Mode should mirror best UX practices. Follow our established color scheme for Light and Dark mode to perfection.
@@ -255,7 +256,6 @@
 
    # Run tests with coverage
    npm run test:coverage
-
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
 
