@@ -1,0 +1,125 @@
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Component Documentation Schema",
+  "type": "object",
+  "required": [
+    "component",
+    "version",
+    "category",
+    "description",
+    "example",
+    "interface",
+    "accessibility",
+    "i18n",
+    "testing",
+    "styling"
+  ],
+  "properties": {
+    "component": {
+      "type": "string",
+      "pattern": "^[A-Z][a-zA-Z]+$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["atom", "molecule", "organism"]
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "example": {
+      "type": "string",
+      "minLength": 10
+    },
+    "interface": {
+      "type": "object",
+      "required": ["props", "exports"],
+      "properties": {
+        "props": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "type", "required", "description"],
+            "properties": {
+              "name": { "type": "string" },
+              "type": { "type": "string" },
+              "required": { "type": "boolean" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "exports": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "required": ["role", "aria", "keyboardInteractions"],
+      "properties": {
+        "role": { "type": "string" },
+        "aria": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "keyboardInteractions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "i18n": {
+      "type": "object",
+      "required": ["supportedLanguages", "requiredKeys", "rtlSupport"],
+      "properties": {
+        "supportedLanguages": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 4
+        },
+        "requiredKeys": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "rtlSupport": { "type": "boolean" }
+      }
+    },
+    "testing": {
+      "type": "object",
+      "required": ["coverage", "priority", "scenarios"],
+      "properties": {
+        "coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "priority": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "scenarios": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "styling": {
+      "type": "object",
+      "required": ["themeTokens", "responsive", "darkMode"],
+      "properties": {
+        "themeTokens": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "responsive": { "type": "boolean" },
+        "darkMode": { "type": "boolean" }
+      }
+    }
+  }
+}
