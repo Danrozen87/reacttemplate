@@ -27,4 +27,3 @@ describe('AuthHero', () => {
     expect(heroSection).toHaveAttribute('aria-label', 'auth.heroSection');
   });
 });
-
