@@ -1,44 +1,71 @@
 
-# Typography System
+# Styles Directory Documentation
 
-## Overview
-Our typography system is built on the Poppins font family with a carefully crafted scale and weight system.
+This directory contains all global styling configurations and utilities for the project.
 
-## Font Weights
-- Light (300): Body text, subtle content
-- Regular (400): Default text, interactive elements
-- Bold (700): Headings, emphasis
+## File Structure
 
-## Type Scale
-### Headings
-- H1: 4xl -> 5xl -> 6xl (mobile -> tablet -> desktop)
-- H2: 3xl -> 4xl -> 5xl
-- H3: 2xl -> 3xl -> 4xl
-- H4: xl -> 2xl -> 3xl
+- `index.css` - Main entry point for all styles
+- `base.css` - Core styles and typography
+- `theme.css` - Theme variables and color system
+- `forms.css` - Form-specific styling
+- `animations.css` - Global animations
 
-### Body Text
-- Default: base -> lg
-- Large: lg -> xl
-- Small: sm -> base
+## Key Features
 
-## Usage
-```tsx
-// Headings
-<h1 className="h1">Main Heading</h1>
-<h2 className="h2">Section Heading</h2>
+1. **Centralized Theme System**
+   - 60-30-10 color rule for main content
+   - Separate form styling system
+   - Dark mode support
+   - Global animations
 
-// Body text
-<p className="body-default">Default paragraph text</p>
-<p className="body-large">Larger body text</p>
-<p className="body-small">Smaller body text</p>
-```
+2. **Typography System**
+   - Poppins font integration
+   - Responsive text scales
+   - Consistent spacing
 
-## Accessibility
-- All text components maintain a minimum contrast ratio of 4.5:1
-- Text scaling is supported for users with custom font size preferences
-- Line heights are optimized for readability
+3. **Form Design**
+   - Independent styling system
+   - Accessibility-first approach
+   - Cross-browser compatibility
 
-## Responsive Behavior
-- Font sizes scale appropriately across breakpoints
-- Line heights adjust for optimal readability
-- Margins and spacing adapt to maintain visual hierarchy
+4. **Utilities**
+   - Glass morphism effects
+   - Interactive states
+   - Responsive helpers
+
+## Usage Guidelines
+
+1. **Adding New Styles**
+   - Keep files focused and small
+   - Document all changes
+   - Follow existing patterns
+
+2. **Testing Requirements**
+   - Cross-browser compatibility
+   - Responsive behavior
+   - Dark mode support
+   - RTL language support
+
+3. **Accessibility**
+   - Maintain WCAG compliance
+   - Test with screen readers
+   - Verify color contrast
+
+## Maintainability
+
+1. **Code Organization**
+   - Use consistent naming
+   - Keep related styles together
+   - Document complex selectors
+
+2. **Performance**
+   - Minimize specificity
+   - Avoid deep nesting
+   - Use utility classes
+
+3. **Documentation**
+   - Keep README up to date
+   - Document breaking changes
+   - Include usage examples
+
