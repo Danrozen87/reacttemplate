@@ -43,4 +43,3 @@ describe('BaseLayout', () => {
     expect(layoutWrapper).toHaveClass('min-h-screen', 'bg-background');
   });
 });
-
