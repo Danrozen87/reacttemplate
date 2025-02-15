@@ -4,7 +4,7 @@
  * @description Utilities for validating component documentation against schema
  */
 
-import Ajv from "ajv";
+import Ajv, { ErrorObject } from "ajv";
 import schema from "@/components/atoms/.docs-schema.json";
 
 const ajv = new Ajv();
@@ -13,6 +13,11 @@ const validate = ajv.compile(schema);
 interface ValidationResult {
   isValid: boolean;
   errors: string[];
+  details?: {
+    field: string;
+    message: string;
+    value?: unknown;
+  }[];
 }
 
 interface ParsedProp {
@@ -52,6 +57,29 @@ interface ParsedDocumentation {
     responsive: boolean;
     darkMode: boolean;
   };
+}
+
+/**
+ * Formats validation errors into user-friendly messages
+ */
+function formatValidationError(error: ErrorObject): string {
+  const field = error.instancePath.replace(/^\//, '') || 'root';
+  const value = error.data;
+  
+  switch (error.keyword) {
+    case 'required':
+      return `Missing required field: ${error.params.missingProperty}`;
+    case 'enum':
+      return `Invalid value for ${field}. Allowed values: ${error.params.allowedValues.join(', ')}`;
+    case 'pattern':
+      return `Invalid format for ${field}. Must match pattern: ${error.params.pattern}`;
+    case 'minItems':
+      return `${field} must have at least ${error.params.limit} items`;
+    case 'type':
+      return `Invalid type for ${field}. Expected ${error.params.type}`;
+    default:
+      return `${field} ${error.message}`;
+  }
 }
 
 /**
@@ -102,11 +130,24 @@ function extractProps(source: string): ParsedProp[] {
 export function validateDocumentation(documentation: unknown): ValidationResult {
   const valid = validate(documentation);
   
+  if (!valid && validate.errors) {
+    const formattedErrors = validate.errors.map(formatValidationError);
+    const details = validate.errors.map(error => ({
+      field: error.instancePath.replace(/^\//, '') || 'root',
+      message: formatValidationError(error),
+      value: error.data
+    }));
+
+    return {
+      isValid: false,
+      errors: formattedErrors,
+      details
+    };
+  }
+
   return {
-    isValid: valid,
-    errors: valid ? [] : (validate.errors?.map(err => 
-      `${err.instancePath} ${err.message}`
-    ) ?? [])
+    isValid: true,
+    errors: []
   };
 }
 
