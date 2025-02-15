@@ -1,4 +1,6 @@
 
+import * as React from 'react';
+
 /**
  * @description Centralized animation and blur utility classes with focus effects
  */
