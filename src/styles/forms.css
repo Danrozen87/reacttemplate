@@ -1,5 +1,5 @@
 
-/* Light mode autofill styling */
+/* Form-specific styling with new variables */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -9,10 +9,10 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--input)) inset;
-  -webkit-text-fill-color: hsl(var(--foreground));
+  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--form-input)) inset;
+  -webkit-text-fill-color: hsl(var(--form-input-foreground));
   transition: background-color 5000s ease-in-out 0s;
-  caret-color: hsl(var(--foreground));
+  caret-color: hsl(var(--form-input-foreground));
 }
 
 /* Dark mode autofill styling */
@@ -25,25 +25,25 @@ select:-webkit-autofill:focus {
 .dark select:-webkit-autofill,
 .dark select:-webkit-autofill:hover,
 .dark select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--input)) inset;
-  -webkit-text-fill-color: hsl(var(--foreground));
-  transition: background-color 5000s ease-in-out 0s;
-  caret-color: hsl(var(--foreground));
+  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--form-input)) inset;
+  -webkit-text-fill-color: hsl(var(--form-input-foreground));
+  caret-color: hsl(var(--form-input-foreground));
 }
 
-/* Additional autofill transition smoothing */
+/* Form element transitions */
 input,
 textarea,
 select {
   transition: all 0.2s ease;
-  background-color: hsl(var(--input));
+  background-color: hsl(var(--form-input));
 }
 
-/* Focus state enhancement for better visibility */
+/* Focus states */
 input:focus,
 textarea:focus,
 select:focus {
-  background-color: hsl(var(--input));
+  background-color: hsl(var(--form-input));
   outline: none;
-  border-color: hsl(var(--ring));
+  border-color: hsl(var(--form-ring));
 }
+

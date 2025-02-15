@@ -1,17 +1,14 @@
+
 @layer base {
   :root {
-    /* Base Color Palette - Adjusted for better contrast */
+    /* Main Theme - 60% Base Colors */
     --mint: 108 27% 84%;      /* #D0E6C6 */
-    --deep-red: 351 47% 47%;  /* #AF3E4F */
-    --eggplant: 296 25% 18%;  /* Darkened from 24% to 18% */
-    --khaki: 33 20% 82%;      /* Lightened and increased saturation for better contrast */
-    --soft-orange: 21 59% 65%; /* #DF986D */
-
-    /* Light Mode Defaults - Following 60-30-10 rule */
+    --eggplant: 296 25% 18%;  /* Darkened for better contrast */
     --background: var(--mint);
     --foreground: var(--eggplant);
     
-    /* 30% - Secondary surfaces with improved contrast */
+    /* 30% - Secondary Colors */
+    --khaki: 33 20% 82%;
     --card: var(--khaki);
     --card-foreground: var(--eggplant);
     --popover: var(--khaki);
@@ -19,63 +16,57 @@
     --secondary: var(--khaki);
     --secondary-foreground: var(--eggplant);
     
-    /* Input fields with more subtle tint for light mode */
-    --input: 108 20% 94%;
-    --input-foreground: var(--eggplant);
-    --input-border: 296 15% 85%;
-    --input-placeholder: 296 15% 65%;
-    
-    /* 10% - Accents and CTAs */
+    /* 10% - Accent Colors */
+    --soft-orange: 21 59% 65%;
     --primary: var(--soft-orange);
     --primary-foreground: 0 0% 100%;
     --accent: var(--soft-orange);
     --accent-foreground: 0 0% 100%;
     
-    /* Support colors - for better contrast and readability */
+    /* Form-Specific Colors - Separated from 60-30-10 */
+    --form-input: 108 20% 98%;
+    --form-input-foreground: var(--eggplant);
+    --form-border: 296 15% 85%;
+    --form-placeholder: 296 15% 65%;
+    --form-ring: var(--soft-orange);
+    --form-error: var(--deep-red);
+    
+    /* Support Colors */
     --muted: var(--khaki);
     --muted-foreground: 296 15% 40%;
-    
-    /* Destructive actions - use sparingly */
     --destructive: var(--deep-red);
     --destructive-foreground: 0 0% 100%;
-    
-    /* UI elements */
     --border: var(--khaki);
-    --ring: var(--soft-orange);
     
     --radius: 0.75rem;
   }
 
   .dark {
-    /* Dark Mode Overrides - Following 60-30-10 rule with darker theme */
-    --background: 296 25% 12%;  /* Even darker background */
-    --foreground: 108 27% 90%;  /* Brighter mint for better contrast */
+    /* Dark Mode Theme Colors */
+    --background: 296 25% 12%;
+    --foreground: 108 27% 90%;
     
-    /* Input fields with enhanced dark mode visibility and subtle tint */
-    --input: 296 15% 20%;
-    --input-foreground: 108 27% 90%;
-    --input-border: 296 20% 30%;
-    --input-placeholder: 108 27% 50%;
-    
-    /* 30% - Secondary surfaces with improved dark mode contrast */
-    --card: 296 20% 20%;  /* Darker cards */
+    /* Dark Mode Secondary Colors */
+    --card: 296 20% 20%;
     --card-foreground: 108 27% 90%;
     --popover: 296 20% 20%;
     --popover-foreground: 108 27% 90%;
     --secondary: 296 20% 20%;
     --secondary-foreground: 108 27% 90%;
     
-    /* Support colors with better dark mode visibility */
+    /* Dark Mode Form-Specific Colors */
+    --form-input: 296 15% 20%;
+    --form-input-foreground: 108 27% 90%;
+    --form-border: 296 20% 30%;
+    --form-placeholder: 108 27% 50%;
+    --form-ring: 108 27% 84%;
+    
+    /* Dark Mode Support Colors */
     --muted: 296 15% 25%;
     --muted-foreground: 108 27% 75%;
-    
-    /* Destructive actions - consistent across modes */
     --destructive: var(--deep-red);
     --destructive-foreground: 0 0% 100%;
-    
-    /* UI elements with improved contrast */
     --border: 296 20% 30%;
-    --ring: 108 27% 84%;
   }
 }
 
@@ -91,25 +82,33 @@
   }
 }
 
+/* Form-specific utilities */
+@layer utilities {
+  .form-input-base {
+    @apply bg-form-input text-form-input-foreground border-form-border placeholder:text-form-placeholder focus:ring-form-ring;
+  }
+  
+  .form-input-error {
+    @apply border-form-error focus:ring-form-error;
+  }
+}
+
 /* Custom utilities for common patterns */
 @layer utilities {
-  /* Glass effect with improved contrast */
   .glass {
     @apply backdrop-blur-xl bg-background/50 border border-border/50 shadow-lg;
   }
   
-  /* Text balance for better readability */
   .text-balance {
     text-wrap: balance;
   }
 
-  /* High contrast text variants */
   .text-high-contrast {
     @apply text-foreground font-medium;
   }
 
-  /* Interactive element states */
   .interactive-hover {
     @apply hover:bg-accent/10 active:bg-accent/20 transition-colors duration-200;
   }
 }
+
