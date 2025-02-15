@@ -9,6 +9,7 @@ export interface ValidationResult {
     message: string;
     value?: unknown;
   }[];
+  propValidation?: PropValidationResult;
 }
 
 export interface ParsedProp {
@@ -16,6 +17,18 @@ export interface ParsedProp {
   type: string;
   required: boolean;
   description: string;
+}
+
+export interface PropValidationResult {
+  isValid: boolean;
+  mismatches: PropMismatch[];
+}
+
+export interface PropMismatch {
+  propName: string;
+  documentedType: string;
+  actualType: string;
+  issue: 'type_mismatch' | 'missing_in_code' | 'missing_in_docs' | 'required_mismatch';
 }
 
 export interface ParsedDocumentation {
