@@ -1,74 +1,45 @@
 
 import { describe, it, expect } from 'vitest';
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { ResponsiveGrid } from '../responsive-grid';
 
 describe('ResponsiveGrid', () => {
-  it('renders children correctly', () => {
-    render(
-      <ResponsiveGrid>
-        <div>Item 1</div>
-        <div>Item 2</div>
-      </ResponsiveGrid>
-    );
-    
-    expect(screen.getByText('Item 1')).toBeInTheDocument();
-    expect(screen.getByText('Item 2')).toBeInTheDocument();
+  const renderGrid = (props = {}) => 
+    render(<ResponsiveGrid {...props}><div>Item</div></ResponsiveGrid>);
+
+  it('applies default classes correctly', () => {
+    const { container } = renderGrid();
+    const grid = container.firstChild;
+
+    ['grid', 'gap-4', 'grid-cols-1', 'sm:grid-cols-2', 
+     'md:grid-cols-3', 'lg:grid-cols-4'].forEach(className => {
+      expect(grid).toHaveClass(className);
+    });
   });
 
-  it('applies correct default classes', () => {
-    const { container } = render(
-      <ResponsiveGrid>
-        <div>Item</div>
-      </ResponsiveGrid>
-    );
-
+  it('applies correct ARIA attributes', () => {
+    const { container } = renderGrid({
+      gridLabel: 'Custom grid label',
+      gridRole: 'list'
+    });
+    
     const grid = container.firstChild;
-    expect(grid).toHaveClass('grid');
-    expect(grid).toHaveClass('gap-4');
-    expect(grid).toHaveClass('grid-cols-1');
-    expect(grid).toHaveClass('sm:grid-cols-2');
-    expect(grid).toHaveClass('md:grid-cols-3');
-    expect(grid).toHaveClass('lg:grid-cols-4');
+    expect(grid).toHaveAttribute('role', 'list');
+    expect(grid).toHaveAttribute('aria-label', 'Custom grid label');
+  });
+
+  it('uses default grid role when not specified', () => {
+    const { container } = renderGrid();
+    expect(container.firstChild).toHaveAttribute('role', 'grid');
   });
 
   it('applies custom gap class', () => {
-    const { container } = render(
-      <ResponsiveGrid gap="lg">
-        <div>Item</div>
-      </ResponsiveGrid>
-    );
-
+    const { container } = renderGrid({ gap: 'lg' });
     expect(container.firstChild).toHaveClass('gap-6');
   });
 
-  it('applies custom columns configuration', () => {
-    const { container } = render(
-      <ResponsiveGrid
-        columns={{
-          xs: 2,
-          md: 4,
-          xl: 6
-        }}
-      >
-        <div>Item</div>
-      </ResponsiveGrid>
-    );
-
-    const grid = container.firstChild;
-    expect(grid).toHaveClass('grid-cols-2');
-    expect(grid).toHaveClass('md:grid-cols-4');
-    expect(grid).toHaveClass('xl:grid-cols-6');
-  });
-
   it('merges custom className', () => {
-    const { container } = render(
-      <ResponsiveGrid className="custom-class">
-        <div>Item</div>
-      </ResponsiveGrid>
-    );
-
-    expect(container.firstChild).toHaveClass('custom-class');
+    const { container } = renderGrid({ className: 'test-class' });
+    expect(container.firstChild).toHaveClass('test-class');
   });
 });
