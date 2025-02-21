@@ -1,13 +1,15 @@
-#Lovable Task Tracking & Reporting
+#Lovable AI Response Standard, Task Tracking & Reporting
 
-> **Objective**: Ensure thorough progress tracking and regular status updates on the following tasks:
-> 1. **Move Files**  
-> 2. **Update All Imports**  
-> 3. **Clean Up Old Files**  
-> 4. **Verify Build**  
-> 5. **Guarantee 100% Project Constraint Adherence**  
-> 6. **Simplify Folder/File Structure**
-> 7. **Suggest continous improvements and consult established documentations and reason to find the best way forward, regardless of topic. 
+> **Lovable's Guarantee**: Ensure thorough progress tracking and regular status updates on the following tasks:
+> 1. **Code deliveries**
+> 2. **Moving files**
+> 3. **Updating Imports**  
+> 4. **Cleaning Up Old Files**  
+> 5. **Verifying Builds**  
+> 6. **Guarantee 100% Project Constraint Adherence**  
+> 7. **Working to simplifying Folder/File Structure continously**
+> 8. **Suggest improvements and consult established documentations and reason to find the best way forward, regardless of topic.**
+> 9. **Critiques own work to ensure no bad implementations make their way into production. 
 
 ---
 
@@ -17,19 +19,21 @@
   - Task name  
   - Current status (e.g., In Progress, Blocked, Complete)  
   - Remaining steps or sub-tasks
+  - Motivating why it is the best-in-class, most reliable way of doing it with the best track record.
 
 - **Regular Updates**: Provide concise status in each chat, covering:
   1. **What’s Done**  
   2. **What’s Left**  
   3. **Any New Blockers** or clarifications needed
+  4. **Assessment of how well it adheres to established contraints in README.md for the project**
 
 - **Completion Criteria**: Mark each task “Complete” only after:
-  - Files are fully migrated (no partial merges)  
-  - All imports reference new paths  
-  - Old files are removed or archived  
+  - Files and features are fully realized (or moved, migrated, no partial or unsuccesful commits or merges)  
+  - All imports reference new paths if new things are introduced  
+  - Old files are removed entirely, ones new file is validated as one-to-one with old files
   - The build passes with zero errors or warnings  
   - Project constraints (line limits, no inline CSS, atomic structure) are upheld  
-  - Folder/file structure is streamlined and tested
+  - Folder/file structure is streamlined and tested to ensure maximum DX and maintainability and clarity throughout the project.
 
 ---
 
@@ -39,14 +43,17 @@
   - Task-by-task bullet points  
   - Percentage or milestone-based progress  
   - Key achievements or unresolved issues
+  - Considerations that require decisions for future deliveries.
 
 - **Ownership**: 
-  - Take responsibility for each step, verifying no overlooked items  
+  - Lovable AI understands and takes full responsibility for each step, verifying no overlooked items  
   - Maintain an **audit trail**: which files were moved, which imports changed, etc.
+  - Stores audit trails and chats in Supabase if Lovable deems that as necessary to track progress and history.
 
 - **Goal Alignment**:
-  - Confirm all modifications align with the stated objectives (simplicity, maintainability, atomic design).  
-  - If any deviation arises, highlight and seek quick resolution.
+  - Confirm all modifications align with the stated objectives (simplicity, maintainability, atomic design, best-in-class UX, DX and performance).  
+  - If any deviation arises, highlight and seek quick resolution. 
+  - Confirms adherence to project constraints with each task. 
 
 ---
 
