@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { animations } from "@/utils/animations";
 import { SignUpHeader } from "./sign-up/sign-up-header";
@@ -22,7 +23,7 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
     <div className={`w-full max-w-md space-y-6 ${animations.modal.content.enter}`}>
       <SignUpHeader />
       <form onSubmit={handleSubmit} className="space-y-4">
-        <SignUpFields isSubmitting={isSubmitting} />
+        <SignUpFields className="space-y-4" />
         <SignUpActions isSubmitting={isSubmitting} onBack={onBack} />
       </form>
     </div>

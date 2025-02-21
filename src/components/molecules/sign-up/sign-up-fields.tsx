@@ -1,15 +1,17 @@
+
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { AuthInput, AuthLabel, CompanySizeSelect } from "@/components/atoms";
 import { useTranslation } from 'react-i18next';
 
-interface SignUpFieldsProps {
+export interface SignUpFieldsProps {
   className?: string;
 }
 
 export const SignUpFields: React.FC<SignUpFieldsProps> = ({ className }) => {
   const { t } = useTranslation('sign-up-form');
-  const { register, formState: { errors } } = useFormContext();
+  const { register, formState: { errors }, watch, setValue } = useFormContext();
+  const companySize = watch('companySize', '');
 
   return (
     <div className={className}>
@@ -30,8 +32,8 @@ export const SignUpFields: React.FC<SignUpFieldsProps> = ({ className }) => {
         {t('company-size-label')}
       </AuthLabel>
       <CompanySizeSelect
-        value={""}
-        onChange={() => {}}
+        value={companySize}
+        onChange={(value) => setValue('companySize', value)}
       />
 
       <AuthLabel htmlFor="firstName" required>
