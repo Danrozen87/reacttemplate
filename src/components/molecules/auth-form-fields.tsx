@@ -1,4 +1,3 @@
-
 import { useState, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
@@ -52,7 +51,7 @@ export const AuthFormFields = memo(function AuthFormFields({
       />
       
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 hover-visible rounded-md p-1">
           <Checkbox
             id="remember"
             checked={rememberMe}
@@ -62,14 +61,14 @@ export const AuthFormFields = memo(function AuthFormFields({
           />
           <AuthLabel
             htmlFor="remember"
-            className="text-muted-foreground font-light"
+            className="text-muted-foreground hover:text-foreground transition-colors"
           >
             {t("auth.rememberMe")}
           </AuthLabel>
         </div>
         <Button
           variant="link"
-          className="px-0 font-poppins font-light text-sm"
+          className="px-0 font-poppins font-light text-sm hover:text-primary/80 focus:text-primary/80"
           onClick={onForgotPassword}
           disabled={isSubmitting}
           type="button"
@@ -81,7 +80,7 @@ export const AuthFormFields = memo(function AuthFormFields({
       
       <Button
         type="submit"
-        className="w-full font-poppins"
+        className="w-full font-poppins hover:bg-primary/90 focus:bg-primary/90"
         disabled={isSubmitting}
         aria-busy={isSubmitting}
       >
@@ -90,4 +89,3 @@ export const AuthFormFields = memo(function AuthFormFields({
     </div>
   );
 });
-

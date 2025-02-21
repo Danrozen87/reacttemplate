@@ -1,4 +1,3 @@
-
 @layer base {
   :root {
     /* 40% Primary Colors */
@@ -98,4 +97,93 @@ body {
 
 html {
   @apply scroll-smooth;
+}
+
+@layer base {
+  :root {
+    /* Base colors with proper contrast ratios */
+    --color-primary-bg: 0 0% 100%;
+    --color-primary-text: 240 10% 3.9%;
+    --color-secondary-bg: 240 4.8% 95.9%;
+    --color-secondary-text: 240 3.8% 46.1%;
+    
+    /* Interactive states */
+    --color-hover: 240 5% 90%;
+    --color-select: 221 83% 53%;
+    --color-select-text: 0 0% 100%;
+
+    /* Theme mapping */
+    --background: var(--color-primary-bg);
+    --foreground: var(--color-primary-text);
+    --muted: var(--color-secondary-bg);
+    --muted-foreground: var(--color-secondary-text);
+    
+    /* Semantic Colors */
+    --color-success: 142 71% 45%;
+    --color-warning: 38 92% 50%;
+    --color-error: 0 84% 60%;
+
+    /* Theme Colors */
+    --background: var(--color-primary-bg);
+    --foreground: var(--color-primary-text);
+    --card: var(--color-secondary-bg);
+    --card-foreground: var(--color-primary-text);
+    --popover: var(--color-secondary-bg);
+    --popover-foreground: var(--color-primary-text);
+    --primary: var(--color-interactive);
+    --primary-foreground: var(--color-primary-text);
+    --secondary: var(--color-secondary-bg);
+    --secondary-foreground: var(--color-secondary-text);
+    --muted: var(--color-secondary-bg);
+    --muted-foreground: var(--color-secondary-text);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-primary-text);
+    --destructive: var(--color-error);
+    --destructive-foreground: var(--color-primary-text);
+    --border: var(--color-secondary-bg);
+    --input: var(--color-secondary-bg);
+    --ring: var(--color-interactive);
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark mode colors with proper contrast */
+    --color-primary-bg: 240 10% 3.9%;
+    --color-primary-text: 0 0% 98%;
+    --color-secondary-bg: 240 3.7% 15.9%;
+    --color-secondary-text: 240 5% 84.9%;
+    
+    /* Interactive states for dark mode */
+    --color-hover: 240 5% 25%;
+    --color-select: 221 83% 53%;
+    --color-select-text: 0 0% 100%;
+
+    /* Theme mapping */
+    --background: var(--color-primary-bg);
+    --foreground: var(--color-primary-text);
+    --muted: var(--color-secondary-bg);
+    --muted-foreground: var(--color-secondary-text);
+  }
+}
+
+/* Global selection styles */
+@layer base {
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+
+  ::-moz-selection {
+    @apply bg-primary/30 text-foreground;
+  }
+}
+
+/* Improved hover states */
+@layer utilities {
+  .hover-visible {
+    @apply hover:bg-muted/80 hover:text-foreground transition-colors;
+  }
+  
+  .hover-highlight {
+    @apply hover:bg-primary/10 hover:text-foreground transition-colors;
+  }
 }

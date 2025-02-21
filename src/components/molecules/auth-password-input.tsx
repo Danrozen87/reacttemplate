@@ -29,7 +29,7 @@ export const AuthPasswordInput = memo(function AuthPasswordInput({
           id="password"
           type={showPassword ? "text" : "password"}
           placeholder={t("auth.passwordPlaceholder")}
-          className="pr-10"
+          className="pr-10 selection:bg-primary/30 selection:text-foreground"
           disabled={disabled}
           required
           aria-required="true"
@@ -38,7 +38,7 @@ export const AuthPasswordInput = memo(function AuthPasswordInput({
         <button
           type="button"
           onClick={togglePassword}
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground focus:text-foreground transition-colors"
           aria-label={t(showPassword ? "auth.hidePassword" : "auth.showPassword")}
           disabled={disabled}
         >
