@@ -5,16 +5,93 @@
   "tsx": true,
   "tailwind": {
     "config": "tailwind.config.ts",
-    "css": "src/index.css",
-    "baseColor": "slate",
+    "css": "src/styles/index.css",
+    "baseColor": "mint",
     "cssVariables": true,
     "prefix": ""
   },
   "aliases": {
     "components": "@/components",
+    "atoms": "@/components/atoms",
+    "molecules": "@/components/molecules",
+    "organisms": "@/components/organisms",
     "utils": "@/lib/utils",
     "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "i18n": "@/i18n",
+    "hooks": "@/hooks",
+    "layouts": "@/layouts"
+  },
+  "rules": {
+    "components": {
+      "maxLines": 68,
+      "requireReadme": true,
+      "enforceAtomicDesign": true,
+      "requireTests": true,
+      "testCoverage": {
+        "atoms": 90,
+        "molecules": 85,
+        "organisms": 80
+      }
+    },
+    "i18n": {
+      "enforceAtomicTranslations": true,
+      "requiredLanguages": ["en", "sv", "da", "nl"],
+      "domainBasedFiles": true,
+      "maxKeysPerFile": 20,
+      "requireTypes": true
+    },
+    "folder": {
+      "noNestedComponents": true,
+      "enforceKebabCase": true,
+      "requireIndex": true,
+      "atomicStructure": {
+        "atoms": "src/components/atoms",
+        "molecules": "src/components/molecules",
+        "organisms": "src/components/organisms"
+      }
+    },
+    "documentation": {
+      "requireJSDoc": true,
+      "requireComponentProps": true,
+      "requireAccessibility": true,
+      "requireUsageExample": true
+    },
+    "accessibility": {
+      "enforceAria": true,
+      "requireKeyboardNav": true,
+      "enforceContrast": true
+    },
+    "styling": {
+      "enforceTokens": true,
+      "noInlineStyles": true,
+      "requireDarkMode": true,
+      "enforceColorRatio": {
+        "primary": 40,
+        "secondary": 30,
+        "tertiary": 20,
+        "accent": 10
+      }
+    },
+    "performance": {
+      "maxBundleSize": "100kb",
+      "enforceCodeSplitting": true,
+      "requireLazyLoading": true
+    }
+  },
+  "themes": {
+    "light": {
+      "background": "hsl(var(--mint))",
+      "foreground": "hsl(var(--eggplant))",
+      "primary": "hsl(var(--soft-orange))",
+      "secondary": "hsl(var(--sage))",
+      "accent": "hsl(var(--coral))"
+    },
+    "dark": {
+      "background": "hsl(var(--background))",
+      "foreground": "hsl(var(--foreground))",
+      "primary": "hsl(var(--primary))",
+      "secondary": "hsl(var(--secondary))",
+      "accent": "hsl(var(--accent))"
+    }
   }
 }
