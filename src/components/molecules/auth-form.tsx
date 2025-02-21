@@ -15,6 +15,8 @@ export const AuthForm = memo(function AuthForm() {
     isSubmitting,
     isRecoveryMode,
     setIsRecoveryMode,
+    isSignUpMode,
+    setIsSignUpMode,
     handleSubmit,
   } = useAuthFormState();
 
@@ -22,6 +24,14 @@ export const AuthForm = memo(function AuthForm() {
     return (
       <PasswordRecoveryForm 
         onBack={() => setIsRecoveryMode(false)} 
+      />
+    );
+  }
+
+  if (isSignUpMode) {
+    return (
+      <SignUpForm 
+        onBack={() => setIsSignUpMode(false)} 
       />
     );
   }
@@ -36,7 +46,9 @@ export const AuthForm = memo(function AuthForm() {
           isSubmitting={isSubmitting}
           onForgotPassword={() => setIsRecoveryMode(true)}
         />
-        <AuthFormFooter />
+        <AuthFormFooter 
+          onSignUp={() => setIsSignUpMode(true)}
+        />
       </form>
     </div>
   );
