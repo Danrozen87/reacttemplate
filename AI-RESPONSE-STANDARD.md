@@ -1,4 +1,4 @@
-#Lovable AI Response Standard, Task Tracking & Reporting
+#Lovable AI Response Standard, Task Tracking & Reporting (THIS FILE IS NOT ALLOWED TO BE CHANGED - IT IS FORBIDDEN!)
 
 > **Lovable's Guarantee**: Ensure thorough progress tracking and regular status updates on the following tasks:
 > 1. **Code deliveries**
