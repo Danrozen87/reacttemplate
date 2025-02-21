@@ -29,10 +29,10 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
   };
 
   const companySizes = [
-    { value: "0-10", label: "0-10 employees" },
-    { value: "10-50", label: "10-50 employees" },
-    { value: "50-100", label: "50-100 employees" },
-    { value: "100+", label: "100+ employees" },
+    { value: "0-10", label: "0-10" },
+    { value: "10-50", label: "10-50" },
+    { value: "50-100", label: "50-100" },
+    { value: "100+", label: "100+" },
   ];
 
   return (
@@ -112,7 +112,7 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
                   value={size.value}
                   className="font-poppins"
                 >
-                  {size.label}
+                  {`${size.label} ${t("auth.signup.employees")}`}
                 </SelectItem>
               ))}
             </SelectContent>
