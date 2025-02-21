@@ -11,10 +11,19 @@ describe('useViewport', () => {
     global.window.innerWidth = BREAKPOINT_VALUES.md;
     global.window.innerHeight = 800;
     
-    // Fix: Properly type the event listener callback
-    global.window.addEventListener = vi.fn((event: string, callback: Function) => {
+    // Fix: Use correct event listener type
+    global.window.addEventListener = vi.fn((
+      event: keyof WindowEventMap,
+      listener: EventListenerOrEventListenerObject
+    ) => {
       if (event === 'resize') {
-        mockResizeEvent.mockImplementation(() => callback());
+        mockResizeEvent.mockImplementation(() => {
+          if (typeof listener === 'function') {
+            listener({} as Event);
+          } else {
+            listener.handleEvent({} as Event);
+          }
+        });
       }
     });
     
