@@ -1,6 +1,13 @@
 
 import type { ToastProps } from "@/components/ui/toast";
 
+// Define ToastActionElement type
+export type ToastActionElement = React.ReactElement<{
+  altText: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}>;
+
 export interface ToasterToast extends Omit<ToastProps, "title" | "description"> {
   id: string;
   title?: string;

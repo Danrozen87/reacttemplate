@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useToast } from "@/hooks/toast";
 import type { AuthFormState, AuthResponse, AuthToastConfig, UserRole } from "./auth-form/types";
+import type { ToasterToast } from "@/hooks/toast/toast-types";
 
 export const useAuthFormState = () => {
   const { t } = useTranslation();
@@ -21,7 +22,7 @@ export const useAuthFormState = () => {
         role: determineUserRole(email)
       };
 
-      const toastConfig: AuthToastConfig = {
+      const toastConfig: Omit<ToasterToast, "id"> = {
         title: t("auth.loginSuccess"),
         description: t(`auth.roleAssigned.${mockAuthResponse.role}`),
         duration: 3000,
@@ -32,7 +33,7 @@ export const useAuthFormState = () => {
 
       toast(toastConfig);
     } catch (error) {
-      const errorToastConfig: AuthToastConfig = {
+      const errorToastConfig: Omit<ToasterToast, "id"> = {
         title: t("auth.loginError"),
         description: t("auth.tryAgain"),
         variant: "destructive",

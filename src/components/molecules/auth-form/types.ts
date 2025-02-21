@@ -32,7 +32,8 @@ export interface AuthFormContainerProps {
   className?: string;
 }
 
-export type ToastVariant = 'default' | 'destructive' | 'success';
+// Matching the allowed toast variants from shadcn/ui
+export type ToastVariant = 'default' | 'destructive';
 
 export interface AuthToastConfig {
   title: string;
