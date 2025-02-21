@@ -1,7 +1,12 @@
 
 {
   "auth": {
-    "noAccount": "Heb je geen account?",
-    "signUpNow": "Registreer nu"
+    "form": {
+      "footer": {
+        "forgotPassword": "Wachtwoord vergeten?",
+        "noAccount": "Geen account?",
+        "signUp": "Registreren"
+      }
+    }
   }
 }

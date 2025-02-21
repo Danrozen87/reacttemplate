@@ -1,7 +1,12 @@
 
 {
   "auth": {
-    "noAccount": "Don't have an account?",
-    "signUpNow": "Sign up now"
+    "form": {
+      "footer": {
+        "forgotPassword": "Forgot password?",
+        "noAccount": "Don't have an account?",
+        "signUp": "Sign up"
+      }
+    }
   }
 }

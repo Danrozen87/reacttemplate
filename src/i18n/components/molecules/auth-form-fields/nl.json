@@ -1,9 +1,12 @@
 
 {
   "auth": {
-    "rememberMe": "Onthoud mij",
-    "forgotPassword": "Wachtwoord vergeten?",
-    "signIn": "Inloggen",
-    "signingIn": "Bezig met inloggen..."
+    "form": {
+      "fields": {
+        "email": "E-mail",
+        "password": "Wachtwoord",
+        "rememberMe": "Onthoud mij"
+      }
+    }
   }
 }

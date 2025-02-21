@@ -1,9 +1,12 @@
 
 {
   "auth": {
-    "rememberMe": "Husk mig",
-    "forgotPassword": "Glemt adgangskode?",
-    "signIn": "Log ind",
-    "signingIn": "Logger ind..."
+    "form": {
+      "fields": {
+        "email": "E-mail",
+        "password": "Adgangskode",
+        "rememberMe": "Husk mig"
+      }
+    }
   }
 }

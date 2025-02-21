@@ -1,7 +1,12 @@
 
 {
   "auth": {
-    "noAccount": "Har du inget konto?",
-    "signUpNow": "Registrera dig nu"
+    "form": {
+      "footer": {
+        "forgotPassword": "Glömt lösenord?",
+        "noAccount": "Har du inget konto?",
+        "signUp": "Registrera dig"
+      }
+    }
   }
 }

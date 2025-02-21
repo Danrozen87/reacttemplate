@@ -1,7 +1,12 @@
 
 {
   "auth": {
-    "noAccount": "Har du ikke en konto?",
-    "signUpNow": "Tilmeld dig nu"
+    "form": {
+      "footer": {
+        "forgotPassword": "Glemt adgangskode?",
+        "noAccount": "Har du ikke en konto?",
+        "signUp": "Tilmeld dig"
+      }
+    }
   }
 }

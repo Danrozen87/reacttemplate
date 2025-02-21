@@ -1,9 +1,12 @@
 
 {
   "auth": {
-    "rememberMe": "Remember me",
-    "forgotPassword": "Forgot password?",
-    "signIn": "Sign in",
-    "signingIn": "Signing in..."
+    "form": {
+      "fields": {
+        "email": "Email",
+        "password": "Password",
+        "rememberMe": "Remember me"
+      }
+    }
   }
 }

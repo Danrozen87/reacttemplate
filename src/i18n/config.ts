@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -18,14 +19,14 @@ import authFormEmailEn from './components/molecules/auth-form-email/en.json';
 import authFormEmailDa from './components/molecules/auth-form-email/da.json';
 import authFormEmailSv from './components/molecules/auth-form-email/sv.json';
 import authFormEmailNl from './components/molecules/auth-form-email/nl.json';
-import authFormFieldsEn from './components/organisms/auth-form-fields/en.json';
-import authFormFieldsDa from './components/organisms/auth-form-fields/da.json';
-import authFormFieldsSv from './components/organisms/auth-form-fields/sv.json';
-import authFormFieldsNl from './components/organisms/auth-form-fields/nl.json';
-import authFormFooterEn from './components/organisms/auth-form-footer/en.json';
-import authFormFooterDa from './components/organisms/auth-form-footer/da.json';
-import authFormFooterSv from './components/organisms/auth-form-footer/sv.json';
-import authFormFooterNl from './components/organisms/auth-form-footer/nl.json';
+import authFormFieldsEn from './components/molecules/auth-form-fields/en.json';
+import authFormFieldsDa from './components/molecules/auth-form-fields/da.json';
+import authFormFieldsSv from './components/molecules/auth-form-fields/sv.json';
+import authFormFieldsNl from './components/molecules/auth-form-fields/nl.json';
+import authFormFooterEn from './components/molecules/auth-form-footer/en.json';
+import authFormFooterDa from './components/molecules/auth-form-footer/da.json';
+import authFormFooterSv from './components/molecules/auth-form-footer/sv.json';
+import authFormFooterNl from './components/molecules/auth-form-footer/nl.json';
 import authSocialButtonsEn from './components/molecules/auth-social-buttons/en.json';
 import authSocialButtonsDa from './components/molecules/auth-social-buttons/da.json';
 import authSocialButtonsSv from './components/molecules/auth-social-buttons/sv.json';
