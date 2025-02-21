@@ -25,7 +25,9 @@ class PerformanceTracker {
 
   private flushMetrics(): void {
     const averageRenderTimes = this.calculateAverages();
-    logger.info('Performance metrics:', { averageRenderTimes });
+    logger.info('Performance metrics:', {
+      data: { averageRenderTimes }
+    });
     this.metrics = [];
   }
 

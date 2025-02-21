@@ -29,7 +29,9 @@ export class PerformanceTestUtils {
       };
 
       results.push(result);
-      logger.info(`Performance report for ${componentName}:`, result);
+      logger.info(`Performance report for ${componentName}:`, {
+        data: result
+      });
     });
 
     return results;
