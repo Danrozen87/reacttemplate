@@ -1,0 +1,25 @@
+
+# Global owners
+* @maintainers
+
+# Component-specific owners
+/src/components/atoms/ @ui-team
+/src/components/molecules/ @ui-team
+/src/components/organisms/ @ui-team
+
+# i18n owners
+/src/i18n/ @i18n-team
+
+# Configuration owners
+/.github/ @devops-team
+/.*rc.* @devops-team
+/*.config.* @devops-team
+
+# Documentation owners
+/*.md @docs-team
+/src/**/*.md @docs-team
+
+# Test owners
+/src/**/*.test.* @qa-team
+/src/test/ @qa-team
+
