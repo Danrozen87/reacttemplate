@@ -19,7 +19,16 @@
     "ui": "@/components/ui",
     "i18n": "@/i18n",
     "hooks": "@/hooks",
-    "layouts": "@/layouts"
+    "layouts": "@/layouts",
+    "animations": "@/utils/animations"
+  },
+  "animations": {
+    "enabled": true,
+    "system": {
+      "path": "@/utils/animations",
+      "prefix": "",
+      "reducedMotion": true
+    }
   },
   "rules": {
     "components": {
@@ -80,18 +89,34 @@
   },
   "themes": {
     "light": {
-      "background": "hsl(var(--mint))",
-      "foreground": "hsl(var(--eggplant))",
-      "primary": "hsl(var(--soft-orange))",
-      "secondary": "hsl(var(--sage))",
-      "accent": "hsl(var(--coral))"
+      "background": "220 20% 98%",
+      "foreground": "222 47% 11%",
+      "primary": "217 91% 60%",
+      "secondary": "220 14% 96%",
+      "muted": "220 14% 96%",
+      "muted-foreground": "220 8% 46%",
+      "accent": "35 92% 51%",
+      "accent-foreground": "210 40% 98%",
+      "destructive": "0 84% 60%",
+      "destructive-foreground": "210 40% 98%",
+      "border": "220 13% 91%",
+      "input": "220 13% 91%",
+      "ring": "var(--primary)"
     },
     "dark": {
-      "background": "hsl(var(--background))",
-      "foreground": "hsl(var(--foreground))",
-      "primary": "hsl(var(--primary))",
-      "secondary": "hsl(var(--secondary))",
-      "accent": "hsl(var(--accent))"
+      "background": "222 47% 11%",
+      "foreground": "210 40% 98%",
+      "primary": "217 91% 60%",
+      "secondary": "223 47% 7%",
+      "muted": "223 47% 7%",
+      "muted-foreground": "215 20% 65%",
+      "accent": "35 92% 51%",
+      "accent-foreground": "210 40% 98%",
+      "destructive": "0 84% 60%",
+      "destructive-foreground": "210 40% 98%",
+      "border": "217 19% 27%",
+      "input": "217 19% 27%",
+      "ring": "var(--primary)"
     }
   }
 }
