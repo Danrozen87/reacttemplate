@@ -7,7 +7,7 @@ import { animations } from "@/utils/animations";
  * @description Header section of the authentication form with title and subtitle
  */
 export function AuthFormHeader() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("auth-form-header");
 
   return (
     <div className={`space-y-2 ${animations.modal.content.enter}`}>
