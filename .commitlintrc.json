@@ -1,4 +1,98 @@
-
 {
-  "extends": ["@commitlint/config-conventional"]
+  "extends": ["@commitlint/config-conventional"],
+  "rules": {
+    "type-enum": [
+      2,
+      "always",
+      [
+        "feat",     // New feature
+        "fix",      // Bug fix
+        "docs",     // Documentation changes
+        "style",    // Code style changes (formatting, etc)
+        "refactor", // Code refactoring
+        "perf",     // Performance improvements
+        "test",     // Adding or modifying tests
+        "chore",    // Maintenance tasks
+        "i18n",     // Internationalization changes
+        "atomic",   // Atomic design structure changes
+        "a11y",     // Accessibility improvements
+        "theme"     // Theme and styling updates
+      ]
+    ],
+    "type-case": [2, "always", "lower"],
+    "scope-enum": [
+      2,
+      "always",
+      [
+        "atoms",
+        "molecules",
+        "organisms",
+        "hooks",
+        "utils",
+        "i18n",
+        "theme",
+        "test",
+        "docs",
+        "config"
+      ]
+    ],
+    "scope-case": [2, "always", "kebab-case"],
+    "subject-case": [2, "always", "kebab-case"],
+    "subject-max-length": [2, "always", 68],
+    "body-max-line-length": [2, "always", 68],
+    "footer-max-line-length": [2, "always", 68],
+    "references": [2, "always"],
+    "signed-off-by": [2, "always"]
+  },
+  "prompt": {
+    "questions": {
+      "type": {
+        "description": "Select the type of change you're committing:",
+        "enum": {
+          "feat": {
+            "description": "A new feature (triggers a MINOR version)",
+            "title": "Features",
+            "emoji": "✨"
+          },
+          "fix": {
+            "description": "A bug fix (triggers a PATCH version)",
+            "title": "Bug Fixes",
+            "emoji": "🐛"
+          },
+          "i18n": {
+            "description": "Internationalization changes",
+            "title": "i18n",
+            "emoji": "🌐"
+          },
+          "atomic": {
+            "description": "Atomic design structure changes",
+            "title": "Atomic Design",
+            "emoji": "⚛️"
+          },
+          "a11y": {
+            "description": "Accessibility improvements",
+            "title": "Accessibility",
+            "emoji": "♿"
+          },
+          "theme": {
+            "description": "Theme and styling updates",
+            "title": "Theme",
+            "emoji": "🎨"
+          }
+        }
+      },
+      "scope": {
+        "description": "Select the scope of this change (optional):"
+      },
+      "subject": {
+        "description": "Write a short description of the change (max 68 chars):"
+      },
+      "body": {
+        "description": "Provide a longer description of the change (optional):"
+      },
+      "references": {
+        "description": "Add issue references (e.g., 'fixes #123', 'relates to #456'):"
+      }
+    }
+  }
 }
