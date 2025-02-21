@@ -14,7 +14,7 @@ interface CompanySizeSelectProps {
   onChange: (value: string) => void;
 }
 
-export const CompanySizeSelect = React.forwardRef<HTMLSelectElement, CompanySizeSelectProps>(
+export const CompanySizeSelect = React.forwardRef<HTMLButtonElement, CompanySizeSelectProps>(
   ({ value, onChange }, ref) => {
     return (
       <Select value={value} onValueChange={onChange}>
