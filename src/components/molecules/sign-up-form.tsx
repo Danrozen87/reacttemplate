@@ -18,7 +18,7 @@ interface SignUpFormProps {
  * with company information collection. Implements full i18n support and accessibility features.
  */
 export function SignUpForm({ onBack }: SignUpFormProps) {
-  const { t } = useTranslation();
+  const { t } = useTranslation("sign-up-form");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {

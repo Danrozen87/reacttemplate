@@ -1,0 +1,22 @@
+
+{
+  "auth": {
+    "signup": {
+      "title": "Opret en konto",
+      "description": "Tilmeld dig for at begynde at bruge vores platform",
+      "firstName": "Fornavn",
+      "firstNamePlaceholder": "Indtast dit fornavn",
+      "lastName": "Efternavn",
+      "lastNamePlaceholder": "Indtast dit efternavn",
+      "email": "E-mail",
+      "emailPlaceholder": "Indtast din e-mailadresse",
+      "companyName": "Firmanavn",
+      "companyNamePlaceholder": "Indtast dit firmanavn",
+      "companySize": "Virksomhedsstørrelse",
+      "companySizePlaceholder": "Vælg virksomhedsstørrelse",
+      "create": "Opret konto",
+      "creating": "Opretter konto...",
+      "backToLogin": "Tilbage til login"
+    }
+  }
+}

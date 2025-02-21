@@ -1,0 +1,22 @@
+
+{
+  "auth": {
+    "signup": {
+      "title": "Skapa ett konto",
+      "description": "Registrera dig för att börja använda vår plattform",
+      "firstName": "Förnamn",
+      "firstNamePlaceholder": "Ange ditt förnamn",
+      "lastName": "Efternamn",
+      "lastNamePlaceholder": "Ange ditt efternamn",
+      "email": "E-post",
+      "emailPlaceholder": "Ange din e-postadress",
+      "companyName": "Företagsnamn",
+      "companyNamePlaceholder": "Ange ditt företagsnamn",
+      "companySize": "Företagsstorlek",
+      "companySizePlaceholder": "Välj företagsstorlek",
+      "create": "Skapa konto",
+      "creating": "Skapar konto...",
+      "backToLogin": "Tillbaka till inloggning"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+
+{
+  "auth": {
+    "signup": {
+      "title": "Create an Account",
+      "description": "Sign up to start using our platform",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email address",
+      "companyName": "Company Name",
+      "companyNamePlaceholder": "Enter your company name",
+      "companySize": "Company Size",
+      "companySizePlaceholder": "Select company size",
+      "create": "Create Account",
+      "creating": "Creating Account...",
+      "backToLogin": "Back to Login"
+    }
+  }
+}

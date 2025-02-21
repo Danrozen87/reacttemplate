@@ -1,0 +1,22 @@
+
+{
+  "auth": {
+    "signup": {
+      "title": "Account aanmaken",
+      "description": "Registreer om ons platform te gebruiken",
+      "firstName": "Voornaam",
+      "firstNamePlaceholder": "Voer je voornaam in",
+      "lastName": "Achternaam",
+      "lastNamePlaceholder": "Voer je achternaam in",
+      "email": "E-mail",
+      "emailPlaceholder": "Voer je e-mailadres in",
+      "companyName": "Bedrijfsnaam",
+      "companyNamePlaceholder": "Voer je bedrijfsnaam in",
+      "companySize": "Bedrijfsgrootte",
+      "companySizePlaceholder": "Selecteer bedrijfsgrootte",
+      "create": "Account aanmaken",
+      "creating": "Account wordt aangemaakt...",
+      "backToLogin": "Terug naar inloggen"
+    }
+  }
+}
