@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -22,6 +23,41 @@ import authFormHeaderEn from './components/molecules/auth-form-header/en.json';
 import authFormHeaderSv from './components/molecules/auth-form-header/sv.json';
 import authFormHeaderDa from './components/molecules/auth-form-header/da.json';
 import authFormHeaderNl from './components/molecules/auth-form-header/nl.json';
+
+// Type definitions for translations
+interface AuthLabelTranslations {
+  auth: {
+    label: {
+      email: string;
+      password: string;
+      remember: string;
+      submit: string;
+    }
+  }
+}
+
+interface AuthFormHeaderTranslations {
+  auth: {
+    welcome: string;
+    signInToContinue: string;
+  }
+}
+
+interface AuthPasswordInputTranslations {
+  auth: {
+    password: string;
+    passwordPlaceholder: string;
+    showPassword: string;
+    hidePassword: string;
+  }
+}
+
+interface AuthFormEmailTranslations {
+  auth: {
+    emailOrPhone: string;
+    emailOrPhonePlaceholder: string;
+  }
+}
 
 // Type validation for translations
 export type TranslationNamespaces = {
