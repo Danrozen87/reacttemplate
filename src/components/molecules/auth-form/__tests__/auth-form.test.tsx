@@ -31,7 +31,7 @@ describe('AuthForm', () => {
 
   it('handles form submission correctly', async () => {
     const mockToast = vi.fn();
-    (useToast as jest.Mock).mockImplementation(() => ({
+    (useToast as unknown as ReturnType<typeof vi.fn>).mockImplementation(() => ({
       toast: mockToast
     }));
 
