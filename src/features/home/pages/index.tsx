@@ -1,5 +1,4 @@
 
-import BaseLayout from "@/layouts/base-layout";
 import { AuthForm } from "@/components/molecules/auth-form";
 import { AuthHero } from "@/components/organisms/auth-hero/auth-hero";
 import { AuthLogo } from "@/components/atoms/auth-logo/auth-logo";
