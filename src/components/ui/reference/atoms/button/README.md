@@ -39,5 +39,3 @@ Key test scenarios:
 - Maintains accessibility features
 - Proper prop forwarding
 - Theme compatibility
-
-

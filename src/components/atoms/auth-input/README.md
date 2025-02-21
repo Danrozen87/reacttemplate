@@ -47,5 +47,3 @@ Key scenarios:
 - Disabled state behavior
 - Accessibility compliance
 - RTL layout support
-
-

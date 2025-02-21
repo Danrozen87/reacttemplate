@@ -40,4 +40,3 @@ Key test scenarios:
 - Displays error states appropriately
 - Maintains accessibility features
 - Theme compatibility
-
