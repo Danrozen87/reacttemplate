@@ -21,7 +21,7 @@ export const AuthLabel: React.FC<AuthLabelProps> = ({
       {...props}
     >
       {children}
-      {required && <span className="text-destructive">*</span>}
+      {required && <span className="text-destructive" aria-label={t("required")}>*</span>}
     </label>
   );
 };

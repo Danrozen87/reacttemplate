@@ -1,8 +1,4 @@
 
-/**
- * @component AuthPasswordInput
- * @description A secure password input component with visibility toggle and enhanced accessibility
- */
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Eye, EyeOff } from "lucide-react";
@@ -30,6 +26,8 @@ export function AuthPasswordInput({ disabled }: AuthPasswordInputProps) {
           className="pr-10"
           disabled={disabled}
           required
+          aria-required="true"
+          autoComplete="current-password"
         />
         <button
           type="button"

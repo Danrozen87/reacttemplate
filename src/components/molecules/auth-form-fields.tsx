@@ -1,8 +1,4 @@
 
-/**
- * @component AuthFormFields
- * @description Field group for authentication form with enhanced accessibility
- */
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
@@ -30,13 +26,27 @@ export function AuthFormFields({
   const [rememberMe, setRememberMe] = useState(false);
 
   return (
-    <div className={`space-y-4 ${animations.modal.content.enter}`}>
+    <div 
+      className={`space-y-4 ${animations.modal.content.enter}`}
+      role="group" 
+      aria-labelledby="login-fields"
+    >
+      <div id="login-fields" className="sr-only">
+        {t("auth.loginFields")}
+      </div>
+      
       <AuthFormEmail 
         email={email}
         setEmail={setEmail}
         disabled={isSubmitting}
+        aria-required="true"
       />
-      <AuthPasswordInput disabled={isSubmitting} />
+      
+      <AuthPasswordInput 
+        disabled={isSubmitting}
+        aria-required="true"
+      />
+      
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Checkbox
@@ -44,6 +54,7 @@ export function AuthFormFields({
             checked={rememberMe}
             onCheckedChange={(checked) => setRememberMe(checked as boolean)}
             disabled={isSubmitting}
+            aria-label={t("auth.rememberMe")}
           />
           <AuthLabel
             htmlFor="remember"
@@ -58,14 +69,17 @@ export function AuthFormFields({
           onClick={onForgotPassword}
           disabled={isSubmitting}
           type="button"
+          aria-label={t("auth.forgotPasswordAria")}
         >
           {t("auth.forgotPassword")}
         </Button>
       </div>
+      
       <Button
         type="submit"
         className="w-full font-poppins"
         disabled={isSubmitting}
+        aria-busy={isSubmitting}
       >
         {isSubmitting ? t("auth.signingIn") : t("auth.signIn")}
       </Button>
