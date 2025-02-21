@@ -46,29 +46,43 @@
   }
 
   .dark {
+    /* 40% Primary Colors */
     --color-primary-bg: 240 10% 3.9%;
     --color-primary-text: 0 0% 98%;
+    
+    /* 30% Secondary Colors */
     --color-secondary-bg: 240 3.7% 15.9%;
     --color-secondary-text: 240 5% 64.9%;
+    
+    /* 20% Interactive Colors */
     --color-interactive: 221 83% 53%;
     --color-interactive-hover: 221 83% 45%;
+    
+    /* 10% Accent Colors */
     --color-accent: 262 83% 58%;
     --color-accent-hover: 262 83% 50%;
   }
 
   .light {
+    /* 40% Primary Colors */
     --color-primary-bg: 0 0% 100%;
     --color-primary-text: 240 10% 3.9%;
+    
+    /* 30% Secondary Colors */
     --color-secondary-bg: 240 4.8% 95.9%;
     --color-secondary-text: 240 3.8% 46.1%;
+    
+    /* 20% Interactive Colors */
     --color-interactive: 221 83% 53%;
     --color-interactive-hover: 221 83% 45%;
+    
+    /* 10% Accent Colors */
     --color-accent: 262 83% 58%;
     --color-accent-hover: 262 83% 50%;
   }
 }
 
-/* Form-specific styling with new variables */
+/* Form-specific styling */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -78,25 +92,10 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--form-input)) inset;
-  -webkit-text-fill-color: hsl(var(--form-input-foreground));
+  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--color-primary-bg)) inset;
+  -webkit-text-fill-color: hsl(var(--color-primary-text));
   transition: background-color 5000s ease-in-out 0s;
-  caret-color: hsl(var(--form-input-foreground));
-}
-
-/* Dark mode autofill styling */
-.dark input:-webkit-autofill,
-.dark input:-webkit-autofill:hover,
-.dark input:-webkit-autofill:focus,
-.dark textarea:-webkit-autofill,
-.dark textarea:-webkit-autofill:hover,
-.dark textarea:-webkit-autofill:focus,
-.dark select:-webkit-autofill,
-.dark select:-webkit-autofill:hover,
-.dark select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--form-input)) inset;
-  -webkit-text-fill-color: hsl(var(--form-input-foreground));
-  caret-color: hsl(var(--form-input-foreground));
+  caret-color: hsl(var(--color-primary-text));
 }
 
 /* Form element transitions */
@@ -104,15 +103,35 @@ input,
 textarea,
 select {
   transition: all 0.2s ease;
-  background-color: hsl(var(--form-input));
+  background-color: hsl(var(--color-primary-bg));
+  color: hsl(var(--color-primary-text));
+}
+
+/* Selection styles */
+::selection {
+  background-color: hsl(var(--color-interactive) / 0.2);
+  color: hsl(var(--color-primary-text));
 }
 
 /* Focus states */
 input:focus,
 textarea:focus,
 select:focus {
-  background-color: hsl(var(--form-input));
+  background-color: hsl(var(--color-primary-bg));
+  border-color: hsl(var(--color-interactive));
   outline: none;
-  border-color: hsl(var(--form-ring));
+  color: hsl(var(--color-primary-text));
 }
 
+/* Dark mode specific overrides */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: hsl(var(--color-primary-bg));
+  color: hsl(var(--color-primary-text));
+}
+
+.dark ::selection {
+  background-color: hsl(var(--color-interactive) / 0.3);
+  color: hsl(var(--color-primary-text));
+}
