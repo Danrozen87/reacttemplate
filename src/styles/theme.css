@@ -1,84 +1,104 @@
 
 @layer base {
   :root {
-    /* Main Theme - 60% Base Colors */
-    --mint: 108 27% 84%;      /* #D0E6C6 */
-    --eggplant: 296 25% 18%;  /* Darkened for better contrast */
-    --background: var(--mint);
-    --foreground: var(--eggplant);
+    /* 40% - Main Background/Base Layer */
+    --background: 220 20% 98%;    /* #F8FAFC */
+    --foreground: 222 47% 11%;    /* #1F2937 */
     
-    /* 30% - Secondary Colors */
-    --khaki: 33 20% 82%;
-    --card: var(--khaki);
-    --card-foreground: var(--eggplant);
-    --popover: var(--khaki);
-    --popover-foreground: var(--eggplant);
-    --secondary: var(--khaki);
-    --secondary-foreground: var(--eggplant);
+    /* 30% - Primary UI/Surface Layer */
+    --card: 220 14% 96%;          /* #E5E7EB */
+    --card-foreground: 222 47% 11%;
+    --popover: 220 14% 96%;
+    --popover-foreground: 222 47% 11%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
     
-    /* 10% - Accent Colors */
-    --soft-orange: 21 59% 65%;
-    --primary: var(--soft-orange);
-    --primary-foreground: 0 0% 100%;
-    --accent: var(--soft-orange);
-    --accent-foreground: 0 0% 100%;
+    /* 20% - Secondary/Brand Color */
+    --primary: 217 91% 60%;       /* #2563EB */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 210 40% 98%;
     
-    /* Form-Specific Colors - Separated from 60-30-10 */
-    --form-input: 108 20% 98%;
-    --form-input-foreground: var(--eggplant);
-    --form-border: 296 15% 85%;
-    --form-placeholder: 296 15% 65%;
-    --form-ring: var(--soft-orange);
-    --form-error: var(--deep-red);
+    /* 10% - Accent/Highlight Color */
+    --accent: 35 92% 51%;         /* #F59E0B */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Form Elements */
+    --form-input: 220 20% 98%;
+    --form-input-foreground: 222 47% 11%;
+    --form-border: 220 13% 91%;
+    --form-placeholder: 220 8% 46%;
+    --form-ring: var(--accent);
+    --form-error: var(--destructive);
+
+    /* Border & Ring */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: var(--primary);
     
-    /* Support Colors */
-    --muted: var(--khaki);
-    --muted-foreground: 296 15% 40%;
-    --destructive: var(--deep-red);
-    --destructive-foreground: 0 0% 100%;
-    --border: var(--khaki);
-    
+    /* Radius */
     --radius: 0.75rem;
   }
 
   .dark {
-    /* Dark Mode Theme Colors */
-    --background: 296 25% 12%;
-    --foreground: 108 27% 90%;
+    /* 40% - Main Background/Base Layer */
+    --background: 222 47% 11%;    /* #1F2937 */
+    --foreground: 210 40% 98%;    /* #F8FAFC */
     
-    /* Dark Mode Secondary Colors */
-    --card: 296 20% 20%;
-    --card-foreground: 108 27% 90%;
-    --popover: 296 20% 20%;
-    --popover-foreground: 108 27% 90%;
-    --secondary: 296 20% 20%;
-    --secondary-foreground: 108 27% 90%;
+    /* 30% - Primary UI/Surface Layer */
+    --card: 223 47% 7%;          /* #111827 */
+    --card-foreground: 210 40% 98%;
+    --popover: 223 47% 7%;
+    --popover-foreground: 210 40% 98%;
+    --muted: 223 47% 7%;
+    --muted-foreground: 215 20% 65%;
     
-    /* Dark Mode Form-Specific Colors */
-    --form-input: 296 15% 20%;
-    --form-input-foreground: 108 27% 90%;
-    --form-border: 296 20% 30%;
-    --form-placeholder: 108 27% 50%;
-    --form-ring: 108 27% 84%;
+    /* 20% - Secondary/Brand Color */
+    --primary: 217 91% 60%;      /* #3B82F6 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 210 40% 98%;
     
-    /* Dark Mode Support Colors */
-    --muted: 296 15% 25%;
-    --muted-foreground: 108 27% 75%;
-    --destructive: var(--deep-red);
-    --destructive-foreground: 0 0% 100%;
-    --border: 296 20% 30%;
+    /* 10% - Accent/Highlight Color */
+    --accent: 35 92% 51%;        /* #F59E0B */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Form Elements */
+    --form-input: 223 47% 7%;
+    --form-input-foreground: 210 40% 98%;
+    --form-border: 217 19% 27%;
+    --form-placeholder: 215 20% 65%;
+    --form-ring: var(--accent);
+    --form-error: var(--destructive);
+
+    /* Border & Ring */
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: var(--primary);
   }
 }
 
-/* Typography classes with Poppins integration */
+/* Typography with Poppins Integration */
 @layer base {
   * {
     @apply border-border selection:bg-primary/10 selection:text-primary;
   }
   
   body {
-    @apply bg-background text-foreground font-poppins antialiased;
+    @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-bold;
+  }
+
+  p {
+    @apply font-poppins font-light;
   }
 }
 
@@ -110,5 +130,22 @@
   .interactive-hover {
     @apply hover:bg-accent/10 active:bg-accent/20 transition-colors duration-200;
   }
-}
 
+  /* Button variants following 40-30-20-10 rule */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90;
+  }
+
+  /* Card styles following surface layer principles */
+  .surface-card {
+    @apply bg-card text-card-foreground rounded-lg border border-border shadow-sm;
+  }
+}
