@@ -31,5 +31,3 @@
    - Use Poppins Light
    - Apply for subtitles and captions
    - Consider contrast with backgrounds
-
-
