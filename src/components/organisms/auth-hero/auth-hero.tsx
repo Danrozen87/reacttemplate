@@ -12,7 +12,7 @@ interface AuthHeroProps {
  * images and inspirational quote with proper accessibility and responsive design.
  */
 export function AuthHero() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("auth-hero");
 
   return (
     <div 
