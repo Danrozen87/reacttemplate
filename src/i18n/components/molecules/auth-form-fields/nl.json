@@ -1,0 +1,9 @@
+
+{
+  "auth": {
+    "rememberMe": "Onthoud mij",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "signIn": "Inloggen",
+    "signingIn": "Bezig met inloggen..."
+  }
+}

@@ -1,0 +1,9 @@
+
+{
+  "auth": {
+    "rememberMe": "Husk mig",
+    "forgotPassword": "Glemt adgangskode?",
+    "signIn": "Log ind",
+    "signingIn": "Logger ind..."
+  }
+}

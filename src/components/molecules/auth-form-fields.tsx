@@ -26,7 +26,7 @@ export function AuthFormFields({
   isSubmitting,
   onForgotPassword
 }: AuthFormFieldsProps) {
-  const { t } = useTranslation();
+  const { t } = useTranslation("auth-form-fields");
   const [rememberMe, setRememberMe] = useState(false);
 
   return (
