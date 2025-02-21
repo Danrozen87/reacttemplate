@@ -4,8 +4,9 @@
 
 **URL**: https://lovable.dev/projects/c400aa17-c02f-45bb-b853-7aaa44ba43b4
 
-> **Always stop to ensure every part of this file is fully respected.**  
+> **Always stop to look at Lovables AI-RESPONSE-STANDARD.md file for task management and reporting.**  
 > **I repeat: Always Consult the `README.md` file for additional details**
+> **New atomic i18n strategy and approach: Always Consult the `i18nREADME.md` file for additional details on translation work**
 
 ---
 
