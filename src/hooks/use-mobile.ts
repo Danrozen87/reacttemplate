@@ -10,18 +10,18 @@
  * ```
  */
 import * as React from "react"
-import { BREAKPOINTS } from "@/constants/breakpoints"
+import { BREAKPOINT_VALUES } from "@/constants/breakpoints"
 
 export function useIsMobile() {
   const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)
 
   React.useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${BREAKPOINTS.MOBILE - 1}px)`)
+    const mql = window.matchMedia(`(max-width: ${BREAKPOINT_VALUES.md - 1}px)`)
     const onChange = () => {
-      setIsMobile(window.innerWidth < BREAKPOINTS.MOBILE)
+      setIsMobile(window.innerWidth < BREAKPOINT_VALUES.md)
     }
     mql.addEventListener("change", onChange)
-    setIsMobile(window.innerWidth < BREAKPOINTS.MOBILE)
+    setIsMobile(window.innerWidth < BREAKPOINT_VALUES.md)
     return () => mql.removeEventListener("change", onChange)
   }, [])
 
