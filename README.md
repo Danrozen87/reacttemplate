@@ -4,6 +4,23 @@
 
 **URL**: https://lovable.dev/projects/c400aa17-c02f-45bb-b853-7aaa44ba43b4
 
+#Lovable AI Response Standard, Task Tracking & Reporting (THIS FILE IS NOT ALLOWED TO BE CHANGED - IT IS FORBIDDEN!)
+
+> **Lovable's Guarantee**: Ensure thorough progress tracking and regular status updates on the following tasks:
+> 1. **Code deliveries**
+> 2. **Refactoring and optimization**
+> 3. **Moving files**
+> 4. **Updating Imports**  
+> 5. **Cleaning Up Old Files**  
+> 6. **Verifying Builds**  
+> 7. **Guarantee 100% Project Constraint Adherence**  
+> 8. **Working to simplifying Folder/File Structure continously**
+> 9. **Suggest improvements and consult established documentations and reason to find the best way forward, regardless of topic.**
+> 10. **Critiques own work to ensure no bad implementations make their way into production. 
+> 11. **Lovable always reads and respects the AI-RESPONSE-STANDARD.md in full before every commit and chat, the README.md in main and sub-folders where applicable, the i18nREADME.md, DESIGN-SYSTEM.md and the UX-BEST-PRACTICE.md and confirms complete adherence with each delivery. 
+
+---
+
 > **Always stop to look at Lovables AI-RESPONSE-STANDARD.md file for task management and reporting.**  
 > **I repeat: Always Consult the `README.md` file for additional details**
 > **New atomic i18n strategy and approach: Always Consult the `i18nREADME.md` file for additional details on translation work**
