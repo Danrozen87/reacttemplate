@@ -1,0 +1,11 @@
+
+{
+  "input": {
+    "required": "Detta fält är obligatoriskt",
+    "invalid": "Vänligen ange ett giltigt värde",
+    "aria": {
+      "error": "Fel i fält",
+      "required": "Obligatoriskt fält"
+    }
+  }
+}

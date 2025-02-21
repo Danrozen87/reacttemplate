@@ -1,0 +1,11 @@
+
+{
+  "input": {
+    "required": "This field is required",
+    "invalid": "Please enter a valid value",
+    "aria": {
+      "error": "Error in field",
+      "required": "Required field"
+    }
+  }
+}

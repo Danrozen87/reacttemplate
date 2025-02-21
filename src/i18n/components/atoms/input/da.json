@@ -1,0 +1,11 @@
+
+{
+  "input": {
+    "required": "Dette felt er påkrævet",
+    "invalid": "Indtast venligst en gyldig værdi",
+    "aria": {
+      "error": "Fejl i felt",
+      "required": "Påkrævet felt"
+    }
+  }
+}

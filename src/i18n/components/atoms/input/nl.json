@@ -1,0 +1,11 @@
+
+{
+  "input": {
+    "required": "Dit veld is verplicht",
+    "invalid": "Voer een geldige waarde in",
+    "aria": {
+      "error": "Fout in veld",
+      "required": "Verplicht veld"
+    }
+  }
+}
