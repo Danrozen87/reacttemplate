@@ -6,7 +6,7 @@ An atomic input component that serves as the foundation for all text input field
 
 ## Usage
 ```tsx
-import { Input } from "@/components/ui/reference/atoms/input/input"
+import { Input } from "@/components/ui/input/input"
 
 // Default input
 <Input placeholder="Enter text" />

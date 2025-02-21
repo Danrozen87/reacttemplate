@@ -6,7 +6,7 @@ An atomic button component that serves as the foundation for all button variants
 
 ## Usage
 ```tsx
-import { Button } from "@/components/ui/reference/atoms/button/button"
+import { Button } from "@/components/ui/button/button"
 
 // Default button
 <Button>Click me</Button>
