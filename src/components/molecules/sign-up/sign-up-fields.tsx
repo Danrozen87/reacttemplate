@@ -1,69 +1,64 @@
-
-import { useTranslation } from "react-i18next";
-import { AuthInput } from "@/components/atoms/auth-input/auth-input";
-import { AuthLabel } from "@/components/atoms/auth-label/auth-label";
-import { CompanySizeSelect } from "./company-size-select";
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
+import { AuthInput, AuthLabel, CompanySizeSelect } from "@/components/atoms";
+import { useTranslation } from 'react-i18next';
 
 interface SignUpFieldsProps {
-  isSubmitting: boolean;
+  className?: string;
 }
 
-export function SignUpFields({ isSubmitting }: SignUpFieldsProps) {
-  const { t } = useTranslation("sign-up-form");
+export const SignUpFields: React.FC<SignUpFieldsProps> = ({ className }) => {
+  const { t } = useTranslation('sign-up-form');
+  const { register, formState: { errors } } = useFormContext();
 
   return (
-    <>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <AuthLabel htmlFor="firstName" required>
-            {t("auth.signup.firstName")}
-          </AuthLabel>
-          <AuthInput
-            id="firstName"
-            placeholder={t("auth.signup.firstNamePlaceholder")}
-            required
-            disabled={isSubmitting}
-          />
-        </div>
-        <div className="space-y-2">
-          <AuthLabel htmlFor="lastName" required>
-            {t("auth.signup.lastName")}
-          </AuthLabel>
-          <AuthInput
-            id="lastName"
-            placeholder={t("auth.signup.lastNamePlaceholder")}
-            required
-            disabled={isSubmitting}
-          />
-        </div>
-      </div>
+    <div className={className}>
+      <AuthLabel htmlFor="companyName" required>
+        {t('company-name-label')}
+      </AuthLabel>
+      <AuthInput
+        id="companyName"
+        type="text"
+        placeholder={t('company-name-placeholder')}
+        {...register("companyName", {
+          required: t('company-name-required'),
+        })}
+        error={errors.companyName?.message as string}
+      />
 
-      <div className="space-y-2">
-        <AuthLabel htmlFor="signup-email" required>
-          {t("auth.signup.email")}
-        </AuthLabel>
-        <AuthInput
-          id="signup-email"
-          type="email"
-          placeholder={t("auth.signup.emailPlaceholder")}
-          required
-          disabled={isSubmitting}
-        />
-      </div>
+      <AuthLabel htmlFor="companySize" required>
+        {t('company-size-label')}
+      </AuthLabel>
+      <CompanySizeSelect
+        value={""}
+        onChange={() => {}}
+      />
 
-      <div className="space-y-2">
-        <AuthLabel htmlFor="companyName" required>
-          {t("auth.signup.companyName")}
-        </AuthLabel>
-        <AuthInput
-          id="companyName"
-          placeholder={t("auth.signup.companyNamePlaceholder")}
-          required
-          disabled={isSubmitting}
-        />
-      </div>
+      <AuthLabel htmlFor="firstName" required>
+        {t('first-name-label')}
+      </AuthLabel>
+      <AuthInput
+        id="firstName"
+        type="text"
+        placeholder={t('first-name-placeholder')}
+        {...register("firstName", {
+          required: t('first-name-required'),
+        })}
+        error={errors.firstName?.message as string}
+      />
 
-      <CompanySizeSelect isSubmitting={isSubmitting} />
-    </>
+      <AuthLabel htmlFor="lastName" required>
+        {t('last-name-label')}
+      </AuthLabel>
+      <AuthInput
+        id="lastName"
+        type="text"
+        placeholder={t('last-name-placeholder')}
+        {...register("lastName", {
+          required: t('last-name-required'),
+        })}
+        error={errors.lastName?.message as string}
+      />
+    </div>
   );
-}
+};
