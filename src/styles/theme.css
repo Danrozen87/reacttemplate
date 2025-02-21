@@ -1,6 +1,5 @@
 @layer base {
   :root {
-    /* Base theme inherits from dark mode by default */
     --radius: 0.5rem;
     --border-width: 1px;
 
@@ -93,15 +92,15 @@
     --popover: var(--color-secondary-bg);
     --popover-foreground: var(--color-primary-text);
     --primary: var(--color-interactive);
-    --primary-foreground: var(--color-primary-text);
+    --primary-foreground: 0 0% 98%;        /* White text for buttons */
     --secondary: var(--color-secondary-bg);
     --secondary-foreground: var(--color-secondary-text);
     --muted: var(--color-secondary-bg);
     --muted-foreground: var(--color-secondary-text);
     --accent: var(--color-accent);
-    --accent-foreground: var(--color-primary-text);
+    --accent-foreground: 0 0% 98%;         /* White text for accent buttons */
     --destructive: var(--color-error);
-    --destructive-foreground: var(--color-primary-text);
+    --destructive-foreground: 0 0% 98%;    /* White text for destructive buttons */
     --border: var(--color-secondary-bg);
     --input: var(--color-secondary-bg);
     --ring: var(--color-interactive);
@@ -130,7 +129,6 @@ textarea,
 select {
   transition: all 0.2s ease;
   background-color: hsl(var(--color-primary-bg));
-  color: hsl(var(--color-primary-text));
 }
 
 /* Selection styles */
