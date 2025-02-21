@@ -210,27 +210,7 @@
 - **Strict TypeScript**: Ensures reliability, helps with refactoring, and keeps collaboration smooth.  
 - **Consistent Tooling**: Use ESLint (with Prettier) for an automated, frictionless workflow.  
 - **Atomic Structure**: By splitting components into smaller building blocks, the codebase remains clean, testable, and easy to maintain.  
-- **Minimal Dependencies**: Keep dependencies lean for faster builds and simpler updates.
-
----
-
-## Best-in-Class UX & Centralized Theme System
-
-1. **Centralized Theme Configuration**  
-   - Manage all styling—colors, spacing, typography—from a single theme or config file.  
-   - Changes cascade globally, ensuring cohesive design.  
-   - Supports both light mode and dark mode in a user-friendly manner.
-
-2. **60-30-10 Color Rule**  
-   - Use for balanced and visually appealing interfaces:  
-     - **60%** primary/base color  
-     - **30%** secondary color  
-     - **10%** accent color  
-   - Guides user focus and keeps the UI consistently pleasing.
-
-3. **Mobile-First & Responsive Design**  
-   - Optimize every feature for mobile as a priority, ensuring desktop also provides an excellent experience.  
-   - Use Tailwind’s responsive classes to simplify style variations.
+- **Only necessary Dependencies**: Keep dependencies lean for faster builds and simpler updates.
 
 ---
 
