@@ -1,80 +1,69 @@
 
-# Internationalization (i18n)
+# Internationalization (i18n) Strategy
 
-This directory contains all internationalization configurations and translation files for the application.
+## Structure Overview
 
-## Structure
+Our i18n implementation follows an atomic design pattern, with translations organized by component level:
+
 ```
 i18n/
-├── locales/
-│   ├── en/
-│   │   ├── common.json
-│   │   ├── components.json
-│   │   └── pages.json
-│   ├── sv/
-│   ├── da/
-│   └── nl/
-├── config.ts
-└── README.md
+├── components/
+│   ├── atoms/
+│   │   └── [component-name]/
+│   │       ├── en.json
+│   │       ├── da.json
+│   │       ├── sv.json
+│   │       └── nl.json
+│   ├── molecules/
+│   └── organisms/
+└── config.ts
 ```
 
-## Guidelines
+## Key Principles
 
-### Translation File Organization
-1. **Common Translations** (`common.json`)
-   - Global strings used across multiple components
-   - Error messages
-   - Button labels
-   - Form validations
+1. **Atomic Organization**
+   - Each component has its own translation files
+   - Follows atomic design hierarchy (atoms, molecules, organisms)
+   - Maximum of 20 keys per file for maintainability
 
-2. **Component Translations** (`components.json`)
-   - Component-specific strings
-   - Organized by component hierarchy
-   - Follows atomic design structure
+2. **Type Safety**
+   - All translations are strictly typed
+   - Component-specific translation interfaces
+   - No use of "any" type
 
-3. **Page Translations** (`pages.json`)
-   - Page-specific content
-   - Meta titles and descriptions
-   - Page-specific instructions
+3. **Namespace Convention**
+   - Namespaces match component paths
+   - Clear, predictable naming patterns
+   - Avoid namespace collisions
 
-### Naming Conventions
-- Use kebab-case for all translation keys
-- Group related translations under common parents
-- Use descriptive, hierarchical key names
+4. **Required Languages**
+   - English (en) - Base language
+   - Danish (da)
+   - Swedish (sv)
+   - Dutch (nl)
 
-### Required Languages
-- English (en) - Base language
-- Swedish (sv)
-- Danish (da)
-- Dutch (nl)
+5. **File Structure**
+   - One translation file per language per component
+   - Consistent JSON structure across languages
+   - Clear key hierarchy
 
-### Implementation Rules
-1. All text content must be internationalized
-2. No hardcoded strings in components
-3. Maintain consistent key structure across all language files
-4. Include language-specific formatting (dates, numbers, currency)
-5. Document special considerations for each language
+## Usage Example
 
-### Testing Requirements
-- 100% translation coverage for all supported languages
-- Validation of translation key presence
-- Format string verification
-- RTL layout testing where applicable
-
-### Example Structure
-```json
-{
-  "components": {
-    "atomic": {
-      "button": {},
-      "input": {},
-      "theme-switcher": {}
-    },
-    "molecular": {
-      "nav-bar": {},
-      "footer": {},
-      "search-bar": {}
-    }
-  }
-}
+```typescript
+// In a component
+const { t } = useTranslation("auth-label");
+const label = t("auth.label.email");
 ```
+
+## Adding New Translations
+
+1. Create JSON files for all required languages
+2. Add translation type to `config.ts`
+3. Add namespace to resources and namespaces array
+4. Update component to use new namespace
+
+## Maintenance
+
+- Regular validation of unused keys
+- Consistency checks across languages
+- Type generation updates
