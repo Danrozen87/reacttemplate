@@ -1,0 +1,73 @@
+# File: .github/workflows/enforce-standards.yml
+# Purpose: A single CI workflow that enforces all key standards:
+# 1) Custom ESLint checks (line limits, no inline CSS, atomic folder structure, i18n usage, etc.)
+# 2) Optional check that PR body includes acknowledgment (AI-RESPONSE-STANDARD.md & README.md).
+# 3) Ensures no merges if any checks fail (when branch protection is configured).
+
+name: Enforce Standards
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  lint-and-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the PR code
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node (adjust version as needed)
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Step 3: Install all dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run ESLint with custom plugin/rules
+      #
+      # Assumes your .eslintrc.* file is configured to:
+      # - Enforce max 68 lines except for certain files (README.md, theme.css, etc.)
+      # - Disallow inline CSS
+      # - Enforce atomic folder structure and no nested subfolders
+      # - Possibly check i18n usage (via custom plugin or external plugin)
+      # - …plus any other constraints from "AI-RESPONSE-STANDARD.md" or "README.md"
+      #
+      # Also note "--max-warnings=0" ensures that ANY warning is treated as an error.
+      - name: Run ESLint
+        run: |
+          npx eslint . \
+            --ext .js,.jsx,.ts,.tsx \
+            --max-warnings=0
+
+      # Step 5 (Optional): Run additional tests for coverage, i18n checks, or custom scripts
+      # Uncomment if you have scripts like `npm run test` or `npm run check-i18n`.
+      # - name: Run tests (optional)
+      #   run: npm run test
+      #
+      # - name: i18n checks (optional)
+      #   run: npm run check-i18n
+
+      # Step 6 (Optional): Enforce PR body acknowledgment
+      # This ensures the PR description explicitly states the user has read relevant docs.
+      - name: Confirm PR Acknowledgment
+        if: always()
+        run: |
+          echo "Checking PR description for acknowledgment of AI-RESPONSE-STANDARD.md & README.md..."
+          PR_BODY="${{ github.event.pull_request.body }}"
+          REQUIRED_STRING="I have read and understood the AI-RESPONSE-STANDARD.md file and the README.md file in main"
+          
+          # Case-insensitive grep (-qi). If not found, fail with exit 1.
+          if echo "$PR_BODY" | grep -qi "$REQUIRED_STRING"; then
+            echo "✅ Acknowledgment found in PR body."
+          else
+            echo "❌ Missing required text:"
+            echo "   $REQUIRED_STRING"
+            echo "Please add the exact phrase above to your PR description."
+            exit 1
+          fi
