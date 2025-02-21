@@ -1,3 +1,4 @@
+
 @layer base {
   :root {
     /* 40% Primary Colors */
@@ -67,123 +68,51 @@
   }
 }
 
-@layer utilities {
-  .glass-morphism {
-    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
-  }
-  
-  .neo-blur {
-    @apply backdrop-blur-2xl bg-black/40 border border-white/10;
-  }
-  
-  .text-gradient {
-    @apply bg-gradient-to-br from-white via-white/90 to-white/70 bg-clip-text text-transparent;
-  }
-  
-  .text-gradient-primary {
-    @apply bg-gradient-to-br from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent;
-  }
+/* Form-specific styling with new variables */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--form-input)) inset;
+  -webkit-text-fill-color: hsl(var(--form-input-foreground));
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: hsl(var(--form-input-foreground));
 }
 
-/* Base Styles */
-* {
-  @apply border-border selection:bg-white/10 selection:text-white;
+/* Dark mode autofill styling */
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark textarea:-webkit-autofill,
+.dark textarea:-webkit-autofill:hover,
+.dark textarea:-webkit-autofill:focus,
+.dark select:-webkit-autofill,
+.dark select:-webkit-autofill:hover,
+.dark select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--form-input)) inset;
+  -webkit-text-fill-color: hsl(var(--form-input-foreground));
+  caret-color: hsl(var(--form-input-foreground));
 }
 
-body {
-  @apply bg-background text-foreground antialiased;
-  font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+/* Form element transitions */
+input,
+textarea,
+select {
+  transition: all 0.2s ease;
+  background-color: hsl(var(--form-input));
 }
 
-html {
-  @apply scroll-smooth;
+/* Focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: hsl(var(--form-input));
+  outline: none;
+  border-color: hsl(var(--form-ring));
 }
 
-@layer base {
-  :root {
-    /* Base colors with proper contrast ratios */
-    --color-primary-bg: 0 0% 100%;
-    --color-primary-text: 240 10% 3.9%;
-    --color-secondary-bg: 240 4.8% 95.9%;
-    --color-secondary-text: 240 3.8% 46.1%;
-    
-    /* Interactive states */
-    --color-hover: 240 5% 90%;
-    --color-select: 221 83% 53%;
-    --color-select-text: 0 0% 100%;
-
-    /* Theme mapping */
-    --background: var(--color-primary-bg);
-    --foreground: var(--color-primary-text);
-    --muted: var(--color-secondary-bg);
-    --muted-foreground: var(--color-secondary-text);
-    
-    /* Semantic Colors */
-    --color-success: 142 71% 45%;
-    --color-warning: 38 92% 50%;
-    --color-error: 0 84% 60%;
-
-    /* Theme Colors */
-    --background: var(--color-primary-bg);
-    --foreground: var(--color-primary-text);
-    --card: var(--color-secondary-bg);
-    --card-foreground: var(--color-primary-text);
-    --popover: var(--color-secondary-bg);
-    --popover-foreground: var(--color-primary-text);
-    --primary: var(--color-interactive);
-    --primary-foreground: var(--color-primary-text);
-    --secondary: var(--color-secondary-bg);
-    --secondary-foreground: var(--color-secondary-text);
-    --muted: var(--color-secondary-bg);
-    --muted-foreground: var(--color-secondary-text);
-    --accent: var(--color-accent);
-    --accent-foreground: var(--color-primary-text);
-    --destructive: var(--color-error);
-    --destructive-foreground: var(--color-primary-text);
-    --border: var(--color-secondary-bg);
-    --input: var(--color-secondary-bg);
-    --ring: var(--color-interactive);
-    --radius: 0.75rem;
-  }
-
-  .dark {
-    /* Dark mode colors with proper contrast */
-    --color-primary-bg: 240 10% 3.9%;
-    --color-primary-text: 0 0% 98%;
-    --color-secondary-bg: 240 3.7% 15.9%;
-    --color-secondary-text: 240 5% 84.9%;
-    
-    /* Interactive states for dark mode */
-    --color-hover: 240 5% 25%;
-    --color-select: 221 83% 53%;
-    --color-select-text: 0 0% 100%;
-
-    /* Theme mapping */
-    --background: var(--color-primary-bg);
-    --foreground: var(--color-primary-text);
-    --muted: var(--color-secondary-bg);
-    --muted-foreground: var(--color-secondary-text);
-  }
-}
-
-/* Global selection styles */
-@layer base {
-  ::selection {
-    @apply bg-primary/30 text-foreground;
-  }
-
-  ::-moz-selection {
-    @apply bg-primary/30 text-foreground;
-  }
-}
-
-/* Improved hover states */
-@layer utilities {
-  .hover-visible {
-    @apply hover:bg-muted/80 hover:text-foreground transition-colors;
-  }
-  
-  .hover-highlight {
-    @apply hover:bg-primary/10 hover:text-foreground transition-colors;
-  }
-}
