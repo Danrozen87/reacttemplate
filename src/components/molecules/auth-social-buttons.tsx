@@ -1,14 +1,14 @@
 
-import { Button } from "@/components/ui/button";
-import { useTranslation } from "react-i18next";
-import { Github } from "lucide-react";
-
 /**
  * @component AuthSocialButtons
  * @description Social media login buttons for authentication
  */
+import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+import { Github } from "lucide-react";
+
 export function AuthSocialButtons() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("auth-social-buttons");
 
   return (
     <div className="flex flex-col gap-2">
