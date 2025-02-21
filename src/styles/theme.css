@@ -1,113 +1,81 @@
+
 @layer base {
   :root {
     --radius: 0.5rem;
     --border-width: 1px;
 
-    --muted-foreground: hsl(215 20.2% 65.1%);
+    /* Shadow System */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
-    --card-border: hsl(240 5.9% 10.0%);
-    --card-radius: 0.5rem;
+    /* Spacing System */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
 
-    --popover-border: hsl(240 5.9% 10.0%);
-    --popover-radius: 0.5rem;
+    /* Brand Colors - Light Theme */
+    --brand-primary: 17 25% 39%;    /* #7C5A4E - Rich Earth Brown */
+    --brand-secondary: 35 77% 35%;  /* #9C6615 - Deep Gold */
+    --brand-accent: 43 96% 56%;     /* #FFB52E - Vibrant Amber */
 
-    --input-border: hsl(240 5.9% 10.0%);
-    --input-radius: 0.5rem;
-
-    --border: hsl(240 5.9% 10.0%);
-    --radius: 0.5rem;
+    /* UI Colors - Light Theme */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: var(--brand-primary);
+    --primary-foreground: 0 0% 98%;
+    --secondary: var(--brand-secondary);
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: var(--brand-accent);
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: var(--brand-primary);
   }
 
   .dark {
-    /* 40% Primary Colors - Main backgrounds and text */
-    --color-primary-bg: 240 10% 3.9%;      /* Dark slate for main backgrounds */
-    --color-primary-text: 0 0% 98%;        /* Almost white for primary text */
-    
-    /* 30% Secondary Colors - Supporting UI elements */
-    --color-secondary-bg: 240 3.7% 15.9%;  /* Slightly lighter slate for cards/sections */
-    --color-secondary-text: 240 5% 64.9%;  /* Muted text color */
-    
-    /* 20% Interactive Colors - Buttons, links, and interactive states */
-    --color-interactive: 17 25% 39%;       /* #7C5A4E - New darker blue */
-    --color-interactive-hover: 17 25% 34%; /* Slightly darker for hover */
-    
-    /* 10% Accent Colors - Call-to-actions and highlights */
-    --color-accent: 35 77% 35%;           /* #9C6615 - New accent color */
-    --color-accent-hover: 35 77% 30%;     /* Darker accent for hover */
+    /* Brand Colors - Dark Theme */
+    --brand-primary: 17 25% 39%;    /* #7C5A4E */
+    --brand-secondary: 35 77% 35%;  /* #9C6615 */
+    --brand-accent: 43 96% 56%;     /* #FFB52E */
 
-    /* Semantic Colors */
-    --color-success: 142 71% 45%;
-    --color-warning: 38 92% 50%;
-    --color-error: 0 84% 60%;
-
-    /* Mapping to theme variables */
-    --background: var(--color-primary-bg);
-    --foreground: var(--color-primary-text);
-    --card: var(--color-secondary-bg);
-    --card-foreground: var(--color-primary-text);
-    --popover: var(--color-secondary-bg);
-    --popover-foreground: var(--color-primary-text);
-    --primary: var(--color-interactive);
-    --primary-foreground: var(--color-primary-text);
-    --secondary: var(--color-secondary-bg);
-    --secondary-foreground: var(--color-secondary-text);
-    --muted: var(--color-secondary-bg);
-    --muted-foreground: var(--color-secondary-text);
-    --accent: var(--color-accent);
-    --accent-foreground: var(--color-primary-text);
-    --destructive: var(--color-error);
-    --destructive-foreground: var(--color-primary-text);
-    --border: var(--color-secondary-bg);
-    --input: var(--color-secondary-bg);
-    --ring: var(--color-interactive);
-  }
-
-  .light {
-    /* 40% Primary Colors - Main backgrounds and text */
-    --color-primary-bg: 0 0% 100%;         /* Pure white for main backgrounds */
-    --color-primary-text: 240 10% 3.9%;    /* Near black for primary text */
-    
-    /* 30% Secondary Colors - Supporting UI elements */
-    --color-secondary-bg: 240 4.8% 95.9%;  /* Light gray for cards/sections */
-    --color-secondary-text: 240 3.8% 46.1%; /* Medium gray for muted text */
-    
-    /* 20% Interactive Colors - Buttons, links, and interactive states */
-    --color-interactive: 17 25% 39%;       /* #7C5A4E - New darker blue */
-    --color-interactive-hover: 17 25% 34%; /* Slightly darker for hover */
-    
-    /* 10% Accent Colors - Call-to-actions and highlights */
-    --color-accent: 35 77% 35%;           /* #9C6615 - New accent color */
-    --color-accent-hover: 35 77% 30%;     /* Darker accent for hover */
-
-    /* Semantic Colors */
-    --color-success: 142 71% 45%;
-    --color-warning: 38 92% 50%;
-    --color-error: 0 84% 60%;
-
-    /* Mapping to theme variables */
-    --background: var(--color-primary-bg);
-    --foreground: var(--color-primary-text);
-    --card: var(--color-secondary-bg);
-    --card-foreground: var(--color-primary-text);
-    --popover: var(--color-secondary-bg);
-    --popover-foreground: var(--color-primary-text);
-    --primary: var(--color-interactive);
-    --primary-foreground: 0 0% 98%;        /* White text for buttons */
-    --secondary: var(--color-secondary-bg);
-    --secondary-foreground: var(--color-secondary-text);
-    --muted: var(--color-secondary-bg);
-    --muted-foreground: var(--color-secondary-text);
-    --accent: var(--color-accent);
-    --accent-foreground: 0 0% 98%;         /* White text for accent buttons */
-    --destructive: var(--color-error);
-    --destructive-foreground: 0 0% 98%;    /* White text for destructive buttons */
-    --border: var(--color-secondary-bg);
-    --input: var(--color-secondary-bg);
-    --ring: var(--color-interactive);
+    /* UI Colors - Dark Theme */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: var(--brand-primary);
+    --primary-foreground: 0 0% 98%;
+    --secondary: var(--brand-secondary);
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: var(--brand-accent);
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: var(--brand-primary);
   }
 }
 
-/* Form element styling */
+/* Form element styling with new brand identity */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -117,45 +85,14 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--color-primary-bg)) inset;
-  -webkit-text-fill-color: hsl(var(--color-primary-text));
+  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--background)) inset;
+  -webkit-text-fill-color: hsl(var(--foreground));
   transition: background-color 5000s ease-in-out 0s;
-  caret-color: hsl(var(--color-primary-text));
-}
-
-/* Form element transitions */
-input,
-textarea,
-select {
-  transition: all 0.2s ease;
-  background-color: hsl(var(--color-primary-bg));
+  caret-color: hsl(var(--foreground));
 }
 
 /* Selection styles */
 ::selection {
-  background-color: hsl(var(--color-interactive) / 0.2);
-  color: hsl(var(--color-primary-text));
-}
-
-/* Focus states */
-input:focus,
-textarea:focus,
-select:focus {
-  background-color: hsl(var(--color-primary-bg));
-  border-color: hsl(var(--color-interactive));
-  outline: none;
-  color: hsl(var(--color-primary-text));
-}
-
-/* Dark mode specific overrides */
-.dark input,
-.dark textarea,
-.dark select {
-  background-color: hsl(var(--color-primary-bg));
-  color: hsl(var(--color-primary-text));
-}
-
-.dark ::selection {
-  background-color: hsl(var(--color-interactive) / 0.3);
-  color: hsl(var(--color-primary-text));
+  background-color: hsl(var(--brand-primary) / 0.2);
+  color: hsl(var(--foreground));
 }

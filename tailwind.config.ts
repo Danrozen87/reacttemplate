@@ -67,6 +67,21 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        'sm': 'var(--shadow-sm)',
+        'md': 'var(--shadow-md)',
+        'lg': 'var(--shadow-lg)',
+        'xl': 'var(--shadow-xl)',
+      },
+      spacing: {
+        '1': 'var(--space-1)',
+        '2': 'var(--space-2)',
+        '3': 'var(--space-3)',
+        '4': 'var(--space-4)',
+        '6': 'var(--space-6)',
+        '8': 'var(--space-8)',
+        '12': 'var(--space-12)',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -76,42 +91,10 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        // Modal and overlay animations
-        "modal-in": {
-          "0%": { opacity: "0", transform: "translateY(-10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        "modal-out": {
-          "0%": { opacity: "1", transform: "translateY(0)" },
-          "100%": { opacity: "0", transform: "translateY(10px)" },
-        },
-        "overlay-in": {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-        "overlay-out": {
-          "0%": { opacity: "1" },
-          "100%": { opacity: "0" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        // Modal and overlay animations
-        "modal-in": "modal-in 0.3s ease-out",
-        "modal-out": "modal-out 0.2s ease-in",
-        "overlay-in": "overlay-in 0.3s ease-out",
-        "overlay-out": "overlay-out 0.2s ease-in",
-      },
-      backdropBlur: {
-        'xs': '2px',
-        'sm': '4px',
-        DEFAULT: '8px',
-        'md': '12px',
-        'lg': '16px',
-        'xl': '24px',
-        '2xl': '40px',
-        '3xl': '64px',
       },
     },
   },
