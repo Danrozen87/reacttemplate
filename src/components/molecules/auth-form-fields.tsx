@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -16,7 +16,7 @@ interface AuthFormFieldsProps {
   onForgotPassword: () => void;
 }
 
-export function AuthFormFields({
+export const AuthFormFields = memo(function AuthFormFields({
   email,
   setEmail,
   isSubmitting,
@@ -24,6 +24,10 @@ export function AuthFormFields({
 }: AuthFormFieldsProps) {
   const { t } = useTranslation("auth-form-fields");
   const [rememberMe, setRememberMe] = useState(false);
+
+  const handleRememberMeChange = useCallback((checked: boolean) => {
+    setRememberMe(checked);
+  }, []);
 
   return (
     <div 
@@ -52,7 +56,7 @@ export function AuthFormFields({
           <Checkbox
             id="remember"
             checked={rememberMe}
-            onCheckedChange={(checked) => setRememberMe(checked as boolean)}
+            onCheckedChange={handleRememberMeChange}
             disabled={isSubmitting}
             aria-label={t("auth.rememberMe")}
           />
@@ -85,4 +89,5 @@ export function AuthFormFields({
       </Button>
     </div>
   );
-}
+});
+

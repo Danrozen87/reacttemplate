@@ -1,4 +1,5 @@
 
+import { memo } from "react";
 import { animations } from "@/utils/animations";
 import { AuthFormHeader } from "./auth-form-header";
 import { AuthFormFields } from "./auth-form-fields";
@@ -6,17 +7,8 @@ import { AuthFormFooter } from "./auth-form-footer";
 import { PasswordRecoveryForm } from "./password-recovery-form";
 import { SignUpForm } from "./sign-up-form";
 import { useAuthFormState } from "./auth-form-state";
-import { useState } from "react";
 
-/**
- * @component AuthForm
- * @description Authentication form with role-based access control
- * @roles
- * - Admin: Full system access
- * - Manager: Team management access
- * - User: Personal access
- */
-export function AuthForm() {
+export const AuthForm = memo(function AuthForm() {
   const {
     email,
     setEmail,
@@ -26,19 +18,11 @@ export function AuthForm() {
     handleSubmit,
   } = useAuthFormState();
 
-  const [isSignUpMode, setIsSignUpMode] = useState(false);
-
   if (isRecoveryMode) {
     return (
       <PasswordRecoveryForm 
         onBack={() => setIsRecoveryMode(false)} 
       />
-    );
-  }
-
-  if (isSignUpMode) {
-    return (
-      <SignUpForm onBack={() => setIsSignUpMode(false)} />
     );
   }
 
@@ -52,8 +36,8 @@ export function AuthForm() {
           isSubmitting={isSubmitting}
           onForgotPassword={() => setIsRecoveryMode(true)}
         />
-        <AuthFormFooter onSignUp={() => setIsSignUpMode(true)} />
+        <AuthFormFooter />
       </form>
     </div>
   );
-}
+});

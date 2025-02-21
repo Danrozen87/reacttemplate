@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Eye, EyeOff } from "lucide-react";
 import { AuthInput } from "@/components/atoms/auth-input/auth-input";
@@ -9,9 +9,15 @@ interface AuthPasswordInputProps {
   disabled?: boolean;
 }
 
-export function AuthPasswordInput({ disabled }: AuthPasswordInputProps) {
+export const AuthPasswordInput = memo(function AuthPasswordInput({ 
+  disabled 
+}: AuthPasswordInputProps) {
   const { t } = useTranslation("auth-password-input");
   const [showPassword, setShowPassword] = useState(false);
+
+  const togglePassword = useCallback(() => {
+    setShowPassword(prev => !prev);
+  }, []);
 
   return (
     <div className="space-y-2">
@@ -31,7 +37,7 @@ export function AuthPasswordInput({ disabled }: AuthPasswordInputProps) {
         />
         <button
           type="button"
-          onClick={() => setShowPassword(!showPassword)}
+          onClick={togglePassword}
           className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
           aria-label={t(showPassword ? "auth.hidePassword" : "auth.showPassword")}
           disabled={disabled}
@@ -41,4 +47,4 @@ export function AuthPasswordInput({ disabled }: AuthPasswordInputProps) {
       </div>
     </div>
   );
-}
+});
