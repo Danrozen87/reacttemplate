@@ -1,8 +1,22 @@
-
 @layer base {
   :root {
     /* Base theme inherits from dark mode by default */
-    /* ... keep existing code */
+    --radius: 0.5rem;
+    --border-width: 1px;
+
+    --muted-foreground: hsl(215 20.2% 65.1%);
+
+    --card-border: hsl(240 5.9% 10.0%);
+    --card-radius: 0.5rem;
+
+    --popover-border: hsl(240 5.9% 10.0%);
+    --popover-radius: 0.5rem;
+
+    --input-border: hsl(240 5.9% 10.0%);
+    --input-radius: 0.5rem;
+
+    --border: hsl(240 5.9% 10.0%);
+    --radius: 0.5rem;
   }
 
   .dark {
@@ -15,12 +29,12 @@
     --color-secondary-text: 240 5% 64.9%;  /* Muted text color */
     
     /* 20% Interactive Colors - Buttons, links, and interactive states */
-    --color-interactive: 221 83% 53%;      /* Bright blue for interactive elements */
-    --color-interactive-hover: 221 83% 45%; /* Slightly darker blue for hover */
+    --color-interactive: 17 25% 39%;       /* #7C5A4E - New darker blue */
+    --color-interactive-hover: 17 25% 34%; /* Slightly darker for hover */
     
     /* 10% Accent Colors - Call-to-actions and highlights */
-    --color-accent: 262 83% 58%;          /* Vibrant purple for accents */
-    --color-accent-hover: 262 83% 50%;    /* Darker purple for hover */
+    --color-accent: 35 77% 35%;           /* #9C6615 - New accent color */
+    --color-accent-hover: 35 77% 30%;     /* Darker accent for hover */
 
     /* Semantic Colors */
     --color-success: 142 71% 45%;
@@ -59,12 +73,12 @@
     --color-secondary-text: 240 3.8% 46.1%; /* Medium gray for muted text */
     
     /* 20% Interactive Colors - Buttons, links, and interactive states */
-    --color-interactive: 221 83% 53%;      /* Bright blue for interactive elements */
-    --color-interactive-hover: 221 83% 45%; /* Slightly darker blue for hover */
+    --color-interactive: 17 25% 39%;       /* #7C5A4E - New darker blue */
+    --color-interactive-hover: 17 25% 34%; /* Slightly darker for hover */
     
     /* 10% Accent Colors - Call-to-actions and highlights */
-    --color-accent: 262 83% 58%;          /* Vibrant purple for accents */
-    --color-accent-hover: 262 83% 50%;    /* Darker purple for hover */
+    --color-accent: 35 77% 35%;           /* #9C6615 - New accent color */
+    --color-accent-hover: 35 77% 30%;     /* Darker accent for hover */
 
     /* Semantic Colors */
     --color-success: 142 71% 45%;

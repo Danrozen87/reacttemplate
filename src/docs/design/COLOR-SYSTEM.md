@@ -16,13 +16,13 @@ Our color system follows a strict distribution for visual hierarchy and consiste
 - Muted text and borders
 
 ### 3. Interactive Colors (20%)
-- Buttons and links
+- Buttons and links (#7C5A4E)
 - Form elements
 - Focus states
 - Selection highlighting
 
 ### 4. Accent Colors (10%)
-- Call-to-action elements
+- Call-to-action elements (#9C6615)
 - Important highlights
 - Special states
 
@@ -38,12 +38,12 @@ Our color system follows a strict distribution for visual hierarchy and consiste
 --color-secondary-text: 240 5% 64.9%;
 
 /* Interactive (20%) */
---color-interactive: 221 83% 53%;
---color-interactive-hover: 221 83% 45%;
+--color-interactive: 17 25% 39%;      /* #7C5A4E */
+--color-interactive-hover: 17 25% 34%;
 
 /* Accent (10%) */
---color-accent: 262 83% 58%;
---color-accent-hover: 262 83% 50%;
+--color-accent: 35 77% 35%;          /* #9C6615 */
+--color-accent-hover: 35 77% 30%;
 ```
 
 ## Usage Guidelines
@@ -59,12 +59,11 @@ Our color system follows a strict distribution for visual hierarchy and consiste
    - Provide subtle differentiation
 
 3. **Interactive Colors**
-   - Apply to clickable elements
+   - Apply to clickable elements (#7C5A4E)
    - Maintain consistency across states
    - Ensure accessibility standards
 
 4. **Accent Colors**
-   - Use sparingly for emphasis
+   - Use sparingly for emphasis (#9C6615)
    - Highlight important actions
    - Create visual interest
-
