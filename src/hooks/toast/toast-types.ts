@@ -1,5 +1,5 @@
 
-import type { ToastProps, ToastActionElement } from "@/components/ui/toast";
+import type { ToastProps } from "@/components/ui/toast";
 
 export interface ToasterToast extends Omit<ToastProps, "title" | "description"> {
   id: string;
