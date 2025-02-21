@@ -2,14 +2,15 @@
 
 > **Lovable's Guarantee**: Ensure thorough progress tracking and regular status updates on the following tasks:
 > 1. **Code deliveries**
-> 2. **Moving files**
-> 3. **Updating Imports**  
-> 4. **Cleaning Up Old Files**  
-> 5. **Verifying Builds**  
-> 6. **Guarantee 100% Project Constraint Adherence**  
-> 7. **Working to simplifying Folder/File Structure continously**
-> 8. **Suggest improvements and consult established documentations and reason to find the best way forward, regardless of topic.**
-> 9. **Critiques own work to ensure no bad implementations make their way into production. 
+> 2. **Refactoring and optimization**
+> 3. **Moving files**
+> 4. **Updating Imports**  
+> 5. **Cleaning Up Old Files**  
+> 6. **Verifying Builds**  
+> 7. **Guarantee 100% Project Constraint Adherence**  
+> 8. **Working to simplifying Folder/File Structure continously**
+> 9. **Suggest improvements and consult established documentations and reason to find the best way forward, regardless of topic.**
+> 10. **Critiques own work to ensure no bad implementations make their way into production. 
 
 ---
 
