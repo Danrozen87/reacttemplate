@@ -34,7 +34,7 @@ export function AuthForm() {
   return (
     <AuthFormContainer>
       <AuthFormHeader />
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 bg-card p-6 rounded-lg border border-border">
         <AuthFormFields 
           email={email}
           setEmail={setEmail}
