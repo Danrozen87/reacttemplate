@@ -1,28 +1,33 @@
 
 @layer base {
   :root {
-    /* 40% Primary Colors */
-    --color-primary-bg: 240 10% 3.9%;
-    --color-primary-text: 0 0% 98%;
+    /* Base theme inherits from dark mode by default */
+    /* ... keep existing code */
+  }
+
+  .dark {
+    /* 40% Primary Colors - Main backgrounds and text */
+    --color-primary-bg: 240 10% 3.9%;      /* Dark slate for main backgrounds */
+    --color-primary-text: 0 0% 98%;        /* Almost white for primary text */
     
-    /* 30% Secondary Colors */
-    --color-secondary-bg: 240 3.7% 15.9%;
-    --color-secondary-text: 240 5% 64.9%;
+    /* 30% Secondary Colors - Supporting UI elements */
+    --color-secondary-bg: 240 3.7% 15.9%;  /* Slightly lighter slate for cards/sections */
+    --color-secondary-text: 240 5% 64.9%;  /* Muted text color */
     
-    /* 20% Interactive Colors */
-    --color-interactive: 221 83% 53%;
-    --color-interactive-hover: 221 83% 45%;
+    /* 20% Interactive Colors - Buttons, links, and interactive states */
+    --color-interactive: 221 83% 53%;      /* Bright blue for interactive elements */
+    --color-interactive-hover: 221 83% 45%; /* Slightly darker blue for hover */
     
-    /* 10% Accent Colors */
-    --color-accent: 262 83% 58%;
-    --color-accent-hover: 262 83% 50%;
+    /* 10% Accent Colors - Call-to-actions and highlights */
+    --color-accent: 262 83% 58%;          /* Vibrant purple for accents */
+    --color-accent-hover: 262 83% 50%;    /* Darker purple for hover */
 
     /* Semantic Colors */
     --color-success: 142 71% 45%;
     --color-warning: 38 92% 50%;
     --color-error: 0 84% 60%;
 
-    /* Theme Colors */
+    /* Mapping to theme variables */
     --background: var(--color-primary-bg);
     --foreground: var(--color-primary-text);
     --card: var(--color-secondary-bg);
@@ -42,47 +47,54 @@
     --border: var(--color-secondary-bg);
     --input: var(--color-secondary-bg);
     --ring: var(--color-interactive);
-    --radius: 0.75rem;
-  }
-
-  .dark {
-    /* 40% Primary Colors */
-    --color-primary-bg: 240 10% 3.9%;
-    --color-primary-text: 0 0% 98%;
-    
-    /* 30% Secondary Colors */
-    --color-secondary-bg: 240 3.7% 15.9%;
-    --color-secondary-text: 240 5% 64.9%;
-    
-    /* 20% Interactive Colors */
-    --color-interactive: 221 83% 53%;
-    --color-interactive-hover: 221 83% 45%;
-    
-    /* 10% Accent Colors */
-    --color-accent: 262 83% 58%;
-    --color-accent-hover: 262 83% 50%;
   }
 
   .light {
-    /* 40% Primary Colors */
-    --color-primary-bg: 0 0% 100%;
-    --color-primary-text: 240 10% 3.9%;
+    /* 40% Primary Colors - Main backgrounds and text */
+    --color-primary-bg: 0 0% 100%;         /* Pure white for main backgrounds */
+    --color-primary-text: 240 10% 3.9%;    /* Near black for primary text */
     
-    /* 30% Secondary Colors */
-    --color-secondary-bg: 240 4.8% 95.9%;
-    --color-secondary-text: 240 3.8% 46.1%;
+    /* 30% Secondary Colors - Supporting UI elements */
+    --color-secondary-bg: 240 4.8% 95.9%;  /* Light gray for cards/sections */
+    --color-secondary-text: 240 3.8% 46.1%; /* Medium gray for muted text */
     
-    /* 20% Interactive Colors */
-    --color-interactive: 221 83% 53%;
-    --color-interactive-hover: 221 83% 45%;
+    /* 20% Interactive Colors - Buttons, links, and interactive states */
+    --color-interactive: 221 83% 53%;      /* Bright blue for interactive elements */
+    --color-interactive-hover: 221 83% 45%; /* Slightly darker blue for hover */
     
-    /* 10% Accent Colors */
-    --color-accent: 262 83% 58%;
-    --color-accent-hover: 262 83% 50%;
+    /* 10% Accent Colors - Call-to-actions and highlights */
+    --color-accent: 262 83% 58%;          /* Vibrant purple for accents */
+    --color-accent-hover: 262 83% 50%;    /* Darker purple for hover */
+
+    /* Semantic Colors */
+    --color-success: 142 71% 45%;
+    --color-warning: 38 92% 50%;
+    --color-error: 0 84% 60%;
+
+    /* Mapping to theme variables */
+    --background: var(--color-primary-bg);
+    --foreground: var(--color-primary-text);
+    --card: var(--color-secondary-bg);
+    --card-foreground: var(--color-primary-text);
+    --popover: var(--color-secondary-bg);
+    --popover-foreground: var(--color-primary-text);
+    --primary: var(--color-interactive);
+    --primary-foreground: var(--color-primary-text);
+    --secondary: var(--color-secondary-bg);
+    --secondary-foreground: var(--color-secondary-text);
+    --muted: var(--color-secondary-bg);
+    --muted-foreground: var(--color-secondary-text);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-primary-text);
+    --destructive: var(--color-error);
+    --destructive-foreground: var(--color-primary-text);
+    --border: var(--color-secondary-bg);
+    --input: var(--color-secondary-bg);
+    --ring: var(--color-interactive);
   }
 }
 
-/* Form-specific styling */
+/* Form element styling */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
