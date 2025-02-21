@@ -185,6 +185,7 @@
    - Each component should be under **68 lines** to enhance clarity and maintainability.  
    - Split large components into sub-components (e.g., `modal-header`, `modal-footer`, etc.) following the atomic design principle.
    - Simplify interactions between features and components in whatever way you can. 
+   - Maintain every component under 68 lines while ensuring business logic lives in dedicated modules or hooks, preventing monolithic complexities; any PR that introduces unscalable patterns (e.g., tight coupling of UI and data, excessive lines in a single file) will be flagged by ESLint and our logging system to reinforce effective scaling and maintainability.
 
 5. **Supabase Isolation**  
    - Keep authentication, database operations, and other data logic isolated in dedicated modules.  
@@ -198,10 +199,41 @@
 7. **Mobile-First Approach**  
    - Design components and layouts starting from the smallest screen sizes.  
    - Ensure a responsive, seamless user experience on both mobile and desktop devices.
+   - Ensure touch-targets are optimal and dynamically scaling with the vast amount of smart devices out there. 
 
 8. **Dark/Light Mode**  
    - Implement themes akin to ChatGPT’s dark/light toggle.  
    - Must be easily switchable, with consistent styling across all components.
+
+---
+
+## Developer Experience (DX) Notes
+
+- **Strict TypeScript**: Ensures reliability, helps with refactoring, and keeps collaboration smooth.  
+- **Consistent Tooling**: Use ESLint (with Prettier) for an automated, frictionless workflow.  
+- **Atomic Structure**: By splitting components into smaller building blocks, the codebase remains clean, testable, and easy to maintain.  
+- **Minimal Dependencies**: Keep dependencies lean for faster builds and simpler updates.
+
+---
+
+## Best-in-Class UX & Centralized Theme System
+
+1. **Centralized Theme Configuration**  
+   - Manage all styling—colors, spacing, typography—from a single theme or config file.  
+   - Changes cascade globally, ensuring cohesive design.  
+   - Supports both light mode and dark mode in a user-friendly manner.
+
+2. **40-30--20-10 Color Rule**  
+   - Use for balanced and visually appealing interfaces:  
+     - **40%** primary/base color - Example: 40% background might be the entire page or large empty areas.
+     - **30%** secondary color  - Example: 30% primary surfaces (cards, sidebars, modals),
+     - **20%** secondary color  - Example: 20% brand color for main interactive elements (buttons, links, icons),
+     - **10%** accent color  - Example: 10% accent color for “popping” highlights.
+   - Guides user focus and keeps the UI consistently pleasing.
+
+3. **Mobile-First & Responsive Design**  
+   - Optimize every feature for mobile as a priority, ensuring desktop also provides an excellent experience.  
+   - Use Tailwind’s responsive classes to simplify style variations.
 
 ---
 
