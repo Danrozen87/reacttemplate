@@ -17,7 +17,7 @@
 > 8. **Working to simplifying Folder/File Structure continously**
 > 9. **Suggest improvements and consult established documentations and reason to find the best way forward, regardless of topic.**
 > 10. **Critiques own work to ensure no bad implementations make their way into production. 
-> 11. **Lovable always reads and respects the AI-RESPONSE-STANDARD.md in full before every commit and chat, the README.md in main and sub-folders where applicable, the i18nREADME.md, DESIGN-SYSTEM.md and the UX-BEST-PRACTICE.md and confirms complete adherence with each delivery. 
+> 11. **Lovable always reads and respects the AI-RESPONSE-STANDARD.md in full before every commit and chat, the README.md in main and sub-folders where applicable, the i18nREADME.md, COLOR-SYSTEM.md, TYPOGRAPHY.md, SPACING.md, COMPONENTS.md, ANIMATIONS.md and the UX-BEST-PRACTICE.md and confirms complete adherence with each delivery. 
 
 ---
 
