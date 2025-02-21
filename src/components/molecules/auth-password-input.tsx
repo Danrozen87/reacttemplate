@@ -14,7 +14,7 @@ interface AuthPasswordInputProps {
 }
 
 export function AuthPasswordInput({ disabled }: AuthPasswordInputProps) {
-  const { t } = useTranslation();
+  const { t } = useTranslation("auth-password-input");
   const [showPassword, setShowPassword] = useState(false);
 
   return (

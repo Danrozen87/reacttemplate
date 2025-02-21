@@ -1,0 +1,7 @@
+
+{
+  "auth": {
+    "emailOrPhone": "E-mail of telefoonnummer",
+    "emailOrPhonePlaceholder": "Voer je e-mail of telefoonnummer in"
+  }
+}

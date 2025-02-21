@@ -1,0 +1,9 @@
+
+{
+  "auth": {
+    "password": "Wachtwoord",
+    "passwordPlaceholder": "Voer je wachtwoord in",
+    "showPassword": "Toon wachtwoord",
+    "hidePassword": "Verberg wachtwoord"
+  }
+}

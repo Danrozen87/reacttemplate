@@ -1,0 +1,7 @@
+
+{
+  "auth": {
+    "emailOrPhone": "Email or phone number",
+    "emailOrPhonePlaceholder": "Enter your email or phone number"
+  }
+}

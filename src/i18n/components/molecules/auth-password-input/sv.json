@@ -1,0 +1,9 @@
+
+{
+  "auth": {
+    "password": "Lösenord",
+    "passwordPlaceholder": "Ange ditt lösenord",
+    "showPassword": "Visa lösenord",
+    "hidePassword": "Dölj lösenord"
+  }
+}

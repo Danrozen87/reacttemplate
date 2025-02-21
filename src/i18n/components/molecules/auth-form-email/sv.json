@@ -1,0 +1,7 @@
+
+{
+  "auth": {
+    "emailOrPhone": "E-post eller telefonnummer",
+    "emailOrPhonePlaceholder": "Ange din e-post eller telefonnummer"
+  }
+}

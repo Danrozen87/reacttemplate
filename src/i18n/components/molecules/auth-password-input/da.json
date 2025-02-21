@@ -1,0 +1,9 @@
+
+{
+  "auth": {
+    "password": "Adgangskode",
+    "passwordPlaceholder": "Indtast din adgangskode",
+    "showPassword": "Vis adgangskode",
+    "hidePassword": "Skjul adgangskode"
+  }
+}
