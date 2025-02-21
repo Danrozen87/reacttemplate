@@ -1,0 +1,13 @@
+
+{
+  "auth": {
+    "loginSuccess": "Inloggningen lyckades!",
+    "loginError": "Inloggningen misslyckades",
+    "tryAgain": "Försök igen.",
+    "roleAssigned": {
+      "admin": "Inloggad som Administratör med full systemåtkomst.",
+      "manager": "Inloggad som Chef med teamhanteringsåtkomst.",
+      "user": "Inloggad som Användare med personlig åtkomst."
+    }
+  }
+}

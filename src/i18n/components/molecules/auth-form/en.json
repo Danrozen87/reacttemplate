@@ -1,0 +1,13 @@
+
+{
+  "auth": {
+    "loginSuccess": "Login Successful!",
+    "loginError": "Login Failed",
+    "tryAgain": "Please try again.",
+    "roleAssigned": {
+      "admin": "Logged in as Administrator with full system access.",
+      "manager": "Logged in as Manager with team management access.",
+      "user": "Logged in as User with personal access."
+    }
+  }
+}

@@ -1,4 +1,3 @@
-
 import { animations } from "@/utils/animations";
 import { AuthFormHeader } from "./auth-form-header";
 import { AuthFormFields } from "./auth-form-fields";
