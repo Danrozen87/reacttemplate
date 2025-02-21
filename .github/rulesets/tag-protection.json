@@ -1,0 +1,15 @@
+{
+  "name": "Lovable Tag Protection",
+  "target": "tag",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "include": [
+        "v*"
+      ],
+      "exclude": []
+    }
+  },
+  "allow_force_pushes": false,
+  "allow_deletions": false
+}
