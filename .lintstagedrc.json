@@ -1,14 +1,19 @@
-
 {
   "*.{js,jsx,ts,tsx}": [
-    "eslint --fix",
+    "eslint --fix --max-warnings=0",
     "prettier --write",
-    "vitest related --run"
+    "vitest related --run",
+    "ts-prune --error",
+    "npm run type-check"
   ],
   "*.{css,scss}": [
+    "stylelint --fix",
     "prettier --write"
   ],
   "*.{json,yml,yaml,md}": [
     "prettier --write"
+  ],
+  "src/**/*.{ts,tsx}": [
+    "jest --findRelatedTests --passWithNoTests"
   ]
 }
