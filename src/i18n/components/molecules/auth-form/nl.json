@@ -1,13 +1,13 @@
 
 {
   "auth": {
-    "loginSuccess": "Inloggen Geslaagd!",
-    "loginError": "Inloggen Mislukt",
-    "tryAgain": "Probeer het opnieuw.",
+    "loginSuccess": "Succesvol ingelogd",
+    "loginError": "Inloggen mislukt",
+    "tryAgain": "Probeer opnieuw",
     "roleAssigned": {
-      "admin": "Ingelogd als Beheerder met volledige systeemtoegang.",
-      "manager": "Ingelogd als Manager met teambeheertoegang.",
-      "user": "Ingelogd als Gebruiker met persoonlijke toegang."
+      "admin": "Ingelogd als beheerder",
+      "manager": "Ingelogd als manager",
+      "user": "Ingelogd als gebruiker"
     }
   }
 }

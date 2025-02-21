@@ -6,9 +6,10 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useToast } from "@/hooks/toast";
+import type { AuthFormTranslations } from "@/i18n/components/molecules/auth-form/types";
 
 export function useAuthFormState() {
-  const { t } = useTranslation();
+  const { t } = useTranslation<keyof AuthFormTranslations>();
   const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,7 +24,7 @@ export function useAuthFormState() {
       const mockAuthResponse = {
         role: email.includes('admin') ? 'admin' : 
               email.includes('manager') ? 'manager' : 'user'
-      };
+      } as const;
 
       toast({
         title: t("auth.loginSuccess"),

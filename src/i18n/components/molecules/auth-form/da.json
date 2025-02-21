@@ -1,13 +1,13 @@
 
 {
   "auth": {
-    "loginSuccess": "Login Lykkedes!",
-    "loginError": "Login Mislykkedes",
-    "tryAgain": "Prøv venligst igen.",
+    "loginSuccess": "Logget ind med succes",
+    "loginError": "Login mislykkedes",
+    "tryAgain": "Prøv igen",
     "roleAssigned": {
-      "admin": "Logget ind som Administrator med fuld systemadgang.",
-      "manager": "Logget ind som Manager med team management adgang.",
-      "user": "Logget ind som Bruger med personlig adgang."
+      "admin": "Logget ind som administrator",
+      "manager": "Logget ind som leder",
+      "user": "Logget ind som bruger"
     }
   }
 }
