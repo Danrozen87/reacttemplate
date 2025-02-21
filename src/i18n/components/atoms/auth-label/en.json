@@ -1,0 +1,11 @@
+
+{
+  "auth": {
+    "label": {
+      "email": "Email Address",
+      "password": "Password",
+      "remember": "Remember me",
+      "submit": "Submit"
+    }
+  }
+}

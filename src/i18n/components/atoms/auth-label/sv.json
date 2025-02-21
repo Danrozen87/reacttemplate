@@ -1,0 +1,11 @@
+
+{
+  "auth": {
+    "label": {
+      "email": "E-postadress",
+      "password": "Lösenord",
+      "remember": "Kom ihåg mig",
+      "submit": "Skicka"
+    }
+  }
+}

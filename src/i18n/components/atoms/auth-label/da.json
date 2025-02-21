@@ -1,0 +1,11 @@
+
+{
+  "auth": {
+    "label": {
+      "email": "E-mailadresse",
+      "password": "Adgangskode",
+      "remember": "Husk mig",
+      "submit": "Send"
+    }
+  }
+}

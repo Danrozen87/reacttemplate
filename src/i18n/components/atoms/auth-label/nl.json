@@ -1,0 +1,11 @@
+
+{
+  "auth": {
+    "label": {
+      "email": "E-mailadres",
+      "password": "Wachtwoord",
+      "remember": "Onthoud mij",
+      "submit": "Verzenden"
+    }
+  }
+}
