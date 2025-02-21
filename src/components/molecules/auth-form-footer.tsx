@@ -12,7 +12,7 @@ interface AuthFormFooterProps {
  * @description Footer section of the authentication form with social login and signup link
  */
 export function AuthFormFooter({ onSignUp }: AuthFormFooterProps) {
-  const { t } = useTranslation("auth-form-footer");
+  const { t } = useTranslation("auth-form-fields");
 
   const handleSignUpClick = (e: React.MouseEvent) => {
     e.preventDefault();

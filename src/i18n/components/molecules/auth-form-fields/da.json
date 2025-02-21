@@ -1,12 +1,10 @@
 
 {
   "auth": {
-    "form": {
-      "fields": {
-        "email": "E-mail",
-        "password": "Adgangskode",
-        "rememberMe": "Husk mig"
-      }
-    }
+    "rememberMe": "Husk mig",
+    "forgotPassword": "Glemt adgangskode?",
+    "signIn": "Log ind",
+    "noAccount": "Har du ikke en konto?",
+    "signUpNow": "Tilmeld dig nu"
   }
 }

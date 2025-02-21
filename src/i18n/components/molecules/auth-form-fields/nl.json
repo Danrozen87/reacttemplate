@@ -1,12 +1,10 @@
 
 {
   "auth": {
-    "form": {
-      "fields": {
-        "email": "E-mail",
-        "password": "Wachtwoord",
-        "rememberMe": "Onthoud mij"
-      }
-    }
+    "rememberMe": "Onthoud mij",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "signIn": "Inloggen",
+    "noAccount": "Geen account?",
+    "signUpNow": "Nu registreren"
   }
 }
