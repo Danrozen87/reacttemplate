@@ -1,6 +1,8 @@
 
 # Short-Form Highlights: AI-Adherence to Atomic i18n Strategy
 
+**All texts in the system, including toasts, notifications, instructions, button texts, navigation, descriptions, labels, inputs and so forth, will feature English, Swedish, Danish and Netherland-locales. 
+
 1. **Atomic + Domain-Based Files**  
    - Each component or domain has its own small `en.json`, `sv.json`, etc.  
    - AI only updates or generates translations for these scoped files—never a massive, monolithic one.
