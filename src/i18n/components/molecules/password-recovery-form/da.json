@@ -1,0 +1,16 @@
+
+{
+  "auth": {
+    "recovery": {
+      "title": "Gendannelse af adgangskode",
+      "description": "Indtast din e-mail, så sender vi dig vejledning til at nulstille din adgangskode.",
+      "emailSent": "Gendannelsesmail sendt",
+      "checkInbox": "Tjek venligst din indbakke for instruktioner til nulstilling af adgangskode.",
+      "error": "Gendannelsesfejl",
+      "tryAgain": "Prøv venligst igen senere.",
+      "emailPlaceholder": "Indtast din e-mailadresse",
+      "sendInstructions": "Send instruktioner",
+      "backToLogin": "Tilbage til login"
+    }
+  }
+}

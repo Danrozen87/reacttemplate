@@ -1,0 +1,16 @@
+
+{
+  "auth": {
+    "recovery": {
+      "title": "Wachtwoordherstel",
+      "description": "Voer je e-mailadres in en we sturen je instructies om je wachtwoord opnieuw in te stellen.",
+      "emailSent": "Herstel-e-mail verzonden",
+      "checkInbox": "Controleer je inbox voor instructies voor het opnieuw instellen van je wachtwoord.",
+      "error": "Herstelfout",
+      "tryAgain": "Probeer het later opnieuw.",
+      "emailPlaceholder": "Voer je e-mailadres in",
+      "sendInstructions": "Verstuur instructies",
+      "backToLogin": "Terug naar inloggen"
+    }
+  }
+}

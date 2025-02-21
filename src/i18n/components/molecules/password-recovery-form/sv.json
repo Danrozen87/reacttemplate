@@ -1,0 +1,16 @@
+
+{
+  "auth": {
+    "recovery": {
+      "title": "Återställ lösenord",
+      "description": "Ange din e-post så skickar vi instruktioner för att återställa ditt lösenord.",
+      "emailSent": "Återställningsmail skickat",
+      "checkInbox": "Vänligen kontrollera din inkorg för instruktioner om lösenordsåterställning.",
+      "error": "Återställningsfel",
+      "tryAgain": "Vänligen försök igen senare.",
+      "emailPlaceholder": "Ange din e-postadress",
+      "sendInstructions": "Skicka instruktioner",
+      "backToLogin": "Tillbaka till inloggning"
+    }
+  }
+}

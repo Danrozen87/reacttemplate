@@ -17,7 +17,7 @@ interface PasswordRecoveryFormProps {
 }
 
 export function PasswordRecoveryForm({ onBack }: PasswordRecoveryFormProps) {
-  const { t } = useTranslation();
+  const { t } = useTranslation("password-recovery-form");
   const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,7 +27,6 @@ export function PasswordRecoveryForm({ onBack }: PasswordRecoveryFormProps) {
     setIsSubmitting(true);
 
     try {
-      // Mock recovery email send
       await new Promise(resolve => setTimeout(resolve, 1000));
       toast({
         title: t("auth.recovery.emailSent"),

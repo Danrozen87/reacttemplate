@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -50,6 +49,12 @@ import signUpFormDa from './components/molecules/sign-up-form/da.json';
 import signUpFormSv from './components/molecules/sign-up-form/sv.json';
 import signUpFormNl from './components/molecules/sign-up-form/nl.json';
 
+// Atomic Components - Password Recovery Form
+import passwordRecoveryFormEn from './components/molecules/password-recovery-form/en.json';
+import passwordRecoveryFormDa from './components/molecules/password-recovery-form/da.json';
+import passwordRecoveryFormSv from './components/molecules/password-recovery-form/sv.json';
+import passwordRecoveryFormNl from './components/molecules/password-recovery-form/nl.json';
+
 // Define base translation types
 export interface BaseTranslations {
   auth: Record<string, unknown>;
@@ -65,6 +70,9 @@ export type AuthFormFooterTranslations = typeof authFormFooterEn;
 export type AuthSocialButtonsTranslations = typeof authSocialButtonsEn;
 export type SignUpFormTranslations = typeof signUpFormEn;
 
+// Add type for Password Recovery Form translations
+export type PasswordRecoveryFormTranslations = typeof passwordRecoveryFormEn;
+
 // Namespace configuration type
 export type TranslationNamespaces = {
   'auth-label': AuthLabelTranslations;
@@ -75,6 +83,7 @@ export type TranslationNamespaces = {
   'auth-form-footer': AuthFormFooterTranslations;
   'auth-social-buttons': AuthSocialButtonsTranslations;
   'sign-up-form': SignUpFormTranslations;
+  'password-recovery-form': PasswordRecoveryFormTranslations;
 };
 
 // Resource configuration
@@ -87,7 +96,8 @@ const resources = {
     'auth-form-fields': authFormFieldsEn,
     'auth-form-footer': authFormFooterEn,
     'auth-social-buttons': authSocialButtonsEn,
-    'sign-up-form': signUpFormEn
+    'sign-up-form': signUpFormEn,
+    'password-recovery-form': passwordRecoveryFormEn
   },
   da: {
     'auth-label': authLabelDa,
@@ -97,7 +107,8 @@ const resources = {
     'auth-form-fields': authFormFieldsDa,
     'auth-form-footer': authFormFooterDa,
     'auth-social-buttons': authSocialButtonsDa,
-    'sign-up-form': signUpFormDa
+    'sign-up-form': signUpFormDa,
+    'password-recovery-form': passwordRecoveryFormDa
   },
   sv: {
     'auth-label': authLabelSv,
@@ -107,7 +118,8 @@ const resources = {
     'auth-form-fields': authFormFieldsSv,
     'auth-form-footer': authFormFooterSv,
     'auth-social-buttons': authSocialButtonsSv,
-    'sign-up-form': signUpFormSv
+    'sign-up-form': signUpFormSv,
+    'password-recovery-form': passwordRecoveryFormSv
   },
   nl: {
     'auth-label': authLabelNl,
@@ -117,7 +129,8 @@ const resources = {
     'auth-form-fields': authFormFieldsNl,
     'auth-form-footer': authFormFooterNl,
     'auth-social-buttons': authSocialButtonsNl,
-    'sign-up-form': signUpFormNl
+    'sign-up-form': signUpFormNl,
+    'password-recovery-form': passwordRecoveryFormNl
   }
 };
 
@@ -130,7 +143,8 @@ const namespaces = [
   'auth-form-fields',
   'auth-form-footer',
   'auth-social-buttons',
-  'sign-up-form'
+  'sign-up-form',
+  'password-recovery-form'
 ] as const;
 
 // i18n initialization configuration
