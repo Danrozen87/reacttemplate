@@ -43,14 +43,17 @@ describe("LanguageSwitcher", () => {
   });
 
   it("handles language change correctly", async () => {
-    const { toast } = useToast() as { toast: vi.Mock };
-    render(<LanguageSwitcher />);
+    const mockToast = vi.fn();
+    vi.mocked(useToast).mockReturnValue({
+      toast: mockToast,
+    });
     
+    render(<LanguageSwitcher />);
     fireEvent.click(screen.getByRole("button"));
     fireEvent.click(screen.getByText("Svenska"));
 
     await waitFor(() => {
-      expect(toast).toHaveBeenCalledWith({
+      expect(mockToast).toHaveBeenCalledWith({
         description: "common.languageChanged",
         duration: 3000,
         className: "bg-background text-foreground border-accent",
