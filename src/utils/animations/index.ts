@@ -1,4 +1,30 @@
+
 import * as React from 'react';
+
+/**
+ * @description Animation variant types and utilities
+ */
+
+// Base animation types
+export type FadeVariant = 'in' | 'out';
+export type ScaleVariant = 'in' | 'out';
+export type SlideVariant = 'in' | 'out' | 'in-left' | 'out-left';
+export type OverlayVariant = 'in' | 'out';
+
+// Motion animation types
+export type MotionVariant = 'bounce' | 'pulse' | 'slide-up' | 'slide-down' | 'rotate' | 'pop';
+
+// Loading animation types
+export type LoadingVariant = 'shimmer' | 'progress' | 'spinner' | 'pulse' | 'skeleton';
+
+// Interaction animation types
+export type InteractionVariant = 'shake' | 'success' | 'bounce';
+
+// Animation duration types
+export type AnimationDuration = 'fast' | 'normal' | 'slow';
+
+// Animation timing function types
+export type AnimationTiming = 'linear' | 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out';
 
 /**
  * @description Centralized animation and blur utility classes with focus effects
@@ -137,6 +163,7 @@ export const animations = {
 } as const;
 
 export type AnimationKey = keyof typeof animations;
+export type AnimationValue<T extends AnimationKey> = typeof animations[T];
 
 // Hook for scroll-based animations
 export const useScrollAnimation = () => {
@@ -154,7 +181,7 @@ export const useScrollAnimation = () => {
   return isScrolled;
 };
 
-// Loading state hook
+// Loading state hook with duration
 export const useLoadingAnimation = (duration = 2000) => {
   const [isLoading, setIsLoading] = React.useState(false);
   
@@ -169,4 +196,19 @@ export const useLoadingAnimation = (duration = 2000) => {
   }, [isLoading, duration]);
   
   return [isLoading, setIsLoading] as const;
+};
+
+// Type-safe animation utility functions
+export const getAnimationClass = <T extends AnimationKey>(
+  key: T,
+  variant?: keyof AnimationValue<T>
+): string => {
+  const animation = animations[key];
+  return variant && typeof animation === 'object'
+    ? (animation as Record<string, string>)[variant] || ''
+    : (animation as string) || '';
+};
+
+export const combineAnimations = (...classes: string[]): string => {
+  return classes.filter(Boolean).join(' ');
 };
