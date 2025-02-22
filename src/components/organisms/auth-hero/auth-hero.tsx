@@ -33,7 +33,6 @@ export function AuthHero() {
         className={cn(
           "relative z-20 h-full flex flex-col justify-end",
           "p-8 sm:p-10",
-          "bg-gradient-to-t from-black/60 via-black/40 to-transparent",
           animations.modal.content.enter
         )}
       >
