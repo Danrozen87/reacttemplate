@@ -1,3 +1,4 @@
+
 # File: .github/workflows/enforce-standards.yml
 # Purpose: A single CI workflow that enforces all key standards:
 # 1) Custom ESLint checks (line limits, no inline CSS, atomic folder structure, i18n usage, etc.)
