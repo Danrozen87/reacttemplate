@@ -52,6 +52,7 @@ export const animations = {
     pop: "motion-safe:animate-pop"
   },
   blur: {
+    DEFAULT: "backdrop-blur",
     sm: "backdrop-blur-sm",
     md: "backdrop-blur-md",
     lg: "backdrop-blur-lg",
