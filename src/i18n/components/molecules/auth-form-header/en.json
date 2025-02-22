@@ -2,6 +2,6 @@
 {
   "auth": {
     "welcome": "Welcome back",
-    "signInToContinue": "Sign in to continue to your account"
+    "description": "Sign in to continue to your account"
   }
 }
