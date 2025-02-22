@@ -33,6 +33,10 @@ export const animations = {
       content: "absolute right-0 z-50 mt-2 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md",
     }
   },
+  page: {
+    enter: "motion-safe:animate-fade-in",
+    exit: "motion-safe:animate-fade-out"
+  },
   element: {
     fadeIn: "motion-safe:animate-fade-in",
     fadeOut: "motion-safe:animate-fade-out",
@@ -46,5 +50,34 @@ export const animations = {
     slideDown: "motion-safe:animate-slide-down",
     rotate: "motion-safe:animate-rotate",
     pop: "motion-safe:animate-pop"
+  },
+  blur: {
+    sm: "backdrop-blur-sm",
+    md: "backdrop-blur-md",
+    lg: "backdrop-blur-lg",
+    xl: "backdrop-blur-xl",
+    "2xl": "backdrop-blur-2xl",
+    "3xl": "backdrop-blur-3xl"
+  },
+  loading: {
+    shimmer: "animate-shimmer bg-gradient-to-r from-transparent via-muted/5 to-transparent",
+    pulse: "animate-pulse",
+    spinner: "animate-spinner",
+    progress: "animate-progress",
+    skeleton: "animate-pulse bg-muted/60"
+  },
+  loadingStates: {
+    button: {
+      base: "relative overflow-hidden transition-all duration-200",
+      loading: "animate-pulse cursor-wait opacity-70"
+    },
+    card: {
+      base: "relative overflow-hidden transition-all duration-200",
+      loading: "animate-shimmer pointer-events-none"
+    },
+    image: {
+      base: "relative overflow-hidden bg-muted/40",
+      loading: "animate-pulse"
+    }
   }
 } as const;

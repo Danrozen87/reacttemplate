@@ -3,6 +3,8 @@
  * @description Core animation type definitions
  */
 
+import { animations } from '../constants/animation-classes';
+
 // Base animation types
 export type FadeVariant = 'in' | 'out';
 export type ScaleVariant = 'in' | 'out';
