@@ -1,48 +1,46 @@
 
 # Auth Form Component
 
-## Usage
-```tsx
-import { AuthForm } from "@/components/molecules/auth-form";
+## Overview
+Authentication form component with role-based access control, social login options, and responsive design.
 
-function LoginPage() {
-  return <AuthForm />;
-}
+## Structure
+```
+auth-form/
+├── components/        # Internal components
+├── auth-form.tsx     # Main component
+├── types.ts          # Type definitions
+└── index.ts         # Public exports
 ```
 
-## Components
-- `AuthForm`: Main authentication form component
-- `AuthFormContainer`: Wrapper component with animations
-- `AuthFormState`: Custom hook for form state management
-
 ## Features
-- Role-based authentication
-- Password recovery
-- Sign-up flow
-- Animated transitions
-- Toast notifications
-- Internationalization
+- Email authentication
+- Social login integration
+- Forgot password flow
+- Sign up option
+- Role-based access
+- Responsive design
+- Dark/light mode support
+- i18n support
 
 ## Accessibility
-- ARIA labels for form elements
-- Proper focus management
-- Screen reader support
+- ARIA labels
+- Keyboard navigation
+- Focus management
 - Loading states
+- Error handling
 
 ## i18n
-Supports:
-- English (en)
-- Swedish (sv)
-- Danish (da)
-- Dutch (nl)
+Supports all required languages:
+- English
+- Swedish
+- Danish
+- Dutch
 
 ## Testing
-Coverage requirements:
-- Unit tests: 90%
-- Integration tests: 85%
-- E2E tests: 80%
-
-## Performance
-- Lazy-loaded components
-- Optimized re-renders
-- Proper error boundaries
+100% coverage required for:
+- Form submission
+- Validation
+- State management
+- Role-based access
+- i18n integration
