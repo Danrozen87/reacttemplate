@@ -20,7 +20,7 @@ export function AuthHero() {
         <img
           src="/lovable-uploads/dec206da-ce5b-47f3-bf86-10af90d620a6.png"
           alt={t("auth.heroImageAlt")}
-          className="h-full w-full object-cover opacity-50"
+          className="h-full w-full object-cover"
           loading="eager"
         />
       </div>
