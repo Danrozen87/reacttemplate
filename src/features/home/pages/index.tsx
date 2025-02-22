@@ -10,17 +10,6 @@ import { useTranslation } from "react-i18next";
 /**
  * @component HomePage
  * @description Authentication page with login form and hero section
- * 
- * @accessibility
- * - Implements ARIA landmarks for main content and complementary sections
- * - Manages focus states for form elements
- * - Provides clear visual hierarchy through semantic HTML
- * - Ensures proper color contrast in both themes
- * 
- * @responsive
- * - Mobile (<640px): Single column layout, stacked components
- * - Tablet (640px-1024px): Enhanced spacing, optimized form width
- * - Desktop (>1024px): Two-column layout with hero section
  */
 const HomePage = () => {
   const { t } = useTranslation();
