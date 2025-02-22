@@ -30,7 +30,7 @@ export const CompanySizeSelect = React.forwardRef<HTMLButtonElement, CompanySize
       >
         <SelectTrigger 
           ref={ref}
-          className="w-full font-poppins bg-background" 
+          className="w-full font-poppins bg-background transition-all duration-200 focus:scale-[1.02] focus:shadow-sm motion-safe:transform motion-safe:transition" 
           aria-invalid={!!error}
           aria-errormessage={errorId}
           aria-describedby={errorId}
