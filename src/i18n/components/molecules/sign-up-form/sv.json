@@ -16,7 +16,14 @@
       "companySizePlaceholder": "Välj företagsstorlek",
       "create": "Skapa konto",
       "creating": "Skapar konto...",
-      "backToLogin": "Tillbaka till inloggning"
+      "backToLogin": "Tillbaka till inloggning",
+      "company-size": {
+        "1-10": "1-10 anställda",
+        "11-50": "11-50 anställda",
+        "51-200": "51-200 anställda",
+        "201-500": "201-500 anställda",
+        "501+": "501+ anställda"
+      }
     }
   }
 }

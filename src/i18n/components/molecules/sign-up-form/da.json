@@ -16,7 +16,14 @@
       "companySizePlaceholder": "Vælg virksomhedsstørrelse",
       "create": "Opret konto",
       "creating": "Opretter konto...",
-      "backToLogin": "Tilbage til login"
+      "backToLogin": "Tilbage til login",
+      "company-size": {
+        "1-10": "1-10 medarbejdere",
+        "11-50": "11-50 medarbejdere",
+        "51-200": "51-200 medarbejdere",
+        "201-500": "201-500 medarbejdere",
+        "501+": "501+ medarbejdere"
+      }
     }
   }
 }

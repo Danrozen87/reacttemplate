@@ -16,7 +16,14 @@
       "companySizePlaceholder": "Selecteer bedrijfsgrootte",
       "create": "Account aanmaken",
       "creating": "Account wordt aangemaakt...",
-      "backToLogin": "Terug naar inloggen"
+      "backToLogin": "Terug naar inloggen",
+      "company-size": {
+        "1-10": "1-10 medewerkers",
+        "11-50": "11-50 medewerkers",
+        "51-200": "51-200 medewerkers",
+        "201-500": "201-500 medewerkers",
+        "501+": "501+ medewerkers"
+      }
     }
   }
 }
