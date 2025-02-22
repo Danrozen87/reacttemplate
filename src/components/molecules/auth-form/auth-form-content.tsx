@@ -17,9 +17,12 @@ export function AuthFormContent({
     <form 
       onSubmit={handleSubmit} 
       className={cn(
-        "space-y-4 bg-card p-4 sm:p-6",
-        "rounded-lg border border-border",
-        "shadow-sm hover:shadow-md transition-shadow duration-200",
+        "space-y-6",
+        "bg-card p-6 sm:p-8",
+        "rounded-xl border border-border",
+        "shadow-sm hover:shadow-md",
+        "transition-all duration-300 ease-in-out",
+        "backdrop-blur-sm bg-background/80",
         animations.modal.content.enter
       )}
     >

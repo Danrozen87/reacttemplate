@@ -11,6 +11,7 @@ export function AuthHero() {
       className={cn(
         "relative h-full flex-col text-white",
         "bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5",
+        "overflow-hidden",
         animations.modal.content.enter
       )}
       role="complementary"
@@ -20,23 +21,31 @@ export function AuthHero() {
         <img
           src="/lovable-uploads/dec206da-ce5b-47f3-bf86-10af90d620a6.png"
           alt={t("auth.heroImageAlt")}
-          className="h-full w-full object-cover"
+          className={cn(
+            "h-full w-full object-cover",
+            "scale-105 hover:scale-100",
+            "transition-transform duration-700 ease-in-out"
+          )}
           loading="eager"
         />
       </div>
       <div 
         className={cn(
           "relative z-20 h-full flex flex-col justify-end",
-          "p-6 sm:p-8 md:p-10",
-          "bg-gradient-to-t from-black/50 to-transparent",
+          "p-8 sm:p-10",
+          "bg-gradient-to-t from-black/60 via-black/40 to-transparent",
           animations.modal.content.enter
         )}
       >
-        <blockquote className="space-y-2 max-w-lg">
-          <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed">
+        <blockquote className={cn(
+          "space-y-3 max-w-lg",
+          "transform transition-all duration-500",
+          "hover:translate-x-2"
+        )}>
+          <p className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed">
             &ldquo;{t("auth.heroQuote")}&rdquo;
           </p>
-          <footer className="text-sm sm:text-base text-white/90">
+          <footer className="text-base sm:text-lg text-white/90">
             &mdash; {t("auth.heroAuthor")}
           </footer>
         </blockquote>
