@@ -21,17 +21,39 @@ import { ViewportAware } from "./viewport-aware";
 </ViewportAware>
 ```
 
-## Props
-| Name     | Type           | Default               | Description                    |
-|----------|---------------|----------------------|--------------------------------|
-| children | ReactNode     | Required             | Content to render             |
-| fallback | ReactNode     | undefined            | Fallback content              |
-| renderOn | Viewport[]    | All viewports        | Viewports to render content   |
+## Props Interface
+```typescript
+interface ViewportAwareProps {
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
+  renderOn?: Viewport[];
+}
+```
+
+## Variants
+- Basic: Shows/hides content based on viewport
+- With Fallback: Shows alternative content on non-matching viewports
+- Multi-viewport: Supports multiple viewport sizes
 
 ## Accessibility
-- Maintains DOM structure
+- Role: none (uses native div role)
+- ARIA attributes:
+  - aria-hidden: automatically managed based on viewport
+- Maintains DOM structure for assistive technologies
 - Preserves focus management
-- Screen reader friendly
+- Screen reader friendly content switching
+
+## i18n
+- Component text content supports translation
+- RTL layout support
+- Supports all required languages:
+  - English
+  - Swedish
+  - Danish
+  - Dutch
+- Required translation keys:
+  - viewport.hidden
+  - viewport.visible
 
 ## Testing
 Coverage requirement: 100%
@@ -39,3 +61,17 @@ Key scenarios:
 - Renders on specified viewports
 - Shows fallback when needed
 - Handles viewport changes
+- Maintains accessibility
+- RTL layout compliance
+- Focus management
+- Performance impact
+
+## Styling
+- Theme tokens:
+  - breakpoints.xs
+  - breakpoints.sm
+  - breakpoints.md
+  - breakpoints.lg
+  - breakpoints.xl
+- Responsive: true
+- Dark mode support: true
