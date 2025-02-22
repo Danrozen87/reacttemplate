@@ -25,10 +25,21 @@ export function SignUpForm({ onBack }: SignUpFormProps) {
       companySize: "",
       firstName: "",
       lastName: "",
-    }
+    },
+    mode: "onBlur"
   });
 
   const handleSubmit = async (data: SignUpFormData) => {
+    if (!data.companySize) {
+      methods.setError('companySize', {
+        type: 'required',
+        message: methods.getValues('companySize') 
+          ? methods.getValues('companySize')
+          : 'Company size is required'
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     try {
       // Signup logic would go here

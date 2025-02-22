@@ -24,6 +24,14 @@ export const SignUpFields: React.FC<SignUpFieldsProps> = ({ className }) => {
         placeholder={t('auth.signup.companyNamePlaceholder')}
         {...register("companyName", {
           required: t('auth.signup.errors.companyNameRequired'),
+          minLength: {
+            value: 2,
+            message: t('auth.signup.errors.companyNameTooShort')
+          },
+          maxLength: {
+            value: 100,
+            message: t('auth.signup.errors.companyNameTooLong')
+          }
         })}
         error={errors.companyName?.message as string}
       />
@@ -33,7 +41,12 @@ export const SignUpFields: React.FC<SignUpFieldsProps> = ({ className }) => {
       </AuthLabel>
       <CompanySizeSelect
         value={companySize}
-        onChange={(value) => setValue('companySize', value)}
+        onChange={(value) => {
+          setValue('companySize', value, {
+            shouldValidate: true,
+            shouldDirty: true
+          });
+        }}
         error={errors.companySize?.message as string}
       />
 
@@ -46,6 +59,18 @@ export const SignUpFields: React.FC<SignUpFieldsProps> = ({ className }) => {
         placeholder={t('auth.signup.firstNamePlaceholder')}
         {...register("firstName", {
           required: t('auth.signup.errors.firstNameRequired'),
+          minLength: {
+            value: 2,
+            message: t('auth.signup.errors.firstNameTooShort')
+          },
+          maxLength: {
+            value: 50,
+            message: t('auth.signup.errors.firstNameTooLong')
+          },
+          pattern: {
+            value: /^[a-zA-ZÀ-ÿ\s-]+$/,
+            message: t('auth.signup.errors.firstNameInvalid')
+          }
         })}
         error={errors.firstName?.message as string}
       />
@@ -59,6 +84,18 @@ export const SignUpFields: React.FC<SignUpFieldsProps> = ({ className }) => {
         placeholder={t('auth.signup.lastNamePlaceholder')}
         {...register("lastName", {
           required: t('auth.signup.errors.lastNameRequired'),
+          minLength: {
+            value: 2,
+            message: t('auth.signup.errors.lastNameTooShort')
+          },
+          maxLength: {
+            value: 50,
+            message: t('auth.signup.errors.lastNameTooLong')
+          },
+          pattern: {
+            value: /^[a-zA-ZÀ-ÿ\s-]+$/,
+            message: t('auth.signup.errors.lastNameInvalid')
+          }
         })}
         error={errors.lastName?.message as string}
       />

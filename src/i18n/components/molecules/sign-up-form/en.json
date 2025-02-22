@@ -19,9 +19,17 @@
       "backToLogin": "Back to Login",
       "errors": {
         "companyNameRequired": "Company name is required",
+        "companyNameTooShort": "Company name must be at least 2 characters",
+        "companyNameTooLong": "Company name must be less than 100 characters",
         "companySizeRequired": "Company size is required",
         "firstNameRequired": "First name is required",
-        "lastNameRequired": "Last name is required"
+        "firstNameTooShort": "First name must be at least 2 characters",
+        "firstNameTooLong": "First name must be less than 50 characters",
+        "firstNameInvalid": "First name can only contain letters, spaces, and hyphens",
+        "lastNameRequired": "Last name is required",
+        "lastNameTooShort": "Last name must be at least 2 characters",
+        "lastNameTooLong": "Last name must be less than 50 characters",
+        "lastNameInvalid": "Last name can only contain letters, spaces, and hyphens"
       },
       "company-size": {
         "1-10": "1-10 employees",
