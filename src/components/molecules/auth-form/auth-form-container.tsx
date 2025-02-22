@@ -3,8 +3,8 @@
  * @component AuthFormContainer
  * @description Container component for authentication form with animation
  */
-import { animations } from "@/utils/animations";
 import { type ReactNode } from "react";
+import { animations } from "@/utils/animations";
 
 interface AuthFormContainerProps {
   children: ReactNode;
