@@ -2,6 +2,7 @@
 {
   "auth": {
     "welcome": "Velkommen tilbage",
-    "signInToContinue": "Log ind for at fortsætte til din konto"
+    "signInToContinue": "Log ind for at fortsætte til din konto",
+    "enterCredentials": "Indtast dine legitimationsoplysninger for at fortsætte"
   }
 }

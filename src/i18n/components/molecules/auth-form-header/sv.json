@@ -2,6 +2,7 @@
 {
   "auth": {
     "welcome": "Välkommen tillbaka",
-    "signInToContinue": "Logga in för att fortsätta till ditt konto"
+    "signInToContinue": "Logga in för att fortsätta till ditt konto",
+    "enterCredentials": "Ange dina inloggningsuppgifter för att fortsätta"
   }
 }

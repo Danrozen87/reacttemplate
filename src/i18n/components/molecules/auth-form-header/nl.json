@@ -2,6 +2,7 @@
 {
   "auth": {
     "welcome": "Welkom terug",
-    "signInToContinue": "Log in om door te gaan naar je account"
+    "signInToContinue": "Log in om door te gaan naar je account",
+    "enterCredentials": "Voer je inloggegevens in om door te gaan"
   }
 }
