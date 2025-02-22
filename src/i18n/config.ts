@@ -44,6 +44,12 @@ import authSocialButtonsDa from './components/molecules/auth-social-buttons/da.j
 import authSocialButtonsSv from './components/molecules/auth-social-buttons/sv.json';
 import authSocialButtonsNl from './components/molecules/auth-social-buttons/nl.json';
 
+// Atomic Components - Auth Hero
+import authHeroEn from './components/organisms/auth-hero/en.json';
+import authHeroDa from './components/organisms/auth-hero/da.json';
+import authHeroSv from './components/organisms/auth-hero/sv.json';
+import authHeroNl from './components/organisms/auth-hero/nl.json';
+
 // Base translation types
 export interface BaseTranslations {
   auth: Record<string, unknown>;
@@ -57,6 +63,7 @@ export type AuthFormEmailTranslations = typeof authFormEmailEn;
 export type AuthFormFieldsTranslations = typeof authFormFieldsEn;
 export type AuthFormFooterTranslations = typeof authFormFooterEn;
 export type AuthSocialButtonsTranslations = typeof authSocialButtonsEn;
+export type AuthHeroTranslations = typeof authHeroEn;
 
 // Namespace configuration type
 export type TranslationNamespaces = {
@@ -67,6 +74,7 @@ export type TranslationNamespaces = {
   'auth-form-fields': AuthFormFieldsTranslations;
   'auth-form-footer': AuthFormFooterTranslations;
   'auth-social-buttons': AuthSocialButtonsTranslations;
+  'auth-hero': AuthHeroTranslations;
 };
 
 // Resource configuration
@@ -78,7 +86,8 @@ const resources = {
     'auth-form-email': authFormEmailEn,
     'auth-form-fields': authFormFieldsEn,
     'auth-form-footer': authFormFooterEn,
-    'auth-social-buttons': authSocialButtonsEn
+    'auth-social-buttons': authSocialButtonsEn,
+    'auth-hero': authHeroEn
   },
   da: {
     'auth-label': authLabelDa,
@@ -87,7 +96,8 @@ const resources = {
     'auth-form-email': authFormEmailDa,
     'auth-form-fields': authFormFieldsDa,
     'auth-form-footer': authFormFooterDa,
-    'auth-social-buttons': authSocialButtonsDa
+    'auth-social-buttons': authSocialButtonsDa,
+    'auth-hero': authHeroDa
   },
   sv: {
     'auth-label': authLabelSv,
@@ -96,7 +106,8 @@ const resources = {
     'auth-form-email': authFormEmailSv,
     'auth-form-fields': authFormFieldsSv,
     'auth-form-footer': authFormFooterSv,
-    'auth-social-buttons': authSocialButtonsSv
+    'auth-social-buttons': authSocialButtonsSv,
+    'auth-hero': authHeroSv
   },
   nl: {
     'auth-label': authLabelNl,
@@ -105,7 +116,8 @@ const resources = {
     'auth-form-email': authFormEmailNl,
     'auth-form-fields': authFormFieldsNl,
     'auth-form-footer': authFormFooterNl,
-    'auth-social-buttons': authSocialButtonsNl
+    'auth-social-buttons': authSocialButtonsNl,
+    'auth-hero': authHeroNl
   }
 };
 
@@ -117,7 +129,8 @@ const namespaces = [
   'auth-form-email',
   'auth-form-fields',
   'auth-form-footer',
-  'auth-social-buttons'
+  'auth-social-buttons',
+  'auth-hero'
 ] as const;
 
 // i18n initialization configuration
