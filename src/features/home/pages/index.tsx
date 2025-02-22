@@ -12,7 +12,7 @@ const HomePage = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-[45%_55%] bg-background">
+    <div className="min-h-screen grid lg:grid-cols-[30%_70%] bg-background">
       <div 
         className={cn(
           "relative flex flex-col",
