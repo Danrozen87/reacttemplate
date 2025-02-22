@@ -2,5 +2,10 @@
 @import './base.css';
 @import './theme.css';
 @import './forms.css';
-@import './animations.css';
+@import './animations/base.css';
+@import './animations/transitions.css';
+@import './animations/overlays.css';
+@import './animations/interactions.css';
+@import './animations/motion.css';
+@import './animations/loading.css';
 
