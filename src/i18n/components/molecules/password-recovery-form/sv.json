@@ -11,6 +11,9 @@
       "emailPlaceholder": "Ange din e-postadress",
       "sendInstructions": "Skicka instruktioner",
       "backToLogin": "Tillbaka till inloggning"
+    },
+    "label": {
+      "email": "E-postadress"
     }
   }
 }

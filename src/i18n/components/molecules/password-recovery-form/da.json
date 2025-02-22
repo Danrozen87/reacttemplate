@@ -11,6 +11,9 @@
       "emailPlaceholder": "Indtast din e-mailadresse",
       "sendInstructions": "Send instruktioner",
       "backToLogin": "Tilbage til login"
+    },
+    "label": {
+      "email": "E-mailadresse"
     }
   }
 }

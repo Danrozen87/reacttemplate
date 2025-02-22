@@ -11,6 +11,9 @@
       "emailPlaceholder": "Voer je e-mailadres in",
       "sendInstructions": "Verstuur instructies",
       "backToLogin": "Terug naar inloggen"
+    },
+    "label": {
+      "email": "E-mailadres"
     }
   }
 }

@@ -59,7 +59,7 @@ export function PasswordRecoveryForm({ onBack }: PasswordRecoveryFormProps) {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
           <AuthLabel htmlFor="recovery-email" required>
-            {t("auth.emailOrPhone")}
+            {t("auth.label.email")}
           </AuthLabel>
           <AuthInput
             id="recovery-email"

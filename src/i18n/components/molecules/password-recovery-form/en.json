@@ -11,6 +11,9 @@
       "emailPlaceholder": "Enter your email address",
       "sendInstructions": "Send Instructions",
       "backToLogin": "Back to Login"
+    },
+    "label": {
+      "email": "Email Address"
     }
   }
 }
