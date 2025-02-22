@@ -26,6 +26,14 @@ export type AnimationDuration = 'fast' | 'normal' | 'slow';
 // Animation timing function types
 export type AnimationTiming = 'linear' | 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out';
 
+// Type for animation class strings
+export type AnimationClassString = string;
+
+// Type for nested animation objects
+export type AnimationObject = {
+  [key: string]: AnimationClassString | AnimationObject;
+};
+
 /**
  * @description Centralized animation and blur utility classes with focus effects
  */
@@ -42,7 +50,6 @@ export const animations = {
       enter: "motion-safe:animate-modal-in",
       exit: "motion-safe:animate-modal-out",
     },
-    // Root portal wrapper for modals
     portal: {
       wrapper: "relative z-50",
       background: "fixed inset-0 transition-all bg-background/80 backdrop-blur-md",
@@ -50,7 +57,6 @@ export const animations = {
       positioning: "flex min-h-full items-center justify-center p-4 text-center",
     }
   },
-  // Menu and sidebar animations
   navigation: {
     topBar: {
       base: "sticky top-0 z-40 w-full transition-all duration-200",
@@ -74,7 +80,6 @@ export const animations = {
       }
     }
   },
-  // Shared blur effects
   blur: {
     sm: "backdrop-blur-sm",
     DEFAULT: "backdrop-blur",
@@ -84,12 +89,10 @@ export const animations = {
     "2xl": "backdrop-blur-2xl",
     "3xl": "backdrop-blur-3xl",
   },
-  // Page transitions
   page: {
     enter: "motion-safe:animate-fade-in motion-safe:duration-300",
     exit: "motion-safe:animate-fade-out motion-safe:duration-200",
   },
-  // Element animations with new variants
   element: {
     fadeIn: "motion-safe:animate-fade-in",
     fadeOut: "motion-safe:animate-fade-out",
@@ -104,8 +107,6 @@ export const animations = {
     rotate: "motion-safe:animate-rotate",
     pop: "motion-safe:animate-pop"
   },
-
-  // Interaction animations
   interaction: {
     hover: {
       scale: "hover:scale-105 active:scale-95 transition-transform",
@@ -119,24 +120,18 @@ export const animations = {
       glow: "focus:shadow-lg focus:shadow-primary/25 transition-shadow"
     }
   },
-  
-  // State change animations
   state: {
     loading: "motion-safe:animate-pulse opacity-50",
     success: "motion-safe:animate-success",
     error: "motion-safe:animate-shake",
     active: "motion-safe:animate-pop"
   },
-  
-  // Combined effects
   combined: {
     buttonPress: "active:scale-95 hover:scale-105 transition-transform",
     cardHover: "hover:-translate-y-1 hover:shadow-lg transition-all",
     menuItem: "hover:bg-accent/10 active:bg-accent/20 transition-colors",
     linkHover: "hover:underline hover:text-primary transition-all"
   },
-
-  // Loading animations
   loading: {
     shimmer: "animate-shimmer bg-gradient-to-r from-transparent via-muted/5 to-transparent",
     pulse: "animate-pulse",
@@ -144,8 +139,6 @@ export const animations = {
     progress: "animate-progress",
     skeleton: "animate-pulse bg-muted/60"
   },
-
-  // Loading states for specific components
   loadingStates: {
     button: {
       base: "relative overflow-hidden transition-all duration-200",
@@ -198,15 +191,26 @@ export const useLoadingAnimation = (duration = 2000) => {
   return [isLoading, setIsLoading] as const;
 };
 
+// Get nested value from animation object
+const getNestedValue = (obj: AnimationObject, path: string[]): string => {
+  let current: any = obj;
+  
+  for (const key of path) {
+    if (current === undefined) return '';
+    current = current[key];
+  }
+  
+  return typeof current === 'string' ? current : '';
+};
+
 // Type-safe animation utility functions
-export const getAnimationClass = <T extends AnimationKey>(
-  key: T,
-  variant?: keyof AnimationValue<T>
+export const getAnimationClass = (
+  key: AnimationKey,
+  ...path: string[]
 ): string => {
   const animation = animations[key];
-  return variant && typeof animation === 'object'
-    ? (animation as Record<string, string>)[variant] || ''
-    : (animation as string) || '';
+  if (typeof animation === 'string') return animation;
+  return getNestedValue(animation as AnimationObject, path);
 };
 
 export const combineAnimations = (...classes: string[]): string => {
