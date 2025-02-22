@@ -32,10 +32,10 @@ export function AuthHero() {
       >
         <blockquote className="space-y-2">
           <p className="text-lg">
-            {t("auth.heroQuote")}
+            &ldquo;{t("auth.heroQuote")}&rdquo;
           </p>
           <footer className="text-sm">
-            - {t("auth.heroAuthor")}
+            &mdash; {t("auth.heroAuthor")}
           </footer>
         </blockquote>
       </div>
