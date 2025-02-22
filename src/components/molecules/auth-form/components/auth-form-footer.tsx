@@ -1,7 +1,7 @@
 
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
-import { AuthSocialButtons } from "../../../molecules/auth-social-buttons";
+import { AuthSocialButtons } from "../../auth-social-buttons";
 import type { AuthFormFooterProps } from "../types";
 
 export function AuthFormFooter({ onSignUp }: AuthFormFooterProps) {
