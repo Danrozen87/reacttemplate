@@ -7,7 +7,7 @@ import { AuthLabel } from "@/components/atoms/auth-label/auth-label";
 import { AuthPasswordInput } from "./auth-password-input";
 import { AuthFormEmail } from "./auth-form-email";
 import { animations } from "@/utils/animations";
-import type { AuthFormFieldsProps } from "../types";
+import type { AuthFormFieldsProps } from "./types";
 
 export const AuthFormFields = memo(function AuthFormFields({
   email,

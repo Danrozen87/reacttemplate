@@ -1,15 +1,17 @@
 
 export { AuthForm } from "./auth-form";
 export { AuthFormContainer } from "./auth-form-container";
-export { AuthFormFields } from "./components/auth-form-fields";
-export { AuthFormFooter } from "./components/auth-form-footer";
-export { AuthFormHeader } from "./components/auth-form-header";
+export { AuthFormEmail } from "./auth-form-email";
+export { AuthFormFields } from "./auth-form-fields";
+export { AuthFormFooter } from "./auth-form-footer";
+export { AuthFormHeader } from "./auth-form-header";
+export { AuthPasswordInput } from "./auth-password-input";
 export type { 
   AuthFormProps,
   AuthFormFieldsProps,
   AuthFormFooterProps,
   AuthFormState,
   AuthResponse,
-  AuthToastConfig,
-  UserRole 
+  UserRole,
+  AuthToastConfig
 } from "./types";

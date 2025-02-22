@@ -1,5 +1,9 @@
 
-export interface AuthFormProps {}
+import type { ToasterToast } from "@/hooks/toast/toast-types";
+
+export interface AuthFormProps {
+  className?: string;
+}
 
 export interface AuthFormFieldsProps {
   email: string;
@@ -12,6 +16,12 @@ export interface AuthFormFooterProps {
   onSignUp: () => void;
 }
 
+export type UserRole = 'admin' | 'manager' | 'user';
+
+export interface AuthResponse {
+  role: UserRole;
+}
+
 export interface AuthFormState {
   email: string;
   isSubmitting: boolean;
@@ -19,15 +29,4 @@ export interface AuthFormState {
   isSignUpMode: boolean;
 }
 
-export interface AuthResponse {
-  role: UserRole;
-}
-
-export type UserRole = 'admin' | 'manager' | 'user';
-
-export interface AuthToastConfig {
-  title: string;
-  description: string;
-  duration: number;
-  variant: 'default' | 'destructive';
-}
+export type AuthToastConfig = Omit<ToasterToast, "id">;
