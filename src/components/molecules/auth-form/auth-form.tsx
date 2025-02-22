@@ -8,8 +8,7 @@ import { AuthFormHeader } from "../auth-form-header";
 import { AuthFormFields } from "../auth-form-fields";
 import { AuthFormFooter } from "../auth-form-footer";
 import { PasswordRecoveryForm } from "../password-recovery-form";
-import { SignUpForm } from "../sign-up-form";
-import { useAuthFormState } from "./auth-form-state";
+import { SignUpForm } from "../sign-up/sign-up-form"; // Updated import path
 
 export function AuthForm() {
   const {
