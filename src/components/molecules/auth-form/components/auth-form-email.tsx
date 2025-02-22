@@ -10,7 +10,7 @@ interface AuthFormEmailProps {
 }
 
 export function AuthFormEmail({ email, setEmail, disabled }: AuthFormEmailProps) {
-  const { t } = useTranslation("auth-form-fields");
+  const { t } = useTranslation("auth-form-email");
 
   return (
     <div className="space-y-2">

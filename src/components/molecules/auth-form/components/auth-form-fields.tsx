@@ -36,12 +36,10 @@ export const AuthFormFields = memo(function AuthFormFields({
         email={email}
         setEmail={setEmail}
         disabled={isSubmitting}
-        aria-required="true"
       />
       
       <AuthPasswordInput 
         disabled={isSubmitting}
-        aria-required="true"
       />
       
       <div className="flex items-center justify-between">
@@ -66,7 +64,6 @@ export const AuthFormFields = memo(function AuthFormFields({
           onClick={onForgotPassword}
           disabled={isSubmitting}
           type="button"
-          aria-label={t("auth.forgotPasswordAria")}
         >
           {t("auth.forgotPassword")}
         </Button>
