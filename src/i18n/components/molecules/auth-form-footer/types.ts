@@ -1,9 +1,13 @@
 
 export interface AuthFormFooterTranslations {
   auth: {
-    noAccount: string;
-    signUp: string;
-    orContinueWith: string;
-    signInWithGoogle: string;
+    form: {
+      footer: {
+        forgotPassword: string;
+        noAccount: string;
+        signUp: string;
+        orContinueWith: string;
+      };
+    };
   };
 }

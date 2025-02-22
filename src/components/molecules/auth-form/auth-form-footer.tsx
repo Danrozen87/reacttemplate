@@ -14,7 +14,7 @@ export function AuthFormFooter({ onSignUp }: AuthFormFooterProps) {
         </div>
         <div className="relative flex justify-center text-xs uppercase">
           <span className="bg-background px-2 text-muted-foreground">
-            {t("auth.orContinueWith")}
+            {t("auth.form.footer.orContinueWith")}
           </span>
         </div>
       </div>
@@ -24,7 +24,7 @@ export function AuthFormFooter({ onSignUp }: AuthFormFooterProps) {
         onClick={onSignUp}
         className="font-poppins"
       >
-        {t("auth.signUp")}
+        {t("auth.form.footer.signUp")}
       </Button>
     </div>
   );

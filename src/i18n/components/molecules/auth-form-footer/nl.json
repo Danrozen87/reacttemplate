@@ -5,7 +5,8 @@
       "footer": {
         "forgotPassword": "Wachtwoord vergeten?",
         "noAccount": "Geen account?",
-        "signUp": "Registreren"
+        "signUp": "Registreren",
+        "orContinueWith": "Of ga verder met"
       }
     }
   }

@@ -5,7 +5,8 @@
       "footer": {
         "forgotPassword": "Forgot password?",
         "noAccount": "Don't have an account?",
-        "signUp": "Sign up"
+        "signUp": "Sign up",
+        "orContinueWith": "Or continue with"
       }
     }
   }

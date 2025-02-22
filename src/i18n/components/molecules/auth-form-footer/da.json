@@ -5,7 +5,8 @@
       "footer": {
         "forgotPassword": "Glemt adgangskode?",
         "noAccount": "Har du ikke en konto?",
-        "signUp": "Tilmeld dig"
+        "signUp": "Tilmeld dig",
+        "orContinueWith": "Eller fortsæt med"
       }
     }
   }
