@@ -17,6 +17,20 @@
       "create": "Account aanmaken",
       "creating": "Account wordt aangemaakt...",
       "backToLogin": "Terug naar inloggen",
+      "errors": {
+        "companyNameRequired": "Bedrijfsnaam is verplicht",
+        "companyNameTooShort": "Bedrijfsnaam moet minimaal 2 tekens bevatten",
+        "companyNameTooLong": "Bedrijfsnaam mag niet langer zijn dan 100 tekens",
+        "companySizeRequired": "Bedrijfsgrootte is verplicht",
+        "firstNameRequired": "Voornaam is verplicht",
+        "firstNameTooShort": "Voornaam moet minimaal 2 tekens bevatten",
+        "firstNameTooLong": "Voornaam mag niet langer zijn dan 50 tekens",
+        "firstNameInvalid": "Voornaam mag alleen letters, spaties en koppeltekens bevatten",
+        "lastNameRequired": "Achternaam is verplicht",
+        "lastNameTooShort": "Achternaam moet minimaal 2 tekens bevatten",
+        "lastNameTooLong": "Achternaam mag niet langer zijn dan 50 tekens",
+        "lastNameInvalid": "Achternaam mag alleen letters, spaties en koppeltekens bevatten"
+      },
       "company-size": {
         "1-10": "1-10 medewerkers",
         "11-50": "11-50 medewerkers",

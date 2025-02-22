@@ -17,6 +17,20 @@
       "create": "Opret konto",
       "creating": "Opretter konto...",
       "backToLogin": "Tilbage til login",
+      "errors": {
+        "companyNameRequired": "Firmanavn er påkrævet",
+        "companyNameTooShort": "Firmanavn skal være mindst 2 tegn",
+        "companyNameTooLong": "Firmanavn må ikke være længere end 100 tegn",
+        "companySizeRequired": "Virksomhedsstørrelse er påkrævet",
+        "firstNameRequired": "Fornavn er påkrævet",
+        "firstNameTooShort": "Fornavn skal være mindst 2 tegn",
+        "firstNameTooLong": "Fornavn må ikke være længere end 50 tegn",
+        "firstNameInvalid": "Fornavn må kun indeholde bogstaver, mellemrum og bindestreger",
+        "lastNameRequired": "Efternavn er påkrævet",
+        "lastNameTooShort": "Efternavn skal være mindst 2 tegn",
+        "lastNameTooLong": "Efternavn må ikke være længere end 50 tegn",
+        "lastNameInvalid": "Efternavn må kun indeholde bogstaver, mellemrum og bindestreger"
+      },
       "company-size": {
         "1-10": "1-10 medarbejdere",
         "11-50": "11-50 medarbejdere",

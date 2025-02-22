@@ -17,6 +17,20 @@
       "create": "Skapa konto",
       "creating": "Skapar konto...",
       "backToLogin": "Tillbaka till inloggning",
+      "errors": {
+        "companyNameRequired": "Företagsnamn krävs",
+        "companyNameTooShort": "Företagsnamnet måste vara minst 2 tecken",
+        "companyNameTooLong": "Företagsnamnet får inte vara längre än 100 tecken",
+        "companySizeRequired": "Företagsstorlek krävs",
+        "firstNameRequired": "Förnamn krävs",
+        "firstNameTooShort": "Förnamnet måste vara minst 2 tecken",
+        "firstNameTooLong": "Förnamnet får inte vara längre än 50 tecken",
+        "firstNameInvalid": "Förnamnet får endast innehålla bokstäver, mellanslag och bindestreck",
+        "lastNameRequired": "Efternamn krävs",
+        "lastNameTooShort": "Efternamnet måste vara minst 2 tecken",
+        "lastNameTooLong": "Efternamnet får inte vara längre än 50 tecken",
+        "lastNameInvalid": "Efternamnet får endast innehålla bokstäver, mellanslag och bindestreck"
+      },
       "company-size": {
         "1-10": "1-10 anställda",
         "11-50": "11-50 anställda",
