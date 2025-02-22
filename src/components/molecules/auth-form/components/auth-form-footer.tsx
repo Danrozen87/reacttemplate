@@ -1,23 +1,25 @@
 
 import { useTranslation } from "react-i18next";
-import { AuthSocialButtons } from "../../auth-social-buttons";
+import { Button } from "@/components/ui/button";
+import { AuthSocialButtons } from "../../../molecules/auth-social-buttons";
 import type { AuthFormFooterProps } from "../types";
 
 export function AuthFormFooter({ onSignUp }: AuthFormFooterProps) {
-  const { t } = useTranslation("auth-form-footer");
+  const { t } = useTranslation("auth-form-fields");
 
   return (
-    <div className="space-y-4">
+    <>
       <AuthSocialButtons />
-      <div className="text-center text-sm">
-        <button
-          type="button"
+      <p className="text-center text-sm text-muted-foreground font-poppins font-light">
+        {t("auth.noAccount")}{" "}
+        <Button 
+          variant="link" 
+          className="font-medium text-primary p-0 font-poppins"
           onClick={onSignUp}
-          className="text-primary hover:underline font-poppins"
         >
-          {t("auth.form.footer.signUp")}
-        </button>
-      </div>
-    </div>
+          {t("auth.signUpNow")}
+        </Button>
+      </p>
+    </>
   );
 }
