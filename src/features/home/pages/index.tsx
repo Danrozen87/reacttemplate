@@ -18,7 +18,7 @@ const HomePage = () => {
           "flex flex-col p-4 sm:p-6 md:p-8 lg:p-10",
           "bg-background text-foreground",
           "dark:border-r border-border",
-          "transition-colors duration-200 order-2 lg:order-1",
+          "transition-colors duration-200",
           animations.modal.content.enter
         )}
         role="main"
@@ -36,7 +36,7 @@ const HomePage = () => {
           <AuthForm />
         </div>
       </div>
-      <div className="order-1 lg:order-2 min-h-[30vh] lg:min-h-screen">
+      <div className="hidden lg:block">
         <AuthHero />
       </div>
     </div>
