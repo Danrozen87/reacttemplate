@@ -1,4 +1,3 @@
-
 # AuthInput Component
 
 ## Usage
