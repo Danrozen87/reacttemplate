@@ -3,6 +3,7 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { LanguageSwitcher } from "../language-switcher";
 import { useToast } from "@/hooks/use-toast";
+import type { ToasterToast } from "@/types/toast";
 
 // Mock useTranslation
 vi.mock("react-i18next", () => ({
@@ -24,7 +25,9 @@ describe("LanguageSwitcher", () => {
   beforeEach(() => {
     vi.mocked(useToast).mockReturnValue({
       toast: vi.fn(),
-    } as any);
+      toasts: [],
+      dismiss: vi.fn(),
+    });
   });
 
   it("renders language switcher button", () => {
@@ -46,6 +49,8 @@ describe("LanguageSwitcher", () => {
     const mockToast = vi.fn();
     vi.mocked(useToast).mockReturnValue({
       toast: mockToast,
+      dismiss: vi.fn(),
+      toasts: []
     });
     
     render(<LanguageSwitcher />);
