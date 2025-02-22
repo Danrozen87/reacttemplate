@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { AuthLabel } from "@/components/atoms/auth-label";
@@ -18,9 +19,8 @@ export const CompanySizeSelectField: React.FC<CompanySizeSelectFieldProps> = ({ 
         {t('auth.signup.companySize')}
       </AuthLabel>
       <CompanySizeSelect
-        id="companySize"
-        onChange={onChange}
         value={value}
+        onChange={onChange}
         error={error}
       />
     </div>
