@@ -9,7 +9,7 @@ export function AuthHero() {
   return (
     <div 
       className={cn(
-        "relative h-full flex-col p-10 text-white",
+        "relative h-full flex-col text-white",
         "bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5",
         animations.modal.content.enter
       )}
@@ -26,15 +26,17 @@ export function AuthHero() {
       </div>
       <div 
         className={cn(
-          "relative z-20 mt-auto",
+          "relative z-20 h-full flex flex-col justify-end",
+          "p-6 sm:p-8 md:p-10",
+          "bg-gradient-to-t from-black/50 to-transparent",
           animations.modal.content.enter
         )}
       >
-        <blockquote className="space-y-2">
-          <p className="text-lg">
+        <blockquote className="space-y-2 max-w-lg">
+          <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed">
             &ldquo;{t("auth.heroQuote")}&rdquo;
           </p>
-          <footer className="text-sm">
+          <footer className="text-sm sm:text-base text-white/90">
             &mdash; {t("auth.heroAuthor")}
           </footer>
         </blockquote>

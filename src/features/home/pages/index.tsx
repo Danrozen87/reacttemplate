@@ -12,13 +12,13 @@ const HomePage = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-[35%_65%] bg-background">
+    <div className="min-h-screen grid lg:grid-cols-[40%_60%] bg-background">
       <div 
         className={cn(
           "flex flex-col p-4 sm:p-6 md:p-8 lg:p-10",
           "bg-background text-foreground",
           "dark:border-r border-border",
-          "transition-colors duration-200",
+          "transition-colors duration-200 order-2 lg:order-1",
           animations.modal.content.enter
         )}
         role="main"
@@ -26,17 +26,19 @@ const HomePage = () => {
       >
         <div className="flex justify-between items-center mb-4 sm:mb-6 md:mb-8">
           <h1 id="auth-heading" className="sr-only">{t("auth.welcome")}</h1>
-          <AuthLogo />
+          <AuthLogo className="scale-90 sm:scale-100" />
           <div className="flex items-center gap-2">
             <ThemeSwitcher />
             <LanguageSwitcher />
           </div>
         </div>
-        <div className="flex-1 flex items-center justify-center">
+        <div className="flex-1 flex items-center justify-center py-4 sm:py-6">
           <AuthForm />
         </div>
       </div>
-      <AuthHero />
+      <div className="order-1 lg:order-2 min-h-[30vh] lg:min-h-screen">
+        <AuthHero />
+      </div>
     </div>
   );
 };
