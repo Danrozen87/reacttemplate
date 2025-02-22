@@ -1,4 +1,3 @@
-
 # useMobile Hook
 
 ## Usage
@@ -44,6 +43,11 @@ Key scenarios:
 - Cleanup on unmount
 - Browser compatibility
 - Memory leak prevention
+- Event listener cleanup
+- SSR compatibility
+- Debounce functionality
+- Theme integration
+- Multiple instance handling
 
 ## Integration
 - Works with Tailwind breakpoints

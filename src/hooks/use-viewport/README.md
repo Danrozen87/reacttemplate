@@ -1,43 +1,51 @@
-
 # useViewport Hook
 
 ## Usage
-A comprehensive hook for viewport size detection and responsive design management.
+A custom hook that detects the current viewport size and device type.
 
 ```tsx
 import { useViewport } from "@/hooks/use-viewport";
 
-function ResponsiveLayout() {
-  const { isMobile, isTablet, isDesktop, viewport } = useViewport();
+function ResponsiveComponent() {
+  const { isMobile, isTablet, isDesktop } = useViewport();
   
   return (
     <div>
-      {viewport === "xs" && <MobileContent />}
-      {viewport === "md" && <TabletContent />}
-      {viewport === "lg" && <DesktopContent />}
+      {isMobile && <MobileView />}
+      {isTablet && <TabletView />}
+      {isDesktop && <DesktopView />}
     </div>
   );
 }
 ```
 
 ## Features
-- Multiple breakpoint detection
+- Real-time viewport detection
 - Device type inference
-- Orientation awareness
 - Window resize handling
+- Orientation change detection
+- Breakpoint awareness
+- Memory leak prevention
 - Performance optimization
+- SSR support
 
 ## API
 ```typescript
-interface ViewportInfo {
+function useViewport(): {
   isMobile: boolean;
   isTablet: boolean;
   isDesktop: boolean;
-  viewport: "xs" | "sm" | "md" | "lg" | "xl";
-}
-
-function useViewport(): ViewportInfo;
+  device: 'mobile' | 'tablet' | 'desktop';
+  breakpoint: Viewport;
+};
 ```
+
+## Implementation Details
+- Uses window.matchMedia
+- Updates on resize and orientation change events
+- Cleans up event listeners
+- Respects system preferences
+- Uses theme breakpoints
 
 ## Testing
 Coverage requirement: 100%
@@ -48,15 +56,21 @@ Key scenarios:
 - Orientation changes
 - Memory management
 - Browser compatibility
+- SSR support
+- Event cleanup
+- Multiple hook instances
+- Performance impact
+- Error handling
+- Theme integration
 
 ## Integration
-- Tailwind breakpoints
-- Theme system
-- TypeScript support
+- Works with Tailwind breakpoints
+- Theme aware
 - No external dependencies
+- TypeScript support
 
 ## Performance
-- Optimized resize handling
+- Debounced resize handling
 - Minimal re-renders
-- Efficient cleanup
-- Memory leak prevention
+- Efficient event cleanup
+- Memory optimization

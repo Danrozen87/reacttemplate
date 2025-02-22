@@ -1,4 +1,3 @@
-
 # YearGrid Component
 
 A flexible and accessible calendar grid component for displaying and interacting with yearly schedules.
@@ -52,19 +51,17 @@ Required translations are in the common namespace:
 - View mode labels
 
 ## Testing
-
-Coverage requirements:
-- Core grid rendering: 100%
-- Date calculations: 100%
-- User interactions: 90%
-- Accessibility features: 100%
-
-Important test scenarios:
-1. Correct day number calculations
-2. Leap year handling
-3. Week number calculations
-4. Current day highlighting
-5. View mode switching
-6. Keyboard navigation
-7. Drag and drop interactions
-
+Coverage requirement: 100%
+Key scenarios:
+- Core grid rendering
+- Date calculations
+- User interactions
+- Accessibility features
+- Leap year handling
+- Week number calculations
+- Current day highlighting
+- View mode switching
+- Keyboard navigation
+- Drag and drop interactions
+- RTL support
+- Theme compatibility

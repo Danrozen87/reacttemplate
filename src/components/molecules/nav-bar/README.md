@@ -71,7 +71,7 @@ Supports all required languages (EN, SV, DA, NL)
 RTL support: true
 
 ## Testing
-Coverage requirement: 90%
+Coverage requirement: 100%
 Key scenarios:
 - Renders all child components
 - Maintains proper accessibility attributes

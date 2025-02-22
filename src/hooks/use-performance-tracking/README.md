@@ -1,49 +1,41 @@
-
 # usePerformanceTracking Hook
 
 ## Usage
-A hook for tracking and monitoring component performance metrics.
+A custom hook for tracking component render performance and identifying potential bottlenecks.
 
 ```tsx
 import { usePerformanceTracking } from "@/hooks/use-performance-tracking";
 
-function TrackedComponent() {
-  const { startTracking, endTracking, metrics } = usePerformanceTracking("ComponentName");
-  
-  useEffect(() => {
-    startTracking();
-    return () => endTracking();
-  }, []);
+function MyComponent() {
+  usePerformanceTracking("MyComponent");
 
-  return <div>Performance Tracked Component</div>;
+  return <div>My Component</div>;
 }
 ```
 
 ## Features
-- Component render timing
-- Mount/unmount tracking
-- Re-render detection
-- Performance metrics collection
-- Memory usage monitoring
-- Automatic cleanup
+- Measures render time
+- Detects excessive renders
+- Identifies performance bottlenecks
+- Provides detailed performance metrics
+- Supports multiple components
+- Integrates with development tools
+- Reduces performance regressions
+- Improves user experience
 
 ## API
 ```typescript
-interface PerformanceMetrics {
-  mountTime: number;
-  renderCount: number;
-  totalRenderTime: number;
-  averageRenderTime: number;
-}
-
-function usePerformanceTracking(
-  componentName: string
-): {
-  startTracking: () => void;
-  endTracking: () => void;
-  metrics: PerformanceMetrics;
-};
+function usePerformanceTracking(componentName: string): void;
 ```
+
+## Implementation Details
+- Uses `React.useRef` to store start time
+- Uses `React.useEffect` to track mount and unmount
+- Calculates render duration
+- Logs performance metrics to console
+- Employs `requestAnimationFrame` for accurate timing
+- Cleans up resources on unmount
+- Respects development mode settings
 
 ## Testing
 Coverage requirement: 100%
@@ -54,15 +46,21 @@ Key scenarios:
 - Error handling
 - Cleanup verification
 - Browser compatibility
+- Performance overhead
+- Data persistence
+- Edge cases
+- Error boundaries
+- SSR compatibility
+- Resource cleanup
 
 ## Integration
-- Console logging
-- Performance API
-- React DevTools
+- Works with React components
 - No external dependencies
+- TypeScript support
+- Compatible with performance monitoring tools
 
-## Performance Impact
+## Performance
 - Minimal overhead
-- Development mode only
-- Automatic cleanup
+- Efficient timing mechanisms
+- Asynchronous logging
 - Memory optimization
