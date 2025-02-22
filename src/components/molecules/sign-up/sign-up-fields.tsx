@@ -16,48 +16,49 @@ export const SignUpFields: React.FC<SignUpFieldsProps> = ({ className }) => {
   return (
     <div className={className}>
       <AuthLabel htmlFor="companyName" required>
-        {t('company-name-label')}
+        {t('auth.signup.companyName')}
       </AuthLabel>
       <AuthInput
         id="companyName"
         type="text"
-        placeholder={t('company-name-placeholder')}
+        placeholder={t('auth.signup.companyNamePlaceholder')}
         {...register("companyName", {
-          required: t('company-name-required'),
+          required: t('auth.signup.errors.companyNameRequired'),
         })}
         error={errors.companyName?.message as string}
       />
 
       <AuthLabel htmlFor="companySize" required>
-        {t('company-size-label')}
+        {t('auth.signup.companySize')}
       </AuthLabel>
       <CompanySizeSelect
         value={companySize}
         onChange={(value) => setValue('companySize', value)}
+        error={errors.companySize?.message as string}
       />
 
       <AuthLabel htmlFor="firstName" required>
-        {t('first-name-label')}
+        {t('auth.signup.firstName')}
       </AuthLabel>
       <AuthInput
         id="firstName"
         type="text"
-        placeholder={t('first-name-placeholder')}
+        placeholder={t('auth.signup.firstNamePlaceholder')}
         {...register("firstName", {
-          required: t('first-name-required'),
+          required: t('auth.signup.errors.firstNameRequired'),
         })}
         error={errors.firstName?.message as string}
       />
 
       <AuthLabel htmlFor="lastName" required>
-        {t('last-name-label')}
+        {t('auth.signup.lastName')}
       </AuthLabel>
       <AuthInput
         id="lastName"
         type="text"
-        placeholder={t('last-name-placeholder')}
+        placeholder={t('auth.signup.lastNamePlaceholder')}
         {...register("lastName", {
-          required: t('last-name-required'),
+          required: t('auth.signup.errors.lastNameRequired'),
         })}
         error={errors.lastName?.message as string}
       />

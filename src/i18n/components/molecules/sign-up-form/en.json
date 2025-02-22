@@ -17,6 +17,12 @@
       "create": "Create Account",
       "creating": "Creating Account...",
       "backToLogin": "Back to Login",
+      "errors": {
+        "companyNameRequired": "Company name is required",
+        "companySizeRequired": "Company size is required",
+        "firstNameRequired": "First name is required",
+        "lastNameRequired": "Last name is required"
+      },
       "company-size": {
         "1-10": "1-10 employees",
         "11-50": "11-50 employees",
