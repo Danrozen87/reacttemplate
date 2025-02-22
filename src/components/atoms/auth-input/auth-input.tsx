@@ -8,20 +8,24 @@ interface AuthInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const AuthInput = React.forwardRef<HTMLInputElement, AuthInputProps>(
-  ({ className, error, ...props }, ref) => {
+  ({ className, error, id, ...props }, ref) => {
+    const errorId = error ? `${id}-error` : undefined;
+    
     return (
       <Input
         ref={ref}
+        id={id}
         className={cn(
-          "font-poppins bg-background border-input-border",
+          "font-poppins bg-background",
           "placeholder:text-muted-foreground/60",
           "selection:bg-primary/30 selection:text-foreground",
-          "hover:border-primary/50 focus:border-primary",
+          "border-input-border hover:border-primary/50 focus:border-primary",
           error && "border-destructive",
           className
         )}
-        aria-invalid={error ? "true" : "false"}
-        aria-errormessage={error ? `${props.id}-error` : undefined}
+        aria-invalid={!!error}
+        aria-errormessage={errorId}
+        aria-describedby={errorId}
         {...props}
       />
     );

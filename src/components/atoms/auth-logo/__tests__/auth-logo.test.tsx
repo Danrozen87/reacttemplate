@@ -11,6 +11,13 @@ describe('AuthLogo', () => {
 
   it('has correct animation classes', () => {
     const { container } = render(<AuthLogo />);
-    expect(container.firstChild).toHaveClass('animate-modal-in');
+    const element = container.firstChild as HTMLElement;
+    expect(element.className).toContain('animate-modal-in');
+  });
+
+  it('contains gradient background', () => {
+    const { container } = render(<AuthLogo />);
+    const gradientElement = container.querySelector('.bg-gradient-to-br');
+    expect(gradientElement).toBeInTheDocument();
   });
 });
