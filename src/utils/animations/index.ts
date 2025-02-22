@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 
 /**
@@ -65,7 +64,7 @@ export const animations = {
     enter: "motion-safe:animate-fade-in motion-safe:duration-300",
     exit: "motion-safe:animate-fade-out motion-safe:duration-200",
   },
-  // Element animations
+  // Element animations with new variants
   element: {
     fadeIn: "motion-safe:animate-fade-in",
     fadeOut: "motion-safe:animate-fade-out",
@@ -73,6 +72,43 @@ export const animations = {
     scaleOut: "motion-safe:animate-scale-out",
     slideIn: "motion-safe:animate-slide-in",
     slideOut: "motion-safe:animate-slide-out",
+    bounce: "motion-safe:animate-bounce",
+    pulse: "motion-safe:animate-pulse",
+    slideUp: "motion-safe:animate-slide-up",
+    slideDown: "motion-safe:animate-slide-down",
+    rotate: "motion-safe:animate-rotate",
+    pop: "motion-safe:animate-pop"
+  },
+
+  // Interaction animations
+  interaction: {
+    hover: {
+      scale: "hover:scale-105 active:scale-95 transition-transform",
+      glow: "hover:shadow-lg hover:shadow-primary/25 transition-shadow",
+      lift: "hover:-translate-y-1 transition-transform",
+      highlight: "hover:bg-accent/10 transition-colors"
+    },
+    focus: {
+      ring: "focus:ring-2 focus:ring-primary/50 focus:outline-none transition-shadow",
+      scale: "focus:scale-[1.02] transition-transform",
+      glow: "focus:shadow-lg focus:shadow-primary/25 transition-shadow"
+    }
+  },
+  
+  // State change animations
+  state: {
+    loading: "motion-safe:animate-pulse opacity-50",
+    success: "motion-safe:animate-success",
+    error: "motion-safe:animate-shake",
+    active: "motion-safe:animate-pop"
+  },
+  
+  // Combined effects
+  combined: {
+    buttonPress: "active:scale-95 hover:scale-105 transition-transform",
+    cardHover: "hover:-translate-y-1 hover:shadow-lg transition-all",
+    menuItem: "hover:bg-accent/10 active:bg-accent/20 transition-colors",
+    linkHover: "hover:underline hover:text-primary transition-all"
   }
 } as const;
 
