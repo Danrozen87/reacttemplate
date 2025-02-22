@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 
 /**
@@ -158,18 +157,18 @@ export const animations = {
 export type AnimationKey = keyof typeof animations;
 export type AnimationValue<T extends AnimationKey> = typeof animations[T];
 
-// Hook for scroll-based animations
-export const useScrollAnimation = () => {
+// Hook for scroll-based animations with custom threshold
+export const useScrollAnimation = (threshold = 25) => {
   const [isScrolled, setIsScrolled] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 25);
+      setIsScrolled(window.scrollY > threshold);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [threshold]);
 
   return isScrolled;
 };
@@ -189,6 +188,104 @@ export const useLoadingAnimation = (duration = 2000) => {
   }, [isLoading, duration]);
   
   return [isLoading, setIsLoading] as const;
+};
+
+// Hook for managing element appearance animations
+export const useAppearAnimation = (options?: {
+  delay?: number;
+  duration?: number;
+  threshold?: number;
+}) => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const elementRef = React.useRef<HTMLElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: options?.threshold ?? 0.1,
+      }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [options?.threshold]);
+
+  const animationStyle = React.useMemo(() => ({
+    opacity: 0,
+    transform: 'translateY(20px)',
+    transition: `all ${options?.duration ?? 300}ms ease-out`,
+    transitionDelay: `${options?.delay ?? 0}ms`,
+    ...(isVisible && {
+      opacity: 1,
+      transform: 'translateY(0)',
+    }),
+  }), [isVisible, options?.duration, options?.delay]);
+
+  return { elementRef, isVisible, animationStyle };
+};
+
+// Hook for managing hover animations
+export const useHoverAnimation = (variant: keyof typeof animations.interaction.hover) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+  
+  const hoverClass = React.useMemo(() => 
+    animations.interaction.hover[variant],
+    [variant]
+  );
+
+  const hoverProps = {
+    onMouseEnter: () => setIsHovered(true),
+    onMouseLeave: () => setIsHovered(false),
+    className: hoverClass,
+  };
+
+  return { isHovered, hoverProps };
+};
+
+// Hook for managing focus animations
+export const useFocusAnimation = (variant: keyof typeof animations.interaction.focus) => {
+  const [isFocused, setIsFocused] = React.useState(false);
+  
+  const focusClass = React.useMemo(() => 
+    animations.interaction.focus[variant],
+    [variant]
+  );
+
+  const focusProps = {
+    onFocus: () => setIsFocused(true),
+    onBlur: () => setIsFocused(false),
+    className: focusClass,
+  };
+
+  return { isFocused, focusProps };
+};
+
+// Hook for managing sequential animations
+export const useSequentialAnimation = (items: string[], delay = 100) => {
+  const [visibleItems, setVisibleItems] = React.useState<Set<string>>(new Set());
+
+  React.useEffect(() => {
+    items.forEach((item, index) => {
+      const timer = setTimeout(() => {
+        setVisibleItems(prev => new Set([...prev, item]));
+      }, index * delay);
+
+      return () => clearTimeout(timer);
+    });
+  }, [items, delay]);
+
+  const isItemVisible = (item: string) => visibleItems.has(item);
+
+  return { isItemVisible };
 };
 
 // Get nested value from animation object
