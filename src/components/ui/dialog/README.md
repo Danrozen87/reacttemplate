@@ -2,8 +2,10 @@
 # Dialog Component
 
 ## Usage
+A modal dialog component with focus management and accessibility features.
+
 ```tsx
-import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog"
+import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 
 function Example() {
   return (
@@ -16,44 +18,73 @@ function Example() {
         </DialogHeader>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
 ```
 
-## Variants
-- Default: Standard modal dialog
-- Alert: For important notifications
-- Form: For data collection
-- Confirmation: For user decisions
+## Props Interface
+```typescript
+interface DialogProps {
+  defaultOpen?: boolean;
+  modal?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+interface DialogContentProps {
+  children: React.ReactNode;
+  onClose?: () => void;
+}
+```
+
+## Features
+- Focus trapping
+- Keyboard navigation
+- Backdrop click handling
+- Animation support
+- Nested dialog support
+- Custom close handling
 
 ## Accessibility
-- Uses native dialog role
-- Manages focus trap
-- Supports keyboard navigation (Esc to close)
-- ARIA labels for all interactive elements
-- Screen reader announcements
+- Role: dialog
+- ARIA attributes:
+  - aria-modal: true
+  - aria-labelledby: dialog title
+  - aria-describedby: dialog description
+- Focus trap
+- Escape key handling
+- Screen reader optimization
 
 ## i18n
-Required translations:
+Required translation keys:
 ```json
 {
-  "components": {
-    "dialog": {
-      "close": "Close dialog",
-      "aria": {
-        "modal": "Dialog window",
-        "description": "Dialog content"
-      }
+  "dialog": {
+    "close": "Close dialog",
+    "aria": {
+      "modal": "Dialog window",
+      "description": "Dialog content"
     }
   }
 }
 ```
+Supports all required languages (EN, SV, DA, NL)
+RTL support: true
 
 ## Testing
-Coverage target: 90%
-Test scenarios:
-- Opens and closes correctly
-- Keyboard navigation works
+Coverage requirement: 100%
+Key scenarios:
+- Opening/closing behavior
 - Focus management
-- Screen reader compatibility
-- Blur effect application
+- Keyboard navigation
+- Backdrop interaction
+- Animation states
+- Nested dialogs
+- Screen reader support
+
+## Styling
+- Theme tokens:
+  - colors.dialog
+  - animation.dialog
+  - spacing.dialog
+- Responsive: true
+- Dark mode support: true

@@ -1,34 +1,88 @@
 
-# Form Components
+# Form Component
 
 ## Usage
-- Provides form control, validation, and error handling
-- Integrates with React Hook Form
-- Supports custom styling and variants
-- Responsive design patterns
+A form component with validation, error handling, and accessibility features.
 
-## Components
-- FormField: Core form field wrapper
-- FormItem: Container for form elements
-- FormLabel: Accessible form labels
-- FormControl: Input control wrapper
-- FormDescription: Help text for form fields
-- FormMessage: Error/validation messages
+```tsx
+import { Form, FormField, FormItem, FormLabel } from "@/components/ui/form";
+
+function LoginForm() {
+  const form = useForm({
+    defaultValues: {
+      email: "",
+      password: ""
+    }
+  });
+
+  return (
+    <Form {...form}>
+      <FormField
+        name="email"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>Email</FormLabel>
+            <FormControl>
+              <Input {...field} />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+    </Form>
+  );
+}
+```
+
+## Features
+- Form validation
+- Error handling
+- Field management
+- Nested forms
+- Dynamic fields
+- Form state tracking
 
 ## Accessibility
-- ARIA labels and roles
+- Role: form
+- ARIA attributes:
+  - aria-invalid: on error
+  - aria-required: required fields
+  - aria-describedby: error messages
+- Focus management
 - Error announcements
 - Keyboard navigation
-- Focus management
 
 ## i18n
-- Error messages support translation
-- Labels and descriptions support RTL
-- Required translations in locale files
+Required translation keys:
+```json
+{
+  "form": {
+    "required": "Required field",
+    "error": {
+      "invalid": "Invalid input",
+      "required": "This field is required"
+    }
+  }
+}
+```
+Supports all required languages (EN, SV, DA, NL)
+RTL support: true
 
 ## Testing
-Requirements:
-- 100% coverage for form validation
-- Test error states
-- Test accessibility features
-- Test i18n integration
+Coverage requirement: 100%
+Key scenarios:
+- Form submission
+- Validation logic
+- Error handling
+- Field updates
+- Reset behavior
+- Accessibility features
+- i18n support
+
+## Styling
+- Theme tokens:
+  - colors.form
+  - spacing.form
+  - typography.form
+- Responsive: true
+- Dark mode support: true
