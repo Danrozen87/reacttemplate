@@ -5,12 +5,10 @@
  */
 import { AuthFormContainer } from "./auth-form-container";
 import { AuthFormHeader } from "./auth-form-header";
-import { AuthFormFields } from "./auth-form-fields";
-import { AuthFormFooter } from "./auth-form-footer";
+import { AuthFormContent } from "./auth-form-content";
 import { PasswordRecoveryForm } from "../password-recovery-form";
 import { SignUpForm } from "../sign-up-form";
 import { useAuthFormState } from "./auth-form-state";
-import { animations } from "@/utils/animations";
 
 export function AuthForm() {
   const {
@@ -35,18 +33,14 @@ export function AuthForm() {
   return (
     <AuthFormContainer>
       <AuthFormHeader />
-      <form 
-        onSubmit={handleSubmit} 
-        className={`space-y-4 bg-card p-6 rounded-lg border border-border ${animations.modal.content.enter}`}
-      >
-        <AuthFormFields 
-          email={email}
-          setEmail={setEmail}
-          isSubmitting={isSubmitting}
-          onForgotPassword={() => setIsRecoveryMode(true)}
-        />
-        <AuthFormFooter onSignUp={() => setIsSignUpMode(true)} />
-      </form>
+      <AuthFormContent 
+        email={email}
+        setEmail={setEmail}
+        isSubmitting={isSubmitting}
+        setIsRecoveryMode={setIsRecoveryMode}
+        setIsSignUpMode={setIsSignUpMode}
+        handleSubmit={handleSubmit}
+      />
     </AuthFormContainer>
   );
 }

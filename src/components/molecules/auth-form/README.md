@@ -2,35 +2,40 @@
 # Auth Form Component
 
 ## Overview
-Authentication form component with role-based access control, social login options, and responsive design.
+The AuthForm component handles user authentication with role-based access control. It provides login, signup, and password recovery functionality with proper form validation and state management.
 
-## Structure
-```
-auth-form/
-├── components/        # Internal components
-├── auth-form.tsx     # Main component
-├── types.ts          # Type definitions
-└── index.ts         # Public exports
+## Components
+- `AuthForm`: Main container component
+- `AuthFormContent`: Form content with fields and actions
+- `AuthFormHeader`: Form title and description
+- `AuthFormFields`: Input fields for authentication
+- `AuthFormFooter`: Additional actions like signup
+- `AuthFormContainer`: Layout wrapper component
+
+## Props Interface
+```typescript
+interface AuthFormProps {
+  className?: string;
+}
 ```
 
 ## Features
-- Email authentication
-- Social login integration
-- Forgot password flow
+- Email/password authentication
+- Password recovery flow
 - Sign up option
-- Role-based access
+- Role-based access control
 - Responsive design
-- Dark/light mode support
-- i18n support
+- Form validation
+- Loading states
 
 ## Accessibility
-- ARIA labels
-- Keyboard navigation
-- Focus management
-- Loading states
-- Error handling
+- ARIA labels for form elements
+- Proper focus management
+- Loading state indicators
+- Error announcements
+- Keyboard navigation support
 
-## i18n
+## i18n Support
 Supports all required languages:
 - English
 - Swedish
@@ -38,9 +43,11 @@ Supports all required languages:
 - Dutch
 
 ## Testing
-100% coverage required for:
+Coverage requirement: 100%
+Key test scenarios:
 - Form submission
-- Validation
-- State management
+- Field validation
+- State transitions
 - Role-based access
-- i18n integration
+- Error handling
+- Loading states
