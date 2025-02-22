@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { animations } from "@/utils/animations";
-import { SignUpHeader } from "./sign-up-header";
-import { SignUpFields } from "./sign-up-fields";
-import { SignUpActions } from "./sign-up-actions";
+import { SignUpHeader } from "./sign-up/sign-up-header";
+import { SignUpFields } from "./sign-up/sign-up-fields";
+import { SignUpActions } from "./sign-up/sign-up-actions";
 
 interface SignUpFormProps {
   onBack: () => void;

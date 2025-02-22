@@ -4,11 +4,11 @@
  * @description Authentication form with role-based access control
  */
 import { AuthFormContainer } from "./auth-form-container";
-import { AuthFormHeader } from "./auth-form-header";
-import { AuthFormFields } from "./auth-form-fields";
-import { AuthFormFooter } from "./auth-form-footer";
+import { AuthFormHeader } from "../auth-form-header";
+import { AuthFormFields } from "../auth-form-fields";
+import { AuthFormFooter } from "../auth-form-footer";
 import { PasswordRecoveryForm } from "../password-recovery-form";
-import { SignUpForm } from "../sign-up/sign-up-form";
+import { SignUpForm } from "../sign-up-form";
 import { useAuthFormState } from "./auth-form-state";
 
 export function AuthForm() {

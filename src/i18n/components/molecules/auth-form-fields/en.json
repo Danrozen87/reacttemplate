@@ -1,8 +1,10 @@
 
 {
   "auth": {
-    "email": "Email",
-    "emailPlaceholder": "Enter your email address",
-    "forgotPassword": "Forgot password?"
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign in",
+    "noAccount": "Don't have an account?",
+    "signUpNow": "Sign up now"
   }
 }
