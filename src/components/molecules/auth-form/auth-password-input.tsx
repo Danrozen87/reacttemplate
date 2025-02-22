@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { AuthInput } from "@/components/atoms/auth-input/auth-input";
-import { AuthLabel } from "@/components/atoms/auth-label/auth-label";
+import { AuthInput } from "@/components/atoms/auth-input";
+import { AuthLabel } from "@/components/atoms/auth-label";
 
 interface AuthPasswordInputProps {
   disabled?: boolean;

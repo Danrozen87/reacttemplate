@@ -6,8 +6,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { MailIcon, ArrowLeft } from "lucide-react";
-import { AuthInput } from "@/components/atoms/auth-input/auth-input";
-import { AuthLabel } from "@/components/atoms/auth-label/auth-label";
+import { AuthInput } from "@/components/atoms/auth-input";
+import { AuthLabel } from "@/components/atoms/auth-label";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { animations } from "@/utils/animations";

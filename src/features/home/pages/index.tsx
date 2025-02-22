@@ -1,6 +1,6 @@
 
 import { AuthForm } from "@/components/molecules/auth-form";
-import { AuthLogo } from "@/components/atoms/auth-logo/auth-logo";
+import { AuthLogo } from "@/components/atoms/auth-logo";
 import { LanguageSwitcher } from "@/components/atoms/language-switcher/language-switcher";
 import { ThemeSwitcher } from "@/components/atoms/theme-switcher";
 import { animations } from "@/utils/animations";

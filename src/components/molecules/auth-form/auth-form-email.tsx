@@ -1,7 +1,7 @@
 
 import { useTranslation } from "react-i18next";
-import { AuthInput } from "@/components/atoms/auth-input/auth-input";
-import { AuthLabel } from "@/components/atoms/auth-label/auth-label";
+import { AuthInput } from "@/components/atoms/auth-input";
+import { AuthLabel } from "@/components/atoms/auth-label";
 
 interface AuthFormEmailProps {
   email: string;
