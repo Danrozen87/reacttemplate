@@ -26,11 +26,26 @@ import { animations } from '@/utils/animations';
 </div>
 ```
 
+## Loading States
+```tsx
+// Using loading button
+<LoadingButton isLoading loadingText="Saving...">
+  Save Changes
+</LoadingButton>
+
+// Using loading card
+<LoadingCard lines={4} />
+
+// Using skeleton
+<Skeleton variant="text" className="h-4 w-3/4" />
+```
+
 ## Variants
 - Modal animations (overlay and content)
 - Menu animations (overlay and content)
 - Page transitions
 - Element animations (fade, scale, slide)
+- Loading states (shimmer, pulse, spinner)
 - Blur effects (sm to 3xl)
 
 ## Accessibility
@@ -45,3 +60,4 @@ import { animations } from '@/utils/animations';
   - Animation class application
   - Reduced motion preferences
   - Blur effect application
+  - Loading state transitions

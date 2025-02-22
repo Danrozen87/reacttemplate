@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 
 /**
@@ -6,7 +5,6 @@ import * as React from 'react';
  */
 
 export const animations = {
-  // Modal animations with root-level focus effects
   modal: {
     overlay: {
       base: "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm motion-safe:transition-all",
@@ -110,7 +108,32 @@ export const animations = {
     cardHover: "hover:-translate-y-1 hover:shadow-lg transition-all",
     menuItem: "hover:bg-accent/10 active:bg-accent/20 transition-colors",
     linkHover: "hover:underline hover:text-primary transition-all"
-  }
+  },
+
+  // Loading animations
+  loading: {
+    shimmer: "animate-shimmer bg-gradient-to-r from-transparent via-muted/5 to-transparent",
+    pulse: "animate-pulse",
+    spinner: "animate-spinner",
+    progress: "animate-progress",
+    skeleton: "animate-pulse bg-muted/60"
+  },
+
+  // Loading states for specific components
+  loadingStates: {
+    button: {
+      base: "relative overflow-hidden transition-all duration-200",
+      loading: "animate-pulse cursor-wait opacity-70"
+    },
+    card: {
+      base: "relative overflow-hidden transition-all duration-200",
+      loading: "animate-shimmer pointer-events-none"
+    },
+    image: {
+      base: "relative overflow-hidden bg-muted/40",
+      loading: "animate-pulse"
+    }
+  },
 } as const;
 
 export type AnimationKey = keyof typeof animations;
@@ -129,4 +152,21 @@ export const useScrollAnimation = () => {
   }, []);
 
   return isScrolled;
+};
+
+// Loading state hook
+export const useLoadingAnimation = (duration = 2000) => {
+  const [isLoading, setIsLoading] = React.useState(false);
+  
+  React.useEffect(() => {
+    if (isLoading) {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, duration);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading, duration]);
+  
+  return [isLoading, setIsLoading] as const;
 };
