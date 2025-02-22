@@ -5,7 +5,7 @@
  */
 import { AuthFormContainer } from "./auth-form-container";
 import { AuthFormHeader } from "./components/auth-form-header";
-import { AuthFormFields } from "../auth-form-fields";
+import { AuthFormFields } from "./components/auth-form-fields";
 import { AuthFormFooter } from "./components/auth-form-footer";
 import { PasswordRecoveryForm } from "../password-recovery-form";
 import { SignUpForm } from "../sign-up-form";
