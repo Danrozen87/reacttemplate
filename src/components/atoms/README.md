@@ -1,94 +1,47 @@
 
 # Atomic Components
 
-## Documentation Standards
+## Overview
+This directory contains atomic-level components - the smallest, indivisible UI elements of our application.
 
-Each component in the atoms directory must follow these documentation standards:
+## Components
 
-```typescript
-/**
- * @component ComponentName
- * @version 1.0.0
- * @category atom
- * 
- * @description
- * Clear, concise description of the component's purpose and usage.
- * 
- * @example
- * Usage example in TSX format
- * 
- * @interface
- * TypeScript interface definition
- * 
- * @accessibility
- * - role: ARIA role
- * - aria-*: Required ARIA attributes
- * - keyboardInteractions: Supported keyboard interactions
- * 
- * @i18n
- * - supportedLanguages: Supported language codes
- * - requiredKeys: Required translation keys
- * - rtlSupport: RTL support status
- * 
- * @testing
- * - coverage: Required coverage percentage
- * - priority: Test priority order
- * - scenarios: Required test scenarios
- * 
- * @styling
- * - themeTokens: Required theme tokens
- * - responsive: Responsive design support
- * - darkMode: Dark mode support
- */
-```
+### AuthInput
+- Purpose: Base input component for authentication forms
+- Props: Extends standard input props plus error handling
+- Usage: Login, registration, and password recovery forms
 
-## Validation Rules
+### AuthLabel
+- Purpose: Standardized form label with required field support
+- Props: Extends standard label props plus required indicator
+- Usage: Form field labels across auth flows
 
-1. **Component Metadata**
-   - Version must follow semver
-   - Category must be "atom"
-   - Description must be under 100 words
+### AuthLogo
+- Purpose: Application branding component
+- Props: Optional className for styling customization
+- Usage: Header and authentication screens
 
-2. **Interface Documentation**
-   - Must include all props
-   - Must specify required/optional status
-   - Must include type bounds
+## Guidelines
+- Each component must be a single file at root level
+- No nested folders allowed
+- Maximum 68 lines per file
+- Full i18n support required
+- Must include proper TypeScript definitions
+- Must follow accessibility best practices
 
-3. **Accessibility Requirements**
-   - Must specify ARIA role
-   - Must list all required ARIA attributes
-   - Must document keyboard interactions
+## Testing
+- Unit tests required for all components
+- Test files co-located in __tests__ directory
+- Coverage requirements: 90%+
 
-4. **i18n Requirements**
-   - Must support all required languages
-   - Must list all translation keys
-   - Must specify RTL support status
+## i18n Support
+- All text must be internationalized
+- Support for en, sv, da, nl locales
+- Translation keys follow component hierarchy
 
-5. **Testing Requirements**
-   - Must specify coverage requirements
-   - Must list all test scenarios
-   - Must prioritize test cases
+## Accessibility
+- ARIA attributes required
+- Keyboard navigation support
+- Screen reader optimization
+- Color contrast compliance
 
-6. **Styling Requirements**
-   - Must list all theme tokens
-   - Must specify responsive support
-   - Must specify dark mode support
-
-## Implementation Guidelines
-
-1. **File Structure**
-   - One component per file
-   - Consistent file naming
-   - Colocated tests
-
-2. **Code Organization**
-   - JSDoc first
-   - Imports second
-   - Interface third
-   - Component implementation last
-
-3. **Quality Checks**
-   - TypeScript strict mode
-   - ESLint compliance
-   - Test coverage
-   - Accessibility audit
