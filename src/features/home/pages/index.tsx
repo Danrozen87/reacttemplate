@@ -3,6 +3,7 @@ import { AuthForm } from "@/components/molecules/auth-form";
 import { AuthLogo } from "@/components/atoms/auth-logo";
 import { LanguageSwitcher } from "@/components/atoms/language-switcher/language-switcher";
 import { ThemeSwitcher } from "@/components/atoms/theme-switcher";
+import { AuthHero } from "@/components/organisms/auth-hero/auth-hero";
 import { animations } from "@/utils/animations";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
@@ -35,7 +36,7 @@ const HomePage = () => {
           <AuthForm />
         </div>
       </div>
-      <div className="hidden lg:block bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5" />
+      <AuthHero />
     </div>
   );
 };

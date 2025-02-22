@@ -1,23 +1,18 @@
 
 import { useTranslation } from "react-i18next";
 import { animations } from "@/utils/animations";
+import { cn } from "@/lib/utils";
 
-interface AuthHeroProps {
-  className?: string;
-}
-
-/**
- * @component AuthHero
- * @description Hero section for the authentication page featuring alternating background 
- * images and inspirational quote with proper accessibility and responsive design.
- */
 export function AuthHero() {
   const { t } = useTranslation("auth-hero");
 
   return (
     <div 
-      className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r
-        transition-all duration-300 ease-in-out"
+      className={cn(
+        "relative h-full flex-col p-10 text-white",
+        "bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5",
+        animations.modal.content.enter
+      )}
       role="complementary"
       aria-label={t("auth.heroSection")}
     >
@@ -25,23 +20,22 @@ export function AuthHero() {
         <img
           src="/lovable-uploads/dec206da-ce5b-47f3-bf86-10af90d620a6.png"
           alt={t("auth.heroImageAlt")}
-          className="h-full w-full object-cover"
-          style={{ objectPosition: '-300px center' }}
-          role="presentation"
+          className="h-full w-full object-cover opacity-50"
           loading="eager"
         />
       </div>
       <div 
-        className={`relative z-20 mt-auto ${animations.modal.content.enter}`}
-        role="region"
-        aria-label={t("auth.heroQuoteSection")}
+        className={cn(
+          "relative z-20 mt-auto",
+          animations.modal.content.enter
+        )}
       >
         <blockquote className="space-y-2">
-          <p className="text-lg font-poppins font-light">
+          <p className="text-lg">
             {t("auth.heroQuote")}
           </p>
-          <footer className="text-sm font-poppins">
-            {t("auth.heroAuthor")}
+          <footer className="text-sm">
+            - {t("auth.heroAuthor")}
           </footer>
         </blockquote>
       </div>
