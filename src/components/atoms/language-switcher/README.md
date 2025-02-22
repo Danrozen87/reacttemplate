@@ -1,9 +1,6 @@
 
 # LanguageSwitcher Component
 
-## Overview
-A dropdown component that allows users to switch between supported languages.
-
 ## Usage
 ```tsx
 import { LanguageSwitcher } from "./language-switcher";
