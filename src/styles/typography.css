@@ -1,0 +1,44 @@
+
+@layer base {
+  :root {
+    --font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+    --font-mono: ui-monospace, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    @apply mb-6;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    @apply mb-4;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    @apply mb-3;
+  }
+
+  p {
+    font-weight: 400;
+    line-height: 1.6;
+    @apply mb-4;
+  }
+
+  .subtitle {
+    font-weight: 400;
+    @apply text-muted-foreground;
+  }
+}
