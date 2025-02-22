@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -43,25 +44,7 @@ import authSocialButtonsDa from './components/molecules/auth-social-buttons/da.j
 import authSocialButtonsSv from './components/molecules/auth-social-buttons/sv.json';
 import authSocialButtonsNl from './components/molecules/auth-social-buttons/nl.json';
 
-// Atomic Components - Sign Up Form
-import signUpFormEn from './components/molecules/sign-up-form/en.json';
-import signUpFormDa from './components/molecules/sign-up-form/da.json';
-import signUpFormSv from './components/molecules/sign-up-form/sv.json';
-import signUpFormNl from './components/molecules/sign-up-form/nl.json';
-
-// Atomic Components - Password Recovery Form
-import passwordRecoveryFormEn from './components/molecules/password-recovery-form/en.json';
-import passwordRecoveryFormDa from './components/molecules/password-recovery-form/da.json';
-import passwordRecoveryFormSv from './components/molecules/password-recovery-form/sv.json';
-import passwordRecoveryFormNl from './components/molecules/password-recovery-form/nl.json';
-
-// Atomic Components - Input
-import inputEn from './components/atoms/input/en.json';
-import inputDa from './components/atoms/input/da.json';
-import inputSv from './components/atoms/input/sv.json';
-import inputNl from './components/atoms/input/nl.json';
-
-// Define base translation types
+// Base translation types
 export interface BaseTranslations {
   auth: Record<string, unknown>;
 }
@@ -74,13 +57,6 @@ export type AuthFormEmailTranslations = typeof authFormEmailEn;
 export type AuthFormFieldsTranslations = typeof authFormFieldsEn;
 export type AuthFormFooterTranslations = typeof authFormFooterEn;
 export type AuthSocialButtonsTranslations = typeof authSocialButtonsEn;
-export type SignUpFormTranslations = typeof signUpFormEn;
-
-// Add type for Password Recovery Form translations
-export type PasswordRecoveryFormTranslations = typeof passwordRecoveryFormEn;
-
-// Add Input translations type
-export type InputTranslations = typeof inputEn;
 
 // Namespace configuration type
 export type TranslationNamespaces = {
@@ -91,9 +67,6 @@ export type TranslationNamespaces = {
   'auth-form-fields': AuthFormFieldsTranslations;
   'auth-form-footer': AuthFormFooterTranslations;
   'auth-social-buttons': AuthSocialButtonsTranslations;
-  'sign-up-form': SignUpFormTranslations;
-  'password-recovery-form': PasswordRecoveryFormTranslations;
-  'input': InputTranslations;
 };
 
 // Resource configuration
@@ -105,10 +78,7 @@ const resources = {
     'auth-form-email': authFormEmailEn,
     'auth-form-fields': authFormFieldsEn,
     'auth-form-footer': authFormFooterEn,
-    'auth-social-buttons': authSocialButtonsEn,
-    'sign-up-form': signUpFormEn,
-    'password-recovery-form': passwordRecoveryFormEn,
-    'input': inputEn
+    'auth-social-buttons': authSocialButtonsEn
   },
   da: {
     'auth-label': authLabelDa,
@@ -117,10 +87,7 @@ const resources = {
     'auth-form-email': authFormEmailDa,
     'auth-form-fields': authFormFieldsDa,
     'auth-form-footer': authFormFooterDa,
-    'auth-social-buttons': authSocialButtonsDa,
-    'sign-up-form': signUpFormDa,
-    'password-recovery-form': passwordRecoveryFormDa,
-    'input': inputDa
+    'auth-social-buttons': authSocialButtonsDa
   },
   sv: {
     'auth-label': authLabelSv,
@@ -129,10 +96,7 @@ const resources = {
     'auth-form-email': authFormEmailSv,
     'auth-form-fields': authFormFieldsSv,
     'auth-form-footer': authFormFooterSv,
-    'auth-social-buttons': authSocialButtonsSv,
-    'sign-up-form': signUpFormSv,
-    'password-recovery-form': passwordRecoveryFormSv,
-    'input': inputSv
+    'auth-social-buttons': authSocialButtonsSv
   },
   nl: {
     'auth-label': authLabelNl,
@@ -141,10 +105,7 @@ const resources = {
     'auth-form-email': authFormEmailNl,
     'auth-form-fields': authFormFieldsNl,
     'auth-form-footer': authFormFooterNl,
-    'auth-social-buttons': authSocialButtonsNl,
-    'sign-up-form': signUpFormNl,
-    'password-recovery-form': passwordRecoveryFormNl,
-    'input': inputNl
+    'auth-social-buttons': authSocialButtonsNl
   }
 };
 
@@ -156,10 +117,7 @@ const namespaces = [
   'auth-form-email',
   'auth-form-fields',
   'auth-form-footer',
-  'auth-social-buttons',
-  'sign-up-form',
-  'password-recovery-form',
-  'input'
+  'auth-social-buttons'
 ] as const;
 
 // i18n initialization configuration
