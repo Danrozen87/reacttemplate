@@ -3,7 +3,7 @@ import { useState, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { AuthLabel } from "@/components/atoms/auth-label/auth-label";
+import { AuthLabel } from "@/components/atoms/auth-label";
 import { AuthPasswordInput } from "./auth-password-input";
 import { AuthFormEmail } from "./auth-form-email";
 import { animations } from "@/utils/animations";

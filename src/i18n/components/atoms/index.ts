@@ -1,3 +1,3 @@
 
-export * from "./auth-label";
-export * from "./auth-input";
+export * from "./auth-label/types";
+export * from "./auth-input/types";
