@@ -8,15 +8,6 @@ import tailwindcss from "eslint-plugin-tailwindcss";
 import regexp from "eslint-plugin-regexp";
 import a11y from "eslint-plugin-jsx-a11y";
 
-import { componentRules } from "./eslint/rules/component-rules";
-import { typescriptRules } from "./eslint/rules/typescript-rules";
-import { i18nRules } from "./eslint/rules/i18n-rules";
-import { documentationRules } from "./eslint/rules/documentation-rules";
-import { a11yRules } from "./eslint/rules/a11y-rules";
-import { styleRules } from "./eslint/rules/style-rules";
-import { performanceRules } from "./eslint/rules/performance-rules";
-import { importRules } from "./eslint/rules/import-rules";
-
 export default tseslint.config(
   { ignores: ["dist"] },
   {
@@ -40,20 +31,122 @@ export default tseslint.config(
       "jsx-a11y": a11y,
     },
     rules: {
-      ...componentRules,
-      ...typescriptRules,
-      ...i18nRules,
-      ...documentationRules,
-      ...a11yRules,
-      ...styleRules,
-      ...performanceRules,
-      ...importRules,
-      
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
       ],
+      
+      // File Structure & Naming
+      "filename-rules/match": ["error", {
+        "pattern": "^[a-z0-9-]+$",
+        "message": "Use kebab-case for file names"
+      }],
+      "folder-rules/unique-names": ["error", {
+        "message": "Folder names must be unique across the project"
+      }],
+      "folder-rules/atomic-structure": ["error", {
+        "atoms": "src/components/atoms",
+        "molecules": "src/components/molecules",
+        "organisms": "src/components/organisms",
+        "message": "Components must be in their appropriate atomic design folders"
+      }],
+      
+      // Component Size & Structure
+      "max-lines": ["error", {
+        "max": 68,
+        "skipBlankLines": true,
+        "skipComments": true
+      }],
+      "max-depth": ["error", 3],
+      "complexity": ["error", 10],
+      
+      // TypeScript Configuration
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-explicit-any": "error",
+      "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "default",
+          "format": ["kebab-case"],
+          "leadingUnderscore": "allow"
+        },
+        {
+          "selector": "variable",
+          "format": ["kebab-case", "UPPER_CASE"],
+          "leadingUnderscore": "allow"
+        },
+        {
+          "selector": "typeLike",
+          "format": ["PascalCase"]
+        }
+      ],
+      
+      // i18n Strategy Enforcement
+      "i18n/atomic-translations": ["error", {
+        "maxKeysPerFile": 20,
+        "requiredLanguages": ["en", "sv", "da", "nl"],
+        "domainBasedStructure": true
+      }],
+      "i18n/no-missing-keys": "error",
+      "i18n/valid-keys": "error",
+      
+      // Documentation Requirements
+      "jsdoc/require-jsdoc": ["error", {
+        "require": {
+          "FunctionDeclaration": true,
+          "MethodDefinition": true,
+          "ClassDeclaration": true,
+          "ArrowFunctionExpression": true
+        }
+      }],
+      "jsdoc/require-description": "error",
+      "jsdoc/require-param": "error",
+      "jsdoc/require-returns": "error",
+      
+      // Accessibility Rules
+      "jsx-a11y/aria-props": "error",
+      "jsx-a11y/aria-proptypes": "error",
+      "jsx-a11y/aria-unsupported-elements": "error",
+      "jsx-a11y/role-has-required-aria-props": "error",
+      "jsx-a11y/role-supports-aria-props": "error",
+      
+      // Styling & Theme Enforcement
+      "tailwindcss/no-custom-classname": "error",
+      "tailwindcss/enforces-negative-arbitrary-values": "error",
+      "tailwindcss/enforces-shorthand": "error",
+      
+      // Component Pattern Enforcement
+      "regexp/component-structure": ["error", {
+        "patterns": [
+          {
+            "pattern": "^export\\s+const\\s+[A-Z][a-zA-Z]+\\s*=\\s*React\\.forwardRef",
+            "message": "Components must use forwardRef pattern"
+          },
+          {
+            "pattern": "README\\.md$",
+            "message": "Each component must have a README.md file"
+          }
+        ]
+      }],
+      
+      // Performance Rules
+      "no-console": ["error", { "allow": ["error", "warn"] }],
+      "react/no-unstable-nested-components": "error",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      
+      // Import Rules
+      "import/no-duplicates": "error",
+      "import/no-cycle": "error",
+      "import/order": ["error", {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc" }
+      }]
     }
   },
   {
