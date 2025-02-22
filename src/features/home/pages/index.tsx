@@ -5,6 +5,7 @@ import { LanguageSwitcher } from "@/components/atoms/language-switcher/language-
 import { ThemeSwitcher } from "@/components/atoms/theme-switcher";
 import { animations } from "@/utils/animations";
 import { useTranslation } from "react-i18next";
+import { cn } from "@/lib/utils";
 
 const HomePage = () => {
   const { t } = useTranslation();
